@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"version": "1.1.2",
+	"name": "__MSG_extName__",
+	"description": "__MSG_extDescription__",
+	"author": "Thomas Tavernier <thomas@tavernier.dev>",
+	"default_locale": "en",
+	"icons": {
+		"128":	"assets/icon128.png"
+	},
+	"permissions": [
+		"storage"
+	],
+	"browser_action": {
+		"default_popup": "popup/popup.html"
+    },
+	"content_scripts": [{
+		"js": 		["js/crunchyroll.js"],
+		"matches": 	["*://www.crunchyroll.com/*"],
+		"run_at":	"document_end"
+		},
+		{
+		"js": 		["js/youtube.js"],
+		"matches": 	["*://www.youtube.com/*"],
+		"run_at":	"document_idle"
+		}]
+}
