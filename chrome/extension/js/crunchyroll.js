@@ -1,4 +1,5 @@
 var style = document.createElement('style');
+var ratio = window.screen.availHeight / window.screen.availWidth;
 
 // refresh function
 refresh = function(){
@@ -44,7 +45,7 @@ setStyleAsBiggerPlayer = function(){
 			margin: 0 auto !important;
 		}
 		#showmedia_video {
-			height: 100vh;
+			height: calc((` + ratio + `) * 100vw);;
 			background-color: black !important;
 			width: 100% !important;
 			min-width: 960px !important;
@@ -93,11 +94,14 @@ unsetStyle = function(){
 toggle = function(){
 	// if large && in video page
 	if (document.getElementById("main_content").className == "left" && document.getElementsByClassName("showmedia-trail cf")[0] != undefined) {
+		// set style
 		setStyleAsBiggerPlayer();
 	}
 	else {
+		// unset style
 		unsetStyle();
 	}
+	// refresh
 	setTimeout(refresh);
 }
 
@@ -118,10 +122,11 @@ toggleRecursion = function(){
 launcher = function(){
 	// add styleshett to document
 	document.head.appendChild(style);
-	// if there is ads
+	// remove ads
 	setTimeout(removeAds);
 	// if Crunchyroll HTML5 extension installed
 	if (document.getElementsByClassName("chrome-button chrome-size-button")[0] != undefined) {
+		// add an event listener on size button
 		document.getElementsByClassName("chrome-button chrome-size-button")[0].addEventListener("click", toggleRecursion);
 	}
 	setTimeout(toggleRecursion);
@@ -135,4 +140,4 @@ chrome.storage.sync.get(['isCrunchyrollOff'], function(result){
 		launcher();
 	}
 });
-	
+
