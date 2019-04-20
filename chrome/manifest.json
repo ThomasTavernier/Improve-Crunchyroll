@@ -22,8 +22,8 @@
 		{
 		"js": 		["extension/js/gogoanime.js"],
 		"matches": [ "*://*/*" ],
-        	"include_globs": [
-            		"*://*.gogoanime.*/*",
+        "include_globs": [
+            "*://*.gogoanime.*/*",
 			"*://*.gogoanimes.*/*"
 		],	
 		"run_at":	"document_end"
