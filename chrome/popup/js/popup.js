@@ -10,18 +10,6 @@ chrome.storage.sync.get(['isCrunchyrollOff'], function(result){
 });
 }
 
-// check if Gogoanime activate
-checkGogoanime = function(){
-chrome.storage.sync.get(['isGogoanimeOff'], function(result){
-	if (result.isGogoanimeOff) {
-		document.getElementById("gogoanime").className  = "buttonOFF";
-	}
-	else {
-		document.getElementById("gogoanime").className  = "buttonON";
-	}
-});
-}
-
 // check if Youtube activate
 checkYouyube = function(){
 chrome.storage.sync.get(['isYoutubeOff'], function(result){
@@ -42,14 +30,6 @@ toggleCrunchyroll = function(){
 	setTimeout(checkCrunchyroll);
 }
 
-// toggle Gogoanime
-toggleGogoanime = function(){
-	chrome.storage.sync.get(['isGogoanimeOff'], function(result){
-		chrome.storage.sync.set({"isGogoanimeOff": !result.isGogoanimeOff});
-	});
-	setTimeout(checkGogoanime);
-}
-
 // toggle Youtube
 toggleYoutube = function(){
 	chrome.storage.sync.get(['isYoutubeOff'], function(result){
@@ -62,17 +42,14 @@ toggleYoutube = function(){
 resetdefaults = function(){
 	chrome.storage.sync.clear();
 	checkCrunchyroll();
-	checkGogoanime();
 	checkYouyube();
 }
 
 // launcher
 launcher = function(){
 	checkCrunchyroll();
-	checkGogoanime();
 	checkYouyube();
 	document.getElementById("crunchyroll").addEventListener("click", toggleCrunchyroll);
-	document.getElementById("gogoanime").addEventListener("click", toggleGogoanime);
 	document.getElementById("youtube").addEventListener("click", toggleYoutube);
 	document.getElementById("reset").addEventListener("click", resetdefaults);
 }
