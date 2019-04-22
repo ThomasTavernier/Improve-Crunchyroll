@@ -25,28 +25,31 @@ unsetStyle = function(){
 	style.innerHTML = ``;
 }
 
-// cinema/normal switch function
-CinemaNormalSwitch = function(){
+// toggle function
+toggle = function(){
 	// if large && in video page
 	if (document.getElementById("player-theater-container").children[0] != undefined && document.getElementById("player-container").offsetHeight > 0) {
+		// set style
 		setTimeout(setStyleAsBiggerPlayer);
 	}
 	else {
+		// unset style
 		setTimeout(unsetStyle);
 	}
+	// refresh
 	setTimeout(refresh);
 }
 
-// cinema/normal switch recursion function
-CinemaNormalSwitchRecursion = function(){
+// toggle recursion function
+toggleRecursion = function(){
 	// if page is load
 	if (document.getElementById("player-theater-container") != null) {
 		// laucnh cinema/normal switch function
-		setTimeout(CinemaNormalSwitch);
+		setTimeout(toggle);
 	}
 	else {
 		// retry in 250ms
-		setTimeout(CinemaNormalSwitchRecursion, 250);
+		setTimeout(toggleRecursion, 250);
 	}
 }
 
@@ -55,7 +58,7 @@ addEventListenerOnCinemaNormalSwitchRecursion = function() {
 	// if cinama/normal switch exist
 	if (document.getElementsByClassName("ytp-size-button ytp-button")[0] != undefined) {
 		// add event listener cinama/normal switch
-		document.getElementsByClassName("ytp-size-button ytp-button")[0].addEventListener("click", function(){setTimeout(CinemaNormalSwitchRecursion, 1)});
+		document.getElementsByClassName("ytp-size-button ytp-button")[0].addEventListener("click", function(){setTimeout(toggleRecursion, 1)});
 	}
 	else {
 		// retry in 250ms
@@ -66,11 +69,11 @@ addEventListenerOnCinemaNormalSwitchRecursion = function() {
 // launcher function
 launcher = function() {
 	// add event listener on url change
-	window.addEventListener("yt-page-data-updated", function(){setTimeout(CinemaNormalSwitchRecursion)});
+	window.addEventListener("yt-page-data-updated", function(){setTimeout(toggleRecursion)});
 	// add styleshett to document
 	document.head.appendChild(style);
 	// verif if the current page is a video
-	setTimeout(CinemaNormalSwitchRecursion);
+	setTimeout(toggleRecursion);
 	// laucnh add event listener on cinama/normal switch recursion function
 	setTimeout(addEventListenerOnCinemaNormalSwitchRecursion);
 }
