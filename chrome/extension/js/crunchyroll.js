@@ -2,12 +2,12 @@ var style = document.createElement('style');
 var ratio = window.screen.availHeight / window.screen.availWidth;
 
 // refresh function
-refresh = function(){
+refresh = function () {
 	window.dispatchEvent(new Event("resize"));
 }
 
 // remove Ads
-removeAds = function(){
+removeAds = function () {
 	var styleSheetRemoveAds = document.createElement('style');
 	styleSheetRemoveAds.innerHTML = `
 		#message_box {
@@ -34,7 +34,7 @@ removeAds = function(){
 }
 
 // set style as bigger player function
-setStyleAsBiggerPlayer = function(){
+setStyleAsBiggerPlayer = function () {
 	if (document.getElementById("main_content").contains(document.getElementById("showmedia_video"))) {
 		document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
 		document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
@@ -86,12 +86,12 @@ setStyleAsBiggerPlayer = function(){
 }
 
 // unset style function
-unsetStyle = function(){ 
+unsetStyle = function () {
 	style.innerHTML = ``
-} 
+}
 
 // toggle video player
-toggle = function(){
+toggle = function () {
 	// if large && in video page
 	if (document.getElementById("main_content").className == "left" && document.getElementsByClassName("showmedia-trail cf")[0] != undefined) {
 		// set style
@@ -106,7 +106,7 @@ toggle = function(){
 }
 
 // togglerecursion function
-toggleRecursion = function(){
+toggleRecursion = function () {
 	// if page is load
 	if (document.getElementById("main_content") != null) {
 		// laucnh cinema/normal switch function
@@ -118,26 +118,44 @@ toggleRecursion = function(){
 	}
 }
 
-// launcher
-launcher = function(){
+// set focus without crunchyrollHTML5 function
+setFocusWithoutCrunchyrollHTML5 = function () {
+	document.getElementById("showmedia_video_player").firstChild.focus();
+}
+
+// set focus function
+setFocus = function () {
+	// if Crunchyroll HTML5 extension is installed
+	if (document.getElementById("showmedia_video_box_wide") != null) {
+		// set focus 
+		document.getElementById("showmedia_video_box_wide").firstChild.focus();
+	} else {
+		// set focus without crunchyrollHTML5 in 250ms
+		setTimeout(setFocusWithoutCrunchyrollHTML5, 250);
+	}
+}
+
+// init
+init = function () {
 	// add styleshett to document
 	document.head.appendChild(style);
 	// remove ads
 	setTimeout(removeAds);
-	// if Crunchyroll HTML5 extension installed
+	// if Crunchyroll HTML5 extension is installed
 	if (document.getElementsByClassName("chrome-button chrome-size-button")[0] != undefined) {
 		// add an event listener on size button
 		document.getElementsByClassName("chrome-button chrome-size-button")[0].addEventListener("click", toggleRecursion);
 	}
 	setTimeout(toggleRecursion);
+	// set focus to the video player
+	setTimeout(setFocus);
 }
 
 // START
-chrome.storage.sync.get(['isCrunchyrollOff'], function(result){
+chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
 	// if crunchyroll on
 	if (!result.isCrunchyrollOff) {
 		// lauch
-		launcher();
+		init();
 	}
 });
-

@@ -2,12 +2,12 @@ var style = document.createElement('style');
 var ratio = window.screen.availHeight / window.screen.availWidth;
 
 // refresh function
-refresh = function(){
+refresh = function () {
 	window.dispatchEvent(new Event("resize"));
 }
 
 // set style as bigger player function
-setStyleAsBiggerPlayer = function(){
+setStyleAsBiggerPlayer = function () {
 	style.innerHTML = `
     #wrapper {
 		padding: 0 !important;
@@ -73,12 +73,12 @@ setStyleAsBiggerPlayer = function(){
 }
 
 // unset style function
-unsetStyle = function(){
+unsetStyle = function () {
 	style.innerHTML = ``;
 }
 
 // toggle function
-toggle = function(){
+toggle = function () {
 	// if in video page
 	if (document.getElementById("load_anime") != null) {
 		// set style
@@ -93,7 +93,7 @@ toggle = function(){
 }
 
 // toggle recursion function
-toggleRecursion = function(){
+toggleRecursion = function () {
 	// if page is load
 	if (document.getElementById("wrapper") != null) {
 		// laucnh cinema/normal switch function
@@ -105,20 +105,20 @@ toggleRecursion = function(){
 	}
 }
 
-// launcher function
-launcher = function() {
-	// add styleshett to document
+// init function
+init = function () {
+	// add stylesheet to document
 	document.head.appendChild(style);
 	// verif if the current page is a video
 	setTimeout(toggleRecursion);
 }
 
 // START
-chrome.storage.sync.get(['isGogoanimeOff'], function(result){
+chrome.storage.sync.get(['isGogoanimeOff'], function (result) {
 	// if gogoanime on
 	if (!result.isGogoanimeOff) {
 		// lauch
-		launcher();
+		init();
 	}
 });
 
