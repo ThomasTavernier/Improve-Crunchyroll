@@ -34,8 +34,7 @@ setStyleAsBiggerPlayer = function () {
 	.content, .anime_video_body_watch_items, .anime_video_body_watch {
 		margin: 0 !important;
 	}
-	
-	.banner, .anime_name.anime_video, h1, .anime_video_body_cate, .menu_top_link, .content_right, .headnav, .anime_video_body:nth-of-type(2) div:nth-of-type(2), .download-anime, .anime_video_body div:nth-of-type(7) {
+	.banner, .anime_name.anime_video, h1, .anime_video_body_cate, .menu_top_link, .content_right, .headnav, .download-anime, .anime_video_body div:nth-of-type(7) {
 		display: none !important;
 	}
 	.anime_video_body_episodes, .anime_video_body_comment, .anime_muti_link, .main_body:nth-of-type(3), footer {
