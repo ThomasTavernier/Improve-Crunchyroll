@@ -1,13 +1,14 @@
 var style = document.createElement('style');
-var ratio = window.screen.availHeight / window.screen.availWidth;
+var widthRatio = window.screen.height / window.screen.width * 100;
+var heightRatio = window.screen.width / window.screen.height * 100;
 
 // refresh function
-refresh = function () {
+function refresh() {
 	window.dispatchEvent(new Event("resize"));
 }
 
 // set style as bigger player function
-setStyleAsBiggerPlayer = function () {
+function setStyleAsBiggerPlayer() {
 	style.innerHTML = `
     #wrapper {
 		padding: 0 !important;
@@ -28,8 +29,10 @@ setStyleAsBiggerPlayer = function () {
 	}
 	.play-video.selected {
 		max-height: 100vh !important;
-		height: calc((` + ratio + `) * 100vw);;
+		height: ` + widthRatio + `vw;
+		max-width: ` + heightRatio + `vh;
 		padding: 0 !important;
+		margin: auto;
 	}
 	.content, .anime_video_body_watch_items, .anime_video_body_watch {
 		margin: 0 !important;
@@ -72,12 +75,12 @@ setStyleAsBiggerPlayer = function () {
 }
 
 // unset style function
-unsetStyle = function () {
+function unsetStyle() {
 	style.innerHTML = ``;
 }
 
 // toggle function
-toggle = function () {
+function toggle() {
 	// if in video page
 	if (document.getElementById("load_anime") != null) {
 		// set style
@@ -92,7 +95,7 @@ toggle = function () {
 }
 
 // toggle recursion function
-toggleRecursion = function () {
+function toggleRecursion() {
 	// if page is load
 	if (document.getElementById("wrapper") != null) {
 		// laucnh cinema/normal switch function
@@ -105,7 +108,7 @@ toggleRecursion = function () {
 }
 
 // init function
-init = function () {
+function init() {
 	// add stylesheet to document
 	document.head.appendChild(style);
 	// verif if the current page is a video

@@ -2,12 +2,12 @@ var style = document.createElement('style');
 var ratio = window.screen.availHeight / window.screen.availWidth;
 
 // refresh function
-refresh = function () {
+function refresh() {
 	window.dispatchEvent(new Event("resize"));
 }
 
 // remove Ads
-removeAds = function () {
+function removeAds() {
 	var styleSheetRemoveAds = document.createElement('style');
 	styleSheetRemoveAds.innerHTML = `
 		#message_box {
@@ -34,7 +34,7 @@ removeAds = function () {
 }
 
 // set style as bigger player function
-setStyleAsBiggerPlayer = function () {
+function setStyleAsBiggerPlayer() {
 	if (document.getElementById("main_content").contains(document.getElementById("showmedia_video"))) {
 		document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
 		document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
@@ -86,12 +86,12 @@ setStyleAsBiggerPlayer = function () {
 }
 
 // unset style function
-unsetStyle = function () {
+function unsetStyle() {
 	style.innerHTML = ``
 }
 
 // toggle video player
-toggle = function () {
+function toggle() {
 	// if large && in video page
 	if (document.getElementById("main_content").className == "left" && document.getElementsByClassName("showmedia-trail cf")[0] != undefined) {
 		// set style
@@ -106,7 +106,7 @@ toggle = function () {
 }
 
 // togglerecursion function
-toggleRecursion = function () {
+function toggleRecursion() {
 	// if page is load
 	if (document.getElementById("main_content") != null) {
 		// laucnh cinema/normal switch function
@@ -119,12 +119,12 @@ toggleRecursion = function () {
 }
 
 // set focus without crunchyrollHTML5 function
-setFocusWithoutCrunchyrollHTML5 = function () {
+function setFocusWithoutCrunchyrollHTML5() {
 	document.getElementById("showmedia_video_player").firstChild.focus();
 }
 
 // set focus function
-setFocus = function () {
+function setFocus() {
 	// if Crunchyroll HTML5 extension is installed
 	if (document.getElementById("showmedia_video_box_wide") != null) {
 		// set focus 
@@ -136,7 +136,7 @@ setFocus = function () {
 }
 
 // init
-init = function () {
+function init() {
 	// add styleshett to document
 	document.head.appendChild(style);
 	// remove ads

@@ -1,12 +1,12 @@
 var style = document.createElement('style');
 
 // refresh function
-refresh = function () {
+function refresh() {
 	window.dispatchEvent(new Event("resize"));
 }
 
 // set style as bigger player function
-setStyleAsBiggerPlayer = function () {
+function setStyleAsBiggerPlayer() {
 	style.innerHTML = `
     #page-manager {
 		margin-top: 0 !important;
@@ -21,12 +21,12 @@ setStyleAsBiggerPlayer = function () {
 }
 
 // unset style function
-unsetStyle = function () {
+function unsetStyle() {
 	style.innerHTML = ``;
 }
 
 // toggle function
-toggle = function () {
+function toggle() {
 	// if large && in video page
 	if (document.getElementById("player-theater-container").children[0] != undefined && document.getElementById("player-container").offsetHeight > 0) {
 		// set style
@@ -41,7 +41,7 @@ toggle = function () {
 }
 
 // toggle recursion function
-toggleRecursion = function () {
+function toggleRecursion() {
 	// if page is load
 	if (document.getElementById("player-theater-container") != null) {
 		// laucnh cinema/normal switch function
@@ -54,7 +54,7 @@ toggleRecursion = function () {
 }
 
 // add event listener on cinama/normal switch recursion function
-addEventListenerOnCinemaNormalSwitchRecursion = function () {
+function addEventListenerOnCinemaNormalSwitchRecursion() {
 	// if cinama/normal switch exist
 	if (document.getElementsByClassName("ytp-size-button ytp-button")[0] != undefined) {
 		// add event listener cinama/normal switch
@@ -67,7 +67,7 @@ addEventListenerOnCinemaNormalSwitchRecursion = function () {
 }
 
 // init function
-init = function () {
+function init() {
 	// add event listener on url change
 	window.addEventListener("yt-page-data-updated", function () { setTimeout(toggleRecursion) });
 	// add styleshett to document
