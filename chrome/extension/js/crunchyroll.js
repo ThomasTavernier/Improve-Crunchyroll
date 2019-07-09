@@ -29,9 +29,6 @@ function removeAds() {
 		.__web-inspector-hide-shortcut__ {
 			pointer-events: none !important;
 		}
-		#goodbye_box {
-			display: none;
-		}
 	`
 	document.head.appendChild(styleSheetRemoveAds);
 }
@@ -159,6 +156,6 @@ chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
 	// if crunchyroll on
 	if (!result.isCrunchyrollOff) {
 		// lauch
-		setTimeout(init);
+		init();
 	}
 });
