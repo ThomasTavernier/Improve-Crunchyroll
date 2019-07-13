@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "1.3.4",
+	"version": "1.4.0",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -19,6 +19,11 @@
 		"matches": 	["*://www.crunchyroll.com/*"],
 		"run_at":	"document_end"
 		},
+		{
+			"js": 		["extension/js/crunchyrollVideoPlayer.js"],
+			"matches": 	["*://static.crunchyroll.com/vilos/player.html"],
+			"all_frames": true
+			},
 		{
 		"js": 		["extension/js/gogoanime.js"],
 		"matches": 	["*://*.gogoanime.tv/*", "*://*.gogoanime.io/*", "*://*.gogoanimes.tv/*", "*://*.gogoanimes.io/*"],

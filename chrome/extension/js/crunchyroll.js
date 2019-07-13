@@ -1,4 +1,3 @@
-var style = document.createElement('style');
 var ratio = window.screen.availHeight / window.screen.availWidth;
 
 // refresh function
@@ -35,11 +34,12 @@ function removeAds() {
 
 // set style as bigger player function
 function setStyleAsBiggerPlayer() {
-	if (document.getElementById("main_content").contains(document.getElementById("showmedia_video"))) {
-		document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
-		document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
-	}
-	style.innerHTML = `
+	var style = document.createElement('style');
+	document.head.appendChild(style);
+	if (document.getElementById("main_content") !== null) {
+		// document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
+		// document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
+		style.innerHTML = `
 		#showmedia, #footer {
 			width: 960px !important;
 			margin: 0 auto !important;
@@ -69,86 +69,38 @@ function setStyleAsBiggerPlayer() {
 		.showmedia-header:first-child {
 			display: none !important;
 		}
-		.html5-video-player {
-			width: 100% !important;
-			height: 100% !important;
-		}
 		#vilos-player {
 			width: calc(100% + 3px) !important;
 			height: calc(100% + 1px) !important;
 			margin-left: -3px !important;
 			margin-top: -1px !important;
 		}
-		#showmedia_video_player {
-			overflow: hidden !important;
-		}
-	`
-}
-
-// unset style function
-function unsetStyle() {
-	style.innerHTML = ``
-}
-
-// toggle video player
-function toggle() {
-	// if large && in video page
-	if (document.getElementById("main_content").className == "left" && document.getElementsByClassName("showmedia-trail cf")[0] != undefined) {
-		// set style
-		setStyleAsBiggerPlayer();
+		`
 	}
-	else {
-		// unset style
-		unsetStyle();
-	}
-	// refresh
-	setTimeout(refresh);
-}
-
-// togglerecursion function
-function toggleRecursion() {
-	// if page is load
-	if (document.getElementById("main_content") != null) {
-		// laucnh cinema/normal switch function
-		setTimeout(toggle);
-	}
-	else {
-		// retry in 100ms
-		setTimeout(toggleRecursion, 100);
-	}
+	// .html5-video-player {
+	// 	width: 100% !important;
+	// 	height: 100% !important;
+	// }
+	// #showmedia_video_player {
+	// 	overflow: hidden !important;
+	// }
 }
 
 // set focus without crunchyrollHTML5 function
-function setFocusWithoutCrunchyrollHTML5() {
-	document.getElementById("showmedia_video_player").firstChild.focus();
-}
-
-// set focus function
 function setFocus() {
-	// if Crunchyroll HTML5 extension is installed
-	if (document.getElementById("showmedia_video_box_wide") != null) {
-		// set focus 
-		document.getElementById("showmedia_video_box_wide").firstChild.focus();
-	} else {
-		// set focus without crunchyrollHTML5 in 250ms
-		setTimeout(setFocusWithoutCrunchyrollHTML5, 250);
+	if (document.getElementById("showmedia_video_player") !== null) {
+		document.getElementById("showmedia_video_player").firstChild.focus();
 	}
 }
 
 // init
 function init() {
-	// add styleshett to document
-	document.head.appendChild(style);
 	// remove ads
 	setTimeout(removeAds);
-	// if Crunchyroll HTML5 extension is installed
-	if (document.getElementsByClassName("chrome-button chrome-size-button")[0] != undefined) {
-		// add an event listener on size button
-		document.getElementsByClassName("chrome-button chrome-size-button")[0].addEventListener("click", toggleRecursion);
-	}
-	setTimeout(toggleRecursion);
+	// set big player
+	setTimeout(setStyleAsBiggerPlayer);
 	// set focus to the video player
-	setTimeout(setFocus);
+	setTimeout(setFocus, 250);
 }
 
 // START
