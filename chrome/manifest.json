@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -22,7 +22,8 @@
 		{
 			"js": 		["extension/js/crunchyrollVideoPlayer.js"],
 			"matches": 	["*://static.crunchyroll.com/vilos/player.html"],
-			"all_frames": true
+			"all_frames": true,
+			"run_at":	"document_idle"
 			},
 		{
 		"js": 		["extension/js/gogoanime.js"],
