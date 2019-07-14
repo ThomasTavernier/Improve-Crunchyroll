@@ -17,7 +17,6 @@ function insertDiv() {
         backButton.innerHTML = "«" + backNumber;
         backButton.id = backNumber;
         backButton.title = "back " + backNumber +"s";
-        backButton.className = "MIB_button back" + backNumber;
         backButton.addEventListener("click", back);
         buttonList.push(backButton);
     }
@@ -27,12 +26,12 @@ function insertDiv() {
         skipButton.innerHTML = skipNumber + "»";
         skipButton.id = skipNumber;
         skipButton.title = "skip " + skipNumber +"s";
-        skipButton.className = "MIB_button skip" + skipNumber;
         skipButton.addEventListener("click", skip);
         buttonList.push(skipButton);
     }
 
     for (button of buttonList) {
+        button.className += "MIB_button vjs-time-control";
         document.getElementsByClassName("vjs-control-bar")[0].appendChild(button);
     }
 }
@@ -41,13 +40,14 @@ function insertStyle() {
     var style = document.createElement("style");
     style.innerHTML = `
     .MIB_button {
-        font-size: 15px;
-        line-height: 40px;
-        margin: 0 0 0 10px;
-        color: white;
+        padding: 0 5px !important;
+    }
+    .vjs-duration {
+        padding: 0 5px 0 0 !important;
     }
     .MIB_button:hover {
-        color: coral;
+        color: coral !important;
+        background-color: #131318;
     }
     `
     document.head.appendChild(style);
@@ -58,4 +58,11 @@ function init() {
     insertDiv();
 }
 
-setTimeout(init);
+// START
+chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
+	// if crunchyroll on
+	if (!result.isCrunchyrollOff) {
+		// lauch
+		init();
+	}
+});
