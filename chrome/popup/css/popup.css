@@ -50,7 +50,7 @@ button:active, button:focus {
 	outline : 0;
 }
 
-#crunchyroll, #youtube, #gogoanime {
+#crunchyroll, #youtube, #gogoanime, #funimation {
 	height: 35px;
 	width: 35px;
 	background-image: url("/assets/power.png");

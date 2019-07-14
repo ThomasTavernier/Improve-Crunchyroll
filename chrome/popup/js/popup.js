@@ -1,5 +1,5 @@
 // check if Crunchyroll activate
-checkCrunchyroll = function () {
+function checkCrunchyroll() {
 	chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
 		if (result.isCrunchyrollOff) {
 			document.getElementById("crunchyroll").className = "buttonOFF";
@@ -10,8 +10,21 @@ checkCrunchyroll = function () {
 	});
 }
 
+// check if Funimation activate
+function checkFunimation() {
+	chrome.storage.sync.get(['isFunimationOff'], function (result) {
+		if (result.isFunimationOff) {
+			document.getElementById("funimation").className = "buttonOFF";
+		}
+		else {
+			document.getElementById("funimation").className = "buttonON";
+		}
+	});
+}
+
+
 // check if Gogoanime activate
-checkGogoanime = function () {
+function checkGogoanime() {
 	chrome.storage.sync.get(['isGogoanimeOff'], function (result) {
 		if (result.isGogoanimeOff) {
 			document.getElementById("gogoanime").className = "buttonOFF";
@@ -23,7 +36,7 @@ checkGogoanime = function () {
 }
 
 // check if Youtube activate
-checkYouyube = function () {
+function checkYouyube() {
 	chrome.storage.sync.get(['isYoutubeOff'], function (result) {
 		if (result.isYoutubeOff) {
 			document.getElementById("youtube").className = "buttonOFF";
@@ -35,15 +48,23 @@ checkYouyube = function () {
 }
 
 // toggle Crunchyroll
-toggleCrunchyroll = function () {
+function toggleCrunchyroll() {
 	chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
 		chrome.storage.sync.set({ "isCrunchyrollOff": !result.isCrunchyrollOff });
 	});
 	setTimeout(checkCrunchyroll);
 }
 
+// toggle Funimation
+function toggleFunimation() {
+	chrome.storage.sync.get(['isFunimationOff'], function (result) {
+		chrome.storage.sync.set({ "isFunimationOff": !result.isFunimationOff });
+	});
+	setTimeout(checkFunimation);
+}
+
 // toggle Gogoanime
-toggleGogoanime = function () {
+function toggleGogoanime() {
 	chrome.storage.sync.get(['isGogoanimeOff'], function (result) {
 		chrome.storage.sync.set({ "isGogoanimeOff": !result.isGogoanimeOff });
 	});
@@ -51,7 +72,7 @@ toggleGogoanime = function () {
 }
 
 // toggle Youtube
-toggleYoutube = function () {
+function toggleYoutube() {
 	chrome.storage.sync.get(['isYoutubeOff'], function (result) {
 		chrome.storage.sync.set({ "isYoutubeOff": !result.isYoutubeOff });
 	});
@@ -59,19 +80,22 @@ toggleYoutube = function () {
 }
 
 // reset storage
-resetdefaults = function () {
+function resetdefaults() {
 	chrome.storage.sync.clear();
 	checkCrunchyroll();
+	checkFunimation();
 	checkGogoanime();
 	checkYouyube();
 }
 
 // init
-init = function () {
+function init() {
+	checkFunimation();
 	checkCrunchyroll();
 	checkGogoanime();
 	checkYouyube();
 	document.getElementById("crunchyroll").addEventListener("click", toggleCrunchyroll);
+	document.getElementById("funimation").addEventListener("click", toggleFunimation);
 	document.getElementById("gogoanime").addEventListener("click", toggleGogoanime);
 	document.getElementById("youtube").addEventListener("click", toggleYoutube);
 	document.getElementById("reset").addEventListener("click", resetdefaults);
