@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "1.5.0",
+	"version": "1.6.0",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -22,7 +22,7 @@
 			"matches": [
 				"*://www.funimation.com/*"
 			],
-			"run_at": "document_end"
+			"run_at": "document_idle"
 		},
 		{
 			"js": [
@@ -51,6 +51,15 @@
 				"*://*.gogoanimes.tv/*"
 			],
 			"run_at": "document_end"
+		},
+		{
+			"js": [
+				"extension/js/hidive.js"
+			],
+			"matches": [
+				"*://www.hidive.com/*"
+			],
+			"run_at": "document_idle"
 		},
 		{
 			"js": [

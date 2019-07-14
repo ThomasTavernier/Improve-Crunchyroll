@@ -35,6 +35,18 @@ function checkGogoanime() {
 	});
 }
 
+// check if Hidive activate
+function checkHidive() {
+	chrome.storage.sync.get(['isHidiveOff'], function (result) {
+		if (result.isHidiveOff) {
+			document.getElementById("hidive").className = "buttonOFF";
+		}
+		else {
+			document.getElementById("hidive").className = "buttonON";
+		}
+	});
+}
+
 // check if Youtube activate
 function checkYouyube() {
 	chrome.storage.sync.get(['isYoutubeOff'], function (result) {
@@ -71,6 +83,14 @@ function toggleGogoanime() {
 	setTimeout(checkGogoanime);
 }
 
+// toggle Hidive
+function toggleHidive() {
+	chrome.storage.sync.get(['isHidiveOff'], function (result) {
+		chrome.storage.sync.set({ "isHidiveOff": !result.isHidiveOff });
+	});
+	setTimeout(checkHidive);
+}
+
 // toggle Youtube
 function toggleYoutube() {
 	chrome.storage.sync.get(['isYoutubeOff'], function (result) {
@@ -85,6 +105,7 @@ function resetdefaults() {
 	checkCrunchyroll();
 	checkFunimation();
 	checkGogoanime();
+	checkHidive();
 	checkYouyube();
 }
 
@@ -93,10 +114,12 @@ function init() {
 	checkFunimation();
 	checkCrunchyroll();
 	checkGogoanime();
+	checkHidive();
 	checkYouyube();
 	document.getElementById("crunchyroll").addEventListener("click", toggleCrunchyroll);
 	document.getElementById("funimation").addEventListener("click", toggleFunimation);
 	document.getElementById("gogoanime").addEventListener("click", toggleGogoanime);
+	document.getElementById("hidive").addEventListener("click", toggleHidive);
 	document.getElementById("youtube").addEventListener("click", toggleYoutube);
 	document.getElementById("reset").addEventListener("click", resetdefaults);
 }

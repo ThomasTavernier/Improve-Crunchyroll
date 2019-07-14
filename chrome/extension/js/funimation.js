@@ -51,7 +51,6 @@ function setStyleAsBiggerPlayer() {
 
 // init
 function init() {
-    console.log(123);
     // remove ads
     setTimeout(removeAds);
     // set big player
