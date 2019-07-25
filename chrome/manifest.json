@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "1.6.2",
+	"version": "2.0.0",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -8,22 +8,7 @@
 	"icons": {
 		"128": "assets/icon128.png"
 	},
-	"permissions": [
-		"storage"
-	],
-	"browser_action": {
-		"default_popup": "popup/popup.html"
-	},
 	"content_scripts": [
-		{
-			"js": [
-				"extension/js/funimation.js"
-			],
-			"matches": [
-				"*://www.funimation.com/*"
-			],
-			"run_at": "document_idle"
-		},
 		{
 			"js": [
 				"extension/js/crunchyroll.js"
@@ -41,33 +26,6 @@
 				"*://static.crunchyroll.com/vilos/player.html"
 			],
 			"all_frames": true,
-			"run_at": "document_idle"
-		},
-		{
-			"js": [
-				"extension/js/gogoanimes.js"
-			],
-			"matches": [
-				"*://www20.gogoanimes.tv/*"
-			],
-			"run_at": "document_end"
-		},
-		{
-			"js": [
-				"extension/js/hidive.js"
-			],
-			"matches": [
-				"*://www.hidive.com/*"
-			],
-			"run_at": "document_idle"
-		},
-		{
-			"js": [
-				"extension/js/youtube.js"
-			],
-			"matches": [
-				"*://www.youtube.com/*"
-			],
 			"run_at": "document_idle"
 		}
 	]

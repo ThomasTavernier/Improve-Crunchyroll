@@ -1,8 +1,8 @@
 {
 	"extName": {
-		"message": "Rends le plus gros!"
+		"message": "Crunchyroll plus gros lecteur"
 	},
 	"extDescription": {
-		"message": "Grossis le lecteur vidéo, fonctionne actuellement avec Crunchyroll, Funimation, Hidive, GogoAnime et Youtube!"
+		"message": "Grossis le lecteur vidéo, montre l'entête au passage de la souris et ajoue des bouttons avancer/reculer"
 	}
 }

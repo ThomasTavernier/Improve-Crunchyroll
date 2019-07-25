@@ -1,8 +1,8 @@
 {
 	"extName": {
-		"message": "Make it bigger!"
+		"message": "Crunchyroll bigger player"
 	},
 	"extDescription": {
-		"message": "Make the video player bigger, currently works with Crunchyroll, Funimation, Hidive, GogoAnime and Youtube!"
+		"message": "Make the video player bigger, show header on hover and add skip/back buttons"
 	}
 }

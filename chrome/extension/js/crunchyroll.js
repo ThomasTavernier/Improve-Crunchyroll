@@ -37,7 +37,7 @@ function setStyleAsBiggerPlayer() {
 	var style = document.createElement('style');
 	document.head.appendChild(style);
 	if (document.getElementById("main_content") !== null) {
-		if(document.getElementById("showmedia_video_box") !== null) {
+		if (document.getElementById("showmedia_video_box") !== null) {
 			document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
 			document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
 		}
@@ -113,11 +113,4 @@ function init() {
 	setTimeout(setFocus, 250);
 }
 
-// START
-chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
-	// if crunchyroll on
-	if (!result.isCrunchyrollOff) {
-		// lauch
-		init();
-	}
-});
+init();

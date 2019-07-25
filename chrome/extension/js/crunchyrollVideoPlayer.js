@@ -56,13 +56,7 @@ function insertStyle() {
 function init() {
     insertStyle();
     insertDiv();
+    console.log(123);
 }
 
-// START
-chrome.storage.sync.get(['isCrunchyrollOff'], function (result) {
-	// if crunchyroll on
-	if (!result.isCrunchyrollOff) {
-		// lauch
-		init();
-	}
-});
+init();
