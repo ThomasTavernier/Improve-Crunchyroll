@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -10,20 +10,26 @@
 	},
 	"content_scripts": [
 		{
+			"matches": [
+				"https://www.crunchyroll.com/*"
+			],
 			"js": [
 				"extension/js/crunchyroll.js"
 			],
-			"matches": [
-				"*://www.crunchyroll.com/*"
+			"css": [
+				"extension/css/crunchyroll.css"
 			],
 			"run_at": "document_end"
 		},
 		{
+			"matches": [
+				"https://static.crunchyroll.com/vilos/player.html"
+			],
 			"js": [
 				"extension/js/crunchyrollVideoPlayer.js"
 			],
-			"matches": [
-				"*://static.crunchyroll.com/vilos/player.html"
+			"css": [
+				"extension/css/crunchyrollVideoPlayer.css"
 			],
 			"all_frames": true,
 			"run_at": "document_idle"
