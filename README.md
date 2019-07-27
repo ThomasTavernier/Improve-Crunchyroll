@@ -4,7 +4,7 @@
 
 #### Chrome Web Store
 
-Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/make-it-bigger/elmhfjhlecffodalffipmgpploaihjgh) and install it normally.
+Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/crunchyroll-bigger-player/elmhfjhlecffodalffipmgpploaihjgh) and install it normally.
 
 #### Manual/Development
 
