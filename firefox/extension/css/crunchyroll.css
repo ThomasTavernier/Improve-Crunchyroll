@@ -1,0 +1,86 @@
+/* hide background image */
+body {
+    /* background-image: none !important; */
+    background: none !important;
+}
+
+/* remove body href onclick */
+#template_skin_splashlink {
+    pointer-events: none !important;
+}
+
+/* set header transition opacity for inject css code */
+#header_beta {
+    z-index: 3;
+    width: 100%;
+    transition: opacity 0.8s;
+}
+
+/* set header hover opacity and transition for inject css code */
+#header_beta:hover {
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+/* hide banner */
+.cr-expo-banner {
+    display: none !important;
+}
+
+/* remove banner href onclick */
+.__web-inspector-hide-shortcut__ {
+    pointer-events: none !important;
+}
+
+/* remove banner padding */
+#template_skin_leaderboard {
+    height: 0 !important;
+}
+
+/* hide message box */
+#message_box {
+    display: none !important;
+}
+
+/* remove template_scroller padding top */
+#template_scroller {
+    padding-top: 0px !important;
+}
+
+/* set showmedia and footer template_container width */
+#showmedia, #footer {
+    width: 960px !important;
+    margin: 0 auto !important;
+}
+
+/* hide video title */
+.showmedia-header:first-child {
+    display: none !important;
+}
+
+#showmedia_video {
+    background-color: black !important;
+    width: 100% !important;
+    min-width: 960px !important;
+    min-height: 540px !important;
+    max-height: 100vh !important;
+}
+
+/* set video box with and heitgh to 100% */
+#showmedia_video_box_wide {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* set video containre to hide overflow */
+#showmedia_video_player {
+    overflow: hidden !important;
+}
+
+/* set video player width, height and margin */
+#vilos-player {
+    width: calc(100% + 3px) !important;
+    height: calc(100% + 1px) !important;
+    margin-left: -3px !important;
+    margin-top: -1px !important;
+}
