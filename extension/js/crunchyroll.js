@@ -34,7 +34,7 @@ function setStyleAsBiggerPlayer() {
 // set focus without crunchyrollHTML5 function
 function setFocus() {
 	// if we are on a video page
-	if (document.getElementById("showmedia_video_player") !== null) {
+	if (document.getElementById("showmedia_video_player") !== null && document.getElementById("showmedia_video_player").firstChild !== null) {
 		//set focus to the video
 		document.getElementById("showmedia_video_player").firstChild.focus();
 	}

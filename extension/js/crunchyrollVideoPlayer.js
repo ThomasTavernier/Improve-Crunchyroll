@@ -47,4 +47,4 @@ function init() {
     setTimeout(insertButtons);
 }
 
-init();
+setTimeout(init);
