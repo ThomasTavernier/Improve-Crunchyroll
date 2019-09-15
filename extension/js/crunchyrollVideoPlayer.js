@@ -3,23 +3,23 @@
 
 // back X seconds
 function back(evt) {
-    var video = document.getElementById("player_html5_api");
+    let video = document.getElementById("player_html5_api");
     video.currentTime = video.currentTime - parseInt(evt.target.id);
 }
 
 // skip X seconds
 function skip(evt) {
-    var video = document.getElementById("player_html5_api");
+    let video = document.getElementById("player_html5_api");
     video.currentTime = video.currentTime + parseInt(evt.target.id);
 }
 
 // insert buttonns
 function insertButtons() {
-    var backList = [30, 10];
-    var skipList = [30, 90];
-    var buttonList = [];
-    for (backNumber of backList) {
-        var backButton = document.createElement("div");
+    let backList = [30, 10];
+    let skipList = [30, 90];
+    let buttonList = [];
+    for (let backNumber of backList) {
+        let backButton = document.createElement("div");
         backButton.innerHTML = "«" + backNumber;
         backButton.id = backNumber;
         backButton.title = "back " + backNumber + "s";
@@ -27,8 +27,8 @@ function insertButtons() {
         buttonList.push(backButton);
     }
 
-    for (skipNumber of skipList) {
-        var skipButton = document.createElement("div");
+    for (let skipNumber of skipList) {
+        let skipButton = document.createElement("div");
         skipButton.innerHTML = skipNumber + "»";
         skipButton.id = skipNumber;
         skipButton.title = "skip " + skipNumber + "s";
@@ -36,15 +36,23 @@ function insertButtons() {
         buttonList.push(skipButton);
     }
 
-    for (button of buttonList) {
+    for (let button of buttonList) {
         button.className += "MIB_button vjs-time-control";
         document.getElementsByClassName("vjs-control-bar")[0].appendChild(button);
     }
 }
 
 function init() {
-    // insert buttonns
-    setTimeout(insertButtons);
+    recursionCounter++;
+    if (document.getElementsByClassName("vjs-control-bar")[0].children.length >= 17 || recursionCounter === maxRecursion) {
+        // insert buttonns
+        setTimeout(insertButtons);
+    } else {
+        // retry in 100ms
+        setTimeout(init, 100);
+    }
 }
 
+let recursionCounter = 0;
+const maxRecursion = 10;
 setTimeout(init);
