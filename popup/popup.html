@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<script src="../extension/js/const.js"></script>
+	<script src="../extension/js/chromeStorage.js"></script>
+	<script src="popup.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<h1 translate>extName</h1>
+	</div>
+	<div class="content">
+		<label for="bigger_player">
+			<div class="item">
+				<span translate>bigger_player</span>
+				<div class="itemContainer">
+					<div class="switch">
+						<input id="bigger_player" type="checkbox" class="inputCheckbox">
+						<span class="slider"></span>
+					</div>
+				</div>
+			</div>
+		</label>
+		<label for="header_on_hover">
+			<div class="item">
+				<span translate>header_on_hover</span>
+				<div class="itemContainer">
+					<div class="switch">
+						<input id="header_on_hover" type="checkbox" class="inputCheckbox">
+						<span class="slider"></span>
+					</div>
+				</div>
+			</div>
+		</label>
+		<label for="previous_buttons">
+			<div class="item">
+				<span translate>previous_buttons</span>
+				<input id="previous_buttons" class="itemContainer inputText" type="text"
+					placeholder="ex: 30,10">
+			</div>
+		</label>
+		<label for="skip_buttons">
+			<div class="item">
+				<span translate>skip_buttons</span>
+				<input id="skip_buttons" class="itemContainer inputText" type="text" placeholder="ex: 30,90">
+			</div>
+		</label>
+		<label for="hide_banner">
+			<div class="item">
+				<span translate>hide_banner</span>
+				<div class="itemContainer">
+					<div class="switch">
+						<input id="hide_banner" type="checkbox" class="inputCheckbox">
+						<span class="slider"></span>
+					</div>
+				</div>
+			</div>
+		</label>
+		<label for="hide_message_box">
+			<div class="item">
+				<span translate>hide_message_box</span>
+				<div class="itemContainer">
+					<div class="switch">
+						<input id="hide_message_box" type="checkbox" class="inputCheckbox">
+						<span class="slider"></span>
+					</div>
+				</div>
+			</div>
+		</label>
+	</div>
+	<div class="item" id="resetContainer">
+		<button id="reset" translate>reset</button>
+	</div>
+</body>
+
+</html>

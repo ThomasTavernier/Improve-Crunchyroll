@@ -1,0 +1,32 @@
+{
+	"extName": {
+		"message": "Crunchyroll bigger player"
+	},
+	"extDescription": {
+		"message": "Agrande el reproductor, muestre el encabezado al pasar el mouse y agregue los botones de retroceso / salto"
+	},
+	"bigger_player": {
+		"message": "agrande el reproductor"
+	},
+	"header_on_hover": {
+		"message": "muestre el encabezado"
+	},
+	"previous_buttons": {
+		"message": "retroceso buttons"
+	},
+	"skip_buttons": {
+		"message": "salto botones"
+	},
+	"hide_banner": {
+		"message": "ocultar bandera"
+	},
+	"hide_message_box": {
+		"message": "ocultar cuadro de mensaje"
+	},
+	"reset": {
+		"message": "REINICIAR"
+	},
+	"reset_confirm": {
+		"message": "¿Seguro que quieres restablecer la configuración?"
+	}
+}

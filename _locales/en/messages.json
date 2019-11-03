@@ -4,5 +4,29 @@
 	},
 	"extDescription": {
 		"message": "Make the video player bigger, show header on hover and add skip/back buttons"
+	},
+	"bigger_player": {
+		"message": "bigger playyer"
+	},
+	"header_on_hover": {
+		"message": "header on hover"
+	},
+	"previous_buttons": {
+		"message": "previous buttons"
+	},
+	"skip_buttons": {
+		"message": "skip buttons"
+	},
+	"hide_banner": {
+		"message": "hide banner"
+	},
+	"hide_message_box": {
+		"message": "hide message box"
+	},
+	"reset": {
+		"message": "RESET"
+	},
+	"reset_confirm": {
+		"message": "Are you sure you want to reset the settings?"
 	}
 }

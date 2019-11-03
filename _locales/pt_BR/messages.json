@@ -1,0 +1,32 @@
+{
+	"extName": {
+		"message": "Crunchyroll bigger player"
+	},
+	"extDescription": {
+		"message": "Aumentar o player de vídeo, mostre o cabeçalho ao passar o mouse e adicione os botões voltar / pular"
+	},
+	"bigger_player": {
+		"message": "aumentar o player de vídeo"
+	},
+	"header_on_hover": {
+		"message": "cabeçalho ao passar o mouse"
+	},
+	"previous_buttons": {
+		"message": "voltar botões"
+	},
+	"skip_buttons": {
+		"message": "pular botões"
+	},
+	"hide_banner": {
+		"message": "ocultar bandeira"
+	},
+	"hide_message_box": {
+		"message": "ocultar caixa de mensagem"
+	},
+	"reset": {
+		"message": "REDEFINIR"
+	},
+	"reset_confirm": {
+		"message": "Tem certeza de que deseja redefinir as configurações?"
+	}
+}

@@ -1,8 +1,32 @@
 {
 	"extName": {
-		"message": "Crunchyroll plus gros lecteur"
+		"message": "Crunchyroll bigger player"
 	},
 	"extDescription": {
 		"message": "Grossis le lecteur vidéo, montre l'entête au passage de la souris et ajoute des bouttons avancer/reculer"
+	},
+	"bigger_player": {
+		"message": "plus gros lecteur"
+	},
+	"header_on_hover": {
+		"message": "entête (curseur)"
+	},
+	"previous_buttons": {
+		"message": "boutons reculer"
+	},
+	"skip_buttons": {
+		"message": "boutons avancer"
+	},
+	"hide_banner": {
+		"message": "cacher la bannière"
+	},
+	"hide_message_box": {
+		"message": "cacher alerte message"
+	},
+	"reset": {
+		"message": "RÉINITIALISER"
+	},
+	"reset_confirm": {
+		"message": "Êtes-vous sûr de vouloir réinitialiser les paramètres?"
 	}
 }
