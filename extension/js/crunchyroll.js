@@ -18,9 +18,9 @@ function init() {
 		let style = document.createElement('style');
 		style.innerHTML = `
 			#showmedia_video {
-				height: calc((` + window.screen.availHeight / window.screen.availWidth + `) * 100vw);;
+				height: calc((` + window.screen.availHeight / window.screen.availWidth + `) * 100vw);
 			}
-			`
+		`
 		document.head.appendChild(style);
 		document.documentElement.setAttribute('cbp_video_page', true);
 	}

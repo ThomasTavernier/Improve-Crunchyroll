@@ -2,8 +2,8 @@ function update() {
 	for (let inputText of INPUTS_TEXT) {
 		document.getElementById(inputText).value = chromeStorage[inputText];
 	}
-	for (let attribute of ATTRIBUTES) {
-		document.getElementById(attribute).checked = chromeStorage[attribute];
+	for (let inputCheckbox of INPUTS_CHECKBOX) {
+		document.getElementById(inputCheckbox).checked = chromeStorage[inputCheckbox];
 	}
 }
 
@@ -53,7 +53,8 @@ function init() {
 		stylesheet.innerHTML = `
 			.slider:before {
 				transition: .5s;
-			}`
+			}
+		`
 	});
 }
 

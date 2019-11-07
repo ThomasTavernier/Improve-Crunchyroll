@@ -3,18 +3,15 @@
 		"message": "Crunchyroll bigger player"
 	},
 	"extDescription": {
-		"message": "Agrande el reproductor, muestre el encabezado al pasar el mouse y agregue los botones de retroceso / salto"
-	},
-	"bigger_player": {
-		"message": "agrande el reproductor"
+		"message": "Agrande el reproductor y agregue los botones de retroceso / salto"
 	},
 	"header_on_hover": {
 		"message": "muestre el encabezado"
 	},
-	"previous_buttons": {
+	"fast_backward_buttons": {
 		"message": "retroceso buttons"
 	},
-	"skip_buttons": {
+	"fast_forward_buttons": {
 		"message": "salto botones"
 	},
 	"hide_banner": {

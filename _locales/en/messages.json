@@ -3,19 +3,16 @@
 		"message": "Crunchyroll bigger player"
 	},
 	"extDescription": {
-		"message": "Make the video player bigger, show header on hover and add skip/back buttons"
-	},
-	"bigger_player": {
-		"message": "bigger playyer"
+		"message": "Make the video player bigger and add fastforward / fastbackward buttons"
 	},
 	"header_on_hover": {
 		"message": "header on hover"
 	},
-	"previous_buttons": {
-		"message": "previous buttons"
+	"fast_backward_buttons": {
+		"message": "fast backward buttons"
 	},
-	"skip_buttons": {
-		"message": "skip buttons"
+	"fast_forward_buttons": {
+		"message": "fast forward buttons"
 	},
 	"hide_banner": {
 		"message": "hide banner"

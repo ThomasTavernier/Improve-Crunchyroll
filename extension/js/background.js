@@ -4,7 +4,6 @@ function sync() {
     clearTimeout(syncTiemout);
     syncTiemout = setTimeout(() => {
         chrome.storage.local.get(CHROME_STORAGE, function (data) {
-            console.log(data);
             chrome.storage.sync.set(data);
         });
     }, 500);
