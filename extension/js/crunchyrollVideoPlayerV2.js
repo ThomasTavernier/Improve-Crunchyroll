@@ -134,7 +134,7 @@ const callfastBackward = function (mutationsList) {
 };
 
 function init() {
-    new MutationObserver(callfastBackward).observe(document.getElementById('vilosRoot'), {
+    new MutationObserver(callfastBackward).observe(document.getElementById('velocity-controls-package'), {
         childList: true
     });
 };
