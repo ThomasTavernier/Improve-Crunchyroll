@@ -20,7 +20,7 @@ function chromeStorageGet() {
         chromeStorage = data;
         if (chromeStorageInit !== undefined) {
             chromeStorageInit();
-        };
+        }
     });
 }
 

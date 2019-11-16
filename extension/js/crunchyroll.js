@@ -24,7 +24,7 @@ function init() {
 		document.head.appendChild(style);
 		document.documentElement.setAttribute('cbp_video_page', true);
 	}
-};
+}
 
 setTimeout(init);
 

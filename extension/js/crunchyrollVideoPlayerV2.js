@@ -20,7 +20,7 @@ function fastForward(ev) {
 function parseNumber(number) {
     let numberMinutes = Math.floor(number / 60);
     let numberSeconds = number - numberMinutes * 60;
-    return numberMinutes > 0 ? numberMinutes + ':' + (numberSeconds < 10 ? numberSeconds = 0 + numberSeconds : numberSeconds) : numberSeconds;
+    return numberMinutes > 0 ? numberMinutes + ':' + (numberSeconds < 10 ? '0' + numberSeconds : numberSeconds) : numberSeconds;
 }
 
 function createFastForwardBackwardButtons() {
@@ -133,7 +133,7 @@ function init() {
             childList: true
         });
     insertCbpDivs(document.getElementById('vilosControlsContainer'));
-};
+}
 
 let cbp_div_player_controls;
 let cbp_div_player_mode;

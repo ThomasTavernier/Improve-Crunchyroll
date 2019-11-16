@@ -47,7 +47,7 @@ function init() {
 	for (let elementToTranslate of document.querySelectorAll('[translate]')) {
 		elementToTranslate.innerHTML = chrome.i18n.getMessage(elementToTranslate.innerHTML);
 		elementToTranslate.removeAttribute('translate');
-	};
+	}
 
 	setTimeout(() => {
 		stylesheet.innerHTML = `
