@@ -104,39 +104,35 @@ function playerMode2Change(ev) {
 function createPlayerButton() {
     let playerMode1 = document.createElement('span');
     playerMode1.className = 'cbp_buttons theater_mode' + (chromeStorage.theater_mode ? ' on' : '');
-    playerMode1.title= 'theater mode';
+    playerMode1.title = 'theater mode';
     playerMode1.addEventListener('click', playerMode1Change);
 
     let playerMode2 = document.createElement('span');
     playerMode2.className = 'cbp_buttons fullscreen_mode' + (chromeStorage.player_mode === 2 ? ' on' : '');
-    playerMode2.title= 'fullscreen in window mode';
+    playerMode2.title = 'fullscreen in window mode';
     playerMode2.addEventListener('click', playerMode2Change);
 
     cbp_div_player_mode.appendChild(playerMode1);
     cbp_div_player_mode.appendChild(playerMode2);
 }
 
-const callfastBackward = function (mutationsList) {
-    if (mutationsList[1] !== undefined) {
-        const node = mutationsList[1].addedNodes[0];
-        if (node.style.opacity !== '') {
-            if (node.children[0].children[1] !== undefined) {
-                let parentNode = node.children[0].children[1].children[2];
-                parentNode.children[0].appendChild(cbp_div_player_controls);
-                parentNode.children[1].insertBefore(cbp_div_player_mode, parentNode.children[1].children[1]);
-            } else {
-                let parentNode = node.children[0].children[0].children[2];
-                parentNode.children[0].appendChild(cbp_div_player_controls);
-                parentNode.children[1].insertBefore(cbp_div_player_mode, parentNode.children[1].children[1]);
-            }
-        }
+function insertCbpDivs(vilosControlsContainer) {
+    if (vilosControlsContainer.style.opacity !== '') {
+        const overlay = vilosControlsContainer.children[0];
+        const controlsBar = overlay.children[overlay.children[1] !== undefined ? 1 : 0].children[2];
+        controlsBar.children[0].appendChild(cbp_div_player_controls);
+        controlsBar.children[1].insertBefore(cbp_div_player_mode, controlsBar.children[1].children[1]);
     }
-};
+}
 
 function init() {
-    new MutationObserver(callfastBackward).observe(document.getElementById('velocity-controls-package'), {
-        childList: true
-    });
+    new MutationObserver((mutationsList) => {
+            insertCbpDivs(mutationsList[1].addedNodes[0]);
+        })
+        .observe(document.getElementById('velocity-controls-package'), {
+            childList: true
+        });
+    insertCbpDivs(document.getElementById('vilosControlsContainer'));
 };
 
 let cbp_div_player_controls;
