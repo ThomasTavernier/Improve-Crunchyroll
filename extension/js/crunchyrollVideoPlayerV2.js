@@ -126,13 +126,19 @@ function insertCbpDivs(vilosControlsContainer) {
 }
 
 function init() {
-    new MutationObserver((mutationsList) => {
-            insertCbpDivs(mutationsList[1].addedNodes[0]);
-        })
-        .observe(document.getElementById('velocity-controls-package'), {
-            childList: true
-        });
-    insertCbpDivs(document.getElementById('vilosControlsContainer'));
+    if (document.getElementById('velocity-controls-package') !== null) {
+        new MutationObserver((mutationsList) => {
+                insertCbpDivs(mutationsList[1].addedNodes[0]);
+            })
+            .observe(document.getElementById('velocity-controls-package'), {
+                childList: true
+            });
+        insertCbpDivs(document.getElementById('vilosControlsContainer'));
+    } else {        
+        setTimeout(() => {
+            init();
+        }, 100);
+    }
 }
 
 let cbp_div_player_controls;
