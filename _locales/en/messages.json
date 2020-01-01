@@ -1,29 +1,44 @@
 {
-	"extName": {
-		"message": "Crunchyroll bigger player"
-	},
 	"extDescription": {
 		"message": "Make the video player bigger and add fastforward / fastbackward buttons"
 	},
-	"header_on_hover": {
-		"message": "header on hover"
+	"extName": {
+		"message": "Crunchyroll bigger player"
 	},
-	"fast_backward_buttons": {
+	"KEY_FAST_BACKWARD_BUTTONS": {
 		"message": "fast backward buttons"
 	},
-	"fast_forward_buttons": {
+	"KEY_FAST_BACKWARD": {
+		"message": "fast backward"
+	},
+	"KEY_FAST_FORWARD_BUTTONS": {
 		"message": "fast forward buttons"
 	},
-	"hide_banner": {
+	"KEY_FAST_FORWARD": {
+		"message": "fast forward"
+	},
+	"KEY_FULLSCREEN_MODE": {
+		"message": "fullscreen mode"
+	},
+	"KEY_HEADER_ON_HOVER": {
+		"message": "header on hover"
+	},
+	"KEY_HIDE_BANNER": {
 		"message": "hide banner"
 	},
-	"hide_message_box": {
+	"KEY_HIDE_MESSAGE_BOX": {
 		"message": "hide message box"
 	},
-	"reset": {
+	"KEY_RESET_CONFIRM": {
+		"message": "Are you sure you want to reset the settings?"
+	},
+	"KEY_RESET": {
 		"message": "RESET"
 	},
-	"reset_confirm": {
-		"message": "Are you sure you want to reset the settings?"
+	"KEY_SCROLLBAR": {
+		"message": "scrollbar"
+	},
+	"KEY_THEATER_MODE": {
+		"message": "theater mode"
 	}
 }

@@ -20,7 +20,7 @@ function inputCheckboxOnChange(ev) {
 }
 
 function reset() {
-	if (confirm(chrome.i18n.getMessage('reset_confirm'))) {
+	if (confirm(chrome.i18n.getMessage('KEY_RESET_CONFIRM'))) {
 		chrome.storage.local.clear();
 		update();
 	}

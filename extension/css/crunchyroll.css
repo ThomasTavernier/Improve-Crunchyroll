@@ -58,6 +58,11 @@ html[cbp_video_page=true][cbp_player_mode='0'][cbp_not_logged=true] #sidebar {
     top: -372px;
 }
 
+/* hide scrollbar */
+html[cbp_scrollbar=true] ::-webkit-scrollbar {
+    width: 0px;
+}
+
 /* hide banner */
 .cr-expo-banner {
     display: none !important;
@@ -103,10 +108,6 @@ html[cbp_header_on_hover=true] #header_beta:hover {
 }
 
 /* -------------------------------------------------- MISC -------------------------------------------------- */
-
-#showmedia_video {
-    background-color: black;
-}
 
 /* set showmedia, footer, message box and title div width */
 #showmedia,

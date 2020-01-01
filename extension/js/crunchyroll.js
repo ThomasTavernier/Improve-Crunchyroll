@@ -15,14 +15,19 @@ function init() {
 		}
 		let style = document.createElement('style');
 		style.innerHTML = `
-			#showmedia_video {
-				height: calc((` + window.screen.availHeight / window.screen.availWidth + `) * 100vw);
+			html[cbp_scrollbar=true] #showmedia_video {
+				height: calc((${window.screen.height / window.screen.width}) * 100vw);
+			}
+			html[cbp_scrollbar=false] #showmedia_video {
+				height: calc((${window.screen.height / window.screen.width}) * (100vw - ${scrollBarWidth}px));
 			}
 		`
 		document.head.appendChild(style);
 		document.documentElement.setAttribute('cbp_video_page', true);
 	}
 }
+
+const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
 
 setTimeout(init);
 

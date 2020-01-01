@@ -20,7 +20,7 @@ function fastForward(ev) {
 function parseNumber(number) {
     let numberMinutes = Math.floor(number / 60);
     let numberSeconds = number - numberMinutes * 60;
-    return numberMinutes > 0 ? numberMinutes + ':' + (numberSeconds < 10 ? '0' + numberSeconds : numberSeconds) : numberSeconds;
+    return numberMinutes > 0 ? `${numberMinutes}:${numberSeconds < 10 ? '0' + numberSeconds : numberSeconds}` : numberSeconds;
 }
 
 function createFastForwardBackwardButtons() {
@@ -29,24 +29,22 @@ function createFastForwardBackwardButtons() {
 
     let buttonList = [];
     fastBackwardList.forEach(fastBackwardNumber => {
-        if (!isNaN(parseInt(fastBackwardNumber))) {
-            let fastBackwardButton = document.createElement('div');
-            fastBackwardButton.innerHTML = '«' + parseNumber(fastBackwardNumber);
-            fastBackwardButton.id = fastBackwardNumber;
-            fastBackwardButton.title = 'fast backward ' + parseNumber(fastBackwardNumber);
-            fastBackwardButton.addEventListener('click', fastBackward);
-            buttonList.push(fastBackwardButton);
-        }
+        let fastBackwardButton = document.createElement('div');
+        const number = parseNumber(fastBackwardNumber);
+        fastBackwardButton.innerHTML = `«${number}`;
+        fastBackwardButton.id = fastBackwardNumber;
+        fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${number}`
+        fastBackwardButton.addEventListener('click', fastBackward);
+        buttonList.push(fastBackwardButton);
     });
     fastForwardList.forEach(fastForwardNumber => {
-        if (!isNaN(parseInt(fastForwardNumber))) {
-            let fastForwardButton = document.createElement('div');
-            fastForwardButton.innerHTML = parseNumber(fastForwardNumber) + '»';
-            fastForwardButton.id = fastForwardNumber;
-            fastForwardButton.title = 'fast forward ' + parseNumber(fastForwardNumber);
-            fastForwardButton.addEventListener('click', fastForward);
-            buttonList.push(fastForwardButton);
-        }
+        let fastForwardButton = document.createElement('div');
+        const number = parseNumber(fastForwardNumber);
+        fastForwardButton.innerHTML = `${number}»`;
+        fastForwardButton.id = fastForwardNumber;
+        fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${number}`
+        fastForwardButton.addEventListener('click', fastForward);
+        buttonList.push(fastForwardButton);
     });
     buttonList.forEach(button => {
         button.className += 'cbp_buttons';
@@ -65,48 +63,65 @@ function createDivs() {
     createFastForwardBackwardButtons();
 }
 
-function switchPlayerMode(ev) {
+function switchClassForEvent(ev) {
     const ON = ' on';
-
     if (ev.target.className.includes(ON)) ev.target.className = ev.target.className.replace(ON, '');
     else ev.target.className += ON;
+}
 
+function resumePlayerSwitchClassAndSetChromeStorage(ev, obj) {
     resumePlayerState();
+    switchClassForEvent(ev);
+    chrome.storage.local.set(obj);
+}
+
+function scrollBarChange(ev) {
+    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+        scrollbar: chromeStorage.scrollbar ? false : true,
+    });
 }
 
 function playerMode1Change(ev) {
-    let obj = {};
-
-    obj.theater_mode = !chromeStorage.theater_mode;
-    if (chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1) obj.player_mode = obj.theater_mode ? 1 : 0;
-
-    switchPlayerMode(ev);
-    chrome.storage.local.set(obj);
+    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+        theater_mode: !chromeStorage.theater_mode,
+        player_mode: chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1 ? !chromeStorage.theater_mode ? 1 : 0 : chromeStorage.player_mode,
+    });
 }
 
 
 function playerMode2Change(ev) {
-    let obj = {};
-
-    obj.player_mode = (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0;
-
-    switchPlayerMode(ev);
-    chrome.storage.local.set(obj);
+    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+        player_mode: (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0,
+    });
 }
 
 function createPlayerButton() {
-    let playerMode1 = document.createElement('span');
-    playerMode1.className = 'cbp_buttons theater_mode' + (chromeStorage.theater_mode ? ' on' : '');
-    playerMode1.title = 'theater mode';
-    playerMode1.addEventListener('click', playerMode1Change);
-
-    let playerMode2 = document.createElement('span');
-    playerMode2.className = 'cbp_buttons fullscreen_mode' + (chromeStorage.player_mode === 2 ? ' on' : '');
-    playerMode2.title = 'fullscreen in window mode';
-    playerMode2.addEventListener('click', playerMode2Change);
-
-    cbp_div_player_mode.appendChild(playerMode1);
-    cbp_div_player_mode.appendChild(playerMode2);
+    [{
+            className: 'scrollbar',
+            chromeStorageKey: 'scrollbar',
+            title: 'KEY_SCROLLBAR',
+            onChange: scrollBarChange,
+        },
+        {
+            className: 'theater_mode',
+            chromeStorageKey: 'theater_mode',
+            title: 'KEY_THEATER_MODE',
+            onChange: playerMode1Change,
+        },
+        {
+            className: 'fullscreen_mode',
+            chromeStorageKey: 'player_mode',
+            eq: 2,
+            title: 'KEY_FULLSCREEN_MODE',
+            onChange: playerMode2Change,
+        },
+    ].forEach(button => {
+        let span = document.createElement('span');
+        span.className = `cbp_buttons ${button.className} ${chromeStorage[button.chromeStorageKey] === true || button.eq && chromeStorage[button.chromeStorageKey] === button.eq ? 'on' : ''}`;
+        span.title = chrome.i18n.getMessage(button.title);
+        span.addEventListener('click', button.onChange);
+        cbp_div_player_mode.appendChild(span);
+    });
 }
 
 function insertCbpDivs(vilosControlsContainer) {

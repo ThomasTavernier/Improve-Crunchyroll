@@ -1,29 +1,44 @@
 {
-	"extName": {
-		"message": "Crunchyroll bigger player"
-	},
 	"extDescription": {
 		"message": "Agrande el reproductor y agregue los botones de retroceso / salto"
 	},
-	"header_on_hover": {
-		"message": "muestre el encabezado"
+	"extName": {
+		"message": "Crunchyroll bigger player"
 	},
-	"fast_backward_buttons": {
+	"KEY_FAST_BACKWARD_BUTTONS": {
 		"message": "retroceso buttons"
 	},
-	"fast_forward_buttons": {
+	"KEY_FAST_BACKWARD": {
+		"message": "retroceso"
+	},
+	"KEY_FAST_FORWARD_BUTTONS": {
 		"message": "salto botones"
 	},
-	"hide_banner": {
+	"KEY_FAST_FORWARD": {
+		"message": "salto"
+	},
+	"KEY_FULLSCREEN_MODE": {
+		"message": "modo de pantalla completa"
+	},
+	"KEY_HEADER_ON_HOVER": {
+		"message": "muestre el encabezado"
+	},
+	"KEY_HIDE_BANNER": {
 		"message": "ocultar bandera"
 	},
-	"hide_message_box": {
+	"KEY_HIDE_MESSAGE_BOX": {
 		"message": "ocultar cuadro de mensaje"
 	},
-	"reset": {
+	"KEY_RESET_CONFIRM": {
+		"message": "¿Seguro que quieres restablecer la configuración?"
+	},
+	"KEY_RESET": {
 		"message": "REINICIAR"
 	},
-	"reset_confirm": {
-		"message": "¿Seguro que quieres restablecer la configuración?"
+	"KEY_SCROLLBAR": {
+		"message": "barra de desplazamiento"
+	},
+	"KEY_THEATER_MODE": {
+		"message": "modo teatro"
 	}
 }
