@@ -1,10 +1,6 @@
 function update() {
-	for (let inputText of INPUTS_TEXT) {
-		document.getElementById(inputText).value = chromeStorage[inputText];
-	}
-	for (let inputCheckbox of INPUTS_CHECKBOX) {
-		document.getElementById(inputCheckbox).checked = chromeStorage[inputCheckbox];
-	}
+	INPUTS_TEXT.forEach(inputText => document.getElementById(inputText).value = chromeStorage[inputText]);
+	INPUTS_CHECKBOX.forEach(inputCheckbox => document.getElementById(inputCheckbox).checked = chromeStorage[inputCheckbox]);
 }
 
 function inputListOnChange(ev) {
@@ -24,7 +20,7 @@ function inputCheckboxOnChange(ev) {
 }
 
 function reset() {
-	if(confirm(chrome.i18n.getMessage('reset_confirm'))) {
+	if (confirm(chrome.i18n.getMessage('reset_confirm'))) {
 		chrome.storage.local.clear();
 		update();
 	}
@@ -34,21 +30,18 @@ function init() {
 	let stylesheet = document.createElement('style');
 	stylesheet.type = 'text/css';
 	document.head.appendChild(stylesheet);
-
 	document.getElementById("reset").addEventListener("click", reset);
-	for (let inputText of document.getElementsByClassName('inputText')) {
+	document.querySelectorAll('.inputText').forEach(inputText => {
 		inputText.addEventListener('input', (event) => inputListOnChange(event));
 		inputText.addEventListener('change', (event) => inputTextOnChange(event));
-	}
-	for (let inputCheckbox of document.getElementsByClassName('inputCheckbox')) {
+	});
+	document.querySelectorAll('.inputCheckbox').forEach(inputCheckbox => {
 		inputCheckbox.addEventListener('change', (event) => inputCheckboxOnChange(event));
-	}
-
-	for (let elementToTranslate of document.querySelectorAll('[translate]')) {
+	});
+	document.querySelectorAll('[translate]').forEach(elementToTranslate => {
 		elementToTranslate.innerHTML = chrome.i18n.getMessage(elementToTranslate.innerHTML);
 		elementToTranslate.removeAttribute('translate');
-	}
-
+	});
 	setTimeout(() => {
 		stylesheet.innerHTML = `
 			.slider:before {

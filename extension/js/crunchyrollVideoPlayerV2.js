@@ -28,7 +28,7 @@ function createFastForwardBackwardButtons() {
     let fastForwardList = chromeStorage.fast_forward_buttons.split(',');
 
     let buttonList = [];
-    for (let fastBackwardNumber of fastBackwardList) {
+    fastBackwardList.forEach(fastBackwardNumber => {
         if (!isNaN(parseInt(fastBackwardNumber))) {
             let fastBackwardButton = document.createElement('div');
             fastBackwardButton.innerHTML = '«' + parseNumber(fastBackwardNumber);
@@ -37,8 +37,8 @@ function createFastForwardBackwardButtons() {
             fastBackwardButton.addEventListener('click', fastBackward);
             buttonList.push(fastBackwardButton);
         }
-    }
-    for (let fastForwardNumber of fastForwardList) {
+    });
+    fastForwardList.forEach(fastForwardNumber => {
         if (!isNaN(parseInt(fastForwardNumber))) {
             let fastForwardButton = document.createElement('div');
             fastForwardButton.innerHTML = parseNumber(fastForwardNumber) + '»';
@@ -47,21 +47,19 @@ function createFastForwardBackwardButtons() {
             fastForwardButton.addEventListener('click', fastForward);
             buttonList.push(fastForwardButton);
         }
-    }
-    for (let button of buttonList) {
+    });
+    buttonList.forEach(button => {
         button.className += 'cbp_buttons';
         cbp_div_player_controls.appendChild(button);
-    }
+    });
 }
 
 function createDivs() {
     cbp_div_player_controls = document.createElement('div');
     cbp_div_player_mode = document.createElement('div');
 
-    for (let div of [cbp_div_player_controls, cbp_div_player_mode]) {
-        // all class = 'css-1dbjc4n r-1awozwy r-1loqt21 r-13awgt0 r-18u37iz r-1pi2tsx r-1otgn73'
-        div.className = 'cbp_div css-1dbjc4n r-1awozwy r-18u37iz r-1pi2tsx';
-    }
+    // all class = 'css-1dbjc4n r-1awozwy r-1loqt21 r-13awgt0 r-18u37iz r-1pi2tsx r-1otgn73'
+    [cbp_div_player_controls, cbp_div_player_mode].forEach(div => div.className = 'cbp_div css-1dbjc4n r-1awozwy r-18u37iz r-1pi2tsx');
 
     createPlayerButton();
     createFastForwardBackwardButtons();
@@ -70,11 +68,8 @@ function createDivs() {
 function switchPlayerMode(ev) {
     const ON = ' on';
 
-    if (ev.target.className.includes(ON)) {
-        ev.target.className = ev.target.className.replace(ON, '');
-    } else {
-        ev.target.className += ON;
-    }
+    if (ev.target.className.includes(ON)) ev.target.className = ev.target.className.replace(ON, '');
+    else ev.target.className += ON;
 
     resumePlayerState();
 }
@@ -83,9 +78,7 @@ function playerMode1Change(ev) {
     let obj = {};
 
     obj.theater_mode = !chromeStorage.theater_mode;
-    if (chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1) {
-        obj.player_mode = obj.theater_mode ? 1 : 0;
-    }
+    if (chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1) obj.player_mode = obj.theater_mode ? 1 : 0;
 
     switchPlayerMode(ev);
     chrome.storage.local.set(obj);
@@ -125,6 +118,13 @@ function insertCbpDivs(vilosControlsContainer) {
     }
 }
 
+function fixSubsHeight() {
+    document.getElementById('vilosRoot').style.width = '99.9%';
+    setTimeout(() => {
+        if (this.innerHeight !== document.getElementById('velocity-canvas').height) document.getElementById('vilosRoot').style.width = '';
+    }, 100);
+}
+
 function init() {
     if (document.getElementById('velocity-controls-package') !== null) {
         new MutationObserver((mutationsList) => {
@@ -133,8 +133,15 @@ function init() {
             .observe(document.getElementById('velocity-controls-package'), {
                 childList: true
             });
+        new MutationObserver((mutationsList, observer) => {
+                observer.disconnect();
+                if (this.innerHeight !== document.getElementById('velocity-canvas').height) fixSubsHeight();
+            })
+            .observe(document.getElementById('velocity-overlay-package'), {
+                childList: true
+            });
         insertCbpDivs(document.getElementById('vilosControlsContainer'));
-    } else {        
+    } else {
         setTimeout(() => {
             init();
         }, 100);

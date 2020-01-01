@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "2.3.7",
+	"version": "2.3.8",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -26,7 +26,7 @@
 			"css": [
 				"extension/css/crunchyroll.css"
 			],
-			"run_at": "document_end"
+			"run_at": "document_idle"
 		},
 		{
 			"matches": [
@@ -40,7 +40,7 @@
 				"extension/css/crunchyrollVideoPlayer2.css"
 			],
 			"all_frames": true,
-			"run_at": "document_end"
+			"run_at": "document_idle"
 		}
 	]
 }

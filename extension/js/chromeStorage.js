@@ -18,9 +18,7 @@ let chromeStorageInit = undefined;
 function chromeStorageGet() {
     chrome.storage.local.get(CHROME_STORAGE, function (data) {
         chromeStorage = data;
-        if (chromeStorageInit !== undefined) {
-            chromeStorageInit();
-        }
+        if (chromeStorageInit !== undefined) chromeStorageInit();
     });
 }
 

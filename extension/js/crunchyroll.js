@@ -1,9 +1,7 @@
 // This code is to be injected in "https://www.crunchyroll.com/*"
 
 function setAttributes() {
-	for (let attribute of ATTRIBUTES) {
-		document.documentElement.setAttribute('cbp_' + attribute, chromeStorage[attribute]);
-	}
+	ATTRIBUTES.forEach(attribute => document.documentElement.setAttribute('cbp_' + attribute, chromeStorage[attribute]));
 }
 
 function init() {
@@ -12,7 +10,7 @@ function init() {
 		// if user isn't log in
 		if (document.getElementById("showmedia_video_box") !== null) {
 			document.documentElement.setAttribute('cbp_not_logged', true);
-			document.getElementsByClassName("showmedia-trail cf")[0].appendChild(document.getElementById("showmedia_video"));
+			document.querySelector('.showmedia-trail.cf').appendChild(document.getElementById("showmedia_video"));
 			document.getElementById("showmedia_video_box").id = "showmedia_video_box_wide";
 		}
 		let style = document.createElement('style');
