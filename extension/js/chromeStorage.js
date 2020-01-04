@@ -10,7 +10,8 @@ const CHROME_STORAGE = {
 };
 
 const INPUTS_CHECKBOX = ['header_on_hover', 'hide_banner', 'hide_message_box']
-const ATTRIBUTES = ['player_mode', 'scrollbar', ...INPUTS_CHECKBOX];
+const VIDEO_PLAYER_ATTRIBUTES = ['player_mode', 'scrollbar'];
+const ATTRIBUTES = [...VIDEO_PLAYER_ATTRIBUTES, ...INPUTS_CHECKBOX];
 const INPUTS_TEXT = ['fast_backward_buttons', 'fast_forward_buttons'];
 
 let chromeStorage = {};

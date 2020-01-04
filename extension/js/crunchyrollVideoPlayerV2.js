@@ -63,34 +63,27 @@ function createDivs() {
     createFastForwardBackwardButtons();
 }
 
-function switchClassForEvent(ev) {
-    const ON = ' on';
-    if (ev.target.className.includes(ON)) ev.target.className = ev.target.className.replace(ON, '');
-    else ev.target.className += ON;
-}
-
-function resumePlayerSwitchClassAndSetChromeStorage(ev, obj) {
+function resumePlayerAndSetChromeStorage(obj) {
     resumePlayerState();
-    switchClassForEvent(ev);
     chrome.storage.local.set(obj);
 }
 
-function scrollBarChange(ev) {
-    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+function scrollBarChange() {
+    resumePlayerAndSetChromeStorage({
         scrollbar: chromeStorage.scrollbar ? false : true,
     });
 }
 
-function playerMode1Change(ev) {
-    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+function playerMode1Change() {
+    resumePlayerAndSetChromeStorage({
         theater_mode: !chromeStorage.theater_mode,
         player_mode: chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1 ? !chromeStorage.theater_mode ? 1 : 0 : chromeStorage.player_mode,
     });
 }
 
 
-function playerMode2Change(ev) {
-    resumePlayerSwitchClassAndSetChromeStorage(ev, {
+function playerMode2Change() {
+    resumePlayerAndSetChromeStorage({
         player_mode: (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0,
     });
 }
@@ -117,7 +110,7 @@ function createPlayerButton() {
         },
     ].forEach(button => {
         let span = document.createElement('span');
-        span.className = `cbp_buttons ${button.className} ${chromeStorage[button.chromeStorageKey] === true || button.eq && chromeStorage[button.chromeStorageKey] === button.eq ? 'on' : ''}`;
+        span.className = `cbp_buttons ${button.className}`;
         span.title = chrome.i18n.getMessage(button.title);
         span.addEventListener('click', button.onChange);
         cbp_div_player_mode.appendChild(span);
@@ -140,6 +133,10 @@ function fixSubsHeight() {
     }, 100);
 }
 
+function setAttributes() {
+    VIDEO_PLAYER_ATTRIBUTES.forEach(attribute => document.documentElement.setAttribute('cbp_' + attribute, chromeStorage[attribute]));
+}
+
 function init() {
     if (document.getElementById('velocity-controls-package') !== null) {
         new MutationObserver((mutationsList) => {
@@ -155,6 +152,9 @@ function init() {
             .observe(document.getElementById('velocity-overlay-package'), {
                 childList: true
             });
+        document.onfullscreenchange = (e) => {
+            document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
+        }
         insertCbpDivs(document.getElementById('vilosControlsContainer'));
     } else {
         setTimeout(() => {
@@ -169,5 +169,6 @@ let cbp_div_player_mode;
 setTimeout(init);
 
 chromeStorageInit = function () {
+    setAttributes();
     createDivs();
 };
