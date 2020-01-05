@@ -59,7 +59,7 @@ html[cbp_video_page=true][cbp_player_mode='0'][cbp_not_logged=true] #sidebar {
 }
 
 /* hide scrollbar */
-html[cbp_scrollbar=true] ::-webkit-scrollbar {
+html[cbp_video_page=true][cbp_scrollbar=true] ::-webkit-scrollbar {
     width: 0px;
 }
 
