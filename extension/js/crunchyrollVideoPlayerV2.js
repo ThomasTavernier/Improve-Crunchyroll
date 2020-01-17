@@ -140,7 +140,11 @@ function setAttributes() {
 function init() {
     if (document.getElementById('velocity-controls-package') !== null) {
         new MutationObserver((mutationsList) => {
-                insertCbpDivs(mutationsList[1].addedNodes[0]);
+                if (mutationsList[1]) {
+                    insertCbpDivs(mutationsList[1].addedNodes[0]);
+                } else {
+                    insertCbpDivs(mutationsList[0].addedNodes[0]);
+                }
             })
             .observe(document.getElementById('velocity-controls-package'), {
                 childList: true
@@ -155,7 +159,6 @@ function init() {
         document.onfullscreenchange = (e) => {
             document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
         }
-        insertCbpDivs(document.getElementById('vilosControlsContainer'));
     } else {
         setTimeout(() => {
             init();
