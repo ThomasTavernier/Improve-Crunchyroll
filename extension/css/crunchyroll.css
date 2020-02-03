@@ -130,6 +130,20 @@ html[cbp_theme]:not([cbp_theme="0"]) .collection-carousel-arrow {
     background-image: url(/i/beta/showmedia/collection_arrow.png) !important;
 }
 
+html[cbp_theme]:not([cbp_theme="0"]) .source-home .dropdown-collection {
+    background-size: 45px 152.5px;
+    background-position-x: center;
+    background-image: url(/i/comics/queue_dropdown_arrow.png);
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .source-home .dropdown-collection:hover {
+    background-position: center -42px;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .source-home .dropdown-collection.open {
+    background-position-y: -126px;
+}
+
 /* set showmedia, footer, message box and title div width */
 #showmedia,
 #footer,
