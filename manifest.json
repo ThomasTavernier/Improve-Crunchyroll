@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "2.4.4",
+	"version": "2.5.0",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -12,19 +12,37 @@
 		"storage"
 	],
 	"browser_action": {
-		"default_popup": "popup/popup.html"
+		"default_popup": "popup/index.html"
 	},
-	"content_scripts": [
+	"content_scripts": [{
+			"matches": [
+				"https://www.crunchyroll.com/*"
+			],
+			"exclude_matches": [
+				"https://www.crunchyroll.com/games/*",
+				"https://www.crunchyroll.com/checkout/*"
+			],
+			"js": [
+				"extension/js/chromeStorage.js",
+				"extension/js/crunchyroll-chrome-storage-init.js"
+			],
+			"css": [
+				"extension/css/crunchyroll.css",
+				"extension/css/theme-color.css",
+				"extension/css/crunchyroll-theme.css"
+			],
+			"run_at": "document_start"
+		},
 		{
 			"matches": [
 				"https://www.crunchyroll.com/*"
 			],
-			"js": [
-				"extension/js/chromeStorage.js",
-				"extension/js/crunchyroll.js"
+			"exclude_matches": [
+				"https://www.crunchyroll.com/games/*",
+				"https://www.crunchyroll.com/checkout/*"
 			],
-			"css": [
-				"extension/css/crunchyroll.css"
+			"js": [
+				"extension/js/crunchyroll.js"
 			],
 			"run_at": "document_idle"
 		},
@@ -34,10 +52,20 @@
 			],
 			"js": [
 				"extension/js/chromeStorage.js",
-				"extension/js/crunchyrollVideoPlayerV2.js"
+				"extension/js/crunchyroll-video-player-v2-chrome-storage-init.js"
 			],
 			"css": [
 				"extension/css/crunchyrollVideoPlayer2.css"
+			],
+			"all_frames": true,
+			"run_at": "document_start"
+		},
+		{
+			"matches": [
+				"https://static.crunchyroll.com/vilos-v2/web/vilos/player.html"
+			],
+			"js": [
+				"extension/js/crunchyrollVideoPlayerV2.js"
 			],
 			"all_frames": true,
 			"run_at": "document_idle"

@@ -1,4 +1,8 @@
 /* player */
+#vilos-player {
+    background-color: black;
+}
+
 html[cbp_video_page=true][cbp_player_mode='2'] #showmedia_video_box_wide,
 html[cbp_video_page=true][cbp_player_mode='1'] #showmedia_video_box_wide {
     width: 100% !important;
@@ -111,10 +115,19 @@ html[cbp_video_page=true][cbp_player_mode='2']:not([cbp_header_on_hover=true]) #
     padding-top: 0px !important;
 }
 
-/* -------------------------------------------------- MISC -------------------------------------------------- */
+/* -------------------------------------------------- THEME FIXES -------------------------------------------------- */
 
-#vilos-player {
-    background-color: black;
+html[cbp_theme]:not([cbp_theme="0"]) #header_search_submit_beta {
+    border-radius: 0 !important;
+    background-color: initial !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .footer-column img {
+    border: none;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .collection-carousel-arrow {
+    background-image: url(/i/beta/showmedia/collection_arrow.png) !important;
 }
 
 /* set showmedia, footer, message box and title div width */

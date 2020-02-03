@@ -1,18 +1,15 @@
 {
-	"extDescription": {
-		"message": "Make the video player bigger and add fastforward / fastbackward buttons"
-	},
 	"extName": {
-		"message": "Crunchyroll bigger player"
+		"message": "Improve Crunchyroll"
 	},
-	"KEY_FAST_BACKWARD_BUTTONS": {
-		"message": "fast backward buttons"
+	"extDescription": {
+		"message": "Enhance crunchyroll, bigger player, dark mode, fast forward / backward buttons"
+	},
+	"KEY_DARK_THEME": {
+		"message": "Dark mode"
 	},
 	"KEY_FAST_BACKWARD": {
 		"message": "fast backward"
-	},
-	"KEY_FAST_FORWARD_BUTTONS": {
-		"message": "fast forward buttons"
 	},
 	"KEY_FAST_FORWARD": {
 		"message": "fast forward"
@@ -20,25 +17,31 @@
 	"KEY_FULLSCREEN_MODE": {
 		"message": "fullscreen mode"
 	},
-	"KEY_HEADER_ON_HOVER": {
-		"message": "header on hover"
-	},
-	"KEY_HIDE_BANNER": {
-		"message": "hide banner"
-	},
-	"KEY_HIDE_MESSAGE_BOX": {
-		"message": "hide message box"
-	},
-	"KEY_RESET_CONFIRM": {
-		"message": "Are you sure you want to reset the settings?"
-	},
-	"KEY_RESET": {
-		"message": "RESET"
+	"KEY_GENERAL": {
+		"message": "General"
 	},
 	"KEY_SCROLLBAR": {
 		"message": "scrollbar"
 	},
 	"KEY_THEATER_MODE": {
 		"message": "theater mode"
+	},
+	"KEY_THEMES": {
+		"message": "Themes"
+	},
+	"fast_backward_buttons": {
+		"message": "fast backward buttons"
+	},
+	"fast_forward_buttons": {
+		"message": "fast forward buttons"
+	},
+	"header_on_hover": {
+		"message": "header on hover"
+	},
+	"hide_banner": {
+		"message": "hide banner"
+	},
+	"hide_message_box": {
+		"message": "hide message box"
 	}
 }

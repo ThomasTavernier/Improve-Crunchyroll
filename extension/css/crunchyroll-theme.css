@@ -1,0 +1,1256 @@
+html[cbp_theme]:not([cbp_theme="0"]) .isolated-page-footer {
+    border-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .std-form fieldset,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form p {
+    color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .std-form input:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form input:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form select:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form select:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form textarea:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form textarea:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal-title:after,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-current:after {
+    border-color: var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .std-form [type=radio]:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .std-form [type=radio]:hover {
+    box-shadow: 0 0 0 .08em var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .std-form [type=radio]:checked,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal .preorder-tag,
+html[cbp_theme]:not([cbp_theme="0"]) .resume-play,
+html[cbp_theme]:not([cbp_theme="0"]) .episode-progress,
+html[cbp_theme]:not([cbp_theme="0"]) .rating-histogram .rating-proportion,
+html[cbp_theme]:not([cbp_theme="0"]) .cart-badge,
+html[cbp_theme]:not([cbp_theme="0"]) .user-notification-badge,
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox-submit,
+html[cbp_theme]:not([cbp_theme="0"]) .orange-button {
+    background: var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .overlay-mask,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-media-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .tablist a.action,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-thumbs .mug,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_upsell_mask,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_preoverlay_splash {
+    background-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .overlay-dialog,
+html[cbp_theme]:not([cbp_theme="0"]) .overlay-interstitial,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-featured-media .carousel-nav .nav-con span,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal .prices,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal-savings,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal .prices,
+html[cbp_theme]:not([cbp_theme="0"]) body.main-page,
+html[cbp_theme]:not([cbp_theme="0"]) .payment-method.open a:focus .method-name,
+html[cbp_theme]:not([cbp_theme="0"]) .payment-method.open a:hover .method-name,
+html[cbp_theme]:not([cbp_theme="0"]) .payment-method .method-name,
+html[cbp_theme]:not([cbp_theme="0"]) .login-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .resetpw-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .library-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table,
+html[cbp_theme]:not([cbp_theme="0"]) #header,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_image,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_crvid,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_entity,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-quote,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-sm-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-images,
+html[cbp_theme]:not([cbp_theme="0"]) .group-list,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote textarea.desc-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new,
+html[cbp_theme]:not([cbp_theme="0"]) .user-list,
+html[cbp_theme]:not([cbp_theme="0"]) .the-dialog,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body.old-template-body,
+html[cbp_theme]:not([cbp_theme="0"]) .ui-autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) a.framed-photo img,
+html[cbp_theme]:not([cbp_theme="0"]) img.framed-photo,
+html[cbp_theme]:not([cbp_theme="0"]) .botbar-mod-panel,
+html[cbp_theme]:not([cbp_theme="0"]) #footer,
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar ul,
+html[cbp_theme]:not([cbp_theme="0"]) .daily-deal div.time-remaining,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_about h2,
+html[cbp_theme]:not([cbp_theme="0"]) #slidebox {
+    background-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .overlay-dialog,
+html[cbp_theme]:not([cbp_theme="0"]) .search-form-news,
+html[cbp_theme]:not([cbp_theme="0"]) .search-form-news .search-submit-button,
+html[cbp_theme]:not([cbp_theme="0"]) .library-index-letter_head,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-bar .submit,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-search input,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-search-large input,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote input,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-photo-large-form-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product:hover .mug,
+html[cbp_theme]:not([cbp_theme="0"]) input[type=text].thumb-upload-form-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .search-form-channel input[type=text],
+html[cbp_theme]:not([cbp_theme="0"]) .search-submit-button {
+    border-color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #verify_email_nag a,
+html[cbp_theme]:not([cbp_theme="0"]) .verify-email-nag-tip,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-simulcasts .welcome-simulcasts-release,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-latest-videos li .released,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-latest-videos .ordernum,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-crnews-contents .related-site,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-recent-ep a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-recent-desc,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .related-header,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .related-label,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .related-site,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr .post-date,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr .post-desc,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social .byline-postdate,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social .byline-postdate a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social .byline-and-post-date,
+html[cbp_theme]:not([cbp_theme="0"]) .library-index-generated,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_recently_updated_table .time,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_top_contributors_legend,
+html[cbp_theme]:not([cbp_theme="0"]) .library-data-box,
+html[cbp_theme]:not([cbp_theme="0"]) .library-data-box a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-category-subheader a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-table .general-release,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-table .premium-release,
+html[cbp_theme]:not([cbp_theme="0"]) .library-paginator-loading,
+html[cbp_theme]:not([cbp_theme="0"]) .library-photo-mod-list,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table .body,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-mod-list,
+html[cbp_theme]:not([cbp_theme="0"]) .library-ft-list-page-link,
+html[cbp_theme]:not([cbp_theme="0"]) .library-ft-list-replies,
+html[cbp_theme]:not([cbp_theme="0"]) .library-membership-status,
+html[cbp_theme]:not([cbp_theme="0"]) .library-disambig h3,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-item .info dt,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-item .info dd,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-item .info dd a.creator,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_image ul li,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-details h4,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-details .created,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-restrictions,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-char-counter,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook .guestbook-fine-print,
+html[cbp_theme]:not([cbp_theme="0"]) .mediagb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .mediagb .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .mediagb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .groupgb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .groupgb .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .groupgb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb-full .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb-full .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb-full .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .user-profile-thin-gb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .user-profile-thin-gb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .entity-page-gb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .entity-page-gb .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .entity-page-gb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .pc .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .pc .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .pc .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc-wide .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc-wide .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc-wide .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .librarygb .guestbook-time,
+html[cbp_theme]:not([cbp_theme="0"]) .librarygb .guestbook-links,
+html[cbp_theme]:not([cbp_theme="0"]) .librarygb .guestbook-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-collection-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-fc .replies,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-ft .replies,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-group-dim-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .group-list .time,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-multi_action-link,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-sig-user-status,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-links,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-time,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .modnote-link,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .time,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-caption,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-metadata,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-user,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-photo-large-form,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbum-list .photo-count,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbum-list .created,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbum-list .edit,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product .desc,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product-medium .desc,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product .desc,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new .byline,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new .byline a,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new .edit,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new .created,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-upload-caption,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-upload-user,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-upload-form,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-upload-metadata,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-user-dim-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .user-list .time,
+html[cbp_theme]:not([cbp_theme="0"]) .dimtext,
+html[cbp_theme]:not([cbp_theme="0"]) .dimtext a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.navlist-thumb li a,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-user-small-link a,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-group-small-link a,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-caption,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-user,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-user a,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-photo-form,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-share-title,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.body div.bodyimg span.gmembers,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.links,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.time,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.links a,
+html[cbp_theme]:not([cbp_theme="0"]) .nav_dim :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .nav_highlight :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .uploadnav_dim :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .uploadnav_highlight :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .search_highlight :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .searchnav_dim :hover,
+html[cbp_theme]:not([cbp_theme="0"]) .pm-body,
+html[cbp_theme]:not([cbp_theme="0"]) .pm-new-body,
+html[cbp_theme]:not([cbp_theme="0"]) div.approvemedia-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .placeholder,
+html[cbp_theme]:not([cbp_theme="0"]) .remove-this-mrec-ad a,
+html[cbp_theme]:not([cbp_theme="0"]) .addfav-char-counter,
+html[cbp_theme]:not([cbp_theme="0"]) #footer .footer-column a,
+html[cbp_theme]:not([cbp_theme="0"]) #footer .footer-column a.optanon-show-settings {
+    color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .homepage-banner .message,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-news-views,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-news-views:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal-title a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal .member-price-decorator a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal .preorder-tag,
+html[cbp_theme]:not([cbp_theme="0"]) .interactive-area>header .subheadline,
+html[cbp_theme]:not([cbp_theme="0"]) .interactive-area>header small,
+html[cbp_theme]:not([cbp_theme="0"]) main>header .subheadline,
+html[cbp_theme]:not([cbp_theme="0"]) main>header small,
+html[cbp_theme]:not([cbp_theme="0"]) .tablist>*,
+html[cbp_theme]:not([cbp_theme="0"]) .subscription-page main,
+html[cbp_theme]:not([cbp_theme="0"]) .news-social-submit a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social .votes,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-bar .submit,
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab-container .highlight a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab-container .highlight .library-tab-count,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table .header td,
+html[cbp_theme]:not([cbp_theme="0"]) #colorpicker-okbutton,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-header,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-header a,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-structure-item,
+html[cbp_theme]:not([cbp_theme="0"]) .white,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-sm-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-fc h3,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-ft h3,
+html[cbp_theme]:not([cbp_theme="0"]) .resume-play-text,
+html[cbp_theme]:not([cbp_theme="0"]) .queue-label,
+html[cbp_theme]:not([cbp_theme="0"]) .alt-payments-content button,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .boxtitle,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) .loading-message div,
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub li a,
+html[cbp_theme]:not([cbp_theme="0"]) .botbar-mod-panel a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.navlist li a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .orange-button,
+html[cbp_theme]:not([cbp_theme="0"]) .cart-badge,
+html[cbp_theme]:not([cbp_theme="0"]) .user-notification-badge,
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox-submit,
+html[cbp_theme]:not([cbp_theme="0"]) .dropdown-menu a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-leave__close,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-leave__cta--full,
+html[cbp_theme]:not([cbp_theme="0"]) .opt-in__cta,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-trailer-notice,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-trailer-notice a,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-res-btn-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-res-btn-selected:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-res-btn:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-larger-btn:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_upsell_contents,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_upsell_close,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_preoverlay_button,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_preoverlay_close,
+html[cbp_theme]:not([cbp_theme="0"]) .orange-button,
+html[cbp_theme]:not([cbp_theme="0"]) .action.beta-player-toggle-button {
+    color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_announcement,
+html[cbp_theme]:not([cbp_theme="0"]) #footer_menu,
+html[cbp_theme]:not([cbp_theme="0"]) #footer {
+    background-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_announcement,
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_left,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-block h1,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-title-list h1,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-countdown-day,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-quote {
+    border-color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_announcement a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-pulse-box a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-forum-category a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-simulcasts .welcome-simulcasts-collection a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-simulcasts .welcome-simulcasts-episode,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-latest-videos .series,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-latest-videos .name,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-crnews-title,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-news-title,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-all-titles a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-recent-link a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-countdown-items a,
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_popular_titles a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal .name,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal .prices,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news h2 a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr h2 a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr .byline,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social h2 a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-top-stories-row li a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed h2 a,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_fan_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_related_groups_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_fan_box h4 a,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_related_groups_box h4 a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-category-header a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-cast-list td a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-table .header td,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-thumbs .name,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-featured-item,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-featured-item h3,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-featured-item h4,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table .page-links a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-ft-list-last-updated,
+html[cbp_theme]:not([cbp_theme="0"]) .library-change-poster-link,
+html[cbp_theme]:not([cbp_theme="0"]) .library-manga-sort-links .highlight,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-details h2,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-details h3,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-media-bubble-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-series-bubble-details h3,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-series-bubble-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-series-bubble-restrictions,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-series-bubble-metadata div,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-photo-bubble-caption,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-user-bubble-name,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-user-bubble-status,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-group-bubble-name,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-group-bubble-members,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-group-bubble-headline,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-display-title .widget-forumcategory-display-title-link,
+html[cbp_theme]:not([cbp_theme="0"]) .inbox-nav-contents a,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab a,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab-highlight,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab-hover,
+html[cbp_theme]:not([cbp_theme="0"]) .group-list h4,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-name,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product-medium,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product,
+html[cbp_theme]:not([cbp_theme="0"]) .user-list h4,
+html[cbp_theme]:not([cbp_theme="0"]) .the-dialog .close a,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body a.normal,
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub li.dim a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub li.highlight a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.navlist-thumb li a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.vertical-menu li a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li a,
+html[cbp_theme]:not([cbp_theme="0"]) a.pm-name,
+html[cbp_theme]:not([cbp_theme="0"]) a.pm-new-name,
+html[cbp_theme]:not([cbp_theme="0"]) .pm-subject,
+html[cbp_theme]:not([cbp_theme="0"]) .pm-new-subject,
+html[cbp_theme]:not([cbp_theme="0"]) .header_search_result_name,
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar li a:active,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-spoiler-checkbox,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_about_info_details span {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-block h1,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-title-list h1,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-block h1 a,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-title-list h1 a,
+html[cbp_theme]:not([cbp_theme="0"]) .news-header-right a,
+html[cbp_theme]:not([cbp_theme="0"]) .library-data-box a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .library-category-subheader a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table td .subject:hover,
+html[cbp_theme]:not([cbp_theme="0"]) body,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-crvid-link a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a .thumb-fc:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-ft:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a.group-list-wrapper:hover .group-list,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-links a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .modnote-link:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-reportlink a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbum-list .edit:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .subtitle-list-new a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a.user-list-wrapper:hover .user-list,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .boxtitle a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .topbar-nav-trail a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.highlight a div,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.highlight a:hover div,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.normal a:hover div,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-user-small-link a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-group-small-link a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-user a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.links a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) div.approvemedia-links a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #footer,
+html[cbp_theme]:not([cbp_theme="0"]) .opt-in__title,
+html[cbp_theme]:not([cbp_theme="0"]) .opt-in__subtitle,
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_upsell,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-sort-bar .current-selected {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-pulse-box a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-simulcasts .welcome-simulcasts-episode:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-all-titles a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-countdown-items a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_bottom,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_fan_box h4,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_related_groups_box h4,
+html[cbp_theme]:not([cbp_theme="0"]) .library-article-fav-count-text,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_ratings_container,
+html[cbp_theme]:not([cbp_theme="0"]) #library_video_featured_list .highlight,
+html[cbp_theme]:not([cbp_theme="0"]) a.bbtool img,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-infobox-title,
+html[cbp_theme]:not([cbp_theme="0"]) .bbcode-preview-container,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-display-title .widget-forumcategory-display-firstfewpage:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook .guestbook-shadow,
+html[cbp_theme]:not([cbp_theme="0"]) .inbox-nav-contents li a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .inbox-nav-contents li.highlight a,
+html[cbp_theme]:not([cbp_theme="0"]) a.paginator:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a.paginator-sm:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-stack2,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-sqthumb,
+html[cbp_theme]:not([cbp_theme="0"]) li.ulist-shadow,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-ajax td,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-autocomplete a:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-autocomplete a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .header_search_autocomplete_item_focused {
+    background-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-forum-category,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-crnews-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-news-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .library-share-link input,
+html[cbp_theme]:not([cbp_theme="0"]) .library-share-link-small input,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_bottom,
+html[cbp_theme]:not([cbp_theme="0"]) .library-data-box,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-table td,
+html[cbp_theme]:not([cbp_theme="0"]) .library-change-poster-link,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-item,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_image,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_crvid,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-infobox,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-infobox-title,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-infobox-label,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-series-bubble-restrictions,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-display td,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-display th,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook .guestbook-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .user-profile-thin-gb .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .inbox-body-contents,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .modnote-link,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .modnote-container,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote textarea.desc-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbum-list,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product-medium .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .the-dialog .header h1,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .boxcontents,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-availability-notes {
+    border-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .show-all-simulcasts-button,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) .wrapper .portrait-element:active,
+html[cbp_theme]:not([cbp_theme="0"]) body .wrapper .landscape-element:active {
+    background: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .show-all-simulcasts-button,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button {
+    background: linear-gradient(to bottom, var(--primary) 15%, var(--primary) 100%) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .show-all-simulcasts-button,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-media-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-recent-episodes .welcome-recent-link,
+html[cbp_theme]:not([cbp_theme="0"]) #welcome_popular_titles strong,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal img,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-daily-deal .prices,
+html[cbp_theme]:not([cbp_theme="0"]) #sidebar,
+html[cbp_theme]:not([cbp_theme="0"]) .news-broadcast,
+html[cbp_theme]:not([cbp_theme="0"]) .news-header-wrapper,
+html[cbp_theme]:not([cbp_theme="0"]) .news-footer-more,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news li.news-item,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed li,
+html[cbp_theme]:not([cbp_theme="0"]) #library_add_comment_input,
+html[cbp_theme]:not([cbp_theme="0"]) .library-freeform .bb-header,
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab a,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_fan_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_related_groups_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) .library-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .library-title,
+html[cbp_theme]:not([cbp_theme="0"]) .library-category-header,
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-thumbs .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table td,
+html[cbp_theme]:not([cbp_theme="0"]) .library-ft-title,
+html[cbp_theme]:not([cbp_theme="0"]) .library-poster,
+html[cbp_theme]:not([cbp_theme="0"]) div.autocomplete_entity,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-header,
+html[cbp_theme]:not([cbp_theme="0"]) .bbcode-preview-container,
+html[cbp_theme]:not([cbp_theme="0"]) .mediagb .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .groupgb .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb-full .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .usergb .guestbook-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .entity-page-gb .guestbook-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .pc .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .fgc-wide .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .librarygb .guestbook-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-sm-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-stack1,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-stack2,
+html[cbp_theme]:not([cbp_theme="0"]) .photoalbumthumb-images,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-collection-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-fc,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-ft,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-group-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .group-list,
+html[cbp_theme]:not([cbp_theme="0"]) .fp-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .list-product .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-upload-mug img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-user-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .user-list,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body h3,
+html[cbp_theme]:not([cbp_theme="0"]) hr,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) .text-input[type=password],
+html[cbp_theme]:not([cbp_theme="0"]) .text-input[type=text],
+html[cbp_theme]:not([cbp_theme="0"]) textarea.text-input,
+html[cbp_theme]:not([cbp_theme="0"]) .content-menu:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .ui-autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) input[type=email],
+html[cbp_theme]:not([cbp_theme="0"]) input[type=password],
+html[cbp_theme]:not([cbp_theme="0"]) input[type=text],
+html[cbp_theme]:not([cbp_theme="0"]) textarea,
+html[cbp_theme]:not([cbp_theme="0"]) img.imgborder,
+html[cbp_theme]:not([cbp_theme="0"]) a.framed-photo img,
+html[cbp_theme]:not([cbp_theme="0"]) img.framed-photo,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .cr-header,
+html[cbp_theme]:not([cbp_theme="0"]) img.thumbnail,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-user-small-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-group-small-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-pending-user-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-mug a img,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.img a img,
+html[cbp_theme]:not([cbp_theme="0"]) .notification-list div div.body div.bodyimg a img,
+html[cbp_theme]:not([cbp_theme="0"]) #template_ad_leaderboard,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) .search-tabs li,
+html[cbp_theme]:not([cbp_theme="0"]) #disabled_email,
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=address1],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=address2],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_address1],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_address2],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_city],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_name],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_phone],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_state],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=billing_zip],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=cc_name],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=cc_number],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=city],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=cvv],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=name],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=phone],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=state],
+html[cbp_theme]:not([cbp_theme="0"]) #store_cart_review input[name=zip],
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-list,
+html[cbp_theme]:not([cbp_theme="0"]) .comments .boxtitle,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-sort-bar,
+html[cbp_theme]:not([cbp_theme="0"]) .comments .more-replies,
+html[cbp_theme]:not([cbp_theme="0"]) #slidebox {
+    border-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .show-all-simulcasts-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.block-link,
+html[cbp_theme]:not([cbp_theme="0"]) .form-area header,
+html[cbp_theme]:not([cbp_theme="0"]) .mediagb textarea.guestbook-form,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body a.block-link,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body a.block-link,
+html[cbp_theme]:not([cbp_theme="0"]) .default-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) body .landscape-grid .wrapper a:hover .short-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a.selected:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .sub-tabs-menu a.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .content-menu a.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .irrelevant-price,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-download-app-container,
+html[cbp_theme]:not([cbp_theme="0"]) .collection-carousel-media-link-current a {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-crnews-item,
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-news-item,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .news-date-label,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .body,
+html[cbp_theme]:not([cbp_theme="0"]) .news-bottom-nav,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-top-stories-row li a,
+html[cbp_theme]:not([cbp_theme="0"]) .newsfeed-bottom-nav,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed .news-date-label,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed .body,
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab-contents-container,
+html[cbp_theme]:not([cbp_theme="0"]) .library-disambig,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-autocomplete a,
+html[cbp_theme]:not([cbp_theme="0"]) html[dir=rtl] .header-search-autocomplete a {
+    border-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal-title,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-current,
+html[cbp_theme]:not([cbp_theme="0"]) .alt-payments-content button,
+html[cbp_theme]:not([cbp_theme="0"]) .action.type-primary {
+    background-color: var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal .prices:before,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-ancestor:before,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-current:before,
+html[cbp_theme]:not([cbp_theme="0"]) td.fp-profile,
+html[cbp_theme]:not([cbp_theme="0"]) td.fp-main,
+html[cbp_theme]:not([cbp_theme="0"]) td.td-fp-links,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote textarea.desc,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-photo-large-form-mouseover,
+html[cbp_theme]:not([cbp_theme="0"]) input.thumb-photo-large-form {
+    border-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .welcome-deal-name,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-root,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-ancestor {
+    background-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .landscape-grid .wrapper:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #main_content .landscape-element,
+html[cbp_theme]:not([cbp_theme="0"]) main>footer,
+html[cbp_theme]:not([cbp_theme="0"]) .premium-value-props,
+html[cbp_theme]:not([cbp_theme="0"]) .orderlanding-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .payment-error-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .pp-fail-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .processing-timeout-page .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) body,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-pollwidget,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-base-bubble,
+html[cbp_theme]:not([cbp_theme="0"]) .modal-container .modal-content,
+html[cbp_theme]:not([cbp_theme="0"]) #main_content_white,
+html[cbp_theme]:not([cbp_theme="0"]) .white-wrapper,
+html[cbp_theme]:not([cbp_theme="0"]) .content-panel,
+html[cbp_theme]:not([cbp_theme="0"]) .portrait-element,
+html[cbp_theme]:not([cbp_theme="0"]) #tabs,
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a.selected:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .site-header,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-autocomplete,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-leave,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-leave__cta--weak,
+html[cbp_theme]:not([cbp_theme="0"]) .store-sub-menu>ul>li>a,
+html[cbp_theme]:not([cbp_theme="0"]) .store-sub-menu>ul>li.sel a,
+html[cbp_theme]:not([cbp_theme="0"]) .store-sub-menu>ul.category-style>li>a,
+html[cbp_theme]:not([cbp_theme="0"]) #store_product_images,
+html[cbp_theme]:not([cbp_theme="0"]) .time-remaining-clock,
+html[cbp_theme]:not([cbp_theme="0"]) .store-sub-menu ul li.selectboxit-option,
+html[cbp_theme]:not([cbp_theme="0"]) .ultra-quality-warning p {
+    background: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .form-area,
+html[cbp_theme]:not([cbp_theme="0"]) .login-page main,
+html[cbp_theme]:not([cbp_theme="0"]) .resetpw-page main,
+html[cbp_theme]:not([cbp_theme="0"]) .resetpw-page,
+html[cbp_theme]:not([cbp_theme="0"]) .payment-error-page main,
+html[cbp_theme]:not([cbp_theme="0"]) .processing-timeout-page main,
+html[cbp_theme]:not([cbp_theme="0"]) #template_container.template-container {
+    background: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) main .headline strong,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav .widget-forumnav-children:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .new-footer,
+html[cbp_theme]:not([cbp_theme="0"]) .header-userpanel .header-icon:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .header-userpanel .userpanel-item.state-selected .header-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .has-num span.right,
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar li a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar li.state-selected a,
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar .freetrial-note,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-leave__close:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .relevant-price {
+    color: var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #message_box,
+html[cbp_theme]:not([cbp_theme="0"]) body.main-page {
+    background-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .pp-fail-page .error-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .dropdown-menu a:active {
+    background: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) ul.news h2 a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-abbr h2 a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news-social h2 a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed h2 a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .ui-autocomplete .ui-menu-item,
+html[cbp_theme]:not([cbp_theme="0"]) a,
+html[cbp_theme]:not([cbp_theme="0"]) #footer .footer-column a.optanon-show-settings:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #footer .footer-column a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #footer .footer-language .selected {
+    color: var(--crunchyroll-orange) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) ul.news h3 a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .post-ago,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed h3 a,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed .post-ago,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_top_contributors_table .lib-approved,
+html[cbp_theme]:not([cbp_theme="0"]) #library_front_top_contributors_table .lib-rejected,
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab-container .library-tab-count,
+html[cbp_theme]:not([cbp_theme="0"]) .bb-crvid-link a,
+html[cbp_theme]:not([cbp_theme="0"]) .page-instructions {
+    color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) ul.news .news-date-label,
+html[cbp_theme]:not([cbp_theme="0"]) ul.newsfeed .news-date-label,
+html[cbp_theme]:not([cbp_theme="0"]) .library-forum-table td .subject,
+html[cbp_theme]:not([cbp_theme="0"]) .library-search-item .info dd .highlight,
+html[cbp_theme]:not([cbp_theme="0"]) .pollwidget-showpoll-a,
+html[cbp_theme]:not([cbp_theme="0"]) .header_search_result_type {
+    color: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab a,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_fan_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) #library_article_related_groups_box h3,
+html[cbp_theme]:not([cbp_theme="0"]) .library-cast-list th {
+    background-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .library-tab-widget .tab-container .highlight a {
+    background-color: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .library-cast-list-unknown {
+    color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .library-video-featured-item .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .botbar-mod-panel a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .interstitial {
+    background-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .bb-quote {
+    color: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) a.bbtool:hover img {
+    border-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #colorpicker-div,
+html[cbp_theme]:not([cbp_theme="0"]) #colorpicker-okbutton {
+    border-color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-header,
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .boxtitle,
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub {
+    background-color: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumcategory-header a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-sm-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-disabled,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-photo-large-reportlink a,
+html[cbp_theme]:not([cbp_theme="0"]) #slidebox h2 {
+    color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-structure-item:hover {
+    color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-root:after,
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav-ancestor:after,
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button {
+    border-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .widget-forumnav .widget-forumnav-children,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .block-link:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .pagination a,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .para-div a,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .sub-tabs .selectors a.text-link,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .text-link,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body .wrapper a:hover a,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body a:hover h4,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body li a,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body p a,
+html[cbp_theme]:not([cbp_theme="0"]) .new-template-body span a,
+html[cbp_theme]:not([cbp_theme="0"]) .sub-tabs-menu .calendar-link,
+html[cbp_theme]:not([cbp_theme="0"]) .shop-by-series-responsive .shop-by-series-title a,
+html[cbp_theme]:not([cbp_theme="0"]) .adblocker-message .learn-action,
+html[cbp_theme]:not([cbp_theme="0"]) .video-problems-link:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .video-problems-link:hover {
+    color: var(--crunchyroll-blue) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .forumnav-fc-desc,
+html[cbp_theme]:not([cbp_theme="0"]) .portrait-desc {
+    background: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .paginator-lite-selected,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab-highlight,
+html[cbp_theme]:not([cbp_theme="0"]) .tab-container .tab-hover {
+    background-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) a .thumb-fc:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-ft:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a.group-list-wrapper:hover .group-list,
+html[cbp_theme]:not([cbp_theme="0"]) .modnote .modnote-link:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product:hover .mug,
+html[cbp_theme]:not([cbp_theme="0"]) .thumb-product-medium:hover .mug,
+html[cbp_theme]:not([cbp_theme="0"]) a.user-list-wrapper:hover .user-list,
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button:hover,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button:hover,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button:hover,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button:hover {
+    border-color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .resume-play-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .queue-icon {
+    fill: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .add-queue-button.not-queued,
+html[cbp_theme]:not([cbp_theme="0"]) .landscape-grid .add-queue-button.not-queued:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .portrait-grid .add-queue-button.not-queued:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-player-toggle-button.type-back {
+    background: var(--crunchyroll-blue-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .add-queue-button.not-queued:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-player-toggle-button.type-back:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .beta-player-toggle-button.type-back:hover {
+    background: var(--crunchyroll-blue) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .modal-container .close {
+    color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) img,
+html[cbp_theme]:not([cbp_theme="0"]) img.portrait {
+    border-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #template_body .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .action.type-secondary {
+    border-color: var(--crunchyroll-blue) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #template_body .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) #template_body span.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) .special-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.special-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.special-button {
+    background: linear-gradient(to bottom, #0093d0 0, var(--crunchyroll-blue) 100%) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .default-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.default-button {
+    text-shadow: 0 1px 4px var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button {
+    text-shadow: 0 1px 4px var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button.selected,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button:active,
+html[cbp_theme]:not([cbp_theme="0"]) .loading-message div {
+    background: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.dark-button,
+html[cbp_theme]:not([cbp_theme="0"]) span.dark-button {
+    background: linear-gradient(to bottom, #5f5f5f 0, var(--primary-font) 100%) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .episode-progress-bar {
+    background: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs {
+    background: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a {
+    background: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .main-tabs a:hover {
+    background: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .content-menu {
+    background: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .content-menu {
+    border-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .rating-histogram .rating-bar {
+    background: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .message-container {
+    border-color: var(--crunchyroll-blue-light) 1px solid !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .message-container a,
+html[cbp_theme]:not([cbp_theme="0"]) .video-problems-link {
+    color: var(--crunchyroll-blue-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .message-container-only-errors,
+html[cbp_theme]:not([cbp_theme="0"]) .availability-notes-low {
+    background: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .ui-autocomplete .ui-menu-item {
+    border-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #template_action_button a,
+html[cbp_theme]:not([cbp_theme="0"]) .action-button,
+html[cbp_theme]:not([cbp_theme="0"]) .big-btn,
+html[cbp_theme]:not([cbp_theme="0"]) .submitbtn {
+    background-color: var(--crunchyroll-orange-lightest) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub li.dim a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) ul.topbar-nav-sub li.highlight a,
+html[cbp_theme]:not([cbp_theme="0"]) .tablelist_shadow,
+html[cbp_theme]:not([cbp_theme="0"]) li.vertical-menu-shadow,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.highlight a div,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.highlight a:hover div,
+html[cbp_theme]:not([cbp_theme="0"]) ul.hvertical-menu li.normal a:hover div {
+    background-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .header-userpanel .header-icon:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .header-userpanel .userpanel-item.state-selected .header-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .header-search-form:hover .header-searchbox-submit>svg,
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox:focus~.header-searchbox-submit>svg {
+    fill: var(--crunchyroll-orange-light) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .header-menubar li a {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .dropdown-menu a {
+    color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .type-secondary:focus,
+html[cbp_theme]:not([cbp_theme="0"]) .type-secondary:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-trailer-notice {
+    background-color: var(--crunchyroll-blue) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_free_trial_signup,
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-free-trial-header {
+    border-color: var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #showmedia_free_trial_signup,
+html[cbp_theme]:not([cbp_theme="0"]) .comments form .bottom .submitbtn {
+    background: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .showmedia-free-trial-header {
+    background: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .comment-element {
+    border-color: var(--tertiary) 1px !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-sort-bar,
+html[cbp_theme]:not([cbp_theme="0"]) .comments .more-replies {
+    background-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta .games,
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta .games:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta .store,
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta .store:hover {
+    background-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta #games_button,
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta #store_button {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta #games_button:hover,
+html[cbp_theme]:not([cbp_theme="0"]) #header_menubar_beta #store_button:hover {
+    color: var(--crunchyroll-orange) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .header-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox-submit>svg {
+    fill: var(--primary-font-75) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .header-icon,
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox-submit>svg {
+    color: var(--primary-font-75) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .header-searchbox::placeholder {
+    color: var(--primary-font-75) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow {
+    box-shadow: 0 1px 1px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow {
+    -moz-box-shadow: 0 1px 1px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow {
+    -webkit-box-shadow: 0 1px 1px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .container-shadow {
+    box-shadow: 0 1px 2px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .container-shadow {
+    -moz-box-shadow: 0 1px 2px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .old-template-body .container-shadow {
+    -webkit-box-shadow: 0 1px 2px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow-dark {
+    box-shadow: 0 1px 3px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow-dark {
+    -moz-box-shadow: 0 1px 3px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .container-shadow-dark {
+    -webkit-box-shadow: 0 1px 3px var(--tertiary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #message_box,
+html[cbp_theme]:not([cbp_theme="0"]) input:not([type=radio]),
+html[cbp_theme]:not([cbp_theme="0"]) select,
+html[cbp_theme]:not([cbp_theme="0"]) textarea,
+html[cbp_theme]:not([cbp_theme="0"]) .isolated-page-footer,
+html[cbp_theme]:not([cbp_theme="0"]) .isolated-page-header,
+html[cbp_theme]:not([cbp_theme="0"]) .guestbook-smilies-handle {
+    background-color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #message_box .message-type-warning.message-item,
+html[cbp_theme]:not([cbp_theme="0"]) .announcement a,
+html[cbp_theme]:not([cbp_theme="0"]) .cta span a,
+html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a.highlight,
+html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a:hover {
+    color: var(--primary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) input:not([type=radio]),
+html[cbp_theme]:not([cbp_theme="0"]) select,
+html[cbp_theme]:not([cbp_theme="0"]) textarea,
+html[cbp_theme]:not([cbp_theme="0"]) .queue-label,
+html[cbp_theme]:not([cbp_theme="0"]) .games span a,
+html[cbp_theme]:not([cbp_theme="0"]) .dropdown-menu a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .acct-nav h3 {
+    color: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .show-all-simulcasts-button,
+html[cbp_theme]:not([cbp_theme="0"]) a.default-button,
+html[cbp_theme]:not([cbp_theme="0"]) input.default-button {
+    background: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .login-or-signup-page .forms,
+html[cbp_theme]:not([cbp_theme="0"]) main,
+html[cbp_theme]:not([cbp_theme="0"]) #___gatsby {
+    background-color: var(--secondary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .topbar-nav-sub a {
+    background-color: var(--secondary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .queue-icon {
+    fill: var(--primary-font) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .dropdown-menu a:active {
+    background-color: var(--tertiary) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) #guestbook_commentform .submitbtn {
+    background-color: var(--crunchyroll-orange-lightest) !important;
+}
+
+html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a {
+    color: var(--secondary-font) !important;
+}

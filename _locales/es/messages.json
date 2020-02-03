@@ -1,18 +1,15 @@
 {
-	"extDescription": {
-		"message": "Agrande el reproductor y agregue los botones de retroceso / salto"
-	},
 	"extName": {
-		"message": "Crunchyroll bigger player"
+		"message": "Improve Crunchyroll"
 	},
-	"KEY_FAST_BACKWARD_BUTTONS": {
-		"message": "retroceso buttons"
+	"extDescription": {
+		"message": "Mejora Crunchyroll, agrande el reproductor, modo oscuro, botones de retroceso / salto"
+	},
+	"KEY_DARK_THEME": {
+		"message": "Modo oscuro"
 	},
 	"KEY_FAST_BACKWARD": {
 		"message": "retroceso"
-	},
-	"KEY_FAST_FORWARD_BUTTONS": {
-		"message": "salto botones"
 	},
 	"KEY_FAST_FORWARD": {
 		"message": "salto"
@@ -20,25 +17,31 @@
 	"KEY_FULLSCREEN_MODE": {
 		"message": "modo de pantalla completa"
 	},
-	"KEY_HEADER_ON_HOVER": {
-		"message": "muestre el encabezado"
-	},
-	"KEY_HIDE_BANNER": {
-		"message": "ocultar bandera"
-	},
-	"KEY_HIDE_MESSAGE_BOX": {
-		"message": "ocultar cuadro de mensaje"
-	},
-	"KEY_RESET_CONFIRM": {
-		"message": "¿Seguro que quieres restablecer la configuración?"
-	},
-	"KEY_RESET": {
-		"message": "REINICIAR"
+	"KEY_GENERAL": {
+		"message": "General"
 	},
 	"KEY_SCROLLBAR": {
 		"message": "barra de desplazamiento"
 	},
 	"KEY_THEATER_MODE": {
 		"message": "modo teatro"
+	},
+	"KEY_THEMES": {
+		"message": "Temas"
+	},
+	"fast_backward_buttons": {
+		"message": "retroceso buttons"
+	},
+	"fast_forward_buttons": {
+		"message": "salto botones"
+	},
+	"header_on_hover": {
+		"message": "muestre el encabezado"
+	},
+	"hide_banner": {
+		"message": "ocultar bandera"
+	},
+	"hide_message_box": {
+		"message": "ocultar cuadro de mensaje"
 	}
 }

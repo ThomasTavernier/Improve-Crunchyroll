@@ -1,18 +1,15 @@
 {
-	"extDescription": {
-		"message": "Grossis le lecteur vidéo et ajoute des bouttons avancer / reculer"
-	},
 	"extName": {
-		"message": "Crunchyroll bigger player"
+		"message": "Improve Crunchyroll"
 	},
-	"KEY_FAST_BACKWARD_BUTTONS": {
-		"message": "boutons reculer"
+	"extDescription": {
+		"message": "Améliore Crunchyroll, plus grand lecteur vidéo, mode sombre, des boutons d'avance / retour rapide"
+	},
+	"KEY_DARK_THEME": {
+		"message": "Mode sombre"
 	},
 	"KEY_FAST_BACKWARD": {
 		"message": "reculer"
-	},
-	"KEY_FAST_FORWARD_BUTTONS": {
-		"message": "boutons avancer"
 	},
 	"KEY_FAST_FORWARD": {
 		"message": "avancer"
@@ -20,25 +17,31 @@
 	"KEY_FULLSCREEN_MODE": {
 		"message": "mode plein écran"
 	},
-	"KEY_HEADER_ON_HOVER": {
-		"message": "entête (curseur)"
-	},
-	"KEY_HIDE_BANNER": {
-		"message": "cacher la bannière"
-	},
-	"KEY_HIDE_MESSAGE_BOX": {
-		"message": "cacher alerte message"
-	},
-	"KEY_RESET_CONFIRM": {
-		"message": "Êtes-vous sûr de vouloir réinitialiser les paramètres?"
-	},
-	"KEY_RESET": {
-		"message": "RÉINITIALISER"
+	"KEY_GENERAL": {
+		"message": "Général"
 	},
 	"KEY_SCROLLBAR": {
 		"message": "barre de défilement"
 	},
 	"KEY_THEATER_MODE": {
 		"message": "mode théâtre"
+	},
+	"KEY_THEMES": {
+		"message": "Thèmes"
+	},
+	"fast_backward_buttons": {
+		"message": "boutons reculer"
+	},
+	"fast_forward_buttons": {
+		"message": "boutons avancer"
+	},
+	"header_on_hover": {
+		"message": "entête (curseur)"
+	},
+	"hide_banner": {
+		"message": "cacher la bannière"
+	},
+	"hide_message_box": {
+		"message": "cacher alerte message"
 	}
 }

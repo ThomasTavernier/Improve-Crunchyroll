@@ -1,5 +1,3 @@
-// This code is to be injected in 'https://static.crunchyroll.com/vilos-v2/web/vilos/player.html', it's the video player iframe of 'https://www.crunchyroll.com/*'
-
 function resumePlayerState() {
     const videoPlayer = document.getElementById('player0');
     videoPlayer.paused ? videoPlayer.play() : videoPlayer.pause();
@@ -133,36 +131,27 @@ function fixSubsHeight() {
     }, 100);
 }
 
-function setAttributes() {
-    VIDEO_PLAYER_ATTRIBUTES.forEach(attribute => document.documentElement.setAttribute('cbp_' + attribute, chromeStorage[attribute]));
-}
-
 function init() {
-    if (document.getElementById('velocity-controls-package') !== null) {
-        new MutationObserver((mutationsList) => {
-                if (mutationsList[1]) {
-                    insertCbpDivs(mutationsList[1].addedNodes[0]);
-                } else {
-                    insertCbpDivs(mutationsList[0].addedNodes[0]);
-                }
-            })
-            .observe(document.getElementById('velocity-controls-package'), {
-                childList: true
-            });
-        new MutationObserver((mutationsList, observer) => {
-                observer.disconnect();
-                if (this.innerHeight !== document.getElementById('velocity-canvas').height) fixSubsHeight();
-            })
-            .observe(document.getElementById('velocity-overlay-package'), {
-                childList: true
-            });
-        document.onfullscreenchange = (e) => {
-            document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
-        }
-    } else {
-        setTimeout(() => {
-            init();
-        }, 100);
+    createDivs();
+    new MutationObserver((mutationsList) => {
+            if (mutationsList[1]) {
+                insertCbpDivs(mutationsList[1].addedNodes[0]);
+            } else {
+                insertCbpDivs(mutationsList[0].addedNodes[0]);
+            }
+        })
+        .observe(document.getElementById('velocity-controls-package'), {
+            childList: true,
+        });
+    new MutationObserver((mutationsList, observer) => {
+            observer.disconnect();
+            if (this.innerHeight !== document.getElementById('velocity-canvas').height) fixSubsHeight();
+        })
+        .observe(document.getElementById('velocity-overlay-package'), {
+            childList: true,
+        });
+    document.onfullscreenchange = () => {
+        document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
     }
 }
 
@@ -170,8 +159,3 @@ let cbp_div_player_controls;
 let cbp_div_player_mode;
 
 setTimeout(init);
-
-chromeStorageInit = function () {
-    setAttributes();
-    createDivs();
-};

@@ -1,0 +1,57 @@
+#header {
+    background-color: var(--primary);
+    color: var(--primary-font);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    height: 56px;
+    display: flex;
+    z-index: 2;
+}
+
+#header>div {
+    width: 100%;
+    margin: 0px 8px;
+    display: flex;
+    place-content: space-between;
+}
+
+#header>div>div {
+    display: flex;
+    align-items: center;
+}
+
+#header h3 {
+    margin: 0 8px;
+    line-height: 100%;
+    transition: transform 0.25s;
+    transform: translateX(-40px);
+}
+
+#header:not(.home) h3 {
+    transform: translateX(0);
+}
+
+.returnButton {
+    visibility: hidden;
+    transition: transform 0.15s;
+    transform: scale(0);
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    border: none;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.returnButton:hover {
+    background-color: var(--secondary);
+}
+
+.returnButton>svg {
+    fill: var(--secondary-font);
+}
+
+#header:not(.home) .returnButton {
+    visibility: visible;
+    transform: scale(1);
+}
