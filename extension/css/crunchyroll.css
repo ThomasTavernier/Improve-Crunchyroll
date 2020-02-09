@@ -3,16 +3,24 @@
     background-color: black;
 }
 
+html[cbp_video_page=true][cbp_player_mode='0'][cbp_not_logged=true] #sidebar {
+    position: relative;
+    top: -372px;
+}
+
+html[cbp_video_page=true][cbp_player_mode='2'] .showmedia-header:first-child {
+    display: none !important;
+}
+
+html[cbp_video_page=true][cbp_player_mode]:not([cbp_player_mode='0']) #template_container {
+    padding: 0 !important;
+    width: 100% !important;
+}
+
 html[cbp_video_page=true][cbp_player_mode='2'] #showmedia_video_box_wide,
 html[cbp_video_page=true][cbp_player_mode='1'] #showmedia_video_box_wide {
     width: 100% !important;
     height: 100% !important;
-}
-
-html[cbp_video_page=true][cbp_player_mode='2'] #template_container,
-html[cbp_video_page=true][cbp_player_mode='1'] #template_container {
-    padding: 0 !important;
-    width: 100% !important;
 }
 
 html[cbp_video_page=true][cbp_player_mode='1'] #showmedia_video {
@@ -21,40 +29,39 @@ html[cbp_video_page=true][cbp_player_mode='1'] #showmedia_video {
     min-height: 540px !important;
 }
 
-html[cbp_video_page=true][cbp_player_mode='1'][cbp_hide_banner=false][cbp_hide_message_box=false] #showmedia_video {
+html[cbp_player_mode='0'] #showmedia_video {
+    height: 100% !important;
+}
+
+html[cbp_scrollbar=true] #showmedia_video {
+    height: calc((0.5625) * 100vw);
+}
+
+html[cbp_scrollbar=false] #showmedia_video {
+    height: calc((0.5625) * (100vw - 17px));
+}
+
+html[cbp_player_mode='1'][cbp_hide_banner=false][cbp_hide_message_box=false] #showmedia_video {
     max-height: calc(100vh - 233px) !important;
 }
 
-html[cbp_video_page=true][cbp_player_mode='1'][cbp_hide_banner=false][cbp_hide_message_box=true] #showmedia_video {
+html[cbp_player_mode='1'][cbp_hide_banner=false][cbp_hide_message_box=true] #showmedia_video {
     max-height: calc(100vh - 184px) !important;
 }
 
-html[cbp_video_page=true][cbp_player_mode='1'][cbp_hide_banner=true][cbp_hide_message_box=false] #showmedia_video {
+html[cbp_player_mode='1'][cbp_hide_banner=true][cbp_hide_message_box=false] #showmedia_video {
     max-height: calc(100vh - 173px) !important;
 }
 
-html[cbp_video_page=true][cbp_player_mode='1'][cbp_hide_banner=true][cbp_hide_message_box=true] #showmedia_video {
+html[cbp_player_mode='1'][cbp_hide_banner=true][cbp_hide_message_box=true] #showmedia_video {
     max-height: calc(100vh - 124px) !important;
 }
 
-html[cbp_video_page=true][cbp_player_mode='2'] .showmedia-header:first-child {
-    display: none !important;
-}
-
-html[cbp_video_page=true][cbp_player_mode='2'] #showmedia_video {
+html[cbp_player_mode='2'] #showmedia_video {
     width: 100% !important;
     min-width: 960px !important;
     min-height: 540px !important;
     max-height: 100vh !important;
-}
-
-html[cbp_video_page=true][cbp_player_mode='0'] #showmedia_video {
-    height: 100% !important;
-}
-
-html[cbp_video_page=true][cbp_player_mode='0'][cbp_not_logged=true] #sidebar {
-    position: relative;
-    top: -372px;
 }
 
 /* scrollbar */
