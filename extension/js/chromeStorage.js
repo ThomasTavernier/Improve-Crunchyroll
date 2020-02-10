@@ -2,8 +2,8 @@ const chromeStorage = new class {
 
     constructor() {
         const CHROME_STORAGE = {
-            fast_backward_buttons: "30,10",
-            fast_forward_buttons: "30,90",
+            fast_backward_buttons: '30,10',
+            fast_forward_buttons: '30,90',
             header_on_hover: true,
             hide_banner: true,
             hide_message_box: true,
@@ -27,28 +27,30 @@ const chromeStorage = new class {
             chromeStorage = items;
             const ATTRIBUTES = (location => {
                 switch (location) {
-                    case "https://www.crunchyroll.com":
+                    case 'https://www.crunchyroll.com':
+                        document.documentElement.setAttribute('cbp_video_page',
+                            new RegExp(/^\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g)
+                            .test(window.location.pathname)
+                        );
                         return [
-                            "header_on_hover",
-                            "hide_banner",
-                            "hide_message_box",
-                            "player_mode",
-                            "scrollbar",
-                            "theme",
+                            'header_on_hover',
+                            'hide_banner',
+                            'hide_message_box',
+                            'player_mode',
+                            'scrollbar',
+                            'theme',
                         ];
-                    case "https://static.crunchyroll.com":
+                    case 'https://static.crunchyroll.com':
                         return [
-                            "player_mode",
-                            "scrollbar",
+                            'player_mode',
+                            'scrollbar',
                         ];
                     case `chrome-extension://${chrome.runtime.id}`:
                         return [
-                            "theme",
+                            'theme',
                         ];
-                    default:
-                        return Object.keys(CHROME_STORAGE);
                 }
-            })(window.location.href);
+            })(window.location.origin);
 
             ATTRIBUTES.forEach(attribute => {
                 document.documentElement.setAttribute(
@@ -59,14 +61,12 @@ const chromeStorage = new class {
 
             chrome.storage.local.onChanged.addListener(changes => {
                 Object.entries(changes).forEach(([key, storageChange]) => {
-                    if (storageChange.newValue !== storageChange.oldValue) {
-                        chromeStorage[key] = storageChange.newValue;
-                        if (ATTRIBUTES.includes(key)) {
-                            document.documentElement.setAttribute(
-                                "cbp_" + key,
-                                chromeStorage[key]
-                            );
-                        }
+                    chromeStorage[key] = storageChange.newValue;
+                    if (ATTRIBUTES.includes(key)) {
+                        document.documentElement.setAttribute(
+                            'cbp_' + key,
+                            chromeStorage[key]
+                        );
                     }
                 });
             });

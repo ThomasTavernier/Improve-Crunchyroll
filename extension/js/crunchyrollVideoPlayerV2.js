@@ -22,6 +22,7 @@ function parseNumber(number) {
 }
 
 function createFastForwardBackwardButtons() {
+    cbp_div_player_controls.innerHTML = '';
     let fastBackwardList = chromeStorage.fast_backward_buttons.split(',');
     let fastForwardList = chromeStorage.fast_forward_buttons.split(',');
 
@@ -124,15 +125,7 @@ function insertCbpDivs(vilosControlsContainer) {
     }
 }
 
-function fixSubsHeight() {
-    document.getElementById('vilosRoot').style.width = '99.9%';
-    setTimeout(() => {
-        if (this.innerHeight !== document.getElementById('velocity-canvas').height) document.getElementById('vilosRoot').style.width = '';
-    }, 100);
-}
-
-function init() {
-    createDivs();
+function observeVelocityControlsPackageDiv() {
     new MutationObserver((mutationsList) => {
             if (mutationsList[1]) {
                 insertCbpDivs(mutationsList[1].addedNodes[0]);
@@ -143,16 +136,31 @@ function init() {
         .observe(document.getElementById('velocity-controls-package'), {
             childList: true,
         });
-    new MutationObserver((mutationsList, observer) => {
+}
+
+function init() {
+    createDivs();
+    if (document.getElementById('velocity-controls-package')) {
+        observeVelocityControlsPackageDiv();
+    } else {
+        new MutationObserver((mutationsList, observer) => {
             observer.disconnect();
-            if (this.innerHeight !== document.getElementById('velocity-canvas').height) fixSubsHeight();
-        })
-        .observe(document.getElementById('velocity-overlay-package'), {
-            childList: true,
+            observeVelocityControlsPackageDiv();
+        }).observe(document.getElementById('vilosRoot'), {
+            childList: true
         });
-    document.onfullscreenchange = () => {
-        document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
     }
+    document.onfullscreenchange = () => {
+        document.documentElement.setAttribute(
+            'cbp_fullscreen',
+            document.fullscreenElement ? true : false
+        );
+    };
+    chrome.storage.local.onChanged.addListener(changes => {
+        if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
+            createFastForwardBackwardButtons();
+        }
+    });
 }
 
 let cbp_div_player_controls;

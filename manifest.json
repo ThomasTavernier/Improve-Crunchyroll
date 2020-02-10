@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "2.5.3",
+	"version": "2.5.4",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -23,8 +23,7 @@
 				"https://www.crunchyroll.com/checkout/*"
 			],
 			"js": [
-				"extension/js/chromeStorage.js",
-				"extension/js/crunchyroll-start.js"
+				"extension/js/chromeStorage.js"
 			],
 			"css": [
 				"extension/css/crunchyroll.css",
