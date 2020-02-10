@@ -1,0 +1,1 @@
+document.documentElement.setAttribute('cbp_video_page', new RegExp(/^https:\/\/www.crunchyroll.com\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g).test(window.location.href));

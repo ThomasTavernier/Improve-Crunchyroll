@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "2.5.2",
+	"version": "2.5.3",
 	"name": "__MSG_extName__",
 	"description": "__MSG_extDescription__",
 	"author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -24,7 +24,7 @@
 			],
 			"js": [
 				"extension/js/chromeStorage.js",
-				"extension/js/crunchyroll-chrome-storage-init.js"
+				"extension/js/crunchyroll-start.js"
 			],
 			"css": [
 				"extension/css/crunchyroll.css",
@@ -51,8 +51,7 @@
 				"https://static.crunchyroll.com/vilos-v2/web/vilos/player.html"
 			],
 			"js": [
-				"extension/js/chromeStorage.js",
-				"extension/js/crunchyroll-video-player-v2-chrome-storage-init.js"
+				"extension/js/chromeStorage.js"
 			],
 			"css": [
 				"extension/css/crunchyrollVideoPlayer2.css"

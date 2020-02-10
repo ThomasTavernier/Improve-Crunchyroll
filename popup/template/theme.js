@@ -14,7 +14,7 @@ core.main.theme = {
 
                 options: [{
                     key: 'KEY_DARK_THEME',
-                    value: '1'
+                    value: 1
                 }]
             }
         }
