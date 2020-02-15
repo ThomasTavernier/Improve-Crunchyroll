@@ -1247,7 +1247,8 @@ html[cbp_theme]:not([cbp_theme="0"]) #message_box .message-type-warning.message-
 html[cbp_theme]:not([cbp_theme="0"]) .announcement a,
 html[cbp_theme]:not([cbp_theme="0"]) .cta span a,
 html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a.highlight,
-html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a:hover {
+html[cbp_theme]:not([cbp_theme="0"]) .acct-nav ul li a:hover,
+html[cbp_theme]:not([cbp_theme="0"]) .series-title.white {
     color: var(--primary) !important;
 }
 
