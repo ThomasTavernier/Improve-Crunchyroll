@@ -20,6 +20,12 @@
 	"KEY_GENERAL": {
 		"message": "Geral"
 	},
+	"KEY_NORMAL": {
+		"message": "Normal"
+	},
+	"KEY_PLAYBACK_RATE": {
+		"message": "Velocidade de playback"
+	},
 	"KEY_SCROLLBAR": {
 		"message": "Barra de rolagem"
 	},

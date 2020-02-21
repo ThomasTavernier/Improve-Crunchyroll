@@ -47,3 +47,116 @@ html[cbp_fullscreen=true] .fullscreen_mode,
 html[cbp_fullscreen=true] .scrollbar {
     display: none;
 }
+
+#vilosSettingsMenu:not([cbp-options='menu']):not([cbp-options='submenu'])>div,
+#vilosSettingsMenu[cbp-options='submenu'] .cbp_menu,
+#vilosSettingsMenu .cbp_playbackRate {
+    display: none;
+}
+
+#vilosSettingsMenu[cbp-options='playbackRate'] .cbp_playbackRate {
+    display: flex !important;
+}
+
+.cbp_menu:hover,
+.cbp_back:hover,
+.cbp_option:hover {
+    background-color: rgb(35, 37, 43);
+}
+
+.cbp_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.cbp_menu .right {
+    display: flex;
+    align-items: center;
+    margin-right: -2px;
+}
+
+.cbp_menu .right_text {
+    max-width: 154px;
+    overflow: hidden;
+}
+
+.cbp_menu .font {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+
+.cbp_menu .right_text .font {
+    color: rgb(218, 218, 218);
+}
+
+.cbp_menu .next {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8.6%207.4L10%206l6%206-6%206-1.4-1.4%204.6-4.6z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E')
+}
+
+.cbp_back {
+    padding: 0 20px;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.cbp_back .back {
+    height: 24px;
+    width: 24px;
+    margin-left: -2px;
+    margin-right: 6px;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%20d%3D%22M15.4%2016.6L14%2018l-6-6%206-6%201.4%201.4-4.6%204.6z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+}
+
+.cbp_back .font {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+
+.cbp_options {
+    display: flex;
+    flex-direction: column;
+}
+
+.cbp_option {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.cbp_option .text {
+    max-width: 250px;
+    overflow: hidden;
+    margin-left: 8px;
+}
+
+.cbp_option .font {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+
+.cbp_option:not([value=true]) .dot {
+    display: none;
+}
+
+.cbp_option[value=true] .outer_circle {
+    fill: rgb(68, 195, 171) !important;
+}
