@@ -1,53 +1,53 @@
 {
-	"extName": {
-		"message": "Improve Crunchyroll"
-	},
-	"extDescription": {
-		"message": "Enhance crunchyroll, bigger player, dark mode, fast forward / backward buttons"
-	},
-	"KEY_DARK_THEME": {
-		"message": "Dark mode"
-	},
-	"KEY_FAST_BACKWARD": {
-		"message": "fast backward"
-	},
-	"KEY_FAST_FORWARD": {
-		"message": "fast forward"
-	},
-	"KEY_FULLSCREEN_MODE": {
-		"message": "fullscreen mode"
-	},
-	"KEY_GENERAL": {
-		"message": "General"
-	},
-	"KEY_NORMAL": {
-		"message": "Normal"
-	},
-	"KEY_PLAYBACK_RATE": {
-		"message": "Playback speed"
-	},
-	"KEY_SCROLLBAR": {
-		"message": "scrollbar"
-	},
-	"KEY_THEATER_MODE": {
-		"message": "theater mode"
-	},
-	"KEY_THEMES": {
-		"message": "Themes"
-	},
-	"fast_backward_buttons": {
-		"message": "fast backward buttons"
-	},
-	"fast_forward_buttons": {
-		"message": "fast forward buttons"
-	},
-	"header_on_hover": {
-		"message": "header on hover"
-	},
-	"hide_banner": {
-		"message": "hide banner"
-	},
-	"hide_message_box": {
-		"message": "hide message box"
-	}
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "extDescription": {
+    "message": "Enhance crunchyroll, bigger player, dark mode, fast forward / backward buttons"
+  },
+  "KEY_DARK_THEME": {
+    "message": "Dark mode"
+  },
+  "KEY_FAST_BACKWARD": {
+    "message": "fast backward"
+  },
+  "KEY_FAST_FORWARD": {
+    "message": "fast forward"
+  },
+  "KEY_FULLSCREEN_MODE": {
+    "message": "fullscreen mode"
+  },
+  "KEY_GENERAL": {
+    "message": "General"
+  },
+  "KEY_NORMAL": {
+    "message": "Normal"
+  },
+  "KEY_PLAYBACK_RATE": {
+    "message": "Playback speed"
+  },
+  "KEY_SCROLLBAR": {
+    "message": "scrollbar"
+  },
+  "KEY_THEATER_MODE": {
+    "message": "theater mode"
+  },
+  "KEY_THEMES": {
+    "message": "Themes"
+  },
+  "fast_backward_buttons": {
+    "message": "fast backward buttons"
+  },
+  "fast_forward_buttons": {
+    "message": "fast forward buttons"
+  },
+  "header_on_hover": {
+    "message": "header on hover"
+  },
+  "hide_banner": {
+    "message": "hide banner"
+  },
+  "hide_message_box": {
+    "message": "hide message box"
+  }
 }

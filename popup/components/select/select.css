@@ -1,17 +1,17 @@
 .select .item {
-    border-radius: 0.5em;
-    margin: 8px;
-    height: 64px;
+  border-radius: 0.5em;
+  margin: 8px;
+  height: 64px;
 }
 
-[class^="item theme"] {
-    color: whitesmoke;
+[class^='item theme'] {
+  color: whitesmoke;
 }
 
 .theme-0 {
-    background-color: white !important;
+  background-color: white !important;
 }
 
 .theme-1 {
-    background-color: rgb(52, 58, 64) !important;
+  background-color: rgb(52, 58, 64) !important;
 }

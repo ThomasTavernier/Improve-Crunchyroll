@@ -1,7 +1,7 @@
 core.home = {
-    type: 'main',
-    label: 'extName',
-    id: 'tab',
+  type: 'main',
+  label: 'extName',
+  id: 'tab',
 
-    content: core.main,
-}
+  content: core.main,
+};

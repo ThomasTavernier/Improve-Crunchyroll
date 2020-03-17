@@ -1,41 +1,41 @@
 main {
-    width: 100%;
-    min-height: calc(100% - 32px);
+  width: 100%;
+  min-height: calc(100% - 32px);
 }
 
 #tab {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .opening,
 .closing {
-    position: absolute;
-    top: 0;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, .1);
-    background-color: inherit;
-    animation: 0.35s ease-in-out 0s 1 slideInFromLeft;
+  position: absolute;
+  top: 0;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
+  animation: 0.35s ease-in-out 0s 1 slideInFromLeft;
 }
 
 .closing {
-    animation-direction: reverse;
+  animation-direction: reverse;
 }
 
 .changing::after {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
 }
 
 @keyframes slideInFromLeft {
-    0% {
-        transform: translateX(336px);
-    }
+  0% {
+    transform: translateX(336px);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }

@@ -1,53 +1,53 @@
 {
-	"extName": {
-		"message": "Improve Crunchyroll"
-	},
-	"extDescription": {
-		"message": "Melhore Crunchyroll, player maior, modo escuro, botões de avanço rápido / retrocesso rápido"
-	},
-	"KEY_DARK_THEME": {
-		"message": "Modo escuro"
-	},
-	"KEY_FAST_BACKWARD": {
-		"message": "voltar"
-	},
-	"KEY_FAST_FORWARD": {
-		"message": "pular"
-	},
-	"KEY_FULLSCREEN_MODE": {
-		"message": "modo tela cheia"
-	},
-	"KEY_GENERAL": {
-		"message": "Geral"
-	},
-	"KEY_NORMAL": {
-		"message": "Normal"
-	},
-	"KEY_PLAYBACK_RATE": {
-		"message": "Velocidade de playback"
-	},
-	"KEY_SCROLLBAR": {
-		"message": "Barra de rolagem"
-	},
-	"KEY_THEATER_MODE": {
-		"message": "modo de teatro"
-	},
-	"KEY_THEMES": {
-		"message": "Temas"
-	},
-	"fast_backward_buttons": {
-		"message": "voltar botões"
-	},
-	"fast_forward_buttons": {
-		"message": "pular botões"
-	},
-	"header_on_hover": {
-		"message": "cabeçalho ao passar o mouse"
-	},
-	"hide_banner": {
-		"message": "ocultar bandeira"
-	},
-	"hide_message_box": {
-		"message": "ocultar caixa de mensagem"
-	}
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "extDescription": {
+    "message": "Melhore Crunchyroll, player maior, modo escuro, botões de avanço rápido / retrocesso rápido"
+  },
+  "KEY_DARK_THEME": {
+    "message": "Modo escuro"
+  },
+  "KEY_FAST_BACKWARD": {
+    "message": "voltar"
+  },
+  "KEY_FAST_FORWARD": {
+    "message": "pular"
+  },
+  "KEY_FULLSCREEN_MODE": {
+    "message": "modo tela cheia"
+  },
+  "KEY_GENERAL": {
+    "message": "Geral"
+  },
+  "KEY_NORMAL": {
+    "message": "Normal"
+  },
+  "KEY_PLAYBACK_RATE": {
+    "message": "Velocidade de playback"
+  },
+  "KEY_SCROLLBAR": {
+    "message": "Barra de rolagem"
+  },
+  "KEY_THEATER_MODE": {
+    "message": "modo de teatro"
+  },
+  "KEY_THEMES": {
+    "message": "Temas"
+  },
+  "fast_backward_buttons": {
+    "message": "voltar botões"
+  },
+  "fast_forward_buttons": {
+    "message": "pular botões"
+  },
+  "header_on_hover": {
+    "message": "cabeçalho ao passar o mouse"
+  },
+  "hide_banner": {
+    "message": "ocultar bandeira"
+  },
+  "hide_message_box": {
+    "message": "ocultar caixa de mensagem"
+  }
 }

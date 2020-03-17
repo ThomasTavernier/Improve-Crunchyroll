@@ -1,53 +1,53 @@
 {
-	"extName": {
-		"message": "Improve Crunchyroll"
-	},
-	"extDescription": {
-		"message": "Améliore Crunchyroll, plus grand lecteur vidéo, mode sombre, des boutons d'avance / retour rapide"
-	},
-	"KEY_DARK_THEME": {
-		"message": "Mode sombre"
-	},
-	"KEY_FAST_BACKWARD": {
-		"message": "reculer"
-	},
-	"KEY_FAST_FORWARD": {
-		"message": "avancer"
-	},
-	"KEY_FULLSCREEN_MODE": {
-		"message": "mode plein écran"
-	},
-	"KEY_GENERAL": {
-		"message": "Général"
-	},
-	"KEY_NORMAL": {
-		"message": "Normal"
-	},
-	"KEY_PLAYBACK_RATE": {
-		"message": "Vitesse de lecture"
-	},
-	"KEY_SCROLLBAR": {
-		"message": "barre de défilement"
-	},
-	"KEY_THEATER_MODE": {
-		"message": "mode théâtre"
-	},
-	"KEY_THEMES": {
-		"message": "Thèmes"
-	},
-	"fast_backward_buttons": {
-		"message": "boutons reculer"
-	},
-	"fast_forward_buttons": {
-		"message": "boutons avancer"
-	},
-	"header_on_hover": {
-		"message": "entête (curseur)"
-	},
-	"hide_banner": {
-		"message": "cacher la bannière"
-	},
-	"hide_message_box": {
-		"message": "cacher alerte message"
-	}
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "extDescription": {
+    "message": "Améliore Crunchyroll, plus grand lecteur vidéo, mode sombre, des boutons d'avance / retour rapide"
+  },
+  "KEY_DARK_THEME": {
+    "message": "Mode sombre"
+  },
+  "KEY_FAST_BACKWARD": {
+    "message": "reculer"
+  },
+  "KEY_FAST_FORWARD": {
+    "message": "avancer"
+  },
+  "KEY_FULLSCREEN_MODE": {
+    "message": "mode plein écran"
+  },
+  "KEY_GENERAL": {
+    "message": "Général"
+  },
+  "KEY_NORMAL": {
+    "message": "Normal"
+  },
+  "KEY_PLAYBACK_RATE": {
+    "message": "Vitesse de lecture"
+  },
+  "KEY_SCROLLBAR": {
+    "message": "barre de défilement"
+  },
+  "KEY_THEATER_MODE": {
+    "message": "mode théâtre"
+  },
+  "KEY_THEMES": {
+    "message": "Thèmes"
+  },
+  "fast_backward_buttons": {
+    "message": "boutons reculer"
+  },
+  "fast_forward_buttons": {
+    "message": "boutons avancer"
+  },
+  "header_on_hover": {
+    "message": "entête (curseur)"
+  },
+  "hide_banner": {
+    "message": "cacher la bannière"
+  },
+  "hide_message_box": {
+    "message": "cacher alerte message"
+  }
 }

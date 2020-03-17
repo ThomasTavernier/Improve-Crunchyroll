@@ -1,12 +1,12 @@
 .item {
-	height: 48px;
-	padding: 0 16px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	cursor: pointer;
+  height: 48px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .item:hover {
-	background: var(--hover-background);
+  background: var(--hover-background);
 }

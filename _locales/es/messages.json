@@ -1,53 +1,53 @@
 {
-	"extName": {
-		"message": "Improve Crunchyroll"
-	},
-	"extDescription": {
-		"message": "Mejora Crunchyroll, agrande el reproductor, modo oscuro, botones de retroceso / salto"
-	},
-	"KEY_DARK_THEME": {
-		"message": "Modo oscuro"
-	},
-	"KEY_FAST_BACKWARD": {
-		"message": "retroceso"
-	},
-	"KEY_FAST_FORWARD": {
-		"message": "salto"
-	},
-	"KEY_FULLSCREEN_MODE": {
-		"message": "modo de pantalla completa"
-	},
-	"KEY_GENERAL": {
-		"message": "General"
-	},
-	"KEY_NORMAL": {
-		"message": "Normal"
-	},
-	"KEY_PLAYBACK_RATE": {
-		"message": "Velocidad de playback"
-	},
-	"KEY_SCROLLBAR": {
-		"message": "barra de desplazamiento"
-	},
-	"KEY_THEATER_MODE": {
-		"message": "modo teatro"
-	},
-	"KEY_THEMES": {
-		"message": "Temas"
-	},
-	"fast_backward_buttons": {
-		"message": "retroceso buttons"
-	},
-	"fast_forward_buttons": {
-		"message": "salto botones"
-	},
-	"header_on_hover": {
-		"message": "muestre el encabezado"
-	},
-	"hide_banner": {
-		"message": "ocultar bandera"
-	},
-	"hide_message_box": {
-		"message": "ocultar cuadro de mensaje"
-	}
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "extDescription": {
+    "message": "Mejora Crunchyroll, agrande el reproductor, modo oscuro, botones de retroceso / salto"
+  },
+  "KEY_DARK_THEME": {
+    "message": "Modo oscuro"
+  },
+  "KEY_FAST_BACKWARD": {
+    "message": "retroceso"
+  },
+  "KEY_FAST_FORWARD": {
+    "message": "salto"
+  },
+  "KEY_FULLSCREEN_MODE": {
+    "message": "modo de pantalla completa"
+  },
+  "KEY_GENERAL": {
+    "message": "General"
+  },
+  "KEY_NORMAL": {
+    "message": "Normal"
+  },
+  "KEY_PLAYBACK_RATE": {
+    "message": "Velocidad de playback"
+  },
+  "KEY_SCROLLBAR": {
+    "message": "barra de desplazamiento"
+  },
+  "KEY_THEATER_MODE": {
+    "message": "modo teatro"
+  },
+  "KEY_THEMES": {
+    "message": "Temas"
+  },
+  "fast_backward_buttons": {
+    "message": "retroceso buttons"
+  },
+  "fast_forward_buttons": {
+    "message": "salto botones"
+  },
+  "header_on_hover": {
+    "message": "muestre el encabezado"
+  },
+  "hide_banner": {
+    "message": "ocultar bandera"
+  },
+  "hide_message_box": {
+    "message": "ocultar cuadro de mensaje"
+  }
 }
