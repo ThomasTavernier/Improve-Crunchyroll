@@ -29,7 +29,7 @@ const chromeStorage = new class {
                 switch (location) {
                     case 'https://www.crunchyroll.com':
                         document.documentElement.setAttribute('cbp_video_page',
-                            new RegExp(/^\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g)
+                            new RegExp(/^\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+|^\/[a-z0-9-]+\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g)
                             .test(window.location.pathname)
                         );
                         return [
