@@ -1,24 +1,7 @@
-function resumePlayerState() {
-    const videoPlayer = document.getElementById('player0');
-    videoPlayer.paused ? videoPlayer.play() : videoPlayer.pause();
-}
-
-function fastBackward(ev) {
-    const videoPlayer = document.getElementById('player0');
-    videoPlayer.currentTime -= parseInt(ev.target.id);
-    resumePlayerState();
-}
-
-function fastForward(ev) {
-    const videoPlayer = document.getElementById('player0');
-    videoPlayer.currentTime += parseInt(ev.target.id);
-    resumePlayerState();
-}
-
 function parseNumber(number) {
     let numberMinutes = Math.floor(number / 60);
     let numberSeconds = number - numberMinutes * 60;
-    return numberMinutes > 0 ? `${numberMinutes}:${numberSeconds < 10 ? '0' + numberSeconds : numberSeconds}` : numberSeconds;
+    return numberMinutes > 0 ? `${numberMinutes}:${numberSeconds < 10 ? `0${numberSeconds}` : numberSeconds}` : numberSeconds;
 }
 
 function translate(key) {
@@ -27,68 +10,70 @@ function translate(key) {
 }
 
 function createFastForwardBackwardButtons() {
-    cbp_div_player_controls.innerHTML = '';
-    let fastBackwardList = chromeStorage.fast_backward_buttons.split(',');
-    let fastForwardList = chromeStorage.fast_forward_buttons.split(',');
-
-    let buttonList = [];
-    fastBackwardList.forEach(fastBackwardNumber => {
-        let fastBackwardButton = document.createElement('div');
-        const number = parseNumber(fastBackwardNumber);
-        fastBackwardButton.innerHTML = `«${number}`;
-        fastBackwardButton.id = fastBackwardNumber;
-        fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${number}`
-        fastBackwardButton.addEventListener('click', fastBackward);
-        buttonList.push(fastBackwardButton);
-    });
-    fastForwardList.forEach(fastForwardNumber => {
-        let fastForwardButton = document.createElement('div');
-        const number = parseNumber(fastForwardNumber);
-        fastForwardButton.innerHTML = `${number}»`;
-        fastForwardButton.id = fastForwardNumber;
-        fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${number}`
-        fastForwardButton.addEventListener('click', fastForward);
-        buttonList.push(fastForwardButton);
-    });
-    buttonList.forEach(button => {
-        button.className += 'cbp_buttons';
-        cbp_div_player_controls.appendChild(button);
-    });
+        cbp_div_player_controls.innerHTML = '';
+        let buttonList = [];
+        (chromeStorage.fast_backward_buttons.length > 0
+                ? chromeStorage.fast_backward_buttons.split(',')
+                : []).forEach((fastBackwardNumber) => {
+                        const fastBackwardButton = document.createElement('div');
+                        fastBackwardButton.innerHTML = `«${fastBackwardNumber}`;
+                        fastBackwardButton.id = fastBackwardNumber;
+                        fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
+                        fastBackwardButton.addEventListener(
+                                'click',
+                                () => (document.getElementById('player0').currentTime -= ~~event.target.id)
+                        );
+                        buttonList.push(fastBackwardButton);
+                });
+        (chromeStorage.fast_forward_buttons.length > 0
+                ? chromeStorage.fast_forward_buttons.split(',')
+                : []).forEach((fastForwardNumber) => {
+                        const fastForwardButton = document.createElement('div');
+                        fastForwardButton.innerHTML = `${fastForwardNumber}»`;
+                        fastForwardButton.id = fastForwardNumber;
+                        fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
+                        fastForwardButton.addEventListener(
+                                'click',
+                                () => (document.getElementById('player0').currentTime += ~~event.target.id)
+                        );
+                        buttonList.push(fastForwardButton);
+                });
+        buttonList.forEach((button) => {
+                button.classList.add('cbp_buttons');
+                cbp_div_player_controls.appendChild(button);
+        });
 }
 
 function createDivs() {
     cbp_div_player_controls = document.createElement('div');
     cbp_div_player_mode = document.createElement('div');
-
-    // all class = 'css-1dbjc4n r-1awozwy r-1loqt21 r-13awgt0 r-18u37iz r-1pi2tsx r-1otgn73'
-    [cbp_div_player_controls, cbp_div_player_mode].forEach(div => div.className = 'cbp_div css-1dbjc4n r-1awozwy r-18u37iz r-1pi2tsx');
+    [cbp_div_player_controls, cbp_div_player_mode].forEach(div => {
+        div.className = 'cbp_div';
+        div.addEventListener('mouseup', () => {
+            event.stopPropagation();
+        });
+    });
 
     createPlayerButton();
     createPlayerSettings();
     createFastForwardBackwardButtons();
 }
 
-function resumePlayerAndSetChromeStorage(obj) {
-    resumePlayerState();
-    chrome.storage.local.set(obj);
-}
-
 function scrollBarChange() {
-    resumePlayerAndSetChromeStorage({
+    chrome.storage.local.set({
         scrollbar: chromeStorage.scrollbar ? false : true,
     });
 }
 
 function playerMode1Change() {
-    resumePlayerAndSetChromeStorage({
+    chrome.storage.local.set({
         theater_mode: !chromeStorage.theater_mode,
         player_mode: chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1 ? !chromeStorage.theater_mode ? 1 : 0 : chromeStorage.player_mode,
     });
 }
 
-
 function playerMode2Change() {
-    resumePlayerAndSetChromeStorage({
+    chrome.storage.local.set({
         player_mode: (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0,
     });
 }
@@ -153,6 +138,7 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
     submenu.className = `cbp_${type} cbp_options`;
     options.forEach(option => {
         const subtMenuItem = document.createElement('div');
+        const optionValueName = option.name ? translate(option.name) : option.value;
         subtMenuItem.className = 'cbp_option';
         subtMenuItem.innerHTML = `
             <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;">
@@ -177,7 +163,7 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
             ></path>
             </svg>
             <div class="text">
-                <span class="font">${option.name ? translate(option.name) : option.value}</span>
+                <span class="font">${optionValueName}</span>
             </div>`;
         subtMenuItem.setAttribute('value', option.value == value);
         subtMenuItem.addEventListener('click', function () {
@@ -185,7 +171,7 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
             if (selected) selected.setAttribute('value', false);
             this.setAttribute('value', true);
             localStorage.setItem(`Vilos:${type}`, option.value);
-            document.getElementById(`cbp_${type}`).innerHTML = option.value;
+            document.getElementById(`cbp_${type}`).innerHTML = optionValueName;
             callback(option.value);
         });
         submenu.appendChild(subtMenuItem);
@@ -233,40 +219,41 @@ function createPlayerSettings() {
 }
 
 function insertCbpDivs(vilosControlsContainer) {
-    if (vilosControlsContainer.style.opacity !== '') {
-        const overlay = vilosControlsContainer.children[0];
-        const controlsBar = overlay.children[overlay.children[1] !== undefined ? 1 : 0].children[2];
-        controlsBar.children[0].appendChild(cbp_div_player_controls);
-        controlsBar.children[1].insertBefore(cbp_div_player_mode, controlsBar.children[1].children[1]);
+    const controlsBar = vilosControlsContainer.firstElementChild.lastElementChild.children[2];
+    const controlsBarLeft = controlsBar.firstElementChild;
+    const controlsBarRight = controlsBar.lastElementChild;
+    const controlsBarRightSettingsButton = controlsBarRight.firstElementChild;
 
-        new MutationObserver((mutationsList) => {
-                const vilosSettingsMenu = mutationsList[0].addedNodes[0];
-                if (vilosSettingsMenu) {
-                    const firstChild = vilosSettingsMenu.firstChild;
-                    vilosSettingsMenu.setAttribute('cbp-options', 'menu');
-                    cbp_div_settings.forEach(element => vilosSettingsMenu.insertBefore(element, firstChild));
-                    new MutationObserver(() => {
-                            vilosSettingsMenu.setAttribute('cbp-options', document.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : 'menu')
-                        })
-                        .observe(vilosSettingsMenu, {
-                            childList: true,
-                        });
-                }
-            })
-            .observe(controlsBar.children[1].children[0], {
+    controlsBarLeft.appendChild(cbp_div_player_controls);
+    controlsBarRight.insertBefore(cbp_div_player_mode, controlsBarRight.children[1]);
+
+    new MutationObserver((mutationsList) => {
+        const vilosSettingsMenu = mutationsList[0].addedNodes[0];
+        if (vilosSettingsMenu) {
+            vilosSettingsMenu.setAttribute('cbp-options', 'menu');
+            const firstElementChild = vilosSettingsMenu.firstElementChild;
+            cbp_div_settings.forEach((cbpDivSetting) => {
+                vilosSettingsMenu.insertBefore(cbpDivSetting, firstElementChild);
+            });
+            new MutationObserver(() => {
+                vilosSettingsMenu.setAttribute(
+                    'cbp-options',
+                    document.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : 'menu'
+                );
+            }).observe(vilosSettingsMenu, {
                 childList: true,
             });
-    }
+        }
+    }).observe(controlsBarRightSettingsButton, {
+        childList: true,
+    });
 }
 
 function observeVelocityControlsPackageDiv() {
     new MutationObserver((mutationsList) => {
-            if (mutationsList[1]) {
-                insertCbpDivs(mutationsList[1].addedNodes[0]);
-            } else {
-                insertCbpDivs(mutationsList[0].addedNodes[0]);
-            }
-        })
+        const addedNode = mutationsList[mutationsList.length - 1].addedNodes[0];
+        if (addedNode.hasChildNodes()) insertCbpDivs(addedNode);
+    })
         .observe(document.getElementById('velocity-controls-package'), {
             childList: true,
         });

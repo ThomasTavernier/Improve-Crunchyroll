@@ -20,12 +20,12 @@ core.main.general = {
                     fast_backward_buttons: {
                         type: 'numberList',
                         key: 'fast_backward_buttons',
-                        placeOlder: 'ex: 30,10',
+                        placeholder: '30,10',
                     },
                     fast_forward_buttons: {
                         type: 'numberList',
                         key: 'fast_forward_buttons',
-                        placeOlder: 'ex: 30,90',
+                        placeholder: '30,90',
                     },
                     hide_banner: {
                         type: 'checkbox',

@@ -1,5 +1,5 @@
 .cbp_div {
-    width: fit-content;
+    display: flex;
 }
 
 .cbp_buttons {

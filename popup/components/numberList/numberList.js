@@ -10,10 +10,10 @@ core.components.numberList = (object) => {
     component.appendChild(input);
 
     input.addEventListener('input', () =>
-        input.value = input.value.replace('.', ',').replace(',,', ',').replace(/[^\d\,]/g, '')
+        input.value = input.value.replace(/\.|,\.|,,/g, ',').replace(/^,|[^\d\,]/g, '')
     );
     input.addEventListener('change', () => {
-        if (input.value.slice(-1) === ',') input.value = input.value.slice(0, -1);
+        input.value = input.value.replace(/,$/, '');
         chromeStorage[key] = input.value;
     });
     component.addEventListener('click', () =>
