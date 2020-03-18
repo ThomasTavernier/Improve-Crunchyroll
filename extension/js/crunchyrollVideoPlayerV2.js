@@ -17,12 +17,11 @@ function createFastForwardBackwardButtons() {
   (chromeStorage.fast_backward_buttons.length > 0 ? chromeStorage.fast_backward_buttons.split(',') : []).forEach(
     (fastBackwardNumber) => {
       const fastBackwardButton = document.createElement('div');
-      fastBackwardButton.innerHTML = `«${fastBackwardNumber}`;
-      fastBackwardButton.id = fastBackwardNumber;
+      fastBackwardButton.innerHTML = `«${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener(
         'click',
-        () => (document.getElementById('player0').currentTime -= ~~event.target.id)
+        () => (document.getElementById('player0').currentTime -= ~~fastBackwardNumber)
       );
       buttonList.push(fastBackwardButton);
     }
@@ -30,12 +29,11 @@ function createFastForwardBackwardButtons() {
   (chromeStorage.fast_forward_buttons.length > 0 ? chromeStorage.fast_forward_buttons.split(',') : []).forEach(
     (fastForwardNumber) => {
       const fastForwardButton = document.createElement('div');
-      fastForwardButton.innerHTML = `${fastForwardNumber}»`;
-      fastForwardButton.id = fastForwardNumber;
+      fastForwardButton.innerHTML = `${parseNumber(fastForwardNumber)}»`;
       fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener(
         'click',
-        () => (document.getElementById('player0').currentTime += ~~event.target.id)
+        () => (document.getElementById('player0').currentTime += ~~fastForwardNumber)
       );
       buttonList.push(fastForwardButton);
     }
