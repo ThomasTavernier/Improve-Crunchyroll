@@ -1,5 +1,5 @@
 /* crunchyroll colors */
-html[cbp_theme] {
+html[ic_theme] {
   --crunchyroll-blue: #0a6da4;
   --crunchyroll-blue-light: #0091d1;
   --crunchyroll-orange: #df6300;
@@ -8,7 +8,7 @@ html[cbp_theme] {
 }
 
 /* dark mode */
-html[cbp_theme][cbp_theme='1'] {
+html[ic_theme][ic_theme='1'] {
   --primary: rgb(52, 58, 64);
   --secondary: rgb(32, 38, 48);
   --tertiary: rgb(22, 28, 38);

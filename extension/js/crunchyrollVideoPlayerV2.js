@@ -12,7 +12,7 @@ function translate(key) {
 }
 
 function createFastForwardBackwardButtons() {
-  cbp_div_player_controls.innerHTML = '';
+  icDivPlayerControls.innerHTML = '';
   let buttonList = [];
   (chromeStorage.fast_backward_buttons.length > 0 ? chromeStorage.fast_backward_buttons.split(',') : []).forEach(
     (fastBackwardNumber) => {
@@ -39,16 +39,16 @@ function createFastForwardBackwardButtons() {
     }
   );
   buttonList.forEach((button) => {
-    button.classList.add('cbp_buttons');
-    cbp_div_player_controls.appendChild(button);
+    button.classList.add('ic_buttons');
+    icDivPlayerControls.appendChild(button);
   });
 }
 
 function createDivs() {
-  cbp_div_player_controls = document.createElement('div');
-  cbp_div_player_mode = document.createElement('div');
-  [cbp_div_player_controls, cbp_div_player_mode].forEach((div) => {
-    div.className = 'cbp_div';
+  icDivPlayerControls = document.createElement('div');
+  icDivPlayerMode = document.createElement('div');
+  [icDivPlayerControls, icDivPlayerMode].forEach((div) => {
+    div.className = 'ic_div';
     div.addEventListener('mouseup', () => {
       event.stopPropagation();
     });
@@ -106,46 +106,46 @@ function createPlayerButton() {
     },
   ].forEach((button) => {
     let span = document.createElement('span');
-    span.className = `cbp_buttons ${button.className}`;
+    span.className = `ic_buttons ${button.className}`;
     span.title = chrome.i18n.getMessage(button.title);
     span.addEventListener('click', button.onChange);
-    cbp_div_player_mode.appendChild(span);
+    icDivPlayerMode.appendChild(span);
   });
 }
 
 function createSettingsDiv(title, value, type) {
   const div = document.createElement('div');
-  div.className = 'cbp_menu';
+  div.className = 'ic_menu';
   div.innerHTML = `
     <div class="font">${title}</div>
     <div class="right">
       <div class="right_text">
-        <span class="font" id="cbp_${type}">
+        <span class="font" id="ic_${type}">
           ${value}
         </span>
       </div>
       <div class="next"></div>
     </div>`;
-  div.addEventListener('click', () => document.getElementById('vilosSettingsMenu').setAttribute('cbp-options', type));
+  div.addEventListener('click', () => document.getElementById('vilosSettingsMenu').setAttribute('ic_options', type));
   return div;
 }
 
 function createSettingsOptionsDiv(title, type, options, value, callback) {
   const back = document.createElement('div');
-  back.className = `cbp_back cbp_${type}`;
+  back.className = `ic_back ic_${type}`;
   back.innerHTML = `
     <div class="back"></div>
     <div class="font">${title}</div>`;
   back.addEventListener('click', () => {
-    document.getElementById('vilosSettingsMenu').setAttribute('cbp-options', 'menu');
+    document.getElementById('vilosSettingsMenu').setAttribute('ic_options', 'menu');
   });
   const submenu = document.createElement('div');
   submenu.id = 'vilosRadioSubmenu';
-  submenu.className = `cbp_${type} cbp_options`;
+  submenu.className = `ic_${type} ic_options`;
   options.forEach((option) => {
     const subtMenuItem = document.createElement('div');
     const optionValueName = option.name ? translate(option.name) : option.value;
-    subtMenuItem.className = 'cbp_option';
+    subtMenuItem.className = 'ic_option';
     subtMenuItem.innerHTML = `
       <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;">
       <circle
@@ -173,11 +173,11 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
       </div>`;
     subtMenuItem.setAttribute('value', option.value == value);
     subtMenuItem.addEventListener('click', function() {
-      const selected = document.querySelector('.cbp_option[value=true]');
+      const selected = document.querySelector('.ic_option[value=true]');
       if (selected) selected.setAttribute('value', false);
       this.setAttribute('value', true);
       localStorage.setItem(`Vilos:${type}`, option.value);
-      document.getElementById(`cbp_${type}`).innerHTML = optionValueName;
+      document.getElementById(`ic_${type}`).innerHTML = optionValueName;
       callback(option.value);
     });
     submenu.appendChild(subtMenuItem);
@@ -186,7 +186,7 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
 }
 
 function createPlayerSettings() {
-  cbp_div_settings = [];
+  icDivSettings = [];
   [
     {
       title: 'KEY_PLAYBACK_RATE',
@@ -238,7 +238,7 @@ function createPlayerSettings() {
         ...createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
       ];
     })
-    .forEach((list) => list.forEach((div) => cbp_div_settings.push(div)));
+    .forEach((list) => list.forEach((div) => icDivSettings.push(div)));
 }
 
 function insertCbpDivs(vilosControlsContainer) {
@@ -247,20 +247,20 @@ function insertCbpDivs(vilosControlsContainer) {
   const controlsBarRight = controlsBar.lastElementChild;
   const controlsBarRightSettingsButton = controlsBarRight.firstElementChild;
 
-  controlsBarLeft.appendChild(cbp_div_player_controls);
-  controlsBarRight.insertBefore(cbp_div_player_mode, controlsBarRight.children[1]);
+  controlsBarLeft.appendChild(icDivPlayerControls);
+  controlsBarRight.insertBefore(icDivPlayerMode, controlsBarRight.children[1]);
 
   new MutationObserver((mutationsList) => {
     const vilosSettingsMenu = mutationsList[0].addedNodes[0];
     if (vilosSettingsMenu) {
-      vilosSettingsMenu.setAttribute('cbp-options', 'menu');
+      vilosSettingsMenu.setAttribute('ic_options', 'menu');
       const firstElementChild = vilosSettingsMenu.firstElementChild;
-      cbp_div_settings.forEach((cbpDivSetting) => {
-        vilosSettingsMenu.insertBefore(cbpDivSetting, firstElementChild);
+      icDivSettings.forEach((icDivSetting) => {
+        vilosSettingsMenu.insertBefore(icDivSetting, firstElementChild);
       });
       new MutationObserver(() => {
         vilosSettingsMenu.setAttribute(
-          'cbp-options',
+          'ic_options',
           document.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : 'menu'
         );
       }).observe(vilosSettingsMenu, {
@@ -294,7 +294,7 @@ function init() {
     });
   }
   document.onfullscreenchange = () => {
-    document.documentElement.setAttribute('cbp_fullscreen', document.fullscreenElement ? true : false);
+    document.documentElement.setAttribute('ic_fullscreen', document.fullscreenElement ? true : false);
   };
   chrome.storage.local.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
@@ -303,8 +303,8 @@ function init() {
   });
 }
 
-let cbp_div_player_controls;
-let cbp_div_player_mode;
-let cbp_div_settings;
+let icDivPlayerControls;
+let icDivPlayerMode;
+let icDivSettings;
 
 setTimeout(init);

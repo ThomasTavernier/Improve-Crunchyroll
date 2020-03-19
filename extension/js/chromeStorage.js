@@ -28,7 +28,7 @@ const chromeStorage = new (class {
         switch (location) {
           case 'https://www.crunchyroll.com':
             document.documentElement.setAttribute(
-              'cbp_video_page',
+              'ic_video_page',
               new RegExp(/^\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+|^\/[a-z0-9-]+\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g).test(
                 window.location.pathname
               )
@@ -42,14 +42,14 @@ const chromeStorage = new (class {
       })(window.location.origin);
 
       ATTRIBUTES.forEach((attribute) => {
-        document.documentElement.setAttribute(`cbp_${attribute}`, chromeStorage[attribute]);
+        document.documentElement.setAttribute(`ic_${attribute}`, chromeStorage[attribute]);
       });
 
       chrome.storage.local.onChanged.addListener((changes) => {
         Object.entries(changes).forEach(([key, storageChange]) => {
           chromeStorage[key] = storageChange.newValue;
           if (ATTRIBUTES.includes(key)) {
-            document.documentElement.setAttribute('cbp_' + key, chromeStorage[key]);
+            document.documentElement.setAttribute('ic_' + key, chromeStorage[key]);
           }
         });
       });
