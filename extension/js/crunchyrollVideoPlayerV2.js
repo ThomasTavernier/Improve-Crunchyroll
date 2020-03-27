@@ -250,8 +250,8 @@ function insertCbpDivs(vilosControlsContainer) {
   controlsBarLeft.appendChild(icDivPlayerControls);
   controlsBarRight.insertBefore(icDivPlayerMode, controlsBarRight.children[1]);
 
-  new MutationObserver((mutationsList) => {
-    const vilosSettingsMenu = mutationsList[0].addedNodes[0];
+  new MutationObserver(() => {
+    const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
     if (vilosSettingsMenu) {
       vilosSettingsMenu.setAttribute('ic_options', 'menu');
       const firstElementChild = vilosSettingsMenu.firstElementChild;
@@ -275,7 +275,7 @@ function insertCbpDivs(vilosControlsContainer) {
 function observeVelocityControlsPackageDiv() {
   new MutationObserver((mutationsList) => {
     const addedNode = mutationsList[mutationsList.length - 1].addedNodes[0];
-    if (addedNode.hasChildNodes()) insertCbpDivs(addedNode);
+    if (addedNode && addedNode.id === 'vilosControlsContainer' && addedNode.hasChildNodes()) insertCbpDivs(addedNode);
   }).observe(document.getElementById('velocity-controls-package'), {
     childList: true,
   });
