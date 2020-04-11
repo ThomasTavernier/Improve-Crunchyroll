@@ -1,3 +1,18 @@
+button {
+  height: 48px;
+  padding: 0 16px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 button:focus {
   outline: 0;
+}
+
+button:hover {
+  background: var(--hover-background);
 }

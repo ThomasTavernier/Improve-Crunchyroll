@@ -18,9 +18,9 @@ core.nav = {
   },
 
   change() {
-    let index = this.nav.length - 1;
-    let current = this.nav[index];
-    let header = document.getElementById('header');
+    const index = this.nav.length - 1;
+    const current = this.nav[index];
+    const header = document.getElementById('header');
     if (index >= 1) {
       header.classList.remove('home');
     } else {

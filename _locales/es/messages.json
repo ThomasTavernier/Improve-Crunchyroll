@@ -5,14 +5,41 @@
   "extDescription": {
     "message": "Mejora Crunchyroll, agrande el reproductor, modo oscuro, botones de retroceso / salto"
   },
+  "KEY_ACCEPT": {
+    "message": "Aceptar"
+  },
+  "KEY_BACKUP": {
+    "message": "Copia de seguridad"
+  },
+  "KEY_BACKUP_AND_RESET": {
+    "message": "Copia de seguridad & reiniciar"
+  },
+  "KEY_CANCEL": {
+    "message": "Cancelar"
+  },
+  "KEY_CONFIRM_BACKUP": {
+    "message": "La copia de seguridad actual se eliminará."
+  },
+  "KEY_CONFIRM_RESET": {
+    "message": "La configuración actual se eliminará."
+  },
+  "KEY_CONFIRM_RESTORE": {
+    "message": "La configuración actual se eliminará"
+  },
   "KEY_DARK_THEME": {
     "message": "Modo oscuro"
   },
   "KEY_FAST_BACKWARD": {
     "message": "retroceso"
   },
+  "KEY_FAST_BACKWARD_BUTTONS": {
+    "message": "retroceso buttons"
+  },
   "KEY_FAST_FORWARD": {
     "message": "salto"
+  },
+  "KEY_FAST_FORWARD_BUTTONS": {
+    "message": "salto botones"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "modo de pantalla completa"
@@ -20,34 +47,55 @@
   "KEY_GENERAL": {
     "message": "General"
   },
+  "KEY_HEADER_ON_HOVER": {
+    "message": "muestre el encabezado"
+  },
+  "KEY_HIDE_BACKGROUND_IMAGE": {
+    "message": "ocultar imagen de fondo"
+  },
+  "KEY_HIDE_BANNER": {
+    "message": "ocultar bandera"
+  },
+  "KEY_HIDE_MESSAGE_BOX": {
+    "message": "ocultar cuadro de mensaje"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
+  },
+  "KEY_OK": {
+    "message": "Ok"
   },
   "KEY_PLAYBACK_RATE": {
     "message": "Velocidad de playback"
   },
+  "KEY_PLAYER": {
+    "message": "Reproductor"
+  },
+  "KEY_RESET": {
+    "message": "Reiniciar"
+  },
+  "KEY_RESTORE": {
+    "message": "Restaurar"
+  },
   "KEY_SCROLLBAR": {
     "message": "barra de desplazamiento"
+  },
+  "KEY_SETTINGS": {
+    "message": "Configuraciones"
+  },
+  "KEY_SUCCESSFULLY_BACKUP": {
+    "message": "Con éxito copia de seguridad."
+  },
+  "KEY_SUCCESSFULLY_RESETED": {
+    "message": "Restablecida con éxito."
+  },
+  "KEY_SUCCESSFULLY_RESTORED": {
+    "message": "Restaurado con éxito."
   },
   "KEY_THEATER_MODE": {
     "message": "modo teatro"
   },
   "KEY_THEMES": {
     "message": "Temas"
-  },
-  "fast_backward_buttons": {
-    "message": "retroceso buttons"
-  },
-  "fast_forward_buttons": {
-    "message": "salto botones"
-  },
-  "header_on_hover": {
-    "message": "muestre el encabezado"
-  },
-  "hide_banner": {
-    "message": "ocultar bandera"
-  },
-  "hide_message_box": {
-    "message": "ocultar cuadro de mensaje"
   }
 }

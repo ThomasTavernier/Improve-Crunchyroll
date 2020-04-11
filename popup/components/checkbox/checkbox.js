@@ -1,5 +1,5 @@
 core.components.checkbox = (object) => {
-  let component = core.components.item(object.key);
+  let component = core.components.item(object);
   let key = object.key;
   let value = chromeStorage[key];
 

@@ -1,6 +1,6 @@
 core.components.folder = (object) => {
-  let component = document.createElement('div');
-  let component_label = document.createElement('span');
+  const component = document.createElement('div');
+  const component_label = document.createElement('span');
 
   component.className = 'folder';
   component.insertAdjacentHTML('beforeend', object.icon);

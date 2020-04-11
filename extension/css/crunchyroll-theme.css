@@ -32,13 +32,14 @@ html[ic_theme]:not([ic_theme='0']) .cart-badge,
 html[ic_theme]:not([ic_theme='0']) .user-notification-badge,
 html[ic_theme]:not([ic_theme='0']) .header-searchbox-submit,
 html[ic_theme]:not([ic_theme='0']) .orange-button {
-  background: var(--crunchyroll-orange-light) !important;
+  background-color: var(--crunchyroll-orange-light) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .overlay-mask,
 html[ic_theme]:not([ic_theme='0']) .welcome-media-mug img,
 html[ic_theme]:not([ic_theme='0']) .tablist a.action,
 html[ic_theme]:not([ic_theme='0']) .library-video-thumbs .mug,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__button,
 html[ic_theme]:not([ic_theme='0']) #showmedia_upsell_mask,
 html[ic_theme]:not([ic_theme='0']) #showmedia_preoverlay_splash {
   background-color: var(--primary-font) !important;
@@ -75,6 +76,8 @@ html[ic_theme]:not([ic_theme='0']) .modnote textarea.desc-selected,
 html[ic_theme]:not([ic_theme='0']) .list-product:hover,
 html[ic_theme]:not([ic_theme='0']) .subtitle-list-new,
 html[ic_theme]:not([ic_theme='0']) .user-list,
+html[ic_theme]:not([ic_theme='0']) .erc-account-menu__link:focus,
+html[ic_theme]:not([ic_theme='0']) .erc-account-menu__link:hover,
 html[ic_theme]:not([ic_theme='0']) .the-dialog,
 html[ic_theme]:not([ic_theme='0']) #template_body.old-template-body,
 html[ic_theme]:not([ic_theme='0']) .ui-autocomplete,
@@ -236,7 +239,8 @@ html[ic_theme]:not([ic_theme='0']) .placeholder,
 html[ic_theme]:not([ic_theme='0']) .remove-this-mrec-ad a,
 html[ic_theme]:not([ic_theme='0']) .addfav-char-counter,
 html[ic_theme]:not([ic_theme='0']) #footer .footer-column a,
-html[ic_theme]:not([ic_theme='0']) #footer .footer-column a.optanon-show-settings {
+html[ic_theme]:not([ic_theme='0']) #footer .footer-column a.optanon-show-settings,
+html[ic_theme]:not([ic_theme='0']) #footer .footer-column a.ot-sdk-show-settings {
   color: var(--secondary-font) !important;
 }
 
@@ -270,6 +274,9 @@ html[ic_theme]:not([ic_theme='0']) .thumb-ft h3,
 html[ic_theme]:not([ic_theme='0']) .resume-play-text,
 html[ic_theme]:not([ic_theme='0']) .queue-label,
 html[ic_theme]:not([ic_theme='0']) .alt-payments-content button,
+html[ic_theme]:not([ic_theme='0']) .erc-premium-upsell-popup__close-button,
+html[ic_theme]:not([ic_theme='0']) .erc-premium-upsell-popup__title,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__button,
 html[ic_theme]:not([ic_theme='0']) .old-template-body .boxtitle,
 html[ic_theme]:not([ic_theme='0']) #template_body .special-button,
 html[ic_theme]:not([ic_theme='0']) #template_body a.special-button,
@@ -426,6 +433,10 @@ html[ic_theme]:not([ic_theme='0']) .thumb-photo-large-reportlink a:hover,
 html[ic_theme]:not([ic_theme='0']) .photoalbum-list .edit:hover,
 html[ic_theme]:not([ic_theme='0']) .subtitle-list-new a:hover,
 html[ic_theme]:not([ic_theme='0']) a.user-list-wrapper:hover .user-list,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__close-button,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__title,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__icon-premium,
+html[ic_theme]:not([ic_theme='0']) .erc-new-membership-popup__description,
 html[ic_theme]:not([ic_theme='0']) .old-template-body .boxtitle a:hover,
 html[ic_theme]:not([ic_theme='0']) .topbar-nav-trail a:hover,
 html[ic_theme]:not([ic_theme='0']) ul.hvertical-menu li.highlight a div,
@@ -457,9 +468,7 @@ html[ic_theme]:not([ic_theme='0']) #library_video_featured_list .highlight,
 html[ic_theme]:not([ic_theme='0']) a.bbtool img,
 html[ic_theme]:not([ic_theme='0']) .bb-infobox-title,
 html[ic_theme]:not([ic_theme='0']) .bbcode-preview-container,
-html[ic_theme]:not([ic_theme='0'])
-  .widget-forumcategory-display-title
-  .widget-forumcategory-display-firstfewpage:hover,
+html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-display-title .widget-forumcategory-display-firstfewpage:hover,
 html[ic_theme]:not([ic_theme='0']) .guestbook .guestbook-shadow,
 html[ic_theme]:not([ic_theme='0']) .inbox-nav-contents li a:hover,
 html[ic_theme]:not([ic_theme='0']) .inbox-nav-contents li.highlight a,
@@ -527,7 +536,7 @@ html[ic_theme]:not([ic_theme='0']) span.default-button.selected,
 html[ic_theme]:not([ic_theme='0']) span.default-button:active,
 html[ic_theme]:not([ic_theme='0']) .wrapper .portrait-element:active,
 html[ic_theme]:not([ic_theme='0']) body .wrapper .landscape-element:active {
-  background: var(--primary) !important;
+  background-color: var(--primary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .show-all-simulcasts-button,
@@ -572,6 +581,7 @@ html[ic_theme]:not([ic_theme='0']) .editlinks,
 html[ic_theme]:not([ic_theme='0']) .bb-spoiler-title.open,
 html[ic_theme]:not([ic_theme='0']) .guestbook-list,
 html[ic_theme]:not([ic_theme='0']) .comments .boxtitle,
+html[ic_theme]:not([ic_theme='0']) .comment-element,
 html[ic_theme]:not([ic_theme='0']) #source_manga_showview .more-options,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_entity,
 html[ic_theme]:not([ic_theme='0']) .bb-header,
@@ -702,6 +712,7 @@ html[ic_theme]:not([ic_theme='0']) html[dir='rtl'] .header-search-autocomplete a
 html[ic_theme]:not([ic_theme='0']) .welcome-deal-title,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-current,
 html[ic_theme]:not([ic_theme='0']) .alt-payments-content button,
+html[ic_theme]:not([ic_theme='0']) .erc-account-menu__cta-button,
 html[ic_theme]:not([ic_theme='0']) .action.type-primary {
   background-color: var(--crunchyroll-orange-light) !important;
 }
@@ -732,6 +743,7 @@ html[ic_theme]:not([ic_theme='0']) .orderlanding-page .form-area,
 html[ic_theme]:not([ic_theme='0']) .payment-error-page .form-area,
 html[ic_theme]:not([ic_theme='0']) .pp-fail-page .form-area,
 html[ic_theme]:not([ic_theme='0']) .processing-timeout-page .form-area,
+html[ic_theme]:not([ic_theme='0']) #source_manga_showview .sort-option,
 html[ic_theme]:not([ic_theme='0']) #source_manga_showview #main_content .landscape-grid li .wrapper,
 html[ic_theme]:not([ic_theme='0']) body,
 html[ic_theme]:not([ic_theme='0']) .bb-pollwidget,
@@ -755,7 +767,7 @@ html[ic_theme]:not([ic_theme='0']) #store_product_images,
 html[ic_theme]:not([ic_theme='0']) .time-remaining-clock,
 html[ic_theme]:not([ic_theme='0']) .store-sub-menu ul li.selectboxit-option,
 html[ic_theme]:not([ic_theme='0']) .ultra-quality-warning p {
-  background: var(--primary) !important;
+  background-color: var(--primary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .form-area,
@@ -765,7 +777,7 @@ html[ic_theme]:not([ic_theme='0']) .resetpw-page,
 html[ic_theme]:not([ic_theme='0']) .payment-error-page main,
 html[ic_theme]:not([ic_theme='0']) .processing-timeout-page main,
 html[ic_theme]:not([ic_theme='0']) #template_container.template-container {
-  background: var(--secondary) !important;
+  background-color: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) main .headline strong,
@@ -783,13 +795,14 @@ html[ic_theme]:not([ic_theme='0']) .relevant-price {
 }
 
 html[ic_theme]:not([ic_theme='0']) #message_box,
+html[ic_theme]:not([ic_theme='0']) .erc-account-menu,
 html[ic_theme]:not([ic_theme='0']) body.main-page {
   background-color: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .pp-fail-page .error-icon,
 html[ic_theme]:not([ic_theme='0']) .dropdown-menu a:active {
-  background: var(--primary-font) !important;
+  background-color: var(--primary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) ul.news h2 a:hover,
@@ -799,6 +812,7 @@ html[ic_theme]:not([ic_theme='0']) ul.newsfeed h2 a:hover,
 html[ic_theme]:not([ic_theme='0']) .ui-autocomplete .ui-menu-item,
 html[ic_theme]:not([ic_theme='0']) a,
 html[ic_theme]:not([ic_theme='0']) #footer .footer-column a.optanon-show-settings:hover,
+html[ic_theme]:not([ic_theme='0']) #footer .footer-column a.ot-sdk-show-settings:hover,
 html[ic_theme]:not([ic_theme='0']) #footer .footer-column a:hover,
 html[ic_theme]:not([ic_theme='0']) #footer .footer-language .selected {
   color: var(--crunchyroll-orange) !important;
@@ -866,25 +880,15 @@ html[ic_theme]:not([ic_theme='0']) .video-problems-link:hover {
   color: var(--crunchyroll-blue) !important;
 }
 
-html[ic_theme]:not([ic_theme='0']) #source_manga_showview .season-dropdown {
-  background: url(/i/beta/videos_dropdown_arrow.png) 614px -11px no-repeat var(--tertiary) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) #source_manga_showview .season-dropdown.open {
-  background: url(/i/beta/videos_dropdown_arrow.png) 614px 12px no-repeat var(--tertiary) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) #source_manga_showview .sort-option {
-  background: url(/i/beta/header/profile_arrow.png) right no-repeat var(--primary) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .comment-element {
-  border-color: var(--tertiary) 1px !important;
+html[ic_theme]:not([ic_theme='0']) #source_manga_showview .season-dropdown,
+html[ic_theme]:not([ic_theme='0']) #source_manga_showview .season-dropdown.open,
+html[ic_theme]:not([ic_theme='0']) .content-menu {
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .comments form .bottom .submitbtn,
 html[ic_theme]:not([ic_theme='0']) #showmedia_free_trial_signup {
-  background: var(--secondary) !important;
+  background-color: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0'])
@@ -941,8 +945,21 @@ html[ic_theme]:not([ic_theme='0'])
   li
   .queue-wrapper
   .volume-purchase-button
-  .amazon_button:active {
-  background: none repeat scroll 0 0 var(--primary-font) !important;
+  .amazon_button:active,
+html[ic_theme]:not([ic_theme='0']) .dark-button,
+html[ic_theme]:not([ic_theme='0']) a.dark-button,
+html[ic_theme]:not([ic_theme='0']) input.dark-button,
+html[ic_theme]:not([ic_theme='0']) span.dark-button,
+html[ic_theme]:not([ic_theme='0']) .dark-button.selected,
+html[ic_theme]:not([ic_theme='0']) .dark-button:active,
+html[ic_theme]:not([ic_theme='0']) a.dark-button.selected,
+html[ic_theme]:not([ic_theme='0']) a.dark-button:active,
+html[ic_theme]:not([ic_theme='0']) input.dark-button.selected,
+html[ic_theme]:not([ic_theme='0']) input.dark-button:active,
+html[ic_theme]:not([ic_theme='0']) span.dark-button.selected,
+html[ic_theme]:not([ic_theme='0']) span.dark-button:active,
+html[ic_theme]:not([ic_theme='0']) .loading-message div {
+  background-color: var(--primary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .bb-quote {
@@ -988,7 +1005,7 @@ html[ic_theme]:not([ic_theme='0']) span.dark-button {
 
 html[ic_theme]:not([ic_theme='0']) .forumnav-fc-desc,
 html[ic_theme]:not([ic_theme='0']) .portrait-desc {
-  background: var(--primary-font) !important;
+  background-color: var(--primary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .paginator-lite-selected,
@@ -1006,7 +1023,7 @@ html[ic_theme]:not([ic_theme='0']) .add-queue-button.not-queued,
 html[ic_theme]:not([ic_theme='0']) .landscape-grid .add-queue-button.not-queued:hover,
 html[ic_theme]:not([ic_theme='0']) .portrait-grid .add-queue-button.not-queued:hover,
 html[ic_theme]:not([ic_theme='0']) .beta-player-toggle-button.type-back {
-  background: var(--crunchyroll-blue-light) !important;
+  background-color: var(--crunchyroll-blue-light) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .add-queue-button.not-queued:hover,
@@ -1028,11 +1045,21 @@ html[ic_theme]:not([ic_theme='0']) span.special-button.selected,
 html[ic_theme]:not([ic_theme='0']) span.special-button:active,
 html[ic_theme]:not([ic_theme='0']) .beta-player-toggle-button.type-back:focus,
 html[ic_theme]:not([ic_theme='0']) .beta-player-toggle-button.type-back:hover {
-  background: var(--crunchyroll-blue) !important;
+  background-color: var(--crunchyroll-blue) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .modal-container .close {
   color: var(--secondary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .erc-header,
+html[ic_theme]:not([ic_theme='0']) .erc-page-overlay {
+  --cx-colors-white: var(--primary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .erc-header,
+html[ic_theme]:not([ic_theme='0']) .erc-page-overlay {
+  --cx-colors-light-gray: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) img,
@@ -1080,44 +1107,24 @@ html[ic_theme]:not([ic_theme='0']) span.dark-button {
 html[ic_theme]:not([ic_theme='0']) .dark-button,
 html[ic_theme]:not([ic_theme='0']) a.dark-button,
 html[ic_theme]:not([ic_theme='0']) input.dark-button,
-html[ic_theme]:not([ic_theme='0']) span.dark-button,
-html[ic_theme]:not([ic_theme='0']) .dark-button.selected,
-html[ic_theme]:not([ic_theme='0']) .dark-button:active,
-html[ic_theme]:not([ic_theme='0']) a.dark-button.selected,
-html[ic_theme]:not([ic_theme='0']) a.dark-button:active,
-html[ic_theme]:not([ic_theme='0']) input.dark-button.selected,
-html[ic_theme]:not([ic_theme='0']) input.dark-button:active,
-html[ic_theme]:not([ic_theme='0']) span.dark-button.selected,
-html[ic_theme]:not([ic_theme='0']) span.dark-button:active,
-html[ic_theme]:not([ic_theme='0']) .loading-message div {
-  background: var(--primary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .dark-button,
-html[ic_theme]:not([ic_theme='0']) a.dark-button,
-html[ic_theme]:not([ic_theme='0']) input.dark-button,
 html[ic_theme]:not([ic_theme='0']) span.dark-button {
   background: linear-gradient(to bottom, #5f5f5f 0, var(--primary-font) 100%) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .episode-progress-bar {
-  background: var(--tertiary) !important;
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .main-tabs {
-  background: var(--tertiary-font) !important;
+  background-color: var(--tertiary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .main-tabs a {
-  background: var(--secondary-font) !important;
+  background-color: var(--secondary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .main-tabs a:hover {
-  background: var(--primary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .content-menu {
-  background: var(--tertiary) !important;
+  background-color: var(--primary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .content-menu {
@@ -1125,11 +1132,11 @@ html[ic_theme]:not([ic_theme='0']) .content-menu {
 }
 
 html[ic_theme]:not([ic_theme='0']) .rating-histogram .rating-bar {
-  background: var(--secondary) !important;
+  background-color: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .message-container {
-  border-color: var(--crunchyroll-blue-light) 1px solid !important;
+  border-color: var(--crunchyroll-blue-light) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .message-container a,
@@ -1139,7 +1146,7 @@ html[ic_theme]:not([ic_theme='0']) .video-problems-link {
 
 html[ic_theme]:not([ic_theme='0']) .message-container-only-errors,
 html[ic_theme]:not([ic_theme='0']) .availability-notes-low {
-  background: var(--tertiary) !important;
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .ui-autocomplete .ui-menu-item {
@@ -1190,12 +1197,16 @@ html[ic_theme]:not([ic_theme='0']) .showmedia-free-trial-header {
 }
 
 html[ic_theme]:not([ic_theme='0']) .showmedia-free-trial-header {
-  background: var(--tertiary) !important;
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .guestbook-sort-bar,
 html[ic_theme]:not([ic_theme='0']) .comments .more-replies {
   background-color: var(--tertiary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .showmedia-free-trial-icon {
+  fill: var(--primary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) #header_menubar_beta .games,
@@ -1296,8 +1307,9 @@ html[ic_theme]:not([ic_theme='0']) .acct-nav h3 {
 
 html[ic_theme]:not([ic_theme='0']) .show-all-simulcasts-button,
 html[ic_theme]:not([ic_theme='0']) a.default-button,
-html[ic_theme]:not([ic_theme='0']) input.default-button {
-  background: var(--tertiary) !important;
+html[ic_theme]:not([ic_theme='0']) input.default-button,
+html[ic_theme]:not([ic_theme='0']) .dropdown-menu a:active {
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .login-or-signup-page .forms,
@@ -1312,10 +1324,6 @@ html[ic_theme]:not([ic_theme='0']) .topbar-nav-sub a {
 
 html[ic_theme]:not([ic_theme='0']) .queue-icon {
   fill: var(--primary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .dropdown-menu a:active {
-  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) #guestbook_commentform .submitbtn {

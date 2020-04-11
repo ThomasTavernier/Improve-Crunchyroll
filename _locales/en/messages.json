@@ -5,14 +5,41 @@
   "extDescription": {
     "message": "Enhance crunchyroll, bigger player, dark mode, fast forward / backward buttons"
   },
+  "KEY_ACCEPT": {
+    "message": "Accept"
+  },
+  "KEY_BACKUP": {
+    "message": "Backup"
+  },
+  "KEY_BACKUP_AND_RESET": {
+    "message": "Backup and reset"
+  },
+  "KEY_CANCEL": {
+    "message": "Cancel"
+  },
+  "KEY_CONFIRM_BACKUP": {
+    "message": "The current backup will be deleted."
+  },
+  "KEY_CONFIRM_RESET": {
+    "message": "The current settings will be deleted."
+  },
+  "KEY_CONFIRM_RESTORE": {
+    "message": "The current settings will be deleted."
+  },
   "KEY_DARK_THEME": {
     "message": "Dark mode"
   },
   "KEY_FAST_BACKWARD": {
     "message": "fast backward"
   },
+  "KEY_FAST_BACKWARD_BUTTONS": {
+    "message": "fast backward buttons"
+  },
   "KEY_FAST_FORWARD": {
     "message": "fast forward"
+  },
+  "KEY_FAST_FORWARD_BUTTONS": {
+    "message": "fast forward buttons"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "fullscreen mode"
@@ -20,34 +47,55 @@
   "KEY_GENERAL": {
     "message": "General"
   },
+  "KEY_HEADER_ON_HOVER": {
+    "message": "header on hover"
+  },
+  "KEY_HIDE_BACKGROUND_IMAGE": {
+    "message": "hide background image"
+  },
+  "KEY_HIDE_BANNER": {
+    "message": "hide banner"
+  },
+  "KEY_HIDE_MESSAGE_BOX": {
+    "message": "hide message box"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
+  },
+  "KEY_OK": {
+    "message": "OK"
   },
   "KEY_PLAYBACK_RATE": {
     "message": "Playback speed"
   },
+  "KEY_PLAYER": {
+    "message": "Player"
+  },
+  "KEY_RESET": {
+    "message": "Reset"
+  },
+  "KEY_RESTORE": {
+    "message": "Restore"
+  },
   "KEY_SCROLLBAR": {
     "message": "scrollbar"
+  },
+  "KEY_SETTINGS": {
+    "message": "Settings"
+  },
+  "KEY_SUCCESSFULLY_BACKUP": {
+    "message": "Successfully backup."
+  },
+  "KEY_SUCCESSFULLY_RESETED": {
+    "message": "Successfully reseted."
+  },
+  "KEY_SUCCESSFULLY_RESTORED": {
+    "message": "Successfully restored."
   },
   "KEY_THEATER_MODE": {
     "message": "theater mode"
   },
   "KEY_THEMES": {
     "message": "Themes"
-  },
-  "fast_backward_buttons": {
-    "message": "fast backward buttons"
-  },
-  "fast_forward_buttons": {
-    "message": "fast forward buttons"
-  },
-  "header_on_hover": {
-    "message": "header on hover"
-  },
-  "hide_banner": {
-    "message": "hide banner"
-  },
-  "hide_message_box": {
-    "message": "hide message box"
   }
 }

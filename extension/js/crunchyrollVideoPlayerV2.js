@@ -7,7 +7,7 @@ function parseNumber(number) {
 }
 
 function translate(key) {
-  let label = chrome.i18n.getMessage(key);
+  const label = chrome.i18n.getMessage(key);
   return label !== '' ? label : key;
 }
 

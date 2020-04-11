@@ -1,25 +1,25 @@
 core.components.main = (object) => {
-  let component = document.createElement('main');
+  const component = document.createElement('main');
   if (object.id) component.id = object.id;
 
-  for (let key of Object.keys(object.content)) {
+  Object.keys(object.content).forEach((key) => {
     core.render(component, object.content[key]);
-  }
+  });
 
   component.open = () => {
-    let content = document.getElementById('content');
+    const content = document.getElementById('content');
     content.classList.add('changing');
     component.classList.add('opening');
     component.addEventListener('animationend', function handler() {
       this.removeEventListener('animationend', handler);
       content.children[0].remove();
       content.classList.remove('changing');
-      component.classList.remove('opening');
+      this.classList.remove('opening');
     });
   };
 
   component.close = () => {
-    let content = document.getElementById('content');
+    const content = document.getElementById('content');
     content.classList.add('changing');
     component.classList.add('closing');
     component.addEventListener('animationend', () => {

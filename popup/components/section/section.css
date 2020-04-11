@@ -1,13 +1,17 @@
 section {
   display: grid;
-  margin: 32px 8px 8px 8px;
+  margin: 8px 8px 8px 8px;
   border-radius: 0.5em;
   background: var(--primary);
   color: var(--secondary-font);
   box-shadow: 0 0 0 1px var(--hover-background), 2px 2px 1px 0px var(--hover-background);
 }
 
-section::before {
+section[section-label] {
+  margin-top: 32px;
+}
+
+section[section-label]::before {
   font-weight: 600;
 
   margin: -24px 0 0px 0;

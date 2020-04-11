@@ -1,9 +1,10 @@
 const chromeStorage = new (class {
   constructor() {
-    const CHROME_STORAGE = {
+    this.CHROME_STORAGE = {
       fast_backward_buttons: '30,10',
       fast_forward_buttons: '30,90',
       header_on_hover: true,
+      hide_background_image: true,
       hide_banner: true,
       hide_message_box: true,
       player_mode: 2,
@@ -13,16 +14,16 @@ const chromeStorage = new (class {
     };
     let chromeStorage;
 
-    Object.keys(CHROME_STORAGE).forEach((key) => {
+    Object.keys(this.CHROME_STORAGE).forEach((key) => {
       this.__defineGetter__(key, () => chromeStorage[key]);
       this.__defineSetter__(key, (value) => {
-        let obj = {};
+        const obj = {};
         obj[key] = value;
         chrome.storage.local.set(obj);
       });
     });
 
-    chrome.storage.local.get(CHROME_STORAGE, (items) => {
+    chrome.storage.local.get(this.CHROME_STORAGE, (items) => {
       chromeStorage = items;
       const ATTRIBUTES = ((location) => {
         switch (location) {
@@ -33,7 +34,15 @@ const chromeStorage = new (class {
                 window.location.pathname
               )
             );
-            return ['header_on_hover', 'hide_banner', 'hide_message_box', 'player_mode', 'scrollbar', 'theme'];
+            return [
+              'header_on_hover',
+              'hide_background_image',
+              'hide_banner',
+              'hide_message_box',
+              'player_mode',
+              'scrollbar',
+              'theme',
+            ];
           case 'https://static.crunchyroll.com':
             return ['player_mode', 'scrollbar'];
           case `chrome-extension://${chrome.runtime.id}`:

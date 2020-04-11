@@ -3,7 +3,7 @@ const core = new (class {
   components = {};
 
   translate(key) {
-    let label = chrome.i18n.getMessage(key);
+    const label = chrome.i18n.getMessage(key);
     return label !== '' ? label : key;
   }
 })();

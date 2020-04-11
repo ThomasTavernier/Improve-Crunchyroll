@@ -1,11 +1,11 @@
 core.components.select = (object) => {
-  let component = document.createElement('div');
+  const component = document.createElement('div');
   let active;
 
   component.className = 'select';
   object.options.forEach((option) => {
-    let component_option = core.components.item(option.key);
-    let component_switch = core.components.switch();
+    const component_option = core.components.item(option);
+    const component_switch = core.components.switch();
 
     if (chromeStorage[object.key] === option.value) {
       active = component_switch;
