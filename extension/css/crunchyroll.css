@@ -74,7 +74,8 @@ html[ic_hide_background_image='true'] body.main-page {
   background-image: none;
 }
 
-html[ic_hide_background_image='true'] #template_skin_leaderboard > * {
+html[ic_hide_background_image='true'] #template_skin_leaderboard > *,
+html[ic_hide_background_image='true'] #template_skin_splashlink {
   display: none;
 }
 
