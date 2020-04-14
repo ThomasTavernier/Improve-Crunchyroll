@@ -3,9 +3,14 @@
   background-color: black;
 }
 
-html[ic_video_page='true'][ic_player_mode='0'][ic_not_logged='true'] #sidebar {
-  position: relative;
-  top: -372px;
+html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0'])[ic_not_logged_in='true']
+  #showmedia_video:not(:empty) {
+  position: absolute;
+  left: 0;
+}
+
+html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0'])[ic_not_logged_in='true'] #sidebar {
+  overflow: hidden;
 }
 
 html[ic_video_page='true'][ic_player_mode='2'] .showmedia-header:first-child {
