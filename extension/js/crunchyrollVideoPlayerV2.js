@@ -243,6 +243,7 @@ function createPlayerSettings() {
 
 function insertCbpDivs(vilosControlsContainer) {
   const controlsBar = vilosControlsContainer.firstElementChild.lastElementChild.children[2];
+  if (!controlsBar) return;
   const controlsBarLeft = controlsBar.firstElementChild;
   const controlsBarRight = controlsBar.lastElementChild;
   const controlsBarRightSettingsButton = controlsBarRight.firstElementChild;
