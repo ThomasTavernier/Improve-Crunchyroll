@@ -60,6 +60,8 @@ html[ic_theme]:not([ic_theme='0']) .resetpw-page .form-area,
 html[ic_theme]:not([ic_theme='0']) .library-mug img,
 html[ic_theme]:not([ic_theme='0']) .library-forum-table,
 html[ic_theme]:not([ic_theme='0']) .queue-sortable .queue-item,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-fblike,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-thumblink img,
 html[ic_theme]:not([ic_theme='0']) #header,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_image,
@@ -262,6 +264,10 @@ html[ic_theme]:not([ic_theme='0']) .library-search-bar .submit,
 html[ic_theme]:not([ic_theme='0']) .library-tab-widget .tab-container .highlight a,
 html[ic_theme]:not([ic_theme='0']) .library-tab-widget .tab-container .highlight .library-tab-count,
 html[ic_theme]:not([ic_theme='0']) .library-forum-table .header td,
+html[ic_theme]:not([ic_theme='0']) a.forum_main-topic-desc-numcomments,
+html[ic_theme]:not([ic_theme='0']) .forum_series-header,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-header,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-header a,
 html[ic_theme]:not([ic_theme='0']) #colorpicker-okbutton,
 html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header,
 html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header a,
@@ -329,6 +335,7 @@ html[ic_theme]:not([ic_theme='0']) #welcome_left,
 html[ic_theme]:not([ic_theme='0']) .welcome-block h1,
 html[ic_theme]:not([ic_theme='0']) .welcome-title-list h1,
 html[ic_theme]:not([ic_theme='0']) .welcome-countdown-day,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-postreply-header,
 html[ic_theme]:not([ic_theme='0']) .bb-quote {
   border-color: var(--secondary-font) !important;
 }
@@ -370,6 +377,11 @@ html[ic_theme]:not([ic_theme='0']) .library-forum-table .page-links a,
 html[ic_theme]:not([ic_theme='0']) .library-ft-list-last-updated,
 html[ic_theme]:not([ic_theme='0']) .library-change-poster-link,
 html[ic_theme]:not([ic_theme='0']) .library-manga-sort-links .highlight,
+html[ic_theme]:not([ic_theme='0']) .forum_main-topic-desc,
+html[ic_theme]:not([ic_theme='0']) a.forum_main-topic-desc-title,
+html[ic_theme]:not([ic_theme='0']) .forum_main-topic-desc-clip,
+html[ic_theme]:not([ic_theme='0']) .forum_series-display-title a,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-name a,
 html[ic_theme]:not([ic_theme='0']) .widget-media-bubble-details h2,
 html[ic_theme]:not([ic_theme='0']) .widget-media-bubble-details h3,
 html[ic_theme]:not([ic_theme='0']) .widget-media-bubble-desc,
@@ -465,6 +477,8 @@ html[ic_theme]:not([ic_theme='0']) #library_article_related_groups_box h4,
 html[ic_theme]:not([ic_theme='0']) .library-article-fav-count-text,
 html[ic_theme]:not([ic_theme='0']) #library_article_ratings_container,
 html[ic_theme]:not([ic_theme='0']) #library_video_featured_list .highlight,
+html[ic_theme]:not([ic_theme='0']) .forum_series-display-title a:hover,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-messages td,
 html[ic_theme]:not([ic_theme='0']) a.bbtool img,
 html[ic_theme]:not([ic_theme='0']) .bb-infobox-title,
 html[ic_theme]:not([ic_theme='0']) .bbcode-preview-container,
@@ -495,6 +509,10 @@ html[ic_theme]:not([ic_theme='0']) .library-data-box,
 html[ic_theme]:not([ic_theme='0']) .library-video-table td,
 html[ic_theme]:not([ic_theme='0']) .library-change-poster-link,
 html[ic_theme]:not([ic_theme='0']) .library-search-item,
+html[ic_theme]:not([ic_theme='0']) #forum_summary_modtip,
+html[ic_theme]:not([ic_theme='0']) .forum_series-display td,
+html[ic_theme]:not([ic_theme='0']) .forum_series-display th,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-thumblink img,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_image,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_crvid,
@@ -718,6 +736,9 @@ html[ic_theme]:not([ic_theme='0']) .action.type-primary {
 }
 
 html[ic_theme]:not([ic_theme='0']) .welcome-deal .prices:before,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-footer,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-footer,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-ancestor:before,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-current:before,
 html[ic_theme]:not([ic_theme='0']) td.fp-profile,
@@ -962,6 +983,25 @@ html[ic_theme]:not([ic_theme='0']) .loading-message div {
   background-color: var(--primary-font) !important;
 }
 
+html[ic_theme]:not([ic_theme='0']) .forum_series-header,
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-header,
+html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header,
+html[ic_theme]:not([ic_theme='0']) .old-template-body .boxtitle,
+html[ic_theme]:not([ic_theme='0']) ul.topbar-nav-sub {
+  background-color: var(--tertiary-font) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-header a:hover,
+html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header a:hover,
+html[ic_theme]:not([ic_theme='0']) .paginator-disabled,
+html[ic_theme]:not([ic_theme='0']) .paginator-sm-disabled,
+html[ic_theme]:not([ic_theme='0']) .paginator-lite-disabled,
+html[ic_theme]:not([ic_theme='0']) .thumb-photo-large-reportlink a,
+html[ic_theme]:not([ic_theme='0']) #slidebox h2 {
+  color: var(--tertiary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-details,
 html[ic_theme]:not([ic_theme='0']) .bb-quote {
   color: var(--tertiary-font) !important;
 }
@@ -973,21 +1013,6 @@ html[ic_theme]:not([ic_theme='0']) a.bbtool:hover img {
 html[ic_theme]:not([ic_theme='0']) #colorpicker-div,
 html[ic_theme]:not([ic_theme='0']) #colorpicker-okbutton {
   border-color: var(--secondary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header,
-html[ic_theme]:not([ic_theme='0']) .old-template-body .boxtitle,
-html[ic_theme]:not([ic_theme='0']) ul.topbar-nav-sub {
-  background-color: var(--tertiary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header a:hover,
-html[ic_theme]:not([ic_theme='0']) .paginator-disabled,
-html[ic_theme]:not([ic_theme='0']) .paginator-sm-disabled,
-html[ic_theme]:not([ic_theme='0']) .paginator-lite-disabled,
-html[ic_theme]:not([ic_theme='0']) .thumb-photo-large-reportlink a,
-html[ic_theme]:not([ic_theme='0']) #slidebox h2 {
-  color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-structure-item:hover {
