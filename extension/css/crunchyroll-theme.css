@@ -1271,10 +1271,7 @@ html[ic_theme]:not([ic_theme='0']) .header-searchbox-submit > svg {
 }
 
 html[ic_theme]:not([ic_theme='0']) .header-icon,
-html[ic_theme]:not([ic_theme='0']) .header-searchbox-submit > svg {
-  color: var(--primary-font-75) !important;
-}
-
+html[ic_theme]:not([ic_theme='0']) .header-searchbox-submit > svg,
 html[ic_theme]:not([ic_theme='0']) .header-searchbox::placeholder {
   color: var(--primary-font-75) !important;
 }
@@ -1330,7 +1327,8 @@ html[ic_theme]:not([ic_theme='0']) .announcement a,
 html[ic_theme]:not([ic_theme='0']) .cta span a,
 html[ic_theme]:not([ic_theme='0']) .acct-nav ul li a.highlight,
 html[ic_theme]:not([ic_theme='0']) .acct-nav ul li a:hover,
-html[ic_theme]:not([ic_theme='0']) .series-title.white {
+html[ic_theme]:not([ic_theme='0']) .series-title.white,
+html[ic_theme]:not([ic_theme='0']) .availability-notes-high {
   color: var(--primary) !important;
 }
 
@@ -1346,8 +1344,7 @@ html[ic_theme]:not([ic_theme='0']) .acct-nav h3 {
 
 html[ic_theme]:not([ic_theme='0']) .show-all-simulcasts-button,
 html[ic_theme]:not([ic_theme='0']) a.default-button,
-html[ic_theme]:not([ic_theme='0']) input.default-button,
-html[ic_theme]:not([ic_theme='0']) .dropdown-menu a:active {
+html[ic_theme]:not([ic_theme='0']) input.default-button {
   background-color: var(--tertiary) !important;
 }
 
@@ -1363,6 +1360,10 @@ html[ic_theme]:not([ic_theme='0']) .topbar-nav-sub a {
 
 html[ic_theme]:not([ic_theme='0']) .queue-icon {
   fill: var(--primary-font) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .dropdown-menu a:active {
+  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) #guestbook_commentform .submitbtn {
