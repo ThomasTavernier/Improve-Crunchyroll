@@ -116,37 +116,47 @@ function createPlayerButton() {
 function createSettingsDiv(title, value, type) {
   const div = document.createElement('div');
   div.className = 'ic_menu';
+  div.id = `ic_${type}_menu`;
   div.innerHTML = `
     <div class="font">${title}</div>
     <div class="right">
       <div class="right_text">
-        <span class="font" id="ic_${type}">
+        <span class="font">
           ${value}
         </span>
       </div>
       <div class="next"></div>
     </div>`;
-  div.addEventListener('click', () => document.getElementById('vilosSettingsMenu').setAttribute('ic_options', type));
+  div.addEventListener('click', () => {
+    document.getElementById('vilosSettingsMenu').setAttribute('ic_options', 'hide');
+    window.location.hash = type;
+  });
   return div;
 }
 
 function createSettingsOptionsDiv(title, type, options, value, callback) {
+  const div = document.createElement('div');
+  div.id = type;
+  div.className = 'ic_settings';
   const back = document.createElement('div');
-  back.className = `ic_back ic_${type}`;
+  div.appendChild(back);
+  back.className = `ic_back`;
   back.innerHTML = `
     <div class="back"></div>
     <div class="font">${title}</div>`;
   back.addEventListener('click', () => {
-    document.getElementById('vilosSettingsMenu').setAttribute('ic_options', 'menu');
+    const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
+    vilosSettingsMenu.setAttribute('ic_options', 'menu');
+    window.location.hash = '';
   });
-  const submenu = document.createElement('div');
-  submenu.id = 'vilosRadioSubmenu';
-  submenu.className = `ic_${type} ic_options`;
+  const optionsDiv = document.createElement('div');
+  div.appendChild(optionsDiv);
+  optionsDiv.className = `ic_options`;
   options.forEach((option) => {
-    const subtMenuItem = document.createElement('div');
-    const optionValueName = option.name ? translate(option.name) : option.value;
-    subtMenuItem.className = 'ic_option';
-    subtMenuItem.innerHTML = `
+    const optionDIv = document.createElement('div');
+    let optionValueName = option.name ? translate(option.name) : option.value;
+    optionDIv.className = 'ic_option';
+    optionDIv.innerHTML = `
       <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;">
       <circle
         class="bg"
@@ -167,22 +177,40 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
         d="M10,2a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z"
         style="fill: rgb(160, 160, 160);"
       ></path>
-      </svg>
-      <div class="text">
-          <span class="font">${optionValueName}</span>
-      </div>`;
-    subtMenuItem.setAttribute('value', option.value == value);
-    subtMenuItem.addEventListener('click', function() {
+      </svg>`;
+    const name = document.createElement('span');
+    name.className = 'text font';
+    name.innerHTML = option.value;
+    optionDIv.appendChild(name);
+    if (option.type === 'slider') {
+      const slider = document.createElement('input');
+      slider.type = 'range';
+      slider.min = option.min;
+      slider.max = option.max;
+      slider.value = option.value;
+      slider.step = option.step;
+      slider.addEventListener('input', () => {
+        const sliderValue = parseFloat(slider.value);
+        if (sliderValue === sliderValue) {
+          option.value = sliderValue;
+          optionValueName = sliderValue;
+          name.innerHTML = option.value;
+        }
+      });
+      optionDIv.appendChild(slider);
+    }
+    optionDIv.setAttribute('value', option.value === value);
+    optionDIv.addEventListener('click', () => {
       const selected = document.querySelector('.ic_option[value=true]');
       if (selected) selected.setAttribute('value', false);
-      this.setAttribute('value', true);
+      optionDIv.setAttribute('value', true);
       localStorage.setItem(`Vilos:${type}`, option.value);
-      document.getElementById(`ic_${type}`).innerHTML = optionValueName;
+      document.querySelector(`#ic_${type}_menu .right_text .font`).innerHTML = optionValueName;
       callback(option.value);
     });
-    submenu.appendChild(subtMenuItem);
+    optionsDiv.appendChild(optionDIv);
   });
-  return [back, submenu];
+  return div;
 }
 
 function createPlayerSettings() {
@@ -193,6 +221,13 @@ function createPlayerSettings() {
       type: 'playbackRate',
       defaultValue: 1,
       values: [
+        {
+          type: 'slider',
+          value: '1',
+          min: 0.25,
+          max: 2,
+          step: 0.05,
+        },
         {
           value: 0.25,
         },
@@ -223,19 +258,22 @@ function createPlayerSettings() {
     },
   ]
     .map((setting) => {
-      let value = localStorage.getItem(`Vilos:${setting.type}`);
-      if (!value) value = setting.defaultValue;
+      const localStorageValue = parseFloat(localStorage.getItem(`Vilos:${setting.type}`));
+      const value = localStorageValue === localStorageValue ? localStorageValue : setting.defaultValue;
       const title = translate(setting.title);
-      let selectedValueName = setting.values.find((v) => v.value == value);
-      selectedValueName = selectedValueName
-        ? selectedValueName.name
-          ? translate(selectedValueName.name)
-          : selectedValueName.value
-        : value;
+      const selectedValue = setting.values.find((v) => v.value === value);
+      let selectedValueName;
       setting.callback(value);
+      if (selectedValue) {
+        selectedValueName = selectedValue.name ? translate(selectedValue.name) : selectedValue.value;
+      } else {
+        selectedValueName = value;
+        const slider = setting.values.find((value) => value.type === 'slider');
+        if (slider) slider.value = value;
+      }
       return [
         createSettingsDiv(title, selectedValueName, setting.type),
-        ...createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
+        createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
       ];
     })
     .forEach((list) => list.forEach((div) => icDivSettings.push(div)));
@@ -255,6 +293,7 @@ function insertCbpDivs(vilosControlsContainer) {
     const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
     if (vilosSettingsMenu) {
       vilosSettingsMenu.setAttribute('ic_options', 'menu');
+      window.location.hash = '';
       const firstElementChild = vilosSettingsMenu.firstElementChild;
       icDivSettings.forEach((icDivSetting) => {
         vilosSettingsMenu.insertBefore(icDivSetting, firstElementChild);

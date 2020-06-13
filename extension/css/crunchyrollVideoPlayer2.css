@@ -52,14 +52,16 @@ html[ic_fullscreen='true'] .scrollbar {
   display: none;
 }
 
-#vilosSettingsMenu:not([ic_options='menu']):not([ic_options='submenu']) > div,
-#vilosSettingsMenu[ic_options='submenu'] .ic_menu,
-#vilosSettingsMenu .ic_playbackRate {
+#vilosSettingsMenu .ic_settings,
+#vilosSettingsMenu[ic_options='submenu'] > .ic_menu,
+#vilosSettingsMenu[ic_options='hide'] > * {
   display: none;
 }
 
-#vilosSettingsMenu[ic_options='playbackRate'] .ic_playbackRate {
+#vilosSettingsMenu > .ic_settings:target {
   display: flex !important;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .ic_menu:hover,
@@ -109,10 +111,12 @@ html[ic_fullscreen='true'] .scrollbar {
 
 .ic_back {
   padding: 0 20px;
-  height: 40px;
+  margin-top: 10px;
+  min-height: 40px;
   align-items: center;
   cursor: pointer;
   touch-action: manipulation;
+  display: flex;
 }
 
 .ic_back .back {
@@ -131,15 +135,17 @@ html[ic_fullscreen='true'] .scrollbar {
 }
 
 .ic_options {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
 .ic_option {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 0 20px;
-  height: 40px;
+  min-height: 40px;
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -163,4 +169,11 @@ html[ic_fullscreen='true'] .scrollbar {
 
 .ic_option[value='true'] .outer_circle {
   fill: rgb(68, 195, 171) !important;
+}
+
+.ic_option > input[type='range'] {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
