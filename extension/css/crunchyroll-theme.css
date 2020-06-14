@@ -63,6 +63,11 @@ html[ic_theme]:not([ic_theme='0']) .library-forum-table,
 html[ic_theme]:not([ic_theme='0']) .queue-sortable .queue-item,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-fblike,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-thumblink img,
+html[ic_theme]:not([ic_theme='0']) #premium_container .highlighted .comparison,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu a,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu #welcome,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu li.selected,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu .selected a,
 html[ic_theme]:not([ic_theme='0']) #header,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_image,
@@ -274,6 +279,13 @@ html[ic_theme]:not([ic_theme='0']) a.forum_main-topic-desc-numcomments,
 html[ic_theme]:not([ic_theme='0']) .forum_series-header,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-header,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-header a,
+html[ic_theme]:not([ic_theme='0']) li a.tooltip-icon,
+html[ic_theme]:not([ic_theme='0']) .overlay-text,
+html[ic_theme]:not([ic_theme='0']) .bottom-banner-test,
+html[ic_theme]:not([ic_theme='0']) .no-csstransforms .bottom-banner-test,
+html[ic_theme]:not([ic_theme='0']) .top-banner-test,
+html[ic_theme]:not([ic_theme='0']) .no-csstransforms .top-banner-test,
+html[ic_theme]:not([ic_theme='0']) .validator-failure-ftab,
 html[ic_theme]:not([ic_theme='0']) #colorpicker-okbutton,
 html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header,
 html[ic_theme]:not([ic_theme='0']) .widget-forumcategory-header a,
@@ -444,6 +456,9 @@ html[ic_theme]:not([ic_theme='0']) .news-header-right a,
 html[ic_theme]:not([ic_theme='0']) .library-data-box a:hover,
 html[ic_theme]:not([ic_theme='0']) .library-category-subheader a:hover,
 html[ic_theme]:not([ic_theme='0']) .library-forum-table td .subject:hover,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu .selected a,
+html[ic_theme]:not([ic_theme='0']) .tooltip-message,
+html[ic_theme]:not([ic_theme='0']) .freetrial-menu .display-name,
 html[ic_theme]:not([ic_theme='0']) body,
 html[ic_theme]:not([ic_theme='0']) .bb-crvid-link a:hover,
 html[ic_theme]:not([ic_theme='0']) a .thumb-fc:hover,
@@ -523,6 +538,7 @@ html[ic_theme]:not([ic_theme='0']) #forum_summary_modtip,
 html[ic_theme]:not([ic_theme='0']) .forum_series-display td,
 html[ic_theme]:not([ic_theme='0']) .forum_series-display th,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-thumblink img,
+html[ic_theme]:not([ic_theme='0']) .comparison li,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_image,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_crvid,
@@ -614,6 +630,14 @@ html[ic_theme]:not([ic_theme='0']) #source_manga_showview .more-options,
 html[ic_theme]:not([ic_theme='0']) .search-body,
 html[ic_theme]:not([ic_theme='0']) .search-video-thumbs .media-thumb-wide,
 html[ic_theme]:not([ic_theme='0']) .search-results a,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu li,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu a,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu #welcome,
+html[ic_theme]:not([ic_theme='0']) #source_device #page_footer,
+html[ic_theme]:not([ic_theme='0']) #source_device .affiliate-message,
+html[ic_theme]:not([ic_theme='0']) .abtest-input,
+html[ic_theme]:not([ic_theme='0']) #page_footer-old,
 html[ic_theme]:not([ic_theme='0']) div.autocomplete_entity,
 html[ic_theme]:not([ic_theme='0']) .bb-header,
 html[ic_theme]:not([ic_theme='0']) .bbcode-preview-container,
@@ -752,6 +776,9 @@ html[ic_theme]:not([ic_theme='0']) .welcome-deal .prices:before,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-footer,
 html[ic_theme]:not([ic_theme='0']) .showforumtopic-message-user-footer,
+html[ic_theme]:not([ic_theme='0']) .comparison,
+html[ic_theme]:not([ic_theme='0']) .comparison .comparison-list > li,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu li.selected,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-ancestor:before,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav-current:before,
 html[ic_theme]:not([ic_theme='0']) td.fp-profile,
@@ -779,6 +806,10 @@ html[ic_theme]:not([ic_theme='0']) .pp-fail-page .form-area,
 html[ic_theme]:not([ic_theme='0']) .processing-timeout-page .form-area,
 html[ic_theme]:not([ic_theme='0']) #source_manga_showview .sort-option,
 html[ic_theme]:not([ic_theme='0']) #source_manga_showview #main_content .landscape-grid li .wrapper,
+html[ic_theme]:not([ic_theme='0']) .background-box,
+html[ic_theme]:not([ic_theme='0']) .tooltip-message,
+html[ic_theme]:not([ic_theme='0']) #premiumplus_col,
+html[ic_theme]:not([ic_theme='0']) .half-circle,
 html[ic_theme]:not([ic_theme='0']) body,
 html[ic_theme]:not([ic_theme='0']) .bb-pollwidget,
 html[ic_theme]:not([ic_theme='0']) .widget-base-bubble,
@@ -810,11 +841,14 @@ html[ic_theme]:not([ic_theme='0']) .resetpw-page main,
 html[ic_theme]:not([ic_theme='0']) .resetpw-page,
 html[ic_theme]:not([ic_theme='0']) .payment-error-page main,
 html[ic_theme]:not([ic_theme='0']) .processing-timeout-page main,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial.sign-up-form,
+html[ic_theme]:not([ic_theme='0']) #free_col,
 html[ic_theme]:not([ic_theme='0']) #template_container.template-container {
   background-color: var(--secondary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) main .headline strong,
+html[ic_theme]:not([ic_theme='0']) #source_device #header_menubar_beta a:hover,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav .widget-forumnav-children:hover,
 html[ic_theme]:not([ic_theme='0']) .new-footer,
 html[ic_theme]:not([ic_theme='0']) .header-userpanel .header-icon:hover,
@@ -860,6 +894,8 @@ html[ic_theme]:not([ic_theme='0']) ul.newsfeed .post-ago,
 html[ic_theme]:not([ic_theme='0']) #library_front_top_contributors_table .lib-approved,
 html[ic_theme]:not([ic_theme='0']) #library_front_top_contributors_table .lib-rejected,
 html[ic_theme]:not([ic_theme='0']) .library-tab-widget .tab-container .library-tab-count,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu a,
+html[ic_theme]:not([ic_theme='0']) #source_freetrial #content .sub-tabs-menu #welcome,
 html[ic_theme]:not([ic_theme='0']) .bb-crvid-link a,
 html[ic_theme]:not([ic_theme='0']) .page-instructions {
   color: var(--secondary-font) !important;
@@ -896,6 +932,9 @@ html[ic_theme]:not([ic_theme='0']) .interstitial {
 }
 
 html[ic_theme]:not([ic_theme='0']) .queue-sortable .queue-item:hover .series-title,
+html[ic_theme]:not([ic_theme='0']) .membership-price-picker .membership-price,
+html[ic_theme]:not([ic_theme='0']) .blue-price,
+html[ic_theme]:not([ic_theme='0']) .freetrial-menu .display-link,
 html[ic_theme]:not([ic_theme='0']) .widget-forumnav .widget-forumnav-children,
 html[ic_theme]:not([ic_theme='0']) .new-template-body .block-link:hover,
 html[ic_theme]:not([ic_theme='0']) .new-template-body .pagination a,
@@ -1020,8 +1059,41 @@ html[ic_theme]:not([ic_theme='0']) .bb-quote {
   color: var(--tertiary-font) !important;
 }
 
+html[ic_theme]:not([ic_theme='0']) .comparison {
+  background-color: var(--primary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .membership-price-picker .dropdown-arrow,
+html[ic_theme]:not([ic_theme='0']) #template_body .special-button,
+html[ic_theme]:not([ic_theme='0']) #template_body a.special-button,
+html[ic_theme]:not([ic_theme='0']) #template_body input.special-button,
+html[ic_theme]:not([ic_theme='0']) #template_body span.special-button,
+html[ic_theme]:not([ic_theme='0']) .special-button,
+html[ic_theme]:not([ic_theme='0']) a.special-button,
+html[ic_theme]:not([ic_theme='0']) input.special-button,
+html[ic_theme]:not([ic_theme='0']) span.special-button,
+html[ic_theme]:not([ic_theme='0']) .action.type-secondary {
+  border-color: var(--crunchyroll-blue) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .comparison .comparison-list > li,
+html[ic_theme]:not([ic_theme='0']) .benefits-list li:nth-child(2) {
+  border-color: var(--tertiary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) li a.tooltip-icon,
+html[ic_theme]:not([ic_theme='0']) .paginator-lite-selected,
+html[ic_theme]:not([ic_theme='0']) .tab-container .tab-highlight,
+html[ic_theme]:not([ic_theme='0']) .tab-container .tab-hover {
+  background-color: var(--tertiary) !important;
+}
+
 html[ic_theme]:not([ic_theme='0']) a.bbtool:hover img {
   border-color: var(--primary-font) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) #colorpicker {
+  background-color: var(--primary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) #colorpicker-div,
@@ -1045,12 +1117,6 @@ html[ic_theme]:not([ic_theme='0']) span.dark-button {
 html[ic_theme]:not([ic_theme='0']) .forumnav-fc-desc,
 html[ic_theme]:not([ic_theme='0']) .portrait-desc {
   background-color: var(--primary-font) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) .paginator-lite-selected,
-html[ic_theme]:not([ic_theme='0']) .tab-container .tab-highlight,
-html[ic_theme]:not([ic_theme='0']) .tab-container .tab-hover {
-  background-color: var(--tertiary) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) .resume-play-icon,
@@ -1104,18 +1170,6 @@ html[ic_theme]:not([ic_theme='0']) .erc-page-overlay {
 html[ic_theme]:not([ic_theme='0']) img,
 html[ic_theme]:not([ic_theme='0']) img.portrait {
   border-color: var(--tertiary) !important;
-}
-
-html[ic_theme]:not([ic_theme='0']) #template_body .special-button,
-html[ic_theme]:not([ic_theme='0']) #template_body a.special-button,
-html[ic_theme]:not([ic_theme='0']) #template_body input.special-button,
-html[ic_theme]:not([ic_theme='0']) #template_body span.special-button,
-html[ic_theme]:not([ic_theme='0']) .special-button,
-html[ic_theme]:not([ic_theme='0']) a.special-button,
-html[ic_theme]:not([ic_theme='0']) input.special-button,
-html[ic_theme]:not([ic_theme='0']) span.special-button,
-html[ic_theme]:not([ic_theme='0']) .action.type-secondary {
-  border-color: var(--crunchyroll-blue) !important;
 }
 
 html[ic_theme]:not([ic_theme='0']) #template_body .special-button,

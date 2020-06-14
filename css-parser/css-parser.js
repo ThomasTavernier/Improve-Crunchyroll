@@ -24,6 +24,11 @@ const fetchCss = async () => {
       'https://www.crunchyroll.com/versioned_assets/css/view/forum.2f771910.css',
       'https://www.crunchyroll.com/versioned_assets/css/view/showforumtopic.bcc528bc.css',
       'https://www.crunchyroll.com/versioned_assets/css/view/search_beta.4a43cd28.css',
+      'https://www.crunchyroll.com/versioned_assets/css/view/premium_comparison_new.eb981f62.css',
+      ...[
+        //beta
+        'https://www.crunchyroll.com/versioned_assets/css/view/beta/freetrial.ed02bd77.css',
+      ],
     ],
     ...[
       // www
@@ -182,9 +187,9 @@ main {
 
 let colors = {};
 Object.entries({
-  primary: ['fff', 'ffffff', 'ececec'],
+  primary: ['fff', 'ffffff', 'ececec', 'f9f9f9'],
   secondary: ['f2f2f2', 'f3f3f3', 'eee', 'ddd'],
-  tertiary: ['e4e4e4', 'e5e5e5', 'd8e4eb', 'eaeaea', 'ebebeb', 'ccc', 'ecebe9'],
+  tertiary: ['e4e4e4', 'e5e5e5', 'd8e4eb', 'eaeaea', 'ebebeb', 'ccc', 'ecebe9', 'd9d9d9'],
   'primary-font': ['363231', '000', '333', '363136', '3f3f3f', '2a2a2a'],
   'secondary-font': ['bbb', '888', '3a3a3a', '7b737e', '666', 'f0f0f0'],
   'tertiary-font': ['cfcfcf', '555', '4d4d4d'],
