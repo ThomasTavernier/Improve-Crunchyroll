@@ -21,9 +21,13 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["https://www.crunchyroll.com/*"],
-      "exclude_matches": ["https://www.crunchyroll.com/games/*", "https://www.crunchyroll.com/checkout/*"],
-      "js": ["extension/js/crunchyroll.js"],
+      "matches": ["https://www.crunchyroll.com/*/episode*"],
+      "css": ["extension/css/crunchyroll.episode.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.crunchyroll.com/*/episode*"],
+      "js": ["extension/js/crunchyroll.episode.js"],
       "run_at": "document_idle"
     },
     {
