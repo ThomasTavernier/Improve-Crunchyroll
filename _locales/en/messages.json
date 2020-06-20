@@ -59,6 +59,21 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "hide message box"
   },
+  "KEY_MARK_ALL_NEXT": {
+    "message": "Mark all next"
+  },
+  "KEY_MARK_ALL_PREVIOUS": {
+    "message": "Mark all previous"
+  },
+  "KEY_MARK_AS_NOT_WATCHED": {
+    "message": "Mark as not watched"
+  },
+  "KEY_MARK_AS_WATCHED": {
+    "message": "Mark as watched"
+  },
+  "KEY_MARK_ONLY_THIS_ONE": {
+    "message": "Mark only this one"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },

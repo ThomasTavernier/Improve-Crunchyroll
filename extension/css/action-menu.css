@@ -1,0 +1,84 @@
+.ic_loading {
+  cursor: progress;
+}
+
+.ic_action {
+  border-radius: 50%;
+  fill: var(--secondary-font);
+  position: absolute;
+  right: 0;
+  top: 55%;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  display: none;
+}
+
+.ic_action[menu-active] {
+  display: block;
+}
+
+.ic_action:hover {
+  display: block;
+  fill: var(--primary-font);
+  background-color: var(--secondary);
+}
+
+.ic_action.loading {
+  cursor: progress;
+  background-color: red;
+  display: block;
+}
+
+.ic_action_menu {
+  position: absolute;
+  z-index: 9999999;
+  background-color: #e5e5e5;
+  background-color: var(--secondary);
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--primary-font);
+  border: 1px solid var(--primary);
+  padding: 4px 0;
+}
+
+.ic_action_menu * div {
+  display: none;
+}
+
+.ic_action_menu .ic_action_menu {
+  position: absolute;
+  flex-direction: column;
+  top: -4px;
+  left: 100%;
+  width: max-content;
+}
+
+.ic_action_menu > div {
+  position: relative;
+  align-items: center;
+  height: 36px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.ic_action_menu > div,
+.ic_action_menu > div:hover > .ic_action_menu {
+  display: flex;
+}
+
+.ic_action_menu > div:hover {
+  background-color: var(--primary);
+}
+
+.ic_action_menu_parent::after {
+  content: '';
+  height: 36px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  background-image: url(/i/beta/videos_dropdown_arrow.png);
+  background-repeat: no-repeat;
+  background-position-y: -11px;
+  transform: scaleX(-1);
+}

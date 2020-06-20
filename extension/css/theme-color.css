@@ -1,15 +1,20 @@
 /* crunchyroll colors */
-html[ic_theme] {
+html {
   --crunchyroll-blue: #0a6da4;
   --crunchyroll-blue-light: #0091d1;
   --crunchyroll-orange: #df6300;
   --crunchyroll-orange-light: #f78c25;
   --crunchyroll-orange-lightest: #faaf3f;
-  --crunchyroll-white: rgb(242, 242, 242);
+
+  --primary: rgb(255, 255, 255);
+  --secondary: rgb(242, 242, 242);
+  --tertiary: #e5e5e5;
+  --primary-font: #363136;
+  --secondary-font: #3f3f3f;
 }
 
 /* dark mode */
-html[ic_theme][ic_theme='1'] {
+html[ic_theme='1'] {
   --primary: rgb(52, 58, 64);
   --secondary: rgb(32, 38, 48);
   --tertiary: rgb(22, 28, 38);

@@ -59,6 +59,21 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar caixa de mensagem"
   },
+  "KEY_MARK_ALL_NEXT": {
+    "message": "Marcar todas os próximos"
+  },
+  "KEY_MARK_ALL_PREVIOUS": {
+    "message": "Marcar todas as anteriores"
+  },
+  "KEY_MARK_AS_NOT_WATCHED": {
+    "message": "Marcar como não assistidod"
+  },
+  "KEY_MARK_AS_WATCHED": {
+    "message": "Marcar como assistido"
+  },
+  "KEY_MARK_ONLY_THIS_ONE": {
+    "message": "Marque apenas este"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },

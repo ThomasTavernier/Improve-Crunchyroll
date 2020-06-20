@@ -1,89 +1,6 @@
-/* player */
-#vilos-player {
-  background-color: black;
-}
-
-html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0'])[ic_not_logged_in='true']
-  #showmedia_video:not(:empty) {
-  position: absolute;
-  left: 0;
-  z-index: 1;
-}
-
-html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0'])[ic_not_logged_in='true'] #sidebar {
-  overflow: hidden;
-}
-
-html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0']) .showmedia-trailer-notice {
-  position: absolute;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-}
-
-html[ic_video_page='true'][ic_player_mode='2'] .showmedia-header:first-child {
-  display: none !important;
-}
-
-html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0']) #template_container {
-  padding: 0 !important;
-  width: 100% !important;
-}
-
-html[ic_video_page='true'][ic_player_mode]:not([ic_player_mode='0']) #showmedia_video_box_wide {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='1'] #showmedia_video {
-  width: 100% !important;
-  min-width: 960px !important;
-  min-height: 540px !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='0'] #showmedia_video {
-  height: 100% !important;
-}
-
-html[ic_video_page='true'][ic_scrollbar='true'] #showmedia_video {
-  height: calc((0.5625) * 100vw);
-}
-
-html[ic_video_page='true'][ic_scrollbar='false'] #showmedia_video {
-  height: calc((0.5625) * (100vw - 17px));
-}
-
-html[ic_video_page='true'][ic_player_mode='1'][ic_hide_banner='false'][ic_hide_message_box='false'] #showmedia_video {
-  max-height: calc(100vh - 233px) !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='1'][ic_hide_banner='false'][ic_hide_message_box='true'] #showmedia_video {
-  max-height: calc(100vh - 184px) !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='1'][ic_hide_banner='true'][ic_hide_message_box='false'] #showmedia_video {
-  max-height: calc(100vh - 173px) !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='1'][ic_hide_banner='true'][ic_hide_message_box='true'] #showmedia_video {
-  max-height: calc(100vh - 124px) !important;
-}
-
-html[ic_video_page='true'][ic_player_mode='2'] #showmedia_video {
-  width: 100% !important;
-  min-width: 960px !important;
-  min-height: 540px !important;
-  max-height: 100vh !important;
-}
-
-/* scrollbar */
-html[ic_video_page='true'][ic_scrollbar='true'] ::-webkit-scrollbar {
-  width: 0px;
-}
-
 /* background image */
 html[ic_hide_background_image='true'] body.main-page {
-  background-color: var(--crunchyroll-white);
+  background-color: var(--primary);
   background-image: none;
 }
 
@@ -97,8 +14,7 @@ html[ic_hide_background_image='true'] #template_skin_splashlink {
 }
 
 /* banner */
-html[ic_hide_banner='true'] .cr-expo-banner,
-html[ic_video_page='true'][ic_player_mode='2'] .cr-expo-banner {
+html[ic_hide_banner='true'] .cr-expo-banner {
   display: none !important;
 }
 
@@ -107,30 +23,8 @@ html[ic_hide_banner='true'] body.main-page {
 }
 
 /* message box */
-html[ic_hide_message_box='true'] #message_box div:first-child,
-html[ic_video_page='true'][ic_player_mode='2'] #message_box div:first-child {
+html[ic_hide_message_box='true'] #message_box div:first-child {
   display: none !important;
-}
-
-/* header */
-#header_beta {
-  z-index: 3;
-}
-
-html[ic_video_page='true'][ic_player_mode='2'] #header_beta {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  transition: opacity 0.8s;
-}
-
-html[ic_video_page='true'][ic_player_mode='2'][ic_header_on_hover='true'] #header_beta:hover {
-  opacity: 1;
-  transition: opacity 0.4s;
-}
-
-html[ic_video_page='true'][ic_player_mode='2']:not([ic_header_on_hover='true']) #header_beta {
-  display: none;
 }
 
 /* remove template_scroller padding top */
@@ -165,18 +59,4 @@ html[ic_theme]:not([ic_theme='0']) .source-home .dropdown-collection:hover {
 
 html[ic_theme]:not([ic_theme='0']) .source-home .dropdown-collection.open {
   background-position-y: -126px;
-}
-
-/* set showmedia, footer, message box and title div width */
-#showmedia,
-#footer,
-#message_box,
-.showmedia-trail .cf {
-  width: 960px !important;
-  margin: 0 auto !important;
-}
-
-/* fix anime title margin */
-.new-template-body h1 {
-  margin: 12px 0 !important;
 }

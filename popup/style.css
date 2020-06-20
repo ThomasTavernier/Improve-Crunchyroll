@@ -2,11 +2,6 @@ html {
   width: 336px;
   height: 500px;
   --hover-background: rgba(0, 0, 0, 0.08);
-  /* THEME */
-  --primary: rgb(255, 255, 255);
-  --secondary: rgb(242, 242, 242);
-  --primary-font: #363136;
-  --secondary-font: #3f3f3f;
 }
 
 body {

@@ -25,24 +25,14 @@ const chromeStorage = new (class {
 
     chrome.storage.local.get(this.CHROME_STORAGE, (items) => {
       chromeStorage = items;
-      const ATTRIBUTES = ((location) => {
-        switch (location) {
+      const ATTRIBUTES = ((origin) => {
+        switch (origin) {
           case 'https://www.crunchyroll.com':
-            document.documentElement.setAttribute(
-              'ic_video_page',
-              new RegExp(/^\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+|^\/[a-z0-9-]+\/[a-zA-Z0-9-]+\/[a-z0-9-]+-[0-9]+/g).test(
-                window.location.pathname
-              )
-            );
-            return [
-              'header_on_hover',
-              'hide_background_image',
-              'hide_banner',
-              'hide_message_box',
-              'player_mode',
-              'scrollbar',
-              'theme',
-            ];
+            const attributes = ['hide_background_image', 'hide_banner', 'hide_message_box', 'theme'];
+            if (window.location.pathname.match(/\/episode-\d/)) {
+              attributes.push('header_on_hover', 'player_mode', 'scrollbar', 'theme');
+            }
+            return attributes;
           case 'https://static.crunchyroll.com':
             return ['player_mode', 'scrollbar'];
           case `chrome-extension://${chrome.runtime.id}`:
