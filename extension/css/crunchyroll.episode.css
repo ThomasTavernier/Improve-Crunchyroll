@@ -101,6 +101,13 @@ html[ic_player_mode='2']:not([ic_header_on_hover='true']) #header_beta {
   display: none;
 }
 
+/* Fixes */
+
+html[ic_player_mode]:not([ic_player_mode='0']) .game-banner-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 /* set showmedia, footer, message box and title div width */
 #showmedia,
 #footer,
