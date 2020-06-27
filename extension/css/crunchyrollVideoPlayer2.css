@@ -176,4 +176,5 @@ html[ic_fullscreen='true'] .scrollbar {
   margin: auto;
   left: 0;
   right: 0;
+  width: fit-content;
 }
