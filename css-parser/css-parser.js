@@ -234,15 +234,15 @@ function parse(css) {
         text.split(';').forEach((string) => {
           if (string.includes('#')) {
             if (
-              ['border-top', 'border-right', 'border-bottom', 'border-left', 'border'].findIndex((boderSelector) =>
+              ['border-top', 'border-right', 'border-bottom', 'border-left', 'border'].find((boderSelector) =>
                 string.includes(boderSelector)
-              ) !== -1
+              )
             ) {
               string = `border-color:#${string.match(/(?<=#)[0-9a-zA-Z]+/)[0]}`;
             }
             if (
               string.includes('background:') &&
-              ['gradient', 'box-shadow'].findIndex((selector) => string.includes(selector)) === -1
+              !['gradient', 'box-shadow'].find((selector) => string.includes(selector))
             ) {
               string = `background-color: #${string.match(/(?<=#)[0-9a-zA-Z]+/)[0]}`;
             }

@@ -60,3 +60,7 @@ html[ic_theme]:not([ic_theme='0']) .source-home .dropdown-collection:hover {
 html[ic_theme]:not([ic_theme='0']) .source-home .dropdown-collection.open {
   background-position-y: -126px;
 }
+
+html[ic_theme]:not([ic_theme='0']) .erc-account-menu__user-meta::before {
+  background-image: linear-gradient(to right, rgba(242, 242, 242, 0), var(--secondary));
+}

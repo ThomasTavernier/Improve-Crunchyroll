@@ -81,23 +81,23 @@ html[ic_scrollbar='true'] ::-webkit-scrollbar {
 }
 
 /* header */
-#header_beta {
+header {
   z-index: 3;
 }
 
-html[ic_player_mode='2'] #header_beta {
+html[ic_player_mode='2'] header {
   opacity: 0;
   position: absolute;
   width: 100%;
   transition: opacity 0.8s;
 }
 
-html[ic_player_mode='2'][ic_header_on_hover='true'] #header_beta:hover {
+html[ic_player_mode='2'][ic_header_on_hover='true'] header:hover {
   opacity: 1;
   transition: opacity 0.4s;
 }
 
-html[ic_player_mode='2']:not([ic_header_on_hover='true']) #header_beta {
+html[ic_player_mode='2']:not([ic_header_on_hover='true']) header {
   display: none;
 }
 

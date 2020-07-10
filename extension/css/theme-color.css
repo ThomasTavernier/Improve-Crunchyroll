@@ -24,3 +24,15 @@ html[ic_theme='1'] {
   --tertiary-font: rgb(125, 125, 125);
   --crunchyroll-blue: rgb(0, 185, 249);
 }
+html[ic_theme='1'] .erc-header,
+html[ic_theme='1'] .erc-page-overlay {
+  --cx-colors-shark: var(--primary-font); /* 23252b */
+  --cx-colors-silver: var(--tertiary); /* dadada; */
+  --cx-colors-white: var(--primary); /* ffffff */
+  --cx-colors-woodsmoke: var(--secondary-font); /* 141519 */
+  /* --cx-colors-orange-base: #f47521; */
+  /* --cx-colors-orange-dark: #e56a17; */
+  --cx-colors-light-gray: var(--secondary); /* f2f2f2 */
+  --cx-colors-alabaster: var(--primary); /* f8f8f8 */
+  --cx-colors-scarpa-flow: var(--tertiary-font); /* 59595b */
+}
