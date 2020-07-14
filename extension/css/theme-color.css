@@ -36,3 +36,7 @@ html[ic_theme='1'] .erc-page-overlay {
   --cx-colors-alabaster: var(--primary); /* f8f8f8 */
   --cx-colors-scarpa-flow: var(--tertiary-font); /* 59595b */
 }
+html[ic_theme='1'] .erc-account-menu {
+  /* --cx-acc-menu-accent-color: #f47521; */
+  --cx-acc-menu-black-color: var(--primary-font); /* 23252b */
+}

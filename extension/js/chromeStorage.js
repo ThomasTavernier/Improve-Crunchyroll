@@ -29,7 +29,7 @@ const chromeStorage = new (class {
         switch (origin) {
           case 'https://www.crunchyroll.com':
             const attributes = ['hide_background_image', 'hide_banner', 'hide_message_box', 'theme'];
-            if (window.location.pathname.match(/\/episode-\d/)) {
+            if (window.location.pathname.match(/-\d+$/)) {
               attributes.push('header_on_hover', 'player_mode', 'scrollbar', 'theme');
             }
             return attributes;

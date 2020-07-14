@@ -1119,6 +1119,18 @@ html[ic_theme]:not([ic_theme='0']) .portrait-desc {
   background-color: var(--primary-font) !important;
 }
 
+html[ic_theme]:not([ic_theme='0']) .pollwidget {
+  background-color: var(--secondary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .pollwidget-showpoll {
+  background-color: var(--primary) !important;
+}
+
+html[ic_theme]:not([ic_theme='0']) .pollwidget-showpoll {
+  border-color: var(--tertiary) !important;
+}
+
 html[ic_theme]:not([ic_theme='0']) .resume-play-icon,
 html[ic_theme]:not([ic_theme='0']) .queue-icon {
   fill: var(--primary) !important;

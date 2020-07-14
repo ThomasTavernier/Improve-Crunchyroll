@@ -1,5 +1,5 @@
 let css = '';
-const fetchCss = async () => {
+let fetchCss = async () => {
   for (const cssUrl of [
     ...[
       // components
@@ -187,9 +187,9 @@ main {
 
 let colors = {};
 Object.entries({
-  primary: ['fff', 'ffffff', 'ececec', 'f9f9f9'],
-  secondary: ['f2f2f2', 'f3f3f3', 'eee', 'ddd'],
-  tertiary: ['e4e4e4', 'e5e5e5', 'd8e4eb', 'eaeaea', 'ebebeb', 'ccc', 'ecebe9', 'd9d9d9'],
+  primary: ['fff', 'ffffff', 'ececec', 'f9f9f9', 'f5ffea'],
+  secondary: ['f2f2f2', 'f3f3f3', 'eee', 'ddd', 'e8f9df'],
+  tertiary: ['e4e4e4', 'e5e5e5', 'd8e4eb', 'eaeaea', 'ebebeb', 'ccc', 'ecebe9', 'd9d9d9', 'dbf5be'],
   'primary-font': ['363231', '000', '333', '363136', '3f3f3f', '2a2a2a'],
   'secondary-font': ['bbb', '888', '3a3a3a', '7b737e', '666', 'f0f0f0'],
   'tertiary-font': ['cfcfcf', '555', '4d4d4d'],
