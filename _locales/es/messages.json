@@ -59,6 +59,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar cuadro de mensaje"
   },
+  "KEY_HIDE_SUBTITLES": {
+    "message": "ocultar subtítulos"
+  },
   "KEY_MARK_ALL_NEXT": {
     "message": "Marcar todos los siguientes"
   },

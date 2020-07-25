@@ -53,6 +53,11 @@ core.main.general = {
             label: 'KEY_FAST_FORWARD_BUTTONS',
             placeholder: '30,90',
           },
+          hide_subtitles: {
+            type: 'checkbox',
+            key: 'hide_subtitles',
+            label: 'KEY_HIDE_SUBTITLES'
+          },
         },
       },
     },

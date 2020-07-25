@@ -1,3 +1,7 @@
+html[ic_hide_subtitles='true'] #velocity-canvas {
+  display: none;
+}
+
 #velocity-canvas {
   height: 100%;
 }
