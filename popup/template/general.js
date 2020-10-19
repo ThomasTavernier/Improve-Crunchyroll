@@ -24,6 +24,11 @@ core.main.general = {
             key: 'hide_background_image',
             label: 'KEY_HIDE_BACKGROUND_IMAGE',
           },
+          hide_message_box: {
+            type: 'checkbox',
+            key: 'hide_message_box',
+            label: 'KEY_HIDE_MESSAGE_BOX',
+          },
         },
       },
     },
