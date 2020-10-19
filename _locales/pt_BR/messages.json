@@ -56,6 +56,9 @@
   "KEY_HIDE_BANNER": {
     "message": "ocultar bandeira"
   },
+  "KEY_HIDE_DIM_SCREEN": {
+    "message": "ocultar tela escurecida"
+  },
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar caixa de mensagem"
   },

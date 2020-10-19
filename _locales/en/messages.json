@@ -56,6 +56,9 @@
   "KEY_HIDE_BANNER": {
     "message": "hide banner"
   },
+  "KEY_HIDE_DIM_SCREEN": {
+    "message": "hide dim screen"
+  },
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "hide message box"
   },

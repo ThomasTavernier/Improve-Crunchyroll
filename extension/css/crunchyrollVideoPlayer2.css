@@ -2,6 +2,10 @@ html[ic_hide_subtitles='true'] #velocity-canvas {
   display: none;
 }
 
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
+  background: none !important;
+}
+
 #velocity-canvas {
   height: 100%;
 }

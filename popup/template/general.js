@@ -11,7 +11,7 @@ core.main.general = {
     content: {
       general: {
         type: 'section',
-        label: 'KEY_GENERAL',
+        // label: 'KEY_GENERAL',
 
         content: {
           hide_banner: {
@@ -23,40 +23,6 @@ core.main.general = {
             type: 'checkbox',
             key: 'hide_background_image',
             label: 'KEY_HIDE_BACKGROUND_IMAGE',
-          },
-          hide_message_box: {
-            type: 'checkbox',
-            key: 'hide_message_box',
-            label: 'KEY_HIDE_MESSAGE_BOX',
-          },
-        },
-      },
-      player: {
-        type: 'section',
-        label: 'KEY_PLAYER',
-
-        content: {
-          header_on_hover: {
-            type: 'checkbox',
-            key: 'header_on_hover',
-            label: 'KEY_HEADER_ON_HOVER',
-          },
-          fast_backward_buttons: {
-            type: 'numberList',
-            key: 'fast_backward_buttons',
-            label: 'KEY_FAST_BACKWARD_BUTTONS',
-            placeholder: '30,10',
-          },
-          fast_forward_buttons: {
-            type: 'numberList',
-            key: 'fast_forward_buttons',
-            label: 'KEY_FAST_FORWARD_BUTTONS',
-            placeholder: '30,90',
-          },
-          hide_subtitles: {
-            type: 'checkbox',
-            key: 'hide_subtitles',
-            label: 'KEY_HIDE_SUBTITLES'
           },
         },
       },

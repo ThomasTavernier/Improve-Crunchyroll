@@ -56,6 +56,9 @@
   "KEY_HIDE_BANNER": {
     "message": "cacher la bannière"
   },
+  "KEY_HIDE_DIM_SCREEN": {
+    "message": "masquer l'écran sombre"
+  },
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "cacher alerte message"
   },

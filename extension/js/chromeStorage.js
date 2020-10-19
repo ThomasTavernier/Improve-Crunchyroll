@@ -6,6 +6,7 @@ const chromeStorage = new (class {
       header_on_hover: true,
       hide_background_image: true,
       hide_banner: true,
+      hide_dim_screen: false,
       hide_message_box: true,
       hide_subtitles: false,
       player_mode: 2,
@@ -35,7 +36,7 @@ const chromeStorage = new (class {
             }
             return attributes;
           case 'https://static.crunchyroll.com':
-            return ['hide_subtitles', 'player_mode', 'scrollbar'];
+            return ['hide_dim_screen', 'hide_subtitles', 'player_mode', 'scrollbar'];
           case `chrome-extension://${chrome.runtime.id}`:
             return ['theme'];
         }
