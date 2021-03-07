@@ -32,7 +32,7 @@ core.main.settings = {
                           label: 'KEY_BACKUP',
                           on: {
                             click: () => {
-                              core.popup.cancelAccecpt('KEY_CONFIRM_BACKUP', () => {
+                              core.popup.cancelAccept('KEY_CONFIRM_BACKUP', () => {
                                 chrome.storage.local.get(chromeStorage.CHROME_STORAGE, (result) => {
                                   chrome.storage.sync.set(result);
                                   core.popup.ok('KEY_SUCCESSFULLY_BACKUP');
@@ -46,7 +46,7 @@ core.main.settings = {
                           label: 'KEY_RESTORE',
                           on: {
                             click: () => {
-                              core.popup.cancelAccecpt('KEY_CONFIRM_RESTORE', () => {
+                              core.popup.cancelAccept('KEY_CONFIRM_RESTORE', () => {
                                 chrome.storage.sync.get(chromeStorage.CHROME_STORAGE, (result) => {
                                   chrome.storage.local.set(result);
                                   core.popup.ok('KEY_SUCCESSFULLY_RESTORED');
@@ -60,7 +60,7 @@ core.main.settings = {
                           label: 'KEY_RESET',
                           on: {
                             click: () => {
-                              core.popup.cancelAccecpt('KEY_CONFIRM_RESET', () => {
+                              core.popup.cancelAccept('KEY_CONFIRM_RESET', () => {
                                 chrome.storage.local.set(chromeStorage.CHROME_STORAGE);
                                 core.popup.ok('KEY_SUCCESSFULLY_RESETED');
                               });

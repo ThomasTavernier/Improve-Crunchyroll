@@ -4,7 +4,7 @@ section {
   border-radius: 0.5em;
   background: var(--primary);
   color: var(--secondary-font);
-  box-shadow: 0 0 0 1px var(--hover-background), 2px 2px 1px 0px var(--hover-background);
+  box-shadow: 0 0 0 1px var(--hover-background), 2px 2px 1px 0 var(--hover-background);
 }
 
 section[section-label] {
@@ -14,7 +14,7 @@ section[section-label] {
 section[section-label]::before {
   font-weight: 600;
 
-  margin: -24px 0 0px 0;
+  margin: -24px 0 0 0;
   padding: 0 4px;
   content: attr(section-label);
   color: var(--crunchyroll-orange-light);

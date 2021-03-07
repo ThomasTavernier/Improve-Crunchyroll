@@ -4,12 +4,12 @@ core.components.numberList = (object) => {
 
   input.type = 'text';
   input.value = chromeStorage[object.key];
-  input.className = 'inputText';
+  input.className = 'input';
   input.placeholder = object.placeholder;
 
   input.addEventListener(
     'input',
-    () => (input.value = input.value.replace(/\.|,\.|,,/g, ',').replace(/^,|[^\d\,]/g, ''))
+    () => (input.value = input.value.replace(/\.|,\.|,,/g, ',').replace(/^,|[^\d,]/g, ''))
   );
   input.addEventListener('change', () => {
     input.value = input.value.replace(/,$/, '');

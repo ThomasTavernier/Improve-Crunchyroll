@@ -1,5 +1,6 @@
 const chromeStorage = new (class {
   constructor() {
+    const NESTED = 'NESTED';
     this.CHROME_STORAGE = {
       fast_backward_buttons: '30,10',
       fast_forward_buttons: '30,90',
@@ -11,8 +12,21 @@ const chromeStorage = new (class {
       hide_subtitles: false,
       player_mode: 2,
       scrollbar: false,
+      shortcuts: NESTED,
       theater_mode: true,
-      theme: 0,
+      theme: 1,
+    };
+    const CHROME_STORAGE_NESTED = {
+      shortcuts: {
+        backward: {
+          'ctrl||ArrowLeft': 10,
+          'shift||ArrowLeft': 30,
+        },
+        forward: {
+          'ctrl||ArrowRight': 30,
+          'shift||ArrowRight': 90,
+        },
+      },
     };
     let chromeStorage;
 
@@ -27,6 +41,11 @@ const chromeStorage = new (class {
 
     chrome.storage.local.get(this.CHROME_STORAGE, (items) => {
       chromeStorage = items;
+      Object.entries(CHROME_STORAGE_NESTED).forEach(([key, defaultValue]) => {
+        if (chromeStorage[key] === NESTED) {
+          chromeStorage[key] = defaultValue;
+        }
+      });
       const ATTRIBUTES = ((origin) => {
         switch (origin) {
           case 'https://www.crunchyroll.com':
@@ -48,7 +67,11 @@ const chromeStorage = new (class {
 
       chrome.storage.local.onChanged.addListener((changes) => {
         Object.entries(changes).forEach(([key, storageChange]) => {
-          chromeStorage[key] = storageChange.newValue;
+          if (storageChange.newValue === NESTED && CHROME_STORAGE_NESTED[key]) {
+            chromeStorage[key] = CHROME_STORAGE_NESTED[key];
+          } else {
+            chromeStorage[key] = storageChange.newValue;
+          }
           if (ATTRIBUTES.includes(key)) {
             document.documentElement.setAttribute('ic_' + key, chromeStorage[key]);
           }

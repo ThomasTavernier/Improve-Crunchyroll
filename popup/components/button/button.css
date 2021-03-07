@@ -9,6 +9,10 @@ button {
   font-size: inherit;
 }
 
+button:disabled {
+  text-decoration: line-through;
+}
+
 button:focus {
   outline: 0;
 }

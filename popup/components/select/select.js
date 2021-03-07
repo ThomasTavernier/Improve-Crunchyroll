@@ -9,7 +9,7 @@ core.components.select = (object) => {
 
     if (chromeStorage[object.key] === option.value) {
       active = component_switch;
-      component_switch.setAttribute('value', true);
+      component_switch.setAttribute('value', 'true');
     }
 
     component_option.classList.add(`theme-${option.value}`);
@@ -18,11 +18,11 @@ core.components.select = (object) => {
       if (chromeStorage[object.key] !== option.value) {
         chromeStorage[object.key] = option.value;
         if (active) active.setAttribute('value', false);
-        component_switch.setAttribute('value', true);
+        component_switch.setAttribute('value', 'true');
         active = component_switch;
       } else {
         chromeStorage[object.key] = 0;
-        component_switch.setAttribute('value', false);
+        component_switch.setAttribute('value', 'false');
         active = undefined;
       }
     });

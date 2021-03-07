@@ -10,6 +10,23 @@ html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
   height: 100%;
 }
 
+.ic_forward_backward {
+  height: 120px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  fill: whitesmoke;
+  opacity: 0.75;
+}
+
+.ic_remove {
+  opacity: 0;
+  transition: opacity 0.75s ease-out;
+}
+
 .ic_div {
   display: flex;
 }
@@ -20,6 +37,7 @@ html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
   width: 40px;
   text-align: center;
   color: whitesmoke;
+  fill: whitesmoke;
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
@@ -100,7 +118,7 @@ html[ic_fullscreen='true'] .scrollbar {
 }
 
 .ic_menu .font {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgb(255, 255, 255);
@@ -136,7 +154,7 @@ html[ic_fullscreen='true'] .scrollbar {
 }
 
 .ic_back .font {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: rgb(255, 255, 255);
@@ -165,7 +183,7 @@ html[ic_fullscreen='true'] .scrollbar {
 }
 
 .ic_option .font {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgb(255, 255, 255);

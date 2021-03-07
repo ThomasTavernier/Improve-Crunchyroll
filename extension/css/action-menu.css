@@ -8,7 +8,6 @@
   position: absolute;
   right: 0;
   top: 55%;
-  border-radius: 50%;
   height: 23px;
   width: 23px;
   display: none;
@@ -33,7 +32,6 @@
 .ic_action_menu {
   position: absolute;
   z-index: 9999999;
-  background-color: #e5e5e5;
   background-color: var(--secondary);
   font-size: 12px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

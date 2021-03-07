@@ -1,9 +1,9 @@
 core.components.checkbox = (object) => {
-  let component = core.components.item(object);
-  let key = object.key;
+  const component = core.components.item(object);
+  const key = object.key;
   let value = chromeStorage[key];
 
-  let switch_component = core.components.switch();
+  const switch_component = core.components.switch();
   switch_component.setAttribute('value', value);
   component.appendChild(switch_component);
 

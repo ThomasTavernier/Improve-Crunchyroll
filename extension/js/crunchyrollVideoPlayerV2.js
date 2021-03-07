@@ -11,30 +11,62 @@ function translate(key) {
   return label !== '' ? label : key;
 }
 
+function forwardBackward(isBackward, seconds) {
+  if (isBackward) {
+    document.getElementById('player0').currentTime -= ~~seconds;
+  } else {
+    document.getElementById('player0').currentTime += ~~seconds;
+  }
+  [...document.getElementsByClassName('ic_forward_backward')].forEach((node) => {
+    node.remove();
+  });
+  const svg = createSvgForwardBackward(isBackward ? 'backward' : 'forward', seconds);
+  svg.classList.add('ic_forward_backward');
+  svg.style[isBackward ? 'right' : 'left'] = '25%';
+  svg.addEventListener('transitionend', () => {
+    svg.remove();
+  });
+  document.getElementById('velocity-controls-package').appendChild(svg);
+  setTimeout(() => {
+    svg.classList.add('ic_remove');
+  });
+}
+
+function forward(fastForwardNumber) {
+  forwardBackward(false, fastForwardNumber);
+}
+
+function backward(fastBackwardNumber) {
+  forwardBackward(true, fastBackwardNumber);
+}
+
+function createSvgForwardBackward(type, fastBackwardNumber) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 226 226');
+  svg.innerHTML = `
+      <use xlink:href='#${type}'></use>
+      <text font-size='90' font-weight='400' letter-spacing='-0.5' font-size-adjust='0.5'>
+        <tspan text-anchor='middle' x='50%' y='67%'>${parseNumber(fastBackwardNumber)}</tspan>
+      </text>`;
+  return svg;
+}
+
 function createFastForwardBackwardButtons() {
   icDivPlayerControls.innerHTML = '';
   let buttonList = [];
   (chromeStorage.fast_backward_buttons.length > 0 ? chromeStorage.fast_backward_buttons.split(',') : []).forEach(
     (fastBackwardNumber) => {
-      const fastBackwardButton = document.createElement('div');
-      fastBackwardButton.innerHTML = `«${parseNumber(fastBackwardNumber)}`;
+      const fastBackwardButton = createSvgForwardBackward('backward', fastBackwardNumber);
       fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
-      fastBackwardButton.addEventListener(
-        'click',
-        () => (document.getElementById('player0').currentTime -= ~~fastBackwardNumber)
-      );
+      fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
       buttonList.push(fastBackwardButton);
     }
   );
   (chromeStorage.fast_forward_buttons.length > 0 ? chromeStorage.fast_forward_buttons.split(',') : []).forEach(
     (fastForwardNumber) => {
-      const fastForwardButton = document.createElement('div');
-      fastForwardButton.innerHTML = `${parseNumber(fastForwardNumber)}»`;
+      const fastForwardButton = createSvgForwardBackward('forward', fastForwardNumber);
       fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
-      fastForwardButton.addEventListener(
-        'click',
-        () => (document.getElementById('player0').currentTime += ~~fastForwardNumber)
-      );
+      fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
       buttonList.push(fastForwardButton);
     }
   );
@@ -42,6 +74,17 @@ function createFastForwardBackwardButtons() {
     button.classList.add('ic_buttons');
     icDivPlayerControls.appendChild(button);
   });
+}
+
+function createAndInsertSvgDefs() {
+  Promise.all(['forward', 'backward'].map((file) => fetch(chrome.extension.getURL(`/resources/${file}.html`))))
+    .then((responses) => Promise.all(responses.map((response) => response.text())))
+    .then((symbols) => {
+      const svgDefs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgDefs.style.display = 'none';
+      svgDefs.innerHTML = `<defs>${symbols.join('')}</defs>`;
+      document.body.appendChild(svgDefs);
+    });
 }
 
 function createDivs() {
@@ -61,7 +104,7 @@ function createDivs() {
 
 function scrollBarChange() {
   chrome.storage.local.set({
-    scrollbar: chromeStorage.scrollbar ? false : true,
+    scrollbar: !chromeStorage.scrollbar,
   });
 }
 
@@ -118,14 +161,14 @@ function createSettingsDiv(title, value, type) {
   div.className = 'ic_menu';
   div.id = `ic_${type}_menu`;
   div.innerHTML = `
-    <div class="font">${title}</div>
-    <div class="right">
-      <div class="right_text">
-        <span class="font">
+    <div class='font'>${title}</div>
+    <div class='right'>
+      <div class='right_text'>
+        <span class='font'>
           ${value}
         </span>
       </div>
-      <div class="next"></div>
+      <div class='next'></div>
     </div>`;
   div.addEventListener('click', () => {
     document.getElementById('vilosSettingsMenu').setAttribute('ic_options', 'hide');
@@ -142,8 +185,8 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
   div.appendChild(back);
   back.className = `ic_back`;
   back.innerHTML = `
-    <div class="back"></div>
-    <div class="font">${title}</div>`;
+    <div class='back'></div>
+    <div class='font'>${title}</div>`;
   back.addEventListener('click', () => {
     const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
     vilosSettingsMenu.setAttribute('ic_options', 'menu');
@@ -157,54 +200,54 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
     let optionValueName = option.name ? translate(option.name) : option.value;
     optionDIv.className = 'ic_option';
     optionDIv.innerHTML = `
-      <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;">
+      <svg viewBox='0 0 20 20' style='height: 20px; width: 20px;'>
       <circle
-        class="bg"
-        cx="10"
-        cy="10"
-        r="9"
-        style="fill: rgb(25, 46, 56); opacity: 1;"
+        class='bg'
+        cx='10'
+        cy='10'
+        r='9'
+        style='fill: rgb(25, 46, 56); opacity: 1;'
       ></circle>
       <circle
-        class="dot"
-        cx="10"
-        cy="10"
-        r="4"
-        style="fill: rgb(68, 195, 171);"
+        class='dot'
+        cx='10'
+        cy='10'
+        r='4'
+        style='fill: rgb(68, 195, 171);'
       ></circle>
       <path
-        class="outer_circle"
-        d="M10,2a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z"
-        style="fill: rgb(160, 160, 160);"
+        class='outer_circle'
+        d='M10,2a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z'
+        style='fill: rgb(160, 160, 160);'
       ></path>
       </svg>`;
     const name = document.createElement('span');
     name.className = 'text font';
-    name.innerHTML = option.value;
+    name.innerHTML = `${option.value}`;
     optionDIv.appendChild(name);
     if (option.type === 'slider') {
       const slider = document.createElement('input');
       slider.type = 'range';
       slider.min = option.min;
       slider.max = option.max;
-      slider.value = option.value;
+      slider.value = `${option.value}`;
       slider.step = option.step;
       slider.addEventListener('input', () => {
         const sliderValue = parseFloat(slider.value);
         if (sliderValue === sliderValue) {
           option.value = sliderValue;
           optionValueName = sliderValue;
-          name.innerHTML = option.value;
+          name.innerHTML = `${option.value}`;
         }
       });
       optionDIv.appendChild(slider);
     }
-    optionDIv.setAttribute('value', option.value === value);
+    optionDIv.setAttribute('value', `${option.value === value}`);
     optionDIv.addEventListener('click', () => {
       const selected = document.querySelector('.ic_option[value=true]');
-      if (selected) selected.setAttribute('value', false);
-      optionDIv.setAttribute('value', true);
-      localStorage.setItem(`Vilos:${type}`, option.value);
+      if (selected) selected.setAttribute('value', 'false');
+      optionDIv.setAttribute('value', 'true');
+      localStorage.setItem(`Vilos:${type}`, `${option.value}`);
       document.querySelector(`#ic_${type}_menu .right_text .font`).innerHTML = optionValueName;
       callback(option.value);
     });
@@ -322,6 +365,7 @@ function observeVelocityControlsPackageDiv() {
 }
 
 function init() {
+  createAndInsertSvgDefs();
   createDivs();
   if (document.getElementById('velocity-controls-package')) {
     observeVelocityControlsPackageDiv();
@@ -334,12 +378,28 @@ function init() {
     });
   }
   document.onfullscreenchange = () => {
-    document.documentElement.setAttribute('ic_fullscreen', document.fullscreenElement ? true : false);
+    document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
   };
+  let shortcuts = chromeStorage.shortcuts;
   chrome.storage.local.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
       createFastForwardBackwardButtons();
     }
+    if (changes.shortcuts) {
+      shortcuts = chromeStorage.shortcuts;
+    }
+  });
+  window.addEventListener('keydown', (ev) => {
+    const key = shortcutUtils.eventToKey(ev);
+    Object.entries({
+      forward,
+      backward,
+    }).forEach(([type, fn]) => {
+      const value = shortcuts && shortcuts[type] && shortcuts[type][key];
+      if (value) {
+        fn(value);
+      }
+    });
   });
 }
 

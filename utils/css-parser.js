@@ -209,7 +209,7 @@ function theme(property) {
   let split = property.split('#');
   const name = split.shift();
   split = split.map((color) => {
-    let stringEnd = '';
+    let stringEnd;
     const max = Math.min(...[color.indexOf(' '), color.length].filter((i) => i !== -1));
     stringEnd = color.substring(max);
     color = color.substring(0, max);

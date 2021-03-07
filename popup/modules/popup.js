@@ -4,64 +4,72 @@ core.popup = {
     if (popup_container && popup_container.close) popup_container.close();
   },
 
-  ok(label) {
+  custom(body, buttons) {
     this.close();
     core.render(document.body, {
       type: 'popup',
 
       content: {
-        span: {
-          type: 'item',
-          label,
-        },
+        ...(body || {}),
         section: {
           type: 'section',
 
           content: {
-            ok: {
-              type: 'button',
-              innerHTML: 'KEY_OK',
-              on: {
-                click: () => this.close(),
-              },
-            },
+            ...Object.entries(buttons).reduce((acc, [key, button]) => {
+              acc[key] = button;
+              acc[key].type = 'button';
+              return acc;
+            }, {}),
           },
         },
       },
     });
   },
 
-  cancelAccecpt(label, okClick) {
-    this.close();
-    core.render(document.body, {
-      type: 'popup',
-
-      content: {
+  ok(label) {
+    this.custom(
+      {
         span: {
           type: 'item',
           label,
         },
-        section: {
-          type: 'section',
-
-          content: {
-            cancel: {
-              type: 'button',
-              innerHTML: 'KEY_CANCEL',
-              on: {
-                click: () => this.close(),
-              },
-            },
-            ok: {
-              type: 'button',
-              innerHTML: 'KEY_ACCEPT',
-              on: {
-                click: okClick,
-              },
-            },
+      },
+      {
+        ok: {
+          type: 'button',
+          innerHTML: 'KEY_OK',
+          on: {
+            click: () => this.close(),
           },
         },
+      }
+    );
+  },
+
+  cancelAccept(label, okClick) {
+    this.custom(
+      {
+        span: {
+          type: 'item',
+          label,
+        },
       },
-    });
+      {
+        cancel: {
+          type: 'button',
+          innerHTML: 'KEY_CANCEL',
+          on: {
+            click: () => this.close(),
+          },
+        },
+        ok: {
+          type: 'button',
+          innerHTML: 'KEY_ACCEPT',
+          on: {
+            click: okClick,
+          },
+        },
+      }
+    );
   },
 };

@@ -8,6 +8,12 @@
   "KEY_ACCEPT": {
     "message": "Aceptar"
   },
+  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+    "message": "Agregar retroceso atajo"
+  },
+  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+    "message": "Agregar salto atajo"
+  },
   "KEY_BACKUP": {
     "message": "Copia de seguridad"
   },
@@ -29,17 +35,32 @@
   "KEY_DARK_THEME": {
     "message": "Modo oscuro"
   },
+  "KEY_DELETE": {
+    "message": "Borrar"
+  },
+  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+    "message": "Editar retroceso atajo"
+  },
+  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+    "message": "Editar salto atajo"
+  },
   "KEY_FAST_BACKWARD": {
     "message": "retroceso"
   },
   "KEY_FAST_BACKWARD_BUTTONS": {
     "message": "retroceso buttons"
   },
+  "KEY_FAST_BACKWARD_SHORTCUTS": {
+    "message": "Etroceso atajos"
+  },
   "KEY_FAST_FORWARD": {
     "message": "salto"
   },
   "KEY_FAST_FORWARD_BUTTONS": {
     "message": "salto botones"
+  },
+  "KEY_FAST_FORWARD_SHORTCUTS": {
+    "message": "Salto atajos"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "modo de pantalla completa"
@@ -92,17 +113,26 @@
   "KEY_PLAYER": {
     "message": "Reproductor"
   },
+  "KEY_PRESS_ANY_KEY": {
+    "message": "Presiona cualquier tecla"
+  },
   "KEY_RESET": {
     "message": "Reiniciar"
   },
   "KEY_RESTORE": {
     "message": "Restaurar"
   },
+  "KEY_SAVE": {
+    "message": "Salvar"
+  },
   "KEY_SCROLLBAR": {
     "message": "barra de desplazamiento"
   },
   "KEY_SETTINGS": {
     "message": "Configuraciones"
+  },
+  "KEY_SHORTCUTS": {
+    "message": "Atajos"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Con éxito copia de seguridad."
@@ -118,5 +148,8 @@
   },
   "KEY_THEMES": {
     "message": "Temas"
+  },
+  "KEY_VALUE": {
+    "message": "Valor"
   }
 }

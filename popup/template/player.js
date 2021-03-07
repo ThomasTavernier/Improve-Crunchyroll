@@ -35,11 +35,6 @@ core.main.player = {
             key: 'hide_subtitles',
             label: 'KEY_HIDE_SUBTITLES',
           },
-          hide_subtitles: {
-            type: 'checkbox',
-            key: 'hide_subtitles',
-            label: 'KEY_HIDE_SUBTITLES',
-          },
           hide_dim_screen: {
             type: 'checkbox',
             key: 'hide_dim_screen',

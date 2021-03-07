@@ -77,7 +77,7 @@ html[ic_player_mode='2'] #showmedia_video {
 
 /* scrollbar */
 html[ic_scrollbar='true'] ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
 
 /* header */

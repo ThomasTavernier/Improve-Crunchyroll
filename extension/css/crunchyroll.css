@@ -29,7 +29,7 @@ html[ic_hide_message_box='true'] #message_box div:first-child {
 
 /* remove template_scroller padding top */
 #template_scroller {
-  padding-top: 0px !important;
+  padding-top: 0 !important;
 }
 
 /* -------------------------------------------------- THEME FIXES -------------------------------------------------- */
@@ -48,7 +48,7 @@ html[ic_theme]:not([ic_theme='0']) .collection-carousel-arrow {
 }
 
 html[ic_theme]:not([ic_theme='0']) .source-home .dropdown-collection {
-  background-size: 45px 152.5px;
+  background-size: 45px;
   background-position-x: center;
   background-image: url(/i/comics/queue_dropdown_arrow.png);
 }

@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "2.10.1",
+  "version": "2.11.0",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -16,7 +16,7 @@
     {
       "matches": ["https://www.crunchyroll.com/*"],
       "exclude_matches": ["https://www.crunchyroll.com/games/*", "https://www.crunchyroll.com/checkout/*"],
-      "js": ["extension/js/chromeStorage.js"],
+      "js": ["shared/chromeStorage.js"],
       "css": ["extension/css/crunchyroll.css", "extension/css/theme-color.css", "extension/css/crunchyroll-theme.css"],
       "run_at": "document_start"
     },
@@ -95,16 +95,22 @@
     },
     {
       "matches": ["https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"],
-      "js": ["extension/js/chromeStorage.js"],
+      "js": ["shared/chromeStorage.js"],
       "css": ["extension/css/crunchyrollVideoPlayer2.css"],
       "all_frames": true,
       "run_at": "document_start"
     },
     {
       "matches": ["https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"],
-      "js": ["extension/js/crunchyrollVideoPlayerV2.js"],
+      "js": [
+        "extension/js/crunchyrollVideoPlayerV2.js",
+        "shared/shortcutUtils.js"
+      ],
       "all_frames": true,
       "run_at": "document_idle"
     }
+  ],
+  "web_accessible_resources": [
+    "resources/*"
   ]
 }

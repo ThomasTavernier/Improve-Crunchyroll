@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.item.center {
+  justify-content: center;
+}
+
 .item:hover {
   background: var(--hover-background);
 }

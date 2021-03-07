@@ -8,6 +8,12 @@
   "KEY_ACCEPT": {
     "message": "Aceitar"
   },
+  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+    "message": "Adicionar atalho de voltar"
+  },
+  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+    "message": "Adicionar atalho de pular"
+  },
   "KEY_BACKUP": {
     "message": "Backup"
   },
@@ -29,17 +35,32 @@
   "KEY_DARK_THEME": {
     "message": "Modo escuro"
   },
+  "KEY_DELETE": {
+    "message": "Excluir"
+  },
+  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+    "message": "Editar atalho de voltar"
+  },
+  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+    "message": "Editar atalho de pular"
+  },
   "KEY_FAST_BACKWARD": {
     "message": "voltar"
   },
   "KEY_FAST_BACKWARD_BUTTONS": {
     "message": "voltar botões"
   },
+  "KEY_FAST_BACKWARD_SHORTCUTS": {
+    "message": "Atalhos de voltar"
+  },
   "KEY_FAST_FORWARD": {
     "message": "pular"
   },
   "KEY_FAST_FORWARD_BUTTONS": {
     "message": "pular botões"
+  },
+  "KEY_FAST_FORWARD_SHORTCUTS": {
+    "message": "Atalhos de pular"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "modo tela cheia"
@@ -92,17 +113,26 @@
   "KEY_PLAYER": {
     "message": "Player"
   },
+  "KEY_PRESS_ANY_KEY": {
+    "message": "Pressione qualquer tecla"
+  },
   "KEY_RESET": {
     "message": "Restaurar"
   },
   "KEY_RESTORE": {
     "message": "Restore"
   },
+  "KEY_SAVE": {
+    "message": "Salve"
+  },
   "KEY_SCROLLBAR": {
     "message": "Barra de rolagem"
   },
   "KEY_SETTINGS": {
     "message": "Configurações"
+  },
+  "KEY_SHORTCUTS": {
+    "message": "Atalhos"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."
@@ -118,5 +148,8 @@
   },
   "KEY_THEMES": {
     "message": "Temas"
+  },
+  "KEY_VALUE": {
+    "message": "Valor"
   }
 }

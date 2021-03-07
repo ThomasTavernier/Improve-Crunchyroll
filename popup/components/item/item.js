@@ -4,8 +4,13 @@ core.components.item = (object) => {
 
   component.className = 'item';
 
-  component_label.innerHTML = core.translate(object.label);
+  component_label.innerText = core.translate(object.label);
   component.appendChild(component_label);
 
+  if (object.subLabel) {
+    const component_subLabel = document.createElement('span');
+    component_subLabel.innerText = core.translate(object.subLabel);
+    component.appendChild(component_subLabel);
+  }
   return component;
 };

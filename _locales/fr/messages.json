@@ -8,6 +8,12 @@
   "KEY_ACCEPT": {
     "message": "J'accepte"
   },
+  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+    "message": "Ajouter raccourci reculer"
+  },
+  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+    "message": "Ajouter raccourci avancer"
+  },
   "KEY_BACKUP": {
     "message": "Sauvegarde"
   },
@@ -29,17 +35,32 @@
   "KEY_DARK_THEME": {
     "message": "Mode sombre"
   },
+  "KEY_DELETE": {
+    "message": "Effacer"
+  },
+  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+    "message": "Éditer raccourci reculer"
+  },
+  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+    "message": "Éditer raccourci avancer"
+  },
   "KEY_FAST_BACKWARD": {
     "message": "reculer"
   },
   "KEY_FAST_BACKWARD_BUTTONS": {
     "message": "boutons reculer"
   },
+  "KEY_FAST_BACKWARD_SHORTCUTS": {
+    "message": "Raccourcis reculer"
+  },
   "KEY_FAST_FORWARD": {
     "message": "avancer"
   },
   "KEY_FAST_FORWARD_BUTTONS": {
     "message": "boutons avancer"
+  },
+  "KEY_FAST_FORWARD_SHORTCUTS": {
+    "message": "Raccourcis avancer"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "mode plein écran"
@@ -92,17 +113,26 @@
   "KEY_PLAYER": {
     "message": "Lecteur vidéo"
   },
+  "KEY_PRESS_ANY_KEY": {
+    "message": "Appuyez sur une touche"
+  },
   "KEY_RESET": {
     "message": "Réinitialiser"
   },
   "KEY_RESTORE": {
     "message": "Restaurer"
   },
+  "KEY_SAVE": {
+    "message": "Sauvegarder"
+  },
   "KEY_SCROLLBAR": {
     "message": "barre de défilement"
   },
   "KEY_SETTINGS": {
     "message": "Réglages"
+  },
+  "KEY_SHORTCUTS": {
+    "message": "Raccourcis"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Sauvegarde réussie."
@@ -118,5 +148,8 @@
   },
   "KEY_THEMES": {
     "message": "Thèmes"
+  },
+  "KEY_VALUE": {
+    "message": "Valeur"
   }
 }

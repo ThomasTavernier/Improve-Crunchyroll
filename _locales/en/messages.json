@@ -8,6 +8,12 @@
   "KEY_ACCEPT": {
     "message": "Accept"
   },
+  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+    "message": "Add fast backward shortcut"
+  },
+  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+    "message": "Add fast forward shortcut"
+  },
   "KEY_BACKUP": {
     "message": "Backup"
   },
@@ -29,17 +35,32 @@
   "KEY_DARK_THEME": {
     "message": "Dark mode"
   },
+  "KEY_DELETE": {
+    "message": "Delete"
+  },
+  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+    "message": "Edit fast backward shortcut"
+  },
+  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+    "message": "Edit fast forward shortcut"
+  },
   "KEY_FAST_BACKWARD": {
     "message": "fast backward"
   },
   "KEY_FAST_BACKWARD_BUTTONS": {
     "message": "fast backward buttons"
   },
+  "KEY_FAST_BACKWARD_SHORTCUTS": {
+    "message": "Fast backward shortcuts"
+  },
   "KEY_FAST_FORWARD": {
     "message": "fast forward"
   },
   "KEY_FAST_FORWARD_BUTTONS": {
     "message": "fast forward buttons"
+  },
+  "KEY_FAST_FORWARD_SHORTCUTS": {
+    "message": "Fast forward shortcuts"
   },
   "KEY_FULLSCREEN_MODE": {
     "message": "fullscreen mode"
@@ -92,17 +113,26 @@
   "KEY_PLAYER": {
     "message": "Player"
   },
+  "KEY_PRESS_ANY_KEY": {
+    "message": "Press any key"
+  },
   "KEY_RESET": {
     "message": "Reset"
   },
   "KEY_RESTORE": {
     "message": "Restore"
   },
+  "KEY_SAVE": {
+    "message": "Save"
+  },
   "KEY_SCROLLBAR": {
     "message": "scrollbar"
   },
   "KEY_SETTINGS": {
     "message": "Settings"
+  },
+  "KEY_SHORTCUTS": {
+    "message": "Shortcuts"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Successfully backup."
@@ -118,5 +148,8 @@
   },
   "KEY_THEMES": {
     "message": "Themes"
+  },
+  "KEY_VALUE": {
+    "message": "Value"
   }
 }

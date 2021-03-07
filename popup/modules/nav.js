@@ -1,19 +1,24 @@
 core.nav = {
   nav: [],
 
-  goTo(location) {
+  goTo(location, replace) {
+    if (replace) {
+      this.nav.pop();
+    }
     this.nav.push(location);
     this.change();
-    if (document.getElementById('content').children.length >= 2)
+    if (document.getElementById('content').children.length >= 2) {
       document.querySelector('#content>main:last-child').open();
+    }
   },
 
   goBack() {
     if (this.nav.length >= 2) {
       this.nav.pop();
       this.change();
-      if (document.getElementById('content').children.length >= 2)
+      if (document.getElementById('content').children.length >= 2) {
         document.querySelector('#content>main:nth-last-child(2)').close();
+      }
     }
   },
 
