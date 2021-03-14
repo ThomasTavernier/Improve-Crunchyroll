@@ -45,7 +45,7 @@ function createSvgForwardBackward(type, fastBackwardNumber) {
   svg.setAttribute('viewBox', '0 0 226 226');
   svg.innerHTML = `
       <use xlink:href='#${type}'></use>
-      <text font-size='90' font-weight='400' letter-spacing='-0.5' font-size-adjust='0.5'>
+      <text font-size='90' font-weight='500' letter-spacing='-0.5' font-size-adjust='0.5'>
         <tspan text-anchor='middle' x='50%' y='67%'>${parseNumber(fastBackwardNumber)}</tspan>
       </text>`;
   return svg;
@@ -56,7 +56,8 @@ function createFastForwardBackwardButtons() {
   let buttonList = [];
   (chromeStorage.fast_backward_buttons.length > 0 ? chromeStorage.fast_backward_buttons.split(',') : []).forEach(
     (fastBackwardNumber) => {
-      const fastBackwardButton = createSvgForwardBackward('backward', fastBackwardNumber);
+      const fastBackwardButton = document.createElement('div');
+      fastBackwardButton.appendChild(createSvgForwardBackward('backward', fastBackwardNumber));
       fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
       buttonList.push(fastBackwardButton);
@@ -64,7 +65,8 @@ function createFastForwardBackwardButtons() {
   );
   (chromeStorage.fast_forward_buttons.length > 0 ? chromeStorage.fast_forward_buttons.split(',') : []).forEach(
     (fastForwardNumber) => {
-      const fastForwardButton = createSvgForwardBackward('forward', fastForwardNumber);
+      const fastForwardButton = document.createElement('div');
+      fastForwardButton.appendChild(createSvgForwardBackward('forward', fastForwardNumber));
       fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
       buttonList.push(fastForwardButton);
