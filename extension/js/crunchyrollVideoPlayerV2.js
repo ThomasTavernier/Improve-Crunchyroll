@@ -92,8 +92,8 @@ function createDivs() {
   icDivPlayerMode = document.createElement('div');
   [icDivPlayerControls, icDivPlayerMode].forEach((div) => {
     div.className = 'ic_div';
-    div.addEventListener('mouseup', () => {
-      event.stopPropagation();
+    ['mouseup', 'mousedown'].forEach((type) => {
+      div.addEventListener(type, (evt) => evt.stopPropagation());
     });
   });
 
