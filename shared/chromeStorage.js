@@ -1,82 +1,107 @@
 const chromeStorage = new (class {
-  constructor() {
-    const NESTED = 'NESTED';
-    this.CHROME_STORAGE = {
-      fast_backward_buttons: '30,10',
-      fast_forward_buttons: '30,90',
-      header_on_hover: true,
-      hide_background_image: true,
-      hide_banner: true,
-      hide_dim_screen: false,
-      hide_message_box: true,
-      hide_subtitles: false,
-      player_mode: 2,
-      scrollbar: false,
-      shortcuts: NESTED,
-      theater_mode: true,
-      theme: 1,
-    };
-    const CHROME_STORAGE_NESTED = {
-      shortcuts: {
-        backward: {
-          'ctrl||ArrowLeft': 10,
-          'shift||ArrowLeft': 30,
-        },
-        forward: {
-          'ctrl||ArrowRight': 30,
-          'shift||ArrowRight': 90,
-        },
+  NESTED = 'NESTED';
+  CHROME_STORAGE = {
+    fast_backward_buttons: '30,10',
+    fast_forward_buttons: '30,90',
+    header_on_hover: true,
+    hide_background_image: true,
+    hide_banner: true,
+    hide_dim_screen: false,
+    hide_message_box: true,
+    hide_subtitles: false,
+    player_mode: 2,
+    scrollbar: false,
+    shortcuts: this.NESTED,
+    theater_mode: true,
+    theme: 1,
+  };
+  CHROME_STORAGE_NESTED = {
+    shortcuts: {
+      backward: {
+        'ctrl||ArrowLeft': 10,
+        'shift||ArrowLeft': 30,
       },
-    };
-    let chromeStorage;
+      forward: {
+        'ctrl||ArrowRight': 30,
+        'shift||ArrowRight': 90,
+      },
+    },
+  };
+  ATTRIBUTES = new (class extends Set {
+    add(value) {
+      document.documentElement.setAttribute(this.toAttributeName(value), chromeStorage[value]);
+      return super.add(value);
+    }
 
-    Object.keys(this.CHROME_STORAGE).forEach((key) => {
-      this.__defineGetter__(key, () => chromeStorage[key]);
-      this.__defineSetter__(key, (value) => {
-        const obj = {};
-        obj[key] = value;
-        chrome.storage.local.set(obj);
-      });
-    });
+    delete(value) {
+      document.documentElement.removeAttribute(this.toAttributeName(value));
+      return super.delete(value);
+    }
 
+    toAttributeName(value) {
+      return `ic_${value}`;
+    }
+  })();
+  LOADED = new Promise((resolve) => {
     chrome.storage.local.get(this.CHROME_STORAGE, (items) => {
-      chromeStorage = items;
-      Object.entries(CHROME_STORAGE_NESTED).forEach(([key, defaultValue]) => {
-        if (chromeStorage[key] === NESTED) {
-          chromeStorage[key] = defaultValue;
-        }
+      Object.keys(this.CHROME_STORAGE).forEach((key) => {
+        this.__defineGetter__(key, () => items[key]);
+        this.__defineSetter__(key, (value) => {
+          chrome.storage.local.set({ [key]: value });
+        });
       });
-      const ATTRIBUTES = ((origin) => {
-        switch (origin) {
-          case 'https://www.crunchyroll.com':
-            const attributes = ['hide_background_image', 'hide_banner', 'hide_message_box', 'theme'];
-            if (window.location.pathname.match(/-\d+$/)) {
-              attributes.push('header_on_hover', 'player_mode', 'scrollbar', 'theme');
-            }
-            return attributes;
-          case 'https://static.crunchyroll.com':
-            return ['hide_dim_screen', 'hide_subtitles', 'player_mode', 'scrollbar'];
-          case `chrome-extension://${chrome.runtime.id}`:
-            return ['theme'];
-        }
-      })(window.location.origin);
 
-      ATTRIBUTES.forEach((attribute) => {
-        document.documentElement.setAttribute(`ic_${attribute}`, chromeStorage[attribute]);
+      Object.entries(this.CHROME_STORAGE_NESTED).forEach(([key, defaultValue]) => {
+        if (items[key] === this.NESTED) {
+          items[key] = defaultValue;
+        }
       });
 
       chrome.storage.local.onChanged.addListener((changes) => {
         Object.entries(changes).forEach(([key, storageChange]) => {
-          if (storageChange.newValue === NESTED && CHROME_STORAGE_NESTED[key]) {
-            chromeStorage[key] = CHROME_STORAGE_NESTED[key];
+          if (storageChange.newValue === this.NESTED && this.CHROME_STORAGE_NESTED[key]) {
+            items[key] = this.CHROME_STORAGE_NESTED[key];
           } else {
-            chromeStorage[key] = storageChange.newValue;
+            items[key] = storageChange.newValue;
           }
-          if (ATTRIBUTES.includes(key)) {
-            document.documentElement.setAttribute('ic_' + key, chromeStorage[key]);
+          if (this.ATTRIBUTES.has(key)) {
+            this.ATTRIBUTES.add(key);
           }
         });
       });
+
+      resolve();
     });
+  });
+
+  reload(...attributes) {
+    return this.LOADED.then(() => {
+      attributes.forEach((attribute) => {
+        if (!this.ATTRIBUTES.has(attribute)) {
+          this.ATTRIBUTES.add(attribute);
+        }
+      });
+      this.ATTRIBUTES.forEach((attribute) => {
+        if (!attributes.includes(attribute)) {
+          this.ATTRIBUTES.delete(attribute);
+        }
+      });
+    });
+  }
+
+  backup(callback) {
+    chrome.storage.local.get(this.CHROME_STORAGE, (result) => {
+      chrome.storage.sync.set(result, callback);
+    });
+  }
+
+  restore(callback) {
+    chrome.storage.sync.get(this.CHROME_STORAGE, (result) => {
+      chrome.storage.local.set(result, callback);
+    });
+  }
+
+  reset(callback) {
+    chrome.storage.local.set(this.CHROME_STORAGE, callback);
   }
 })();

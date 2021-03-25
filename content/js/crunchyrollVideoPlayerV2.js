@@ -1,9 +1,7 @@
 function parseNumber(number) {
-  let numberMinutes = Math.floor(number / 60);
-  let numberSeconds = number - numberMinutes * 60;
-  return numberMinutes > 0
-    ? `${numberMinutes}:${numberSeconds < 10 ? `0${numberSeconds}` : numberSeconds}`
-    : numberSeconds;
+  return [2, 1, 0]
+    .map((v) => ~~((number % Math.pow(60, v + 1)) / Math.pow(60, v)))
+    .reduce((acc, value) => (acc ? `${acc}:${value < 10 ? '0' : ''}${value}` : `${value || ''}`), '');
 }
 
 function translate(key) {
@@ -90,8 +88,6 @@ function createAndInsertSvgDefs() {
 }
 
 function createDivs() {
-  icDivPlayerControls = document.createElement('div');
-  icDivPlayerMode = document.createElement('div');
   [icDivPlayerControls, icDivPlayerMode].forEach((div) => {
     div.className = 'ic_div';
     ['mouseup', 'mousedown'].forEach((type) => {
@@ -259,7 +255,6 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
 }
 
 function createPlayerSettings() {
-  icDivSettings = [];
   [
     {
       title: 'KEY_PLAYBACK_RATE',
@@ -357,31 +352,7 @@ function insertCbpDivs(vilosControlsContainer) {
   });
 }
 
-function observeVelocityControlsPackageDiv() {
-  new MutationObserver((mutationsList) => {
-    const addedNode = mutationsList[mutationsList.length - 1].addedNodes[0];
-    if (addedNode && addedNode.id === 'vilosControlsContainer' && addedNode.hasChildNodes()) insertCbpDivs(addedNode);
-  }).observe(document.getElementById('velocity-controls-package'), {
-    childList: true,
-  });
-}
-
-function init() {
-  createAndInsertSvgDefs();
-  createDivs();
-  if (document.getElementById('velocity-controls-package')) {
-    observeVelocityControlsPackageDiv();
-  } else {
-    new MutationObserver((mutationsList, observer) => {
-      observer.disconnect();
-      observeVelocityControlsPackageDiv();
-    }).observe(document.getElementById('vilosRoot'), {
-      childList: true,
-    });
-  }
-  document.onfullscreenchange = () => {
-    document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
-  };
+function shortcutHandler() {
   let shortcuts = chromeStorage.shortcuts;
   chrome.storage.local.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
@@ -405,8 +376,109 @@ function init() {
   });
 }
 
-let icDivPlayerControls;
-let icDivPlayerMode;
-let icDivSettings;
+function createSkipper(skipper, player) {
+  const element = document.createElement('div');
+  element.className = 'ic_skipper';
+  element.style.display = 'none';
+  element.addEventListener('click', () => {
+    element.style.display = 'none';
+    player.currentTime = skipper.end;
+  });
+  [translate('KEY_SKIP_TO'), parseNumber(skipper.end)].forEach((text) => {
+    const span = document.createElement('span');
+    span.innerText = text;
+    element.appendChild(span);
+  });
+  skipper.element = element;
+  document.documentElement.appendChild(element);
+}
 
-setTimeout(init);
+function skippersHandler() {
+  const script = document.createElement('script');
+  script.text = `(${(() => {
+    const self = document.currentScript;
+
+    function send() {
+      self.dispatchEvent(new CustomEvent('ic_load_config', { detail: window.v1config }));
+      self.remove();
+    }
+
+    if (window.v1config) {
+      send();
+    } else {
+      const interval = setInterval(() => {
+        if (window.v1config) {
+          clearInterval(interval);
+          send();
+        }
+      }, 100);
+    }
+  }).toString()})();`;
+  script.addEventListener('ic_load_config', (evt) => {
+    chrome.runtime.sendMessage(chrome.runtime.id, { type: 'skippers', data: evt.detail }, (skippers) => {
+      if (Array.isArray(skippers)) {
+        const player = document.getElementById('player0');
+        let lastTime;
+        skippers.forEach((skipper) => createSkipper(skipper, player));
+        const timeupdate = () => {
+          const currentTime = ~~player.currentTime;
+          if (lastTime !== currentTime) {
+            lastTime = currentTime;
+            skippers.forEach((skipper) => {
+              skipper.element.style.display = skipper.end > currentTime && currentTime > skipper.start ? '' : 'none';
+            });
+          }
+        };
+        player.addEventListener('timeupdate', timeupdate);
+        player.addEventListener(
+          'loadstart',
+          () => {
+            player.removeEventListener('timeupdate', timeupdate);
+          },
+          { once: true }
+        );
+      }
+    });
+  });
+  document.documentElement.appendChild(script);
+}
+
+const icDivPlayerControls = document.createElement('div');
+const icDivPlayerMode = document.createElement('div');
+const icDivSettings = [];
+
+new MutationObserver((_, observer) => {
+  observer.disconnect();
+  document.onfullscreenchange = () => {
+    document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
+  };
+  chromeStorage.reload('hide_dim_screen', 'hide_subtitles', 'player_mode', 'scrollbar');
+  new MutationObserver((_, observer) => {
+    observer.disconnect();
+    document.getElementById('player0').addEventListener('loadstart', skippersHandler);
+    new MutationObserver((_, observer) => {
+      observer.disconnect();
+      createAndInsertSvgDefs();
+      createDivs();
+      shortcutHandler();
+      new MutationObserver((mutations) => {
+        mutations.some(({ addedNodes }) =>
+          [...addedNodes].some((node) => {
+            if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
+              insertCbpDivs(node);
+              return true;
+            }
+          })
+        );
+      }).observe(document.getElementById('velocity-controls-package'), {
+        childList: true,
+      });
+    }).observe(document.getElementById('vilosRoot'), {
+      childList: true,
+    });
+  }).observe(document.getElementById('vilos'), {
+    childList: true,
+  });
+}).observe(document.documentElement, {
+  childList: true,
+});

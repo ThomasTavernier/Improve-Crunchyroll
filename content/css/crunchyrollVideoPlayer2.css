@@ -208,3 +208,21 @@ html[ic_fullscreen='true'] .scrollbar {
   right: 0;
   width: fit-content;
 }
+
+.ic_skipper {
+  position: absolute;
+  right: 10px;
+  bottom: 96px;
+  width: 130px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  cursor: pointer;
+  padding: 10px;
+  color: whitesmoke;
+  border: 1px rgba(255, 255, 255, 0.4) solid;
+  background-color: rgba(0, 0, 0, 0.4);
+}

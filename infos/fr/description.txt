@@ -10,11 +10,13 @@ Crunchyrollbigger player peut:
  - Masquer l'écran sombre du lecteur
  - Masquer les sous-titres
  - Ajouter des bouttons d'avance / retour rapides
+ - Ajouter des raccourcis d'avance / retour rapides
  - Chacune des fonctionnalités peut être activée / désactivée
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
- - Ajouter des raccourcis d'avance / retour rapides
+ - Supporte la version bêta de Crunchyroll
+ - Boutons de sauts pour les intros, récapitulatifs, outros ...
 
 Les retours sont les bienvenus!
 Je peux facilement ajouter de nouveaux thèmes / modifier ceux existants.

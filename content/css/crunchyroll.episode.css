@@ -13,6 +13,10 @@ html[ic_player_mode]:not([ic_player_mode='0'])[ic_free_trial_template='true'] #s
   overflow: hidden;
 }
 
+html[ic_player_mode]:not([ic_player_mode='0']) .opt-in {
+  display: none;
+}
+
 html[ic_player_mode]:not([ic_player_mode='0']) .showmedia-trailer-notice {
   position: absolute;
   left: 0;

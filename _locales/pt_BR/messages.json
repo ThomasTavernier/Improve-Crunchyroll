@@ -134,6 +134,9 @@
   "KEY_SHORTCUTS": {
     "message": "Atalhos"
   },
+  "KEY_SKIP_TO": {
+    "message": "PULE PARA:"
+  },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."
   },

@@ -9,11 +9,13 @@ Crunchyroll bigger player can:
  - Hide player dim screen
 -  Hide subtitles
  - Add fast backward/forward buttons
+ - Add fast backward/forward shortcuts
  - Each features can be turn on/off
  - Backup/reset settings
 
 New:
- - Add fast backward/forward shortcuts
+ - Support beta version of Crunchyroll
+ - Skippings buttons for intros, recaps, outros...
 
 Feedbacks are welcomed!
 I can easily add new themes/edit existing ones.

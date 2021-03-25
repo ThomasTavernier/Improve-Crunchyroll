@@ -1,7 +1,7 @@
 const seasons = document.querySelectorAll('.list-of-seasons .season');
 if (seasons.length > 0) {
   [...seasons].forEach((season) => {
-    const episodes = [...season.querySelectorAll('.group-item')];
+    const episodes = season.querySelectorAll('.group-item');
     if (episodes.length > 0) {
       const episodesIds = [];
       episodes.forEach((episode) => {

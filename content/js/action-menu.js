@@ -56,7 +56,22 @@ function createActionMenuButton(entries) {
     event.preventDefault();
     actionMenuButton.setAttribute('menu-active', '');
     const actionMenu = createActionMenuEntries(entries);
-    actionMenu.style.left = `${window.pageXOffset + event.clientX}px`;
+    const maxWidth = Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    );
+    let left = window.pageXOffset + event.clientX;
+    const deltaWidth = maxWidth - left;
+    if (deltaWidth <= 300) {
+      actionMenu.classList.add('left');
+      if (deltaWidth <= 150) {
+        left -= 150;
+      }
+    }
+    actionMenu.style.left = `${left}px`;
     actionMenu.style.top = `${window.pageYOffset + event.clientY}px`;
     setTimeout(() => {
       document.documentElement.addEventListener('click', function eventListener() {

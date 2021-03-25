@@ -52,6 +52,11 @@
   width: max-content;
 }
 
+.ic_action_menu.left .ic_action_menu {
+  right: 100%;
+  left: unset;
+}
+
 .ic_action_menu > div {
   position: relative;
   align-items: center;

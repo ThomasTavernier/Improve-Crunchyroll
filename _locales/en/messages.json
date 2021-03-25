@@ -134,6 +134,9 @@
   "KEY_SHORTCUTS": {
     "message": "Shortcuts"
   },
+  "KEY_SKIP_TO": {
+    "message": "SKIP TO:"
+  },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Successfully backup."
   },

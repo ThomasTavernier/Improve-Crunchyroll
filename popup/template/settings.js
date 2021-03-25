@@ -33,8 +33,7 @@ core.main.settings = {
                           on: {
                             click: () => {
                               core.popup.cancelAccept('KEY_CONFIRM_BACKUP', () => {
-                                chrome.storage.local.get(chromeStorage.CHROME_STORAGE, (result) => {
-                                  chrome.storage.sync.set(result);
+                                chromeStorage.backup(() => {
                                   core.popup.ok('KEY_SUCCESSFULLY_BACKUP');
                                 });
                               });
@@ -47,8 +46,7 @@ core.main.settings = {
                           on: {
                             click: () => {
                               core.popup.cancelAccept('KEY_CONFIRM_RESTORE', () => {
-                                chrome.storage.sync.get(chromeStorage.CHROME_STORAGE, (result) => {
-                                  chrome.storage.local.set(result);
+                                chromeStorage.restore(() => {
                                   core.popup.ok('KEY_SUCCESSFULLY_RESTORED');
                                 });
                               });
@@ -61,8 +59,9 @@ core.main.settings = {
                           on: {
                             click: () => {
                               core.popup.cancelAccept('KEY_CONFIRM_RESET', () => {
-                                chrome.storage.local.set(chromeStorage.CHROME_STORAGE);
-                                core.popup.ok('KEY_SUCCESSFULLY_RESETED');
+                                chromeStorage.reset(() => {
+                                  core.popup.ok('KEY_SUCCESSFULLY_RESETED');
+                                });
                               });
                             },
                           },

@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "2.11.2",
+  "version": "2.12.0",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -8,20 +8,43 @@
   "icons": {
     "128": "assets/icon128.png"
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "browser_action": {
     "default_popup": "popup/index.html"
   },
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ],
+    "persistent": false
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.crunchyroll.com/*"],
-      "exclude_matches": ["https://www.crunchyroll.com/games/*", "https://www.crunchyroll.com/checkout/*"],
-      "js": ["shared/chromeStorage.js"],
-      "css": ["extension/css/crunchyroll.css", "extension/css/theme-color.css", "extension/css/crunchyroll-theme.css"],
+      "matches": [
+        "https://www.crunchyroll.com/*"
+      ],
+      "exclude_matches": [
+        "https://www.crunchyroll.com/games/*",
+        "https://www.crunchyroll.com/checkout/*"
+      ],
+      "js": [
+        "shared/chromeStorage.js",
+        "content/js/api.js",
+        "content/js/main.js"
+      ],
+      "css": [
+        "content/css/crunchyroll.css",
+        "content/css/theme-color.css",
+        "content/css/crunchyroll-theme.css"
+      ],
       "run_at": "document_start"
     },
     {
-      "matches": ["https://www.crunchyroll.com/*"],
+      "matches": [
+        "https://www.crunchyroll.com/*"
+      ],
       "exclude_matches": [
         "https://www.crunchyroll.com/forum*",
         "https://www.crunchyroll.com/videos/*",
@@ -51,11 +74,15 @@
         "https://www.crunchyroll.com/privacy*",
         "https://www.crunchyroll.com/*/privacy*"
       ],
-      "css": ["extension/css/crunchyroll.episode.css"],
+      "css": [
+        "content/css/crunchyroll.episode.css"
+      ],
       "run_at": "document_start"
     },
     {
-      "matches": ["https://www.crunchyroll.com/*"],
+      "matches": [
+        "https://www.crunchyroll.com/*"
+      ],
       "exclude_matches": [
         "https://www.crunchyroll.com/forum*",
         "https://www.crunchyroll.com/videos/*",
@@ -86,27 +113,48 @@
         "https://www.crunchyroll.com/*/privacy*"
       ],
       "js": [
-        "extension/js/action-menu.js",
-        "extension/js/crunchyroll.collection.js",
-        "extension/js/crunchyroll.episode.js"
+        "content/js/action-menu.js",
+        "content/js/crunchyroll.collection.js",
+        "content/js/crunchyroll.episode.js"
       ],
-      "css": ["extension/css/action-menu.css", "extension/css/crunchyroll.collection.css"],
+      "css": [
+        "content/css/action-menu.css",
+        "content/css/crunchyroll.collection.css"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"],
-      "js": ["shared/chromeStorage.js"],
-      "css": ["extension/css/crunchyrollVideoPlayer2.css"],
+      "matches": [
+        "https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"
+      ],
+      "js": [
+        "shared/chromeStorage.js",
+        "content/js/crunchyrollVideoPlayerV2.js",
+        "shared/shortcutUtils.js"
+      ],
+      "css": [
+        "content/css/crunchyrollVideoPlayer2.css"
+      ],
       "all_frames": true,
       "run_at": "document_start"
     },
     {
-      "matches": ["https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"],
-      "js": [
-        "extension/js/crunchyrollVideoPlayerV2.js",
-        "shared/shortcutUtils.js"
+      "matches": [
+        "https://beta.crunchyroll.com/*"
       ],
-      "all_frames": true,
+      "js": [
+        "shared/chromeStorage.js",
+        "content/beta/js/api.js",
+        "content/js/action-menu.js",
+        "content/beta/js/series.js",
+        "content/beta/js/watch.js",
+        "content/beta/js/main.js"
+      ],
+      "css": [
+        "content/beta/css/main.css",
+        "content/css/action-menu.css",
+        "content/beta/css/action-menu.css"
+      ],
       "run_at": "document_idle"
     }
   ],

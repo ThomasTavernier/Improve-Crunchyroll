@@ -9,11 +9,13 @@ Crunchyroll bigger player caminante puede:
  - Ocultar la pantalla tenue del jugador
  - Ocultar subtítulos
  - Agregar botones de retroceso / salto
+ - Agregar atajos para retroceso / salto
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
- - Agregar atajos para retroceso / salto
+ - Compatible con la versión beta de Crunchyroll
+ - Botones de omisión para intros, resúmenes, outros ...
 
 ¡Los comentarios son bienvenidos!
 Puedo agregar fácilmente nuevos temas / editar los existentes.

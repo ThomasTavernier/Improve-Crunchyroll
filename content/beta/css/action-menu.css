@@ -1,0 +1,24 @@
+.card {
+  position: relative;
+}
+
+.card:hover .ic_action {
+  z-index: 2;
+  display: block;
+  top: unset;
+  right: 0;
+  fill: whitesmoke;
+}
+
+.card:hover .ic_action:hover {
+  fill: white;
+  background-color: #23252b;
+}
+
+.ic_action_menu {
+  background-color: #23252b;
+}
+
+.ic_action_menu > div:hover {
+  background-color: black;
+}
