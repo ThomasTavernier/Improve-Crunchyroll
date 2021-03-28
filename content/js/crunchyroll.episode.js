@@ -5,12 +5,8 @@ if (document.getElementById('showmedia_video_box')) {
   document.getElementById('showmedia_video').after(document.getElementById('showmedia_video').cloneNode(false));
   document.getElementById('sidebar').prepend(document.getElementById('showmedia_video').cloneNode(false));
 }
-chromeStorage.reload(
-  'header_on_hover',
-  'hide_background_image',
-  'hide_banner',
-  'hide_message_box',
-  'player_mode',
-  'scrollbar',
-  'theme'
-);
+const attributes = ['hide_background_image', 'hide_banner', 'hide_message_box', 'theme'];
+if (window.location.pathname.match(/-\d+$/)) {
+  attributes.push('header_on_hover', 'player_mode', 'scrollbar', 'theme');
+}
+chromeStorage.reload(...attributes);
