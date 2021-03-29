@@ -448,6 +448,8 @@ const icDivPlayerMode = document.createElement('div');
 const icDivSettings = [];
 
 new MutationObserver((_, observer) => {
+  const vilos = document.getElementById('vilos');
+  if (!vilos) return;
   observer.disconnect();
   document.onfullscreenchange = () => {
     document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
@@ -476,7 +478,7 @@ new MutationObserver((_, observer) => {
     }).observe(document.getElementById('vilosRoot'), {
       childList: true,
     });
-  }).observe(document.getElementById('vilos'), {
+  }).observe(vilos, {
     childList: true,
   });
 }).observe(document.documentElement, {
