@@ -1,52 +1,67 @@
 const API = new (class {
-  LOADED = fetch(window.location.origin)
-    .then((response) => response.text())
-    .then((text) => {
-      const {
-        cxApiParams: { apiDomain, accountAuthClientId },
-      } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
-      return fetch(`${apiDomain}/auth/v1/token`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
-        },
-        body: 'grant_type=etp_rt_cookie',
-      })
-        .then((response) => response.json())
-        .then(({ token_type, access_token }) => {
-          const Authorization = `${token_type} ${access_token}`;
-          return Promise.all(
-            ['/index/v2', '/accounts/v1/me'].map((pathname) =>
-              fetch(`${apiDomain}${pathname}`, {
-                headers: {
-                  Authorization: Authorization,
-                },
-              }).then((response) => response.json())
-            )
-          ).then(
-            ([
-              {
-                cms: { bucket, signature, policy, key_pair_id },
-              },
-              { account_id },
-            ]) => {
-              return {
-                Authorization,
-                account_id,
-                apiDomain,
-                bucket,
-                searchParams: {
-                  Signature: signature,
-                  Policy: policy,
-                  'Key-Pair-Id': key_pair_id,
-                },
-              };
-            }
-          );
-        });
-    });
+  TOKEN = (() => {
+    const cxApiParams = fetch(window.location.origin)
+      .then((response) => response.text())
+      .then((text) => {
+        const {
+          cxApiParams: { apiDomain, accountAuthClientId },
+        } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
+        return { apiDomain, accountAuthClientId };
+      });
+    const getToken = () => {
+      return cxApiParams.then(({ apiDomain, accountAuthClientId }) => {
+        return fetch(`${apiDomain}/auth/v1/token`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
+          },
+          body: 'grant_type=etp_rt_cookie',
+        })
+          .then((response) => response.json())
+          .then(({ token_type, access_token, expires_in }) => {
+            setTimeout(() => {
+              this.TOKEN = getToken();
+            }, expires_in * 1000);
+            return { Authorization: `${token_type} ${access_token}`, apiDomain };
+          });
+      });
+    };
+    return getToken();
+  })();
+
+  ME = this.TOKEN.then(({ apiDomain, Authorization }) => {
+    return fetch(`${apiDomain}/accounts/v1/me`, {
+      headers: {
+        Authorization: Authorization,
+      },
+    })
+      .then((response) => response.json())
+      .then(({ account_id }) => {
+        return { account_id };
+      });
+  });
+
+  CMS = this.TOKEN.then(({ apiDomain, Authorization }) => {
+    return fetch(`${apiDomain}/index/v2`, {
+      headers: {
+        Authorization: Authorization,
+      },
+    })
+      .then((response) => response.json())
+      .then(({ cms: { bucket, signature, policy, key_pair_id } }) => {
+        return {
+          apiDomain,
+          bucket,
+          searchParams: {
+            Signature: signature,
+            Policy: policy,
+            'Key-Pair-Id': key_pair_id,
+          },
+        };
+      });
+  });
 
   constructor() {
     chrome.runtime.onMessage.addListener(function ({ type }, __, sendResponse) {
@@ -72,7 +87,8 @@ const API = new (class {
             const item = items.find(({ next_episode_id }) => next_episode_id === mediaId);
             if (item) {
               this.objects(item.id)
-                .then(({ items: [{ __links__: { streams: { href } } }] }) => this.fetch(href))
+                .then(({ items: [{ __links__: { streams: { href } } }] }) => this._fetch(href))
+                .then((response) => response.json())
                 .then(({ subtitles }) => {
                   resolve(Object.values(subtitles));
                 });
@@ -88,42 +104,22 @@ const API = new (class {
   }
 
   objects(objectId) {
-    return this.LOADED.then((apiInfos) =>
-      this._fetchCmsV2(apiInfos, `objects/${objectId}`, {
-        credentials: 'same-origin',
-      })
-    );
+    return this._fetchCmsV2(`objects/${objectId}`, undefined, {
+      credentials: 'same-origin',
+    });
   }
 
   seasons(series_id) {
-    return this.LOADED.then(({ apiDomain, bucket, searchParams }) =>
-      this._fetchCmsV2(
-        {
-          apiDomain,
-          bucket,
-          searchParams: { ...searchParams, series_id },
-        },
-        'seasons'
-      )
-    );
+    return this._fetchCmsV2('seasons', { series_id });
   }
 
   episodes(season_id) {
-    return this.LOADED.then(({ apiDomain, bucket, searchParams }) =>
-      this._fetchCmsV2(
-        {
-          apiDomain,
-          bucket,
-          searchParams: { ...searchParams, season_id },
-        },
-        'episodes'
-      )
-    );
+    return this._fetchCmsV2('episodes', { season_id });
   }
 
   playheads(content_id, playheadMs) {
-    return this.LOADED.then(({ apiDomain, account_id, Authorization }) =>
-      this._fetchContentV1({ apiDomain }, `playheads/${account_id}`, {
+    return Promise.all([this.TOKEN, this.ME]).then(([{ Authorization }, { account_id }]) =>
+      this._fetch(`/content/v1/playheads/${account_id}`, undefined, {
         method: 'POST',
         headers: {
           Authorization,
@@ -134,21 +130,20 @@ const API = new (class {
     );
   }
 
-  fetch(href) {
-    return this.LOADED.then((apiInfos) => this._fetch(apiInfos, href).then((response) => response.json()));
-  }
-
-  _fetchContentV1({ apiDomain }, href, requestInit) {
-    return this._fetch({ apiDomain }, `/content/v1/${href}`, requestInit);
-  }
-
-  _fetchCmsV2({ apiDomain, bucket, searchParams }, href, requestInit) {
-    return this._fetch({ apiDomain, searchParams }, `/cms/v2${bucket}/${href}`, requestInit).then((response) =>
-      response.json()
+  _fetchCmsV2(href, searchParams, requestInit) {
+    return this.CMS.then(({ bucket }) =>
+      this._fetch(`/cms/v2${bucket}/${href}`, searchParams, requestInit).then((response) => response.json())
     );
   }
 
-  _fetch({ apiDomain, searchParams }, href, requestInit) {
-    return fetch(`${apiDomain}${href}?${new URLSearchParams(searchParams)}`, requestInit);
+  _fetch(href, searchParams, requestInit) {
+    return this.CMS.then(({ apiDomain, searchParams: cmsSearchParams }) =>
+      fetch(
+        `${apiDomain}${href}?${new URLSearchParams(
+          searchParams ? { ...cmsSearchParams, ...searchParams } : cmsSearchParams
+        )}`,
+        requestInit
+      )
+    );
   }
 })();
