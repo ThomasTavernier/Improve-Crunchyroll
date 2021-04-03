@@ -74,6 +74,11 @@ class MarkAsWatchedNotWatched {
       });
       if (!episode) return;
       const { id, sequence_number: episode_sequence_number, duration_ms } = episode;
+      const {
+        0: { sequence_number: first_episode_sequence_number },
+        length,
+        [length - 1]: { sequence_number: last_episode_sequence_number },
+      } = episodes;
       body.appendChild(
         createActionMenuButton([
           {
@@ -87,7 +92,7 @@ class MarkAsWatchedNotWatched {
               },
               {
                 name: 'KEY_MARK_ALL_PREVIOUS',
-                if: () => episode_sequence_number > 1,
+                if: () => episode_sequence_number > first_episode_sequence_number,
                 action: () => {
                   Promise.all(
                     episodes
@@ -109,7 +114,7 @@ class MarkAsWatchedNotWatched {
               },
               {
                 name: 'KEY_MARK_ALL_NEXT',
-                if: () => episodes.length !== episode_sequence_number,
+                if: () => last_episode_sequence_number !== episode_sequence_number,
                 action: () => {
                   Promise.all(
                     episodes

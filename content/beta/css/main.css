@@ -23,7 +23,7 @@ html[ic_player_mode='2'] .erc-header {
 }
 
 .header-content {
-  transform: translate(0);
+  transform: initial;
   transition: transform 0.75s ease-in-out;
 }
 
