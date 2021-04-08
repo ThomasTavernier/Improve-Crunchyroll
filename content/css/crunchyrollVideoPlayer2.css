@@ -226,3 +226,7 @@ html[ic_fullscreen='true'] .scrollbar {
   border: 1px rgba(255, 255, 255, 0.4) solid;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
+html[ic_hide_skip_button='true'] .ic_skipper {
+  display: none;
+}

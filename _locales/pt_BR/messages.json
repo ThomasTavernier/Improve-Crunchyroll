@@ -83,6 +83,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar caixa de mensagem"
   },
+  "KEY_HIDE_SKIP_BUTTON": {
+    "message": "ocultar botão pular"
+  },
   "KEY_HIDE_SUBTITLES": {
     "message": "ocultar legendas"
   },

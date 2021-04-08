@@ -8,6 +8,7 @@ const chromeStorage = new (class {
     hide_banner: true,
     hide_dim_screen: false,
     hide_message_box: true,
+    hide_skip_button: false,
     hide_subtitles: false,
     player_mode: 2,
     scrollbar: false,

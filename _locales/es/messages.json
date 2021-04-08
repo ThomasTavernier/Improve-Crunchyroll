@@ -83,6 +83,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar cuadro de mensaje"
   },
+  "KEY_HIDE_SKIP_BUTTON": {
+    "message": "ocultar el botón de omisión"
+  },
   "KEY_HIDE_SUBTITLES": {
     "message": "ocultar subtítulos"
   },

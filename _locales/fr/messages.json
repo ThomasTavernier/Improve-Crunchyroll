@@ -83,6 +83,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "cacher alerte message"
   },
+  "KEY_HIDE_SKIP_BUTTON": {
+    "message": "masquer le bouton de saut"
+  },
   "KEY_HIDE_SUBTITLES": {
     "message": "masquer les sous-titres"
   },

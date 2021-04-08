@@ -83,6 +83,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "hide message box"
   },
+  "KEY_HIDE_SKIP_BUTTON": {
+    "message": "hide skip button"
+  },
   "KEY_HIDE_SUBTITLES": {
     "message": "hide subtitles"
   },
