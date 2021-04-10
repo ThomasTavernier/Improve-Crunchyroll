@@ -95,7 +95,9 @@
                           }
                           lastGroup = undefined;
                         }
-                        lastValue = value;
+                        if (lastGroup || value.person !== 'Title') {
+                          lastValue = value;
+                        }
                         return acc;
                       }, [])
                     );

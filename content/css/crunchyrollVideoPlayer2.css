@@ -225,8 +225,14 @@ html[ic_fullscreen='true'] .scrollbar {
   color: whitesmoke;
   border: 1px rgba(255, 255, 255, 0.4) solid;
   background-color: rgba(0, 0, 0, 0.4);
+  max-height: 140px;
+  clip: rect(0 152px 160px 0px);
+  overflow: hidden;
+  transition: clip 0.3s ease-out;
 }
 
+.ic_skipper:not(.active),
+html:not([ic_vilos_controls='true']) .ic_skipper.active.past:not(:hover),
 html[ic_hide_skip_button='true'] .ic_skipper {
-  display: none;
+  clip: rect(0 152px 160px 152px);
 }

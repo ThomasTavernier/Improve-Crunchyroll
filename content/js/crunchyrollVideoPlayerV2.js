@@ -379,9 +379,8 @@ function shortcutHandler() {
 function createSkipper(skipper, player) {
   const element = document.createElement('div');
   element.className = 'ic_skipper';
-  element.style.display = 'none';
   element.addEventListener('click', () => {
-    element.style.display = 'none';
+    element.classList.remove('active');
     player.currentTime = skipper.end;
   });
   [translate('KEY_SKIP_TO'), parseNumber(skipper.end)].forEach((text) => {
@@ -390,7 +389,7 @@ function createSkipper(skipper, player) {
     element.appendChild(span);
   });
   skipper.element = element;
-  document.documentElement.appendChild(element);
+  return element;
 }
 
 function skippersHandler() {
@@ -419,13 +418,16 @@ function skippersHandler() {
       if (Array.isArray(skippers)) {
         const player = document.getElementById('player0');
         let lastTime;
-        skippers.forEach((skipper) => createSkipper(skipper, player));
+        skippers.forEach((skipper) => document.body.appendChild(createSkipper(skipper, player)));
         const timeupdate = () => {
           const currentTime = ~~player.currentTime;
           if (lastTime !== currentTime) {
             lastTime = currentTime;
             skippers.forEach((skipper) => {
-              skipper.element.style.display = skipper.end > currentTime && currentTime > skipper.start ? '' : 'none';
+              skipper.element.classList[skipper.end > currentTime && currentTime > skipper.start ? 'add' : 'remove'](
+                'active'
+              );
+              skipper.element.classList[currentTime - 5 >= skipper.start ? 'add' : 'remove']('past');
             });
           }
         };
@@ -467,8 +469,11 @@ new MutationObserver((_, observer) => {
         mutations.some(({ addedNodes }) =>
           [...addedNodes].some((node) => {
             if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
+              document.documentElement.setAttribute('ic_vilos_controls', 'true');
               insertCbpDivs(node);
               return true;
+            } else {
+              document.documentElement.setAttribute('ic_vilos_controls', 'false');
             }
           })
         );
