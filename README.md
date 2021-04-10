@@ -1,12 +1,24 @@
-## Installation Instructions
+# Improve Crunchyroll
 
-### Chrome
+#### [Chrome Web Store](https://chrome.google.com/webstore/detail/crunchyroll-bigger-player/elmhfjhlecffodalffipmgpploaihjgh)
 
-#### Chrome Web Store
+#### [Edge Addons](https://microsoftedge.microsoft.com/addons/detail/improve-crunchyroll/jkdpkopdoookfdobegpdbacmbnlacgjk)
 
-Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/crunchyroll-bigger-player/elmhfjhlecffodalffipmgpploaihjgh) and install it normally.
+### Descriptions
 
-#### Manual/Development
+- [English](infos/en/description.md)
+- [Español](infos/es/description.md)
+- [Français](infos/fr/description.md)
+- [Português (Brasil)](infos/pt_BR/description.md)
+
+### Translations
+
+- [English](_locales/en/messages.json)
+- [Español](_locales/es/messages.json)
+- [Français](_locales/fr/messages.json)
+- [Português (Brasil)](_locales/pt_BR/messages.json)
+
+### Manual/Development installation instructions
 
 1. Clone this repository.
 2. In Chrome, go to chrome://extensions.
