@@ -76,7 +76,7 @@ const chromeStorage = new (class {
   });
 
   reload(...attributes) {
-    return this.LOADED.then(() => {
+    this.LOADED.then(() => {
       attributes.forEach((attribute) => {
         if (!this.ATTRIBUTES.has(attribute)) {
           this.ATTRIBUTES.add(attribute);
