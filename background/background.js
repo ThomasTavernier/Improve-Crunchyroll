@@ -95,7 +95,7 @@
                           }
                           lastGroup = undefined;
                         }
-                        if (lastGroup || value.person !== 'Title') {
+                        if (lastGroup || (value.person !== 'Title' && value.type !== 'Show_Title')) {
                           lastValue = value;
                         }
                         return acc;
