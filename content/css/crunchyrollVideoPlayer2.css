@@ -82,13 +82,13 @@ html[ic_fullscreen='true'] .scrollbar {
   display: none;
 }
 
-#vilosSettingsMenu .ic_settings,
-#vilosSettingsMenu[ic_options='submenu'] > .ic_menu,
-#vilosSettingsMenu[ic_options='hide'] > * {
+#velocity-settings-menu .ic_settings,
+#velocity-settings-menu[ic_options='submenu'] > .ic_menu,
+#velocity-settings-menu[ic_options='hide'] > * {
   display: none;
 }
 
-#vilosSettingsMenu > .ic_settings:target {
+#velocity-settings-menu[ic_options='hide'] > .ic_settings:target {
   display: flex !important;
   flex-direction: column;
   overflow-y: auto;
@@ -141,7 +141,6 @@ html[ic_fullscreen='true'] .scrollbar {
 
 .ic_back {
   padding: 0 20px;
-  margin-top: 10px;
   min-height: 40px;
   align-items: center;
   cursor: pointer;

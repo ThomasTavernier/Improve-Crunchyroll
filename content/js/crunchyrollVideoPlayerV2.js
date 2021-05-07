@@ -96,7 +96,6 @@ function createDivs() {
   });
 
   createPlayerButton();
-  createPlayerSettings();
   createFastForwardBackwardButtons();
 }
 
@@ -169,7 +168,7 @@ function createSettingsDiv(title, value, type) {
       <div class='next'></div>
     </div>`;
   div.addEventListener('click', () => {
-    document.getElementById('vilosSettingsMenu').setAttribute('ic_options', 'hide');
+    document.getElementById('velocity-settings-menu').setAttribute('ic_options', 'hide');
     window.location.hash = type;
   });
   return div;
@@ -186,9 +185,7 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
     <div class='back'></div>
     <div class='font'>${title}</div>`;
   back.addEventListener('click', () => {
-    const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
-    vilosSettingsMenu.setAttribute('ic_options', 'menu');
-    window.location.hash = '';
+    document.getElementById('velocity-settings-menu').removeAttribute('ic_options');
   });
   const optionsDiv = document.createElement('div');
   div.appendChild(optionsDiv);
@@ -254,7 +251,9 @@ function createSettingsOptionsDiv(title, type, options, value, callback) {
   return div;
 }
 
-function createPlayerSettings() {
+function createAndInsertSettings() {
+  const velocitySettingsMenu = document.getElementById('velocity-settings-menu');
+  const firstElementChild = velocitySettingsMenu.firstElementChild;
   [
     {
       title: 'KEY_PLAYBACK_RATE',
@@ -296,27 +295,35 @@ function createPlayerSettings() {
       ],
       callback: (value) => (document.getElementById('player0').playbackRate = value),
     },
-  ]
-    .map((setting) => {
-      const localStorageValue = parseFloat(localStorage.getItem(`Vilos:${setting.type}`));
-      const value = localStorageValue === localStorageValue ? localStorageValue : setting.defaultValue;
-      const title = translate(setting.title);
-      const selectedValue = setting.values.find((v) => v.value === value);
-      let selectedValueName;
-      setting.callback(value);
-      if (selectedValue) {
-        selectedValueName = selectedValue.name ? translate(selectedValue.name) : selectedValue.value;
-      } else {
-        selectedValueName = value;
-        const slider = setting.values.find((value) => value.type === 'slider');
-        if (slider) slider.value = value;
-      }
-      return [
-        createSettingsDiv(title, selectedValueName, setting.type),
-        createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
-      ];
-    })
-    .forEach((list) => list.forEach((div) => icDivSettings.push(div)));
+  ].forEach((setting) => {
+    const localStorageValue = parseFloat(localStorage.getItem(`Vilos:${setting.type}`));
+    const value = localStorageValue === localStorageValue ? localStorageValue : setting.defaultValue;
+    const title = translate(setting.title);
+    const selectedValue = setting.values.find((v) => v.value === value);
+    let selectedValueName;
+    setting.callback(value);
+    if (selectedValue) {
+      selectedValueName = selectedValue.name ? translate(selectedValue.name) : selectedValue.value;
+    } else {
+      selectedValueName = value;
+      const slider = setting.values.find((value) => value.type === 'slider');
+      if (slider) slider.value = value;
+    }
+    velocitySettingsMenu.insertBefore(createSettingsDiv(title, selectedValueName, setting.type), firstElementChild);
+    velocitySettingsMenu.insertBefore(
+      createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
+      firstElementChild
+    );
+  });
+
+  new MutationObserver(() => {
+    velocitySettingsMenu.setAttribute(
+      'ic_options',
+      velocitySettingsMenu.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : ''
+    );
+  }).observe(velocitySettingsMenu, {
+    childList: true,
+  });
 }
 
 function insertCbpDivs(vilosControlsContainer) {
@@ -324,32 +331,9 @@ function insertCbpDivs(vilosControlsContainer) {
   if (!controlsBar) return;
   const controlsBarLeft = controlsBar.firstElementChild;
   const controlsBarRight = controlsBar.lastElementChild;
-  const controlsBarRightSettingsButton = controlsBarRight.firstElementChild;
 
   controlsBarLeft.appendChild(icDivPlayerControls);
   controlsBarRight.insertBefore(icDivPlayerMode, controlsBarRight.children[1]);
-
-  new MutationObserver(() => {
-    const vilosSettingsMenu = document.getElementById('vilosSettingsMenu');
-    if (vilosSettingsMenu) {
-      vilosSettingsMenu.setAttribute('ic_options', 'menu');
-      window.location.hash = '';
-      const firstElementChild = vilosSettingsMenu.firstElementChild;
-      icDivSettings.forEach((icDivSetting) => {
-        vilosSettingsMenu.insertBefore(icDivSetting, firstElementChild);
-      });
-      new MutationObserver(() => {
-        vilosSettingsMenu.setAttribute(
-          'ic_options',
-          document.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : 'menu'
-        );
-      }).observe(vilosSettingsMenu, {
-        childList: true,
-      });
-    }
-  }).observe(controlsBarRightSettingsButton, {
-    childList: true,
-  });
 }
 
 function shortcutHandler() {
@@ -447,7 +431,6 @@ function skippersHandler() {
 
 const icDivPlayerControls = document.createElement('div');
 const icDivPlayerMode = document.createElement('div');
-const icDivSettings = [];
 
 new MutationObserver((_, observer) => {
   const vilos = document.getElementById('vilos');
@@ -463,6 +446,7 @@ new MutationObserver((_, observer) => {
     new MutationObserver((_, observer) => {
       observer.disconnect();
       createAndInsertSvgDefs();
+      createAndInsertSettings();
       createDivs();
       shortcutHandler();
       new MutationObserver((mutations) => {
