@@ -24,10 +24,8 @@ function forwardBackward(isBackward, seconds) {
   svg.addEventListener('transitionend', () => {
     svg.remove();
   });
-  document.getElementById('velocity-controls-package').appendChild(svg);
-  setTimeout(() => {
-    svg.classList.add('ic_remove');
-  });
+  document.getElementById('velocity-controls-package').appendChild(svg).focus({ preventScroll: true });
+  svg.classList.add('ic_remove');
 }
 
 function forward(fastForwardNumber) {
@@ -364,8 +362,9 @@ function createSkipper(skipper, player) {
   const element = document.createElement('div');
   element.className = 'ic_skipper';
   element.addEventListener('click', () => {
+    skipper.skipped = true;
     element.classList.remove('active');
-    player.currentTime = skipper.end;
+    forward(skipper.end - player.currentTime);
   });
   [translate('KEY_SKIP_TO'), parseNumber(skipper.end)].forEach((text) => {
     const span = document.createElement('span');
@@ -408,10 +407,19 @@ function skippersHandler() {
           if (lastTime !== currentTime) {
             lastTime = currentTime;
             skippers.forEach((skipper) => {
-              skipper.element.classList[skipper.end > currentTime && currentTime > skipper.start ? 'add' : 'remove'](
-                'active'
-              );
-              skipper.element.classList[currentTime - 5 >= skipper.start ? 'add' : 'remove']('past');
+              if (skipper.end > currentTime && currentTime > skipper.start) {
+                skipper.element.classList.add('active');
+                if (currentTime - 5 >= skipper.start) {
+                  skipper.element.classList.add('past');
+                } else {
+                  skipper.element.classList.remove('past');
+                }
+                if (chromeStorage.auto_skip && !skipper.skipped) {
+                  skipper.element.click();
+                }
+              } else {
+                skipper.element.classList.remove('active');
+              }
             });
           }
         };

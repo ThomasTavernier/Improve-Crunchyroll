@@ -14,6 +14,9 @@
   "KEY_ADD_FAST_FORWARD_SHORTCUT": {
     "message": "Adicionar atalho de pular"
   },
+  "KEY_AUTO_SKIP": {
+    "message": "pular automático"
+  },
   "KEY_BACKUP": {
     "message": "Backup"
   },

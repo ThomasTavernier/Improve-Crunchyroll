@@ -14,6 +14,9 @@
   "KEY_ADD_FAST_FORWARD_SHORTCUT": {
     "message": "Agregar salto atajo"
   },
+  "KEY_AUTO_SKIP": {
+    "message": "omisión automático"
+  },
   "KEY_BACKUP": {
     "message": "Copia de seguridad"
   },

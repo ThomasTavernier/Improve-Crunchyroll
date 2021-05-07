@@ -40,10 +40,22 @@ core.main.player = {
             key: 'hide_dim_screen',
             label: 'KEY_HIDE_DIM_SCREEN',
           },
+        },
+      },
+
+      skippers: {
+        type: 'section',
+
+        content: {
           hide_skip_button: {
             type: 'checkbox',
             key: 'hide_skip_button',
             label: 'KEY_HIDE_SKIP_BUTTON',
+          },
+          auto_skip: {
+            type: 'checkbox',
+            key: 'auto_skip',
+            label: 'KEY_AUTO_SKIP',
           },
         },
       },

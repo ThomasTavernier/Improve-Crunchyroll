@@ -1,6 +1,7 @@
 const chromeStorage = new (class {
   NESTED = 'NESTED';
   CHROME_STORAGE = {
+    auto_skip: false,
     fast_backward_buttons: '30,10',
     fast_forward_buttons: '30,90',
     header_on_hover: true,
