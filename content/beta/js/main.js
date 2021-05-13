@@ -3,13 +3,11 @@
     watch: Watch,
     series: Series,
   };
+  let lastLocationPathName;
   new MutationObserver(() => {
-    const { [location.pathname.match(/(?<=\/)[^\/]*/)[0]]: page } = pages;
-    if (page && Array.isArray(page.attributes)) {
-      chromeStorage.reload(...page.attributes);
-    } else {
-      chromeStorage.reload();
-    }
+    if (location.pathname === lastLocationPathName) return;
+    const { [(lastLocationPathName = location.pathname).match(/(?<=\/)[^\/]*/)[0]]: page } = pages;
+    chromeStorage.reload(...(page && Array.isArray(page.attributes) ? page.attributes : []));
     if (typeof page === 'function') {
       new page();
     }

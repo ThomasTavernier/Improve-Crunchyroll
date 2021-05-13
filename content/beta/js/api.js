@@ -1,5 +1,5 @@
 const API = new (class {
-  TOKEN = (() => {
+  get TOKEN() {
     const cxApiParams = fetch(window.location.origin)
       .then((response) => response.text())
       .then((text) => {
@@ -8,60 +8,76 @@ const API = new (class {
         } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
         return { apiDomain, accountAuthClientId };
       });
-    const getToken = () => {
-      return cxApiParams.then(({ apiDomain, accountAuthClientId }) => {
-        return fetch(`${apiDomain}/auth/v1/token`, {
-          method: 'POST',
-          credentials: 'include',
+    const get = () => {
+      Object.defineProperty(this, 'TOKEN', {
+        value: cxApiParams.then(({ apiDomain, accountAuthClientId }) => {
+          return fetch(`${apiDomain}/auth/v1/token`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
+            },
+            body: 'grant_type=etp_rt_cookie',
+          })
+            .then((response) => response.json())
+            .then(({ token_type, access_token, expires_in }) => {
+              setTimeout(() => {
+                Object.defineProperty(this, 'TOKEN', {
+                  get,
+                });
+              }, expires_in * 1000);
+              return { Authorization: `${token_type} ${access_token}`, apiDomain };
+            });
+        }),
+        configurable: true,
+      });
+      return this.TOKEN;
+    };
+    return get();
+  }
+
+  get ME() {
+    Object.defineProperty(this, 'ME', {
+      value: this.TOKEN.then(({ apiDomain, Authorization }) => {
+        return fetch(`${apiDomain}/accounts/v1/me`, {
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
+            Authorization: Authorization,
           },
-          body: 'grant_type=etp_rt_cookie',
         })
           .then((response) => response.json())
-          .then(({ token_type, access_token, expires_in }) => {
-            setTimeout(() => {
-              this.TOKEN = getToken();
-            }, expires_in * 1000);
-            return { Authorization: `${token_type} ${access_token}`, apiDomain };
+          .then(({ account_id }) => {
+            return { account_id };
           });
-      });
-    };
-    return getToken();
-  })();
+      }),
+    });
+    return this.ME;
+  }
 
-  ME = this.TOKEN.then(({ apiDomain, Authorization }) => {
-    return fetch(`${apiDomain}/accounts/v1/me`, {
-      headers: {
-        Authorization: Authorization,
-      },
-    })
-      .then((response) => response.json())
-      .then(({ account_id }) => {
-        return { account_id };
-      });
-  });
-
-  CMS = this.TOKEN.then(({ apiDomain, Authorization }) => {
-    return fetch(`${apiDomain}/index/v2`, {
-      headers: {
-        Authorization: Authorization,
-      },
-    })
-      .then((response) => response.json())
-      .then(({ cms: { bucket, signature, policy, key_pair_id } }) => {
-        return {
-          apiDomain,
-          bucket,
-          searchParams: {
-            Signature: signature,
-            Policy: policy,
-            'Key-Pair-Id': key_pair_id,
+  get CMS() {
+    Object.defineProperty(this, 'CMS', {
+      value: this.TOKEN.then(({ apiDomain, Authorization }) =>
+        fetch(`${apiDomain}/index/v2`, {
+          headers: {
+            Authorization: Authorization,
           },
-        };
-      });
-  });
+        })
+          .then((response) => response.json())
+          .then(({ cms: { bucket, signature, policy, key_pair_id } }) => {
+            return {
+              apiDomain,
+              bucket,
+              searchParams: {
+                Signature: signature,
+                Policy: policy,
+                'Key-Pair-Id': key_pair_id,
+              },
+            };
+          })
+      ),
+    });
+    return this.CMS;
+  }
 
   constructor() {
     chrome.runtime.onMessage.addListener(function ({ type }, __, sendResponse) {

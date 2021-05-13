@@ -19,26 +19,27 @@ class MarkAsWatchedNotWatched {
 
   constructor() {
     this.init = this.init.bind(this);
-    const targets = [
-      document.querySelector('div.seasons-select h4'),
-      document.querySelector('div.erc-season-with-navigation span'),
-    ].filter((target) => target);
-    if (targets.length === 0) return;
     const series_id = location.pathname.match(/(?<=\/series\/)[^\/]*/);
     if (!series_id) return;
-    const seasons = API.seasons(series_id[0]);
-    targets.forEach((target) => {
-      new MutationObserver(() => {
-        seasons.then(this.init);
-      }).observe(target, {
-        subtree: true,
-        characterData: true,
+    API.seasons(series_id[0]).then(({ items: seasons }) => {
+      [
+        document.querySelector('div.seasons-select h4'),
+        document.querySelector('div.erc-season-with-navigation span'),
+      ].forEach((target) => {
+        if (target) {
+          new MutationObserver(() => {
+            this.init(seasons);
+          }).observe(target, {
+            subtree: true,
+            characterData: true,
+          });
+        }
       });
+      this.init(seasons);
     });
-    seasons.then(this.init);
   }
 
-  init({ items: seasons }) {
+  init(seasons) {
     const currentSeasonH4 = document.querySelector('div.seasons-select h4');
     const currentSeason =
       seasons.length > 1
