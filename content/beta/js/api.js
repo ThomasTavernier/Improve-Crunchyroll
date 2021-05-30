@@ -100,7 +100,11 @@ const API = new (class {
           ],
         }) => {
           this.episodes(season_id).then(({ items }) => {
-            const item = items.find(({ next_episode_id }) => next_episode_id === mediaId);
+            let isUpNext = true;
+            const item = items.find(
+              ({ next_episode_id, id }, i) =>
+                next_episode_id === mediaId || ((isUpNext = isUpNext && id !== mediaId) && i === items.length - 1)
+            );
             if (item) {
               this.objects(item.id)
                 .then(({ items: [{ __links__: { streams: { href } } }] }) => this._fetch(href))
