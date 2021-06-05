@@ -10,6 +10,5 @@ core.components.input = (object) => {
   component.appendChild(input);
   component.addEventListener('click', () => input.focus());
 
-
   return component;
 };

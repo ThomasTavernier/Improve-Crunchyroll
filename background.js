@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function({ type, data }, { tab: { id: tabId } }, sendResponse) {
+chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabId } }, sendResponse) {
   switch (type) {
     case 'skippers':
       const {
@@ -91,10 +91,7 @@ chrome.runtime.onMessage.addListener(function({ type, data }, { tab: { id: tabId
                         }
                         lastGroup = undefined;
                       }
-                      if (
-                        lastGroup ||
-                        ![value.name, value.style].some((s) => s && s.toLowerCase().includes('title'))
-                      ) {
+                      if (lastGroup || ![value.name, value.style].some((s) => s && s.toLowerCase().includes('title'))) {
                         lastValue = value;
                       }
                       return acc;

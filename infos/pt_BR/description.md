@@ -9,6 +9,7 @@ Improve Crunchyroll pode:
  - Ocultar bandeiras,  imagem de fundo
  - Ocultar tela escurecida do jogador
  - Ocultar legendas
+ - Ocultar botão de pausa de reprodução
  - Desativar NumPad
  - Adicionar botões voltar / pular
  - Adicionar atalhos para voltar / pular
@@ -16,7 +17,7 @@ Improve Crunchyroll pode:
  - Configurações de backup / redefinição
 
 Novo:
-- Ocultar botão de pausa de reprodução
+- Chrome Manifest V3
 
 Suporte a versão beta do Crunchyroll.
 Comentários são bem-vindos!

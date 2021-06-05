@@ -1,5 +1,5 @@
 (() => {
-  chrome.runtime.onMessage.addListener(function({ type, data }, sender, sendResponse) {
+  chrome.runtime.onMessage.addListener(function ({ type, data }, sender, sendResponse) {
     const { [type]: action } = actions;
     if (typeof action === 'function') {
       action(...arguments);

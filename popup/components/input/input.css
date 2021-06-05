@@ -5,7 +5,7 @@
   text-align: center;
   border-color: var(--secondary-font);
   background: var(--secondary);
-  color: var(--secondary-font)
+  color: var(--secondary-font);
 }
 
 .input:focus {

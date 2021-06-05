@@ -75,7 +75,7 @@ function createFastForwardBackwardButtons() {
 }
 
 function createAndInsertSvgDefs() {
-  Promise.all(['forward', 'backward'].map((file) => fetch(chrome.extension.getURL(`/resources/${file}.html`))))
+  Promise.all(['forward', 'backward'].map((file) => fetch(chrome.runtime.getURL(`/resources/${file}.html`))))
     .then((responses) => Promise.all(responses.map((response) => response.text())))
     .then((symbols) => {
       const svgDefs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -109,8 +109,8 @@ function playerMode1Change() {
     player_mode:
       chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1
         ? !chromeStorage.theater_mode
-        ? 1
-        : 0
+          ? 1
+          : 0
         : chromeStorage.player_mode,
   });
 }
@@ -368,7 +368,7 @@ function shortcutHandler() {
         ev.stopPropagation();
       });
     },
-    true
+    true,
   );
 }
 

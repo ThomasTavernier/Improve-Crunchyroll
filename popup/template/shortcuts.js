@@ -116,7 +116,7 @@ core.main.shortcuts = {
                                             },
                                           },
                                           save,
-                                        }
+                                        },
                                       );
                                     },
                                   },
@@ -127,7 +127,7 @@ core.main.shortcuts = {
                           },
                         },
                       },
-                      replace
+                      replace,
                     );
                   })(false);
                 },
@@ -185,7 +185,7 @@ core.main.shortcuts = {
                           },
                         },
                       },
-                    }
+                    },
                   );
                 },
               },
@@ -195,7 +195,7 @@ core.main.shortcuts = {
               chrome.storage.local.onChanged.addListener((changes) => {
                 if (changes.shortcuts && changes.shortcuts.newValue.skip !== changes.shortcuts.oldValue.skip) {
                   setTimeout(() =>
-                    skip.setSubLabel(shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts.skip) || 'KEY_NONE')
+                    skip.setSubLabel(shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts.skip) || 'KEY_NONE'),
                   );
                 }
               });

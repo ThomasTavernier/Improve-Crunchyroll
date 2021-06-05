@@ -102,8 +102,8 @@ class MarkAsWatchedNotWatched {
     const currentSeason =
       seasons.length > 1
         ? seasons.find(
-        ({ title }) => currentSeasonH4 && currentSeasonH4.innerText && currentSeasonH4.innerText.endsWith(title),
-        )
+            ({ title }) => currentSeasonH4 && currentSeasonH4.innerText && currentSeasonH4.innerText.endsWith(title),
+          )
         : seasons[0];
     return currentSeason && currentSeason.id;
   }

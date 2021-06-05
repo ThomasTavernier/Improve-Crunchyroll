@@ -9,6 +9,7 @@ Improve Crunchyroll can:
  - Hide banners, background image
  - Hide player dim screen
  - Hide subtitles
+ - Hide play pause button
  - Disable NumPad
  - Add fast backward/forward buttons
  - Add fast backward/forward shortcuts
@@ -16,7 +17,7 @@ Improve Crunchyroll can:
  - Backup/reset settings
 
 New:
- - Hide play pause button
+ - Chrome Manifest V3
 
 Support beta version of Crunchyroll.
 Feedbacks are welcomed!

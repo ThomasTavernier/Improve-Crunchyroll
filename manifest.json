@@ -1,6 +1,6 @@
 {
-  "manifest_version": 2,
-  "version": "2.14.0",
+  "manifest_version": 3,
+  "version": "3.0.0",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -11,14 +11,11 @@
   "permissions": [
     "storage"
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup/index.html"
   },
   "background": {
-    "scripts": [
-      "background/background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -160,6 +157,13 @@
     }
   ],
   "web_accessible_resources": [
-    "resources/*"
+    {
+      "resources": [
+        "resources/*"
+      ],
+      "matches": [
+        "https://static.crunchyroll.com/*"
+      ]
+    }
   ]
 }

@@ -10,6 +10,7 @@ Improve Crunchyroll peut:
  - Grossir le lecteur vidéo
  - Masquer l'écran sombre du lecteur
  - Masquer les sous-titres
+ - Masquer le bouton pause de lecture
  - Désactiver le pavé numérique
  - Ajouter des bouttons d'avance / retour rapides
  - Ajouter des raccourcis d'avance / retour rapides
@@ -17,7 +18,7 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
-- Masquer le bouton pause de lecture
+- Chrome Manifest V3
 
 Supporte la version bêta de Crunchyroll.
 Les retours sont les bienvenus!

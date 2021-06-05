@@ -1,7 +1,5 @@
 class Empty {
   static attributes = [];
 
-  onDestroy() {
-
-  }
+  onDestroy() {}
 }

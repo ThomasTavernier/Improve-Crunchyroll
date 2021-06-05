@@ -1,6 +1,6 @@
 const API = new (class {
   constructor() {
-    chrome.runtime.onMessage.addListener(function({ type }, __, sendResponse) {
+    chrome.runtime.onMessage.addListener(function ({ type }, __, sendResponse) {
       const { [type]: action } = API;
       if (typeof action !== 'function' || !action.apply(API, arguments)) {
         sendResponse();
@@ -93,12 +93,12 @@ const API = new (class {
     return new Promise((resolve, reject) => {
       this.objects(mediaId).then(
         ({
-           items: [
-             {
-               episode_metadata: { season_id },
-             },
-           ],
-         }) => {
+          items: [
+            {
+              episode_metadata: { season_id },
+            },
+          ],
+        }) => {
           this.episodes(season_id).then(({ items }) => {
             let isUpNext = true;
             const item = items.find(

@@ -1,12 +1,15 @@
 (() => {
-  const classes = new Proxy({
-    watch: Watch,
-    series: Series,
-  }, {
-    get(target, p, receiver) {
-      return Reflect.get(target, p, receiver) || Empty;
+  const classes = new Proxy(
+    {
+      watch: Watch,
+      series: Series,
     },
-  });
+    {
+      get(target, p, receiver) {
+        return Reflect.get(target, p, receiver) || Empty;
+      },
+    },
+  );
   let lastLocationPathName;
   let lastInstance = new Empty();
   const callback = () => {
