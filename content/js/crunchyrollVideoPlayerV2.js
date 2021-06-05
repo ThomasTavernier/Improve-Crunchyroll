@@ -376,108 +376,81 @@ function createSkipper(skipper, player) {
 }
 
 function skippersHandler() {
-  const script = document.createElement('script');
-  script.text = `(${(() => {
-    const self = document.currentScript;
-
-    function send() {
-      self.dispatchEvent(new CustomEvent('ic_load_config', { detail: window.v1config }));
-      self.remove();
-    }
-
-    if (window.v1config) {
-      send();
-    } else {
-      const interval = setInterval(() => {
-        if (window.v1config) {
-          clearInterval(interval);
-          send();
-        }
-      }, 100);
-    }
-  }).toString()})();`;
-  script.addEventListener('ic_load_config', (evt) => {
-    chrome.runtime.sendMessage(chrome.runtime.id, { type: 'skippers', data: evt.detail }, (skippers) => {
-      if (Array.isArray(skippers)) {
-        const player = document.getElementById('player0');
-        let lastTime;
-        skippers.forEach((skipper) => document.body.appendChild(createSkipper(skipper, player)));
-        const timeupdate = () => {
-          const currentTime = ~~player.currentTime;
-          if (lastTime !== currentTime) {
-            lastTime = currentTime;
-            skippers.forEach((skipper) => {
-              if (skipper.end > currentTime && currentTime > skipper.start) {
-                skipper.element.classList.add('active');
-                if (currentTime - 5 >= skipper.start) {
-                  skipper.element.classList.add('past');
+  window.addEventListener('message', function listener({ data }) {
+    const { method, value } = JSON.parse(data);
+    if (method === 'extendConfig') {
+      window.removeEventListener('message', listener);
+      chrome.runtime.sendMessage(chrome.runtime.id, { type: 'skippers', data: value }, (skippers) => {
+        if (Array.isArray(skippers)) {
+          const player = document.getElementById('player0');
+          let lastTime;
+          skippers.forEach((skipper) => document.body.appendChild(createSkipper(skipper, player)));
+          const timeupdate = () => {
+            const currentTime = ~~player.currentTime;
+            if (lastTime !== currentTime) {
+              lastTime = currentTime;
+              skippers.forEach((skipper) => {
+                if (skipper.end > currentTime && currentTime > skipper.start) {
+                  skipper.element.classList.add('active');
+                  if (currentTime - 5 >= skipper.start) {
+                    skipper.element.classList.add('past');
+                  } else {
+                    skipper.element.classList.remove('past');
+                  }
+                  if (chromeStorage.auto_skip && !skipper.skipped) {
+                    skipper.element.click();
+                  }
                 } else {
-                  skipper.element.classList.remove('past');
+                  skipper.element.classList.remove('active');
                 }
-                if (chromeStorage.auto_skip && !skipper.skipped) {
-                  skipper.element.click();
-                }
-              } else {
-                skipper.element.classList.remove('active');
-              }
-            });
-          }
-        };
-        player.addEventListener('timeupdate', timeupdate);
-        player.addEventListener(
-          'loadstart',
-          () => {
-            player.removeEventListener('timeupdate', timeupdate);
-          },
-          { once: true }
-        );
-      }
-    });
+              });
+            }
+          };
+          player.addEventListener('timeupdate', timeupdate);
+          player.addEventListener(
+            'loadstart',
+            () => {
+              player.removeEventListener('timeupdate', timeupdate);
+            },
+            { once: true }
+          );
+        }
+      });
+    }
   });
-  document.documentElement.appendChild(script);
 }
 
 const icDivPlayerControls = document.createElement('div');
 const icDivPlayerMode = document.createElement('div');
 
-new MutationObserver((_, observer) => {
-  const vilos = document.getElementById('vilos');
-  if (!vilos) return;
-  observer.disconnect();
-  document.onfullscreenchange = () => {
-    document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
-  };
-  chromeStorage.reload('hide_dim_screen', 'hide_skip_button', 'hide_subtitles', 'player_mode', 'scrollbar');
-  new MutationObserver((_, observer) => {
-    observer.disconnect();
+window.addEventListener(
+  'message',
+  () => {
+    document.onfullscreenchange = () => {
+      document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
+    };
+    chromeStorage.reload('hide_dim_screen', 'hide_skip_button', 'hide_subtitles', 'player_mode', 'scrollbar');
     document.getElementById('player0').addEventListener('loadstart', skippersHandler);
-    new MutationObserver((_, observer) => {
-      observer.disconnect();
-      createAndInsertSvgDefs();
-      createAndInsertSettings();
-      createDivs();
-      shortcutHandler();
-      new MutationObserver((mutations) => {
-        mutations.some(({ addedNodes }) =>
-          [...addedNodes].some((node) => {
-            if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
-              document.documentElement.setAttribute('ic_vilos_controls', 'true');
-              insertCbpDivs(node);
-              return true;
-            } else {
-              document.documentElement.setAttribute('ic_vilos_controls', 'false');
-            }
-          })
-        );
-      }).observe(document.getElementById('velocity-controls-package'), {
-        childList: true,
-      });
-    }).observe(document.getElementById('vilosRoot'), {
+    skippersHandler();
+    createAndInsertSvgDefs();
+    createAndInsertSettings();
+    createDivs();
+    shortcutHandler();
+    new MutationObserver((mutations) => {
+      mutations.some(({ addedNodes }) =>
+        [...addedNodes].some((node) => {
+          if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
+            document.documentElement.setAttribute('ic_vilos_controls', 'true');
+            insertCbpDivs(node);
+            return true;
+          } else {
+            document.documentElement.setAttribute('ic_vilos_controls', 'false');
+          }
+        })
+      );
+    }).observe(document.getElementById('velocity-controls-package'), {
       childList: true,
     });
-  }).observe(vilos, {
-    childList: true,
-  });
-}).observe(document.documentElement, {
-  childList: true,
-});
+  },
+  { once: true }
+);

@@ -1,27 +1,13 @@
-(() => {
-  chrome.runtime.onMessage.addListener(function ({ type, data }, sender, sendResponse) {
-    const { [type]: action } = actions;
-    if (typeof action === 'function') {
-      action(...arguments);
-      return true;
-    }
-    sendResponse();
-  });
-  const actions = {
-    skippers(
-      {
-        type,
-        data: {
-          analytics: { legacy },
-          media: {
-            metadata: { id: mediaId, duration },
-            subtitles: currentSubtitles,
-          },
+chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabId } }, sendResponse) {
+  switch (type) {
+    case 'skippers':
+      const {
+        analytics: { legacy },
+        media: {
+          metadata: { id: mediaId, duration },
+          subtitles: currentSubtitles,
         },
-      },
-      { tab: { id: tabId } },
-      sendResponse
-    ) {
+      } = data;
       new Promise((resolve, reject) => {
         chrome.tabs.sendMessage(
           tabId,
@@ -130,6 +116,8 @@
         .catch(() => {
           sendResponse([]);
         });
-    },
-  };
-})();
+      return true;
+    default:
+      sendResponse();
+  }
+});
