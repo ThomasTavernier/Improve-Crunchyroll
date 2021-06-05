@@ -23,6 +23,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Réinitialisation et sauvegarde"
   },
+  "KEY_BUTTONS": {
+    "message": "Boutons"
+  },
   "KEY_CANCEL": {
     "message": "Annuler"
   },
@@ -142,6 +145,9 @@
   },
   "KEY_SKIP_TO": {
     "message": "PASSER:"
+  },
+  "KEY_SKIPPING": {
+    "message": "Saut"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Sauvegarde réussie."

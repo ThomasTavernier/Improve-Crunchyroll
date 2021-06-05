@@ -23,6 +23,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Backup e redefinição"
   },
+  "KEY_BUTTONS": {
+    "message": "Botões"
+  },
   "KEY_CANCEL": {
     "message": "Cancelar"
   },
@@ -142,6 +145,9 @@
   },
   "KEY_SKIP_TO": {
     "message": "PULE PARA:"
+  },
+  "KEY_SKIPPING": {
+    "message": "Pulando"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."

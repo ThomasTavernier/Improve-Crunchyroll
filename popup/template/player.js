@@ -10,25 +10,13 @@ core.main.player = {
     content: {
       player: {
         type: 'section',
-        // label: 'KEY_GENERAL',
+        label: 'KEY_GENERAL',
 
         content: {
           header_on_hover: {
             type: 'checkbox',
             key: 'header_on_hover',
             label: 'KEY_HEADER_ON_HOVER',
-          },
-          fast_backward_buttons: {
-            type: 'numberList',
-            key: 'fast_backward_buttons',
-            label: 'KEY_FAST_BACKWARD_BUTTONS',
-            placeholder: '30,10',
-          },
-          fast_forward_buttons: {
-            type: 'numberList',
-            key: 'fast_forward_buttons',
-            label: 'KEY_FAST_FORWARD_BUTTONS',
-            placeholder: '30,90',
           },
           hide_subtitles: {
             type: 'checkbox',
@@ -45,6 +33,20 @@ core.main.player = {
 
       skippers: {
         type: 'section',
+        label: 'KEY_SKIPPING',
+
+        content: {
+          auto_skip: {
+            type: 'checkbox',
+            key: 'auto_skip',
+            label: 'KEY_AUTO_SKIP',
+          },
+        },
+      },
+
+      buttons: {
+        type: 'section',
+        label: 'KEY_BUTTONS',
 
         content: {
           hide_skip_button: {
@@ -52,10 +54,17 @@ core.main.player = {
             key: 'hide_skip_button',
             label: 'KEY_HIDE_SKIP_BUTTON',
           },
-          auto_skip: {
-            type: 'checkbox',
-            key: 'auto_skip',
-            label: 'KEY_AUTO_SKIP',
+          fast_backward_buttons: {
+            type: 'numberList',
+            key: 'fast_backward_buttons',
+            label: 'KEY_FAST_BACKWARD_BUTTONS',
+            placeholder: '30,10',
+          },
+          fast_forward_buttons: {
+            type: 'numberList',
+            key: 'fast_forward_buttons',
+            label: 'KEY_FAST_FORWARD_BUTTONS',
+            placeholder: '30,90',
           },
         },
       },

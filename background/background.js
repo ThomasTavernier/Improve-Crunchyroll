@@ -43,7 +43,18 @@
                         .then((response) => response.text())
                         .then((text) => {
                           return text.match(/Dialogue:.*/g).reduce((acc, dialogue) => {
-                            const [, startText, endText, type, person, , , , , ...texts] = dialogue.split(',');
+                            const [
+                              layer,
+                              startText,
+                              endText,
+                              style,
+                              name,
+                              marginL,
+                              marginR,
+                              marginV,
+                              effect,
+                              ...texts
+                            ] = dialogue.split(',');
                             const [start, end] = [startText, endText].map((text) =>
                               text
                                 .split(':')
@@ -54,17 +65,17 @@
                             acc.push({
                               start,
                               end,
-                              type,
-                              person,
+                              style,
+                              name,
                               text,
-                              key: [type, person, text].join(),
+                              key: [style, name, text].join(),
                             });
                             return acc;
                           }, []);
                         })
                     )
                   ).then((subs) => {
-                    const MIN_DURATION = 60;
+                    const MIN_DURATION = 75;
                     const currentSub = subs.shift();
                     const durationInSeconds = duration / 1000;
                     const fake = {
@@ -95,7 +106,10 @@
                           }
                           lastGroup = undefined;
                         }
-                        if (lastGroup || (value.person !== 'Title' && value.type !== 'Show_Title')) {
+                        if (
+                          lastGroup ||
+                          ![value.name, value.style].some((s) => s && s.toLowerCase().includes('title'))
+                        ) {
                           lastValue = value;
                         }
                         return acc;
