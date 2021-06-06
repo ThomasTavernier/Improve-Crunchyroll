@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "2.12.14",
+  "version": "2.12.15",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
