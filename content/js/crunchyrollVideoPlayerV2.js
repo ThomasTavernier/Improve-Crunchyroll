@@ -376,46 +376,54 @@ function createSkipper(skipper, player) {
 }
 
 function skippersHandler() {
-  window.addEventListener('message', function listener({ data }) {
+  let mediaId;
+  window.addEventListener('message', ({ data }) => {
     const { method, value } = JSON.parse(data);
     if (method === 'loadConfig' || method === 'extendConfig') {
-      window.removeEventListener('message', listener);
-      chrome.runtime.sendMessage(chrome.runtime.id, { type: 'skippers', data: value }, (skippers) => {
-        if (Array.isArray(skippers)) {
-          const player = document.getElementById('player0');
-          let lastTime;
-          skippers.forEach((skipper) => document.body.appendChild(createSkipper(skipper, player)));
-          const timeupdate = () => {
-            const currentTime = ~~player.currentTime;
-            if (lastTime !== currentTime) {
-              lastTime = currentTime;
-              skippers.forEach((skipper) => {
-                if (skipper.end > currentTime && currentTime > skipper.start) {
-                  skipper.element.classList.add('active');
-                  if (currentTime - 5 >= skipper.start) {
-                    skipper.element.classList.add('past');
+      const {
+        media: {
+          metadata: { id },
+        },
+      } = value;
+      if (id && id !== mediaId) {
+        mediaId = id;
+        chrome.runtime.sendMessage(chrome.runtime.id, { type: 'skippers', data: value }, (skippers) => {
+          if (Array.isArray(skippers)) {
+            const player = document.getElementById('player0');
+            let lastTime;
+            skippers.forEach((skipper) => document.body.appendChild(createSkipper(skipper, player)));
+            const timeupdate = () => {
+              const currentTime = ~~player.currentTime;
+              if (lastTime !== currentTime) {
+                lastTime = currentTime;
+                skippers.forEach((skipper) => {
+                  if (skipper.end > currentTime && currentTime > skipper.start) {
+                    skipper.element.classList.add('active');
+                    if (currentTime - 5 >= skipper.start) {
+                      skipper.element.classList.add('past');
+                    } else {
+                      skipper.element.classList.remove('past');
+                    }
+                    if (chromeStorage.auto_skip && !skipper.skipped) {
+                      skipper.element.click();
+                    }
                   } else {
-                    skipper.element.classList.remove('past');
+                    skipper.element.classList.remove('active');
                   }
-                  if (chromeStorage.auto_skip && !skipper.skipped) {
-                    skipper.element.click();
-                  }
-                } else {
-                  skipper.element.classList.remove('active');
-                }
-              });
-            }
-          };
-          player.addEventListener('timeupdate', timeupdate);
-          player.addEventListener(
-            'loadstart',
-            () => {
-              player.removeEventListener('timeupdate', timeupdate);
-            },
-            { once: true }
-          );
-        }
-      });
+                });
+              }
+            };
+            player.addEventListener('timeupdate', timeupdate);
+            player.addEventListener(
+              'loadstart',
+              () => {
+                player.removeEventListener('timeupdate', timeupdate);
+              },
+              { once: true }
+            );
+          }
+        });
+      }
     }
   });
 }
@@ -433,7 +441,7 @@ new MutationObserver((_, observer) => {
   chromeStorage.reload('hide_dim_screen', 'hide_skip_button', 'hide_subtitles', 'player_mode', 'scrollbar');
   new MutationObserver((_, observer) => {
     observer.disconnect();
-    document.getElementById('player0').addEventListener('loadstart', skippersHandler);
+    skippersHandler();
     new MutationObserver((_, observer) => {
       observer.disconnect();
       createAndInsertSvgDefs();
