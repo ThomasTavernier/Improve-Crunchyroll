@@ -431,6 +431,7 @@ function skippersHandler() {
 const icDivPlayerControls = document.createElement('div');
 const icDivPlayerMode = document.createElement('div');
 
+skippersHandler();
 new MutationObserver((_, observer) => {
   const vilos = document.getElementById('vilos');
   if (!vilos) return;
@@ -441,7 +442,6 @@ new MutationObserver((_, observer) => {
   chromeStorage.reload('hide_dim_screen', 'hide_skip_button', 'hide_subtitles', 'player_mode', 'scrollbar');
   new MutationObserver((_, observer) => {
     observer.disconnect();
-    skippersHandler();
     new MutationObserver((_, observer) => {
       observer.disconnect();
       createAndInsertSvgDefs();
