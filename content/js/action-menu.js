@@ -16,7 +16,7 @@ function createActionMenuButton(entries) {
       if (entry.subMenus) {
         actionMenuEntry.classList.add('ic_action_menu_parent');
         actionMenuEntry.addEventListener('click', (event) =>
-          event.target === actionMenuEntry ? event.stopPropagation() : undefined
+          event.target === actionMenuEntry ? event.stopPropagation() : undefined,
         );
         actionMenuEntry.appendChild(createActionMenuEntries(entry.subMenus));
       }
@@ -61,7 +61,7 @@ function createActionMenuButton(entries) {
       document.documentElement.scrollWidth,
       document.body.offsetWidth,
       document.documentElement.offsetWidth,
-      document.documentElement.clientWidth
+      document.documentElement.clientWidth,
     );
     let left = window.pageXOffset + event.clientX;
     const deltaWidth = maxWidth - left;

@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabId } }, sendResponse) {
+chrome.runtime.onMessage.addListener(function({ type, data }, { tab: { id: tabId } }, sendResponse) {
   switch (type) {
     case 'skippers':
       const {
@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
               !currentSubtitles.some(({ language: currentLanguage, format: currentFormat, url: currentUrl }) => {
                 const previousSubtitle = previousSubtitles.find(
                   ({ locale, language, format }) =>
-                    (currentLanguage === locale || currentLanguage === language) && currentFormat === format
+                    (currentLanguage === locale || currentLanguage === language) && currentFormat === format,
                 );
                 if (previousSubtitle) {
                   return Promise.all(
@@ -45,7 +45,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                               text
                                 .split(':')
                                 .reverse()
-                                .reduce((acc, v, i) => acc + ~~v * Math.pow(60, i), 0)
+                                .reduce((acc, v, i) => acc + ~~v * Math.pow(60, i), 0),
                             );
                             const text = texts.join().replaceAll(/({[^}]*})|(\\.)/g, '');
                             acc.push({
@@ -58,8 +58,8 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                             });
                             return acc;
                           }, []);
-                        })
-                    )
+                        }),
+                    ),
                   ).then((subs) => {
                     const MIN_DURATION = 75;
                     const currentSub = subs.shift();
@@ -99,7 +99,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                           lastValue = value;
                         }
                         return acc;
-                      }, [])
+                      }, []),
                     );
                   });
                 }
@@ -107,7 +107,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
             ) {
               reject();
             }
-          }
+          },
         );
       })
         .then((data) => {

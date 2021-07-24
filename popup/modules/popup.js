@@ -42,7 +42,7 @@ core.popup = {
             click: () => this.close(),
           },
         },
-      }
+      },
     );
   },
 
@@ -69,7 +69,7 @@ core.popup = {
             click: okClick,
           },
         },
-      }
+      },
     );
   },
 };

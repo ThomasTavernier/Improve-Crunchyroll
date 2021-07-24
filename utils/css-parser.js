@@ -235,7 +235,7 @@ function parse(css) {
           if (string.includes('#')) {
             if (
               ['border-top', 'border-right', 'border-bottom', 'border-left', 'border'].find((boderSelector) =>
-                string.includes(boderSelector)
+                string.includes(boderSelector),
               )
             ) {
               string = `border-color:#${string.match(/(?<=#)[0-9a-zA-Z]+/)[0]}`;
@@ -250,7 +250,7 @@ function parse(css) {
               ...new Set(
                 cssByProperty[string] !== undefined
                   ? [...cssByProperty[string], ...selector.split(',')]
-                  : selector.split(',')
+                  : selector.split(','),
               ),
             ];
           }
@@ -261,7 +261,7 @@ function parse(css) {
     property = theme(property);
     if (property)
       outputCSS += `html[ic_theme]:not([ic_theme="0"]) ${selectors.join(
-        ',\nhtml[ic_theme]:not([ic_theme="0"]) '
+        ',\nhtml[ic_theme]:not([ic_theme="0"]) ',
       )} {\n    ${property} !important;\n}\n\n`;
   });
   return outputCSS;

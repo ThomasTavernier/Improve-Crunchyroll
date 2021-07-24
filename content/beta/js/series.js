@@ -14,7 +14,7 @@ class MarkAsWatchedNotWatched {
         }
         return Reflect.get(target, p);
       },
-    }
+    },
   );
 
   constructor() {
@@ -31,7 +31,7 @@ class MarkAsWatchedNotWatched {
             this.card(card, seasons, episodes);
           });
           this.watchCollection(ercSeasonWithNavigation, seasons, episodes);
-        })
+        }),
       );
       this.watchSeason(seasons, ercSeasonWithNavigation);
     } else {
@@ -58,11 +58,11 @@ class MarkAsWatchedNotWatched {
                     this.card(card, seasons, episodes);
                   });
                 }
-              })
+              }),
             );
             this.watchCollection(ercSeasonWithNavigation, seasons, episodes);
           })
-          .catch()
+          .catch(),
       );
     }).observe(ercSeasonWithNavigation, {
       childList: true,
@@ -78,7 +78,7 @@ class MarkAsWatchedNotWatched {
           if (card.classList.contains('card')) {
             this.card(card, seasons, episodes);
           }
-        })
+        }),
       );
     }).observe(ercPlayableCollection, {
       childList: true,
@@ -90,8 +90,8 @@ class MarkAsWatchedNotWatched {
     const currentSeason =
       seasons.length > 1
         ? seasons.find(
-            ({ title }) => currentSeasonH4 && currentSeasonH4.innerText && currentSeasonH4.innerText.endsWith(title)
-          )
+        ({ title }) => currentSeasonH4 && currentSeasonH4.innerText && currentSeasonH4.innerText.endsWith(title),
+        )
         : seasons[0];
     return currentSeason && currentSeason.id;
   }
@@ -146,7 +146,7 @@ class MarkAsWatchedNotWatched {
                 Promise.all(
                   episodes
                     .filter(({ sequence_number }) => sequence_number <= episode_sequence_number)
-                    .map(({ id, duration_ms }) => API.playheads(id, duration_ms))
+                    .map(({ id, duration_ms }) => API.playheads(id, duration_ms)),
                 ).then(this.refresh);
               },
             },
@@ -168,13 +168,13 @@ class MarkAsWatchedNotWatched {
                 Promise.all(
                   episodes
                     .filter(({ sequence_number }) => sequence_number >= episode_sequence_number)
-                    .map(({ id }) => API.playheads(id, 0))
+                    .map(({ id }) => API.playheads(id, 0)),
                 ).then(this.refresh);
               },
             },
           ],
         },
-      ])
+      ]),
     );
   }
 

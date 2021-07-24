@@ -57,7 +57,7 @@ function createFastForwardBackwardButtons() {
       fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
       buttonList.push(fastBackwardButton);
-    }
+    },
   );
   (chromeStorage.fast_forward_buttons.length > 0 ? chromeStorage.fast_forward_buttons.split(',') : []).forEach(
     (fastForwardNumber) => {
@@ -66,7 +66,7 @@ function createFastForwardBackwardButtons() {
       fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
       buttonList.push(fastForwardButton);
-    }
+    },
   );
   buttonList.forEach((button) => {
     button.classList.add('ic_buttons');
@@ -109,8 +109,8 @@ function playerMode1Change() {
     player_mode:
       chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1
         ? !chromeStorage.theater_mode
-          ? 1
-          : 0
+        ? 1
+        : 0
         : chromeStorage.player_mode,
   });
 }
@@ -310,14 +310,14 @@ function createAndInsertSettings() {
     velocitySettingsMenu.insertBefore(createSettingsDiv(title, selectedValueName, setting.type), firstElementChild);
     velocitySettingsMenu.insertBefore(
       createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
-      firstElementChild
+      firstElementChild,
     );
   });
 
   new MutationObserver(() => {
     velocitySettingsMenu.setAttribute(
       'ic_options',
-      velocitySettingsMenu.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : ''
+      velocitySettingsMenu.querySelector('[data-testid="vilos-settings_back_button"]') ? 'submenu' : '',
     );
   }).observe(velocitySettingsMenu, {
     childList: true,
@@ -419,7 +419,7 @@ function skippersHandler() {
               () => {
                 player.removeEventListener('timeupdate', timeupdate);
               },
-              { once: true }
+              { once: true },
             );
           }
         });
@@ -458,7 +458,7 @@ new MutationObserver((_, observer) => {
             } else {
               document.documentElement.setAttribute('ic_vilos_controls', 'false');
             }
-          })
+          }),
         );
       }).observe(document.getElementById('velocity-controls-package'), {
         childList: true,

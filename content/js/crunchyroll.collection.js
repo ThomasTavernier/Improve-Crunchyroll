@@ -39,7 +39,7 @@ if (seasons.length > 0) {
                   },
                 ],
               },
-            ])
+            ]),
           );
         }
       });
@@ -62,19 +62,19 @@ function markAsWatched(...episodesId) {
                     fetch(
                       `https://www.crunchyroll.com/ajax/?req=RpcApiVideo_VideoView&cbcallcount=0&cbelapsed=0&playhead=${
                         ~~JSON.parse(text.match(/{"metadata":.+}/)).metadata.duration / 1000
-                      }&media_id=${episodeId}`
-                    )
+                      }&media_id=${episodeId}`,
+                    ),
                   );
                 } catch (error) {
                   reject(error);
                 }
               })
-              .catch(reject)
-          )
-      )
+              .catch(reject),
+          ),
+      ),
     )
       .then(() => fetchAndFill(episodesIds).then(resolve).catch(reject))
-      .catch(reject)
+      .catch(reject),
   );
 }
 
@@ -84,12 +84,12 @@ function markAsNotWatched(...episodesId) {
     Promise.all(
       episodesIds.map((episodeId) =>
         fetch(
-          `https://www.crunchyroll.com/ajax/?req=RpcApiVideo_VideoView&cbcallcount=0&cbelapsed=0&playhead=${0}&media_id=${episodeId}`
-        )
-      )
+          `https://www.crunchyroll.com/ajax/?req=RpcApiVideo_VideoView&cbcallcount=0&cbelapsed=0&playhead=${0}&media_id=${episodeId}`,
+        ),
+      ),
     )
       .then(() => fetchAndFill(episodesIds).then(resolve).catch(reject))
-      .catch(reject)
+      .catch(reject),
   );
 }
 
@@ -103,12 +103,12 @@ function fetchAndFill(episodesIds) {
           const episodeProgress = document.querySelector(`#showview_videos_media_${episodeId} .episode-progress`);
           if (episodeProgress) {
             episodeProgress.style.width = `${parseFloat(
-              ((text.match(new RegExp(`${episodeId}(.*?)%`)) || [''])[0].match(/(\d*\.)?\d+%$/) || [])[0]
+              ((text.match(new RegExp(`${episodeId}(.*?)%`)) || [''])[0].match(/(\d*\.)?\d+%$/) || [])[0],
             )}%`;
           }
         });
         resolve();
       })
-      .catch(reject)
+      .catch(reject),
   );
 }

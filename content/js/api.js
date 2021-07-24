@@ -1,5 +1,5 @@
 (() => {
-  chrome.runtime.onMessage.addListener(function ({ type, data }, sender, sendResponse) {
+  chrome.runtime.onMessage.addListener(function({ type, data }, sender, sendResponse) {
     const { [type]: action } = actions;
     if (typeof action === 'function') {
       action(...arguments);
@@ -13,7 +13,7 @@
         fetch(
           `https://www.crunchyroll.com/showmedia?id=${document
             .querySelector(`[media_id="${legacyMediaId}"]`)
-            .previousElementSibling.getAttribute('media_id')}`
+            .previousElementSibling.getAttribute('media_id')}`,
         )
           .then((response) => response.text())
           .then((text) => {

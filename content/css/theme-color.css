@@ -24,6 +24,7 @@ html[ic_theme='1'] {
   --tertiary-font: rgb(125, 125, 125);
   --crunchyroll-blue: rgb(0, 185, 249);
 }
+
 html[ic_theme]:not[ic_theme='0'] .erc-header,
 html[ic_theme]:not[ic_theme='0'] .erc-page-overlay {
   --cx-colors-shark: var(--primary-font); /* 23252b */
@@ -36,6 +37,7 @@ html[ic_theme]:not[ic_theme='0'] .erc-page-overlay {
   --cx-colors-alabaster: var(--primary); /* f8f8f8 */
   --cx-colors-scarpa-flow: var(--tertiary-font); /* 59595b */
 }
+
 html[ic_theme]:not[ic_theme='0'] .erc-account-menu {
   /* --cx-acc-menu-accent-color: #f47521; */
   --cx-acc-menu-black-color: var(--primary-font); /* 23252b */

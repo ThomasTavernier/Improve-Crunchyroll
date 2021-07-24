@@ -966,32 +966,32 @@ html[ic_theme]:not([ic_theme='0']) #showmedia_free_trial_signup {
 }
 
 html[ic_theme]:not([ic_theme='0'])
-  #source_manga_showview
-  .landscape-grid
-  li
-  .queue-wrapper
-  .volume-purchase-button
-  .amazon_button {
+#source_manga_showview
+.landscape-grid
+li
+.queue-wrapper
+.volume-purchase-button
+.amazon_button {
   background: linear-gradient(to bottom, #717171 0, var(--primary-font) 100%) !important;
 }
 
 html[ic_theme]:not([ic_theme='0'])
-  #source_manga_showview
-  .landscape-grid
-  li
-  .queue-wrapper
-  .volume-purchase-button
-  .amazon_button {
+#source_manga_showview
+.landscape-grid
+li
+.queue-wrapper
+.volume-purchase-button
+.amazon_button {
   border-color: var(--secondary-font) !important;
 }
 
 html[ic_theme]:not([ic_theme='0'])
-  #source_manga_showview
-  .landscape-grid
-  li
-  .queue-wrapper
-  .volume-purchase-button
-  .amazon_button:hover,
+#source_manga_showview
+.landscape-grid
+li
+.queue-wrapper
+.volume-purchase-button
+.amazon_button:hover,
 html[ic_theme]:not([ic_theme='0']) a .thumb-fc:hover,
 html[ic_theme]:not([ic_theme='0']) .thumb-ft:hover,
 html[ic_theme]:not([ic_theme='0']) a.group-list-wrapper:hover .group-list,
@@ -1007,19 +1007,19 @@ html[ic_theme]:not([ic_theme='0']) span.dark-button:hover {
 }
 
 html[ic_theme]:not([ic_theme='0'])
-  #source_manga_showview
-  .landscape-grid
-  li
-  .queue-wrapper
-  .volume-purchase-button
-  .amazon_button.selected,
+#source_manga_showview
+.landscape-grid
+li
+.queue-wrapper
+.volume-purchase-button
+.amazon_button.selected,
 html[ic_theme]:not([ic_theme='0'])
-  #source_manga_showview
-  .landscape-grid
-  li
-  .queue-wrapper
-  .volume-purchase-button
-  .amazon_button:active,
+#source_manga_showview
+.landscape-grid
+li
+.queue-wrapper
+.volume-purchase-button
+.amazon_button:active,
 html[ic_theme]:not([ic_theme='0']) .dark-button,
 html[ic_theme]:not([ic_theme='0']) a.dark-button,
 html[ic_theme]:not([ic_theme='0']) input.dark-button,

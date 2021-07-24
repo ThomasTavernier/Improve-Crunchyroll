@@ -1,4 +1,14 @@
 const API = new (class {
+  constructor() {
+    chrome.runtime.onMessage.addListener(function({ type }, __, sendResponse) {
+      const { [type]: action } = API;
+      if (typeof action !== 'function' || !action.apply(API, arguments)) {
+        sendResponse();
+      }
+      return true;
+    });
+  }
+
   get TOKEN() {
     const cxApiParams = fetch(window.location.origin)
       .then((response) => response.text())
@@ -73,37 +83,27 @@ const API = new (class {
                 'Key-Pair-Id': key_pair_id,
               },
             };
-          })
+          }),
       ),
     });
     return this.CMS;
-  }
-
-  constructor() {
-    chrome.runtime.onMessage.addListener(function ({ type }, __, sendResponse) {
-      const { [type]: action } = API;
-      if (typeof action !== 'function' || !action.apply(API, arguments)) {
-        sendResponse();
-      }
-      return true;
-    });
   }
 
   skippers({ data: { mediaId } }, _, sendResponse) {
     return new Promise((resolve, reject) => {
       this.objects(mediaId).then(
         ({
-          items: [
-            {
-              episode_metadata: { season_id },
-            },
-          ],
-        }) => {
+           items: [
+             {
+               episode_metadata: { season_id },
+             },
+           ],
+         }) => {
           this.episodes(season_id).then(({ items }) => {
             let isUpNext = true;
             const item = items.find(
               ({ next_episode_id, id }, i) =>
-                next_episode_id === mediaId || ((isUpNext = isUpNext && id !== mediaId) && i === items.length - 1)
+                next_episode_id === mediaId || ((isUpNext = isUpNext && id !== mediaId) && i === items.length - 1),
             );
             if (item) {
               this.objects(item.id)
@@ -116,7 +116,7 @@ const API = new (class {
               reject();
             }
           });
-        }
+        },
       );
     })
       .then(sendResponse)
@@ -146,13 +146,13 @@ const API = new (class {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ content_id, playhead: ~~(playheadMs / 1000) }),
-      })
+      }),
     );
   }
 
   _fetchCmsV2(href, searchParams, requestInit) {
     return this.CMS.then(({ bucket }) =>
-      this._fetch(`/cms/v2${bucket}/${href}`, searchParams, requestInit).then((response) => response.json())
+      this._fetch(`/cms/v2${bucket}/${href}`, searchParams, requestInit).then((response) => response.json()),
     );
   }
 
@@ -160,10 +160,10 @@ const API = new (class {
     return this.CMS.then(({ apiDomain, searchParams: cmsSearchParams }) =>
       fetch(
         `${apiDomain}${href}?${new URLSearchParams(
-          searchParams ? { ...cmsSearchParams, ...searchParams } : cmsSearchParams
+          searchParams ? { ...cmsSearchParams, ...searchParams } : cmsSearchParams,
         )}`,
-        requestInit
-      )
+        requestInit,
+      ),
     );
   }
 })();
