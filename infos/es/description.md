@@ -1,4 +1,4 @@
-Crunchyroll bigger player caminante puede:
+Improve Crunchyroll puede:
  - Agrandar el reproductor (2 mods)
  - Toma toda la ventana en pantalla completa
  - Tema oscuro

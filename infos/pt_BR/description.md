@@ -1,4 +1,4 @@
-Crunchyroll bigger player pode:
+Improve Crunchyroll pode:
  - Aumentar o player de vídeo (2 mods)
  - Cubra toda a janela em tela cheia
  - Tema escuro

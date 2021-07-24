@@ -1,4 +1,4 @@
-Crunchyroll bigger player can:
+Improve Crunchyroll can:
  - Make the video player bigger (2 mods)
  - Take all window in fullsreen
  - Dark Theme
