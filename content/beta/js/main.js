@@ -1,16 +1,20 @@
 (() => {
-  const pages = {
+  const classes = new Proxy({
     watch: Watch,
     series: Series,
-  };
+  }, {
+    get(target, p, receiver) {
+      return Reflect.get(target, p, receiver) || Empty;
+    },
+  });
   let lastLocationPathName;
+  let lastInstance = new Empty();
   const callback = () => {
     if (location.pathname === lastLocationPathName) return;
-    const { [(lastLocationPathName = location.pathname).match(/(?<=\/)[^\/]*/)[0]]: page } = pages;
-    chromeStorage.reload(...(page && Array.isArray(page.attributes) ? page.attributes : []));
-    if (typeof page === 'function') {
-      new page();
-    }
+    const { [(lastLocationPathName = location.pathname).match(/(?<=\/)[^\/]*/)[0]]: clazz } = classes;
+    chromeStorage.reload(...clazz.attributes);
+    lastInstance.onDestroy();
+    lastInstance = new clazz();
   };
   new MutationObserver(callback).observe(document.head.querySelector('title'), {
     childList: true,

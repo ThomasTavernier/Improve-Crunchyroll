@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "2.12.17",
+  "version": "2.12.18",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -146,6 +146,7 @@
         "shared/chromeStorage.js",
         "content/beta/js/api.js",
         "content/js/action-menu.js",
+        "content/beta/js/empty.js",
         "content/beta/js/series.js",
         "content/beta/js/watch.js",
         "content/beta/js/main.js"

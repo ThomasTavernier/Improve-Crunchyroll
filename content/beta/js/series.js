@@ -1,6 +1,12 @@
-class Series {
+class Series extends Empty {
   constructor() {
-    new MarkAsWatchedNotWatched();
+    super();
+    this.markAsWatchedNotWatched = new MarkAsWatchedNotWatched();
+  }
+
+  onDestroy() {
+    super.onDestroy();
+    this.markAsWatchedNotWatched.destroy();
   }
 }
 
@@ -16,8 +22,10 @@ class MarkAsWatchedNotWatched {
       },
     },
   );
+  locationReloadTimeOut;
 
   constructor() {
+    this.refresh = this.refresh.bind(this);
     const series_id = location.pathname.match(/(?<=\/series\/)[^\/]*/);
     if (!series_id) return;
     const seasons = API.seasons(series_id[0]);
@@ -44,6 +52,10 @@ class MarkAsWatchedNotWatched {
         childList: true,
       });
     }
+  }
+
+  destroy() {
+    clearInterval(this.locationReloadTimeOut);
   }
 
   watchSeason(seasons, ercSeasonWithNavigation) {
@@ -191,6 +203,7 @@ class MarkAsWatchedNotWatched {
         }
       }
     }
-    location.reload();
+    clearTimeout(this.locationReloadTimeOut);
+    this.locationReloadTimeOut = setTimeout(() => location.reload(), 2500);
   }
 }
