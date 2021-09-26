@@ -44,6 +44,9 @@
   "KEY_DELETE": {
     "message": "Delete"
   },
+  "KEY_DISABLE_NUMPAD": {
+    "message": "disable NumPad"
+  },
   "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
     "message": "Edit fast backward shortcut"
   },
@@ -110,6 +113,9 @@
   "KEY_MARK_ONLY_THIS_ONE": {
     "message": "Mark only this one"
   },
+  "KEY_NONE": {
+    "message": "none"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },
@@ -143,11 +149,17 @@
   "KEY_SHORTCUTS": {
     "message": "Shortcuts"
   },
+  "KEY_SKIP": {
+    "message": "skip"
+  },
   "KEY_SKIP_TO": {
     "message": "SKIP TO:"
   },
   "KEY_SKIPPING": {
     "message": "Skipping"
+  },
+  "KEY_SKIPPING_SHORTCUT": {
+    "message": "Set skipping shortcut"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Successfully backup."
@@ -163,6 +175,9 @@
   },
   "KEY_THEMES": {
     "message": "Themes"
+  },
+  "KEY_UNSET": {
+    "message": "Unset"
   },
   "KEY_VALUE": {
     "message": "Value"

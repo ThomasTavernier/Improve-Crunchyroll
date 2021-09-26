@@ -44,6 +44,9 @@
   "KEY_DELETE": {
     "message": "Borrar"
   },
+  "KEY_DISABLE_NUMPAD": {
+    "message": "desactivar NumPad"
+  },
   "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
     "message": "Editar retroceso atajo"
   },
@@ -110,6 +113,9 @@
   "KEY_MARK_ONLY_THIS_ONE": {
     "message": "Marca solo este"
   },
+  "KEY_NONE": {
+    "message": "ninguno"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },
@@ -143,11 +149,17 @@
   "KEY_SHORTCUTS": {
     "message": "Atajos"
   },
+  "KEY_SKIP": {
+    "message": "saltar"
+  },
   "KEY_SKIP_TO": {
     "message": "PASEMOS A:"
   },
   "KEY_SKIPPING": {
     "message": "Saltó a la comba"
+  },
+  "KEY_SKIPPING_SHORTCUT": {
+    "message": "Establecer acceso directo para omitir"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Con éxito copia de seguridad."
@@ -163,6 +175,9 @@
   },
   "KEY_THEMES": {
     "message": "Temas"
+  },
+  "KEY_UNSET": {
+    "message": "Desarmado"
   },
   "KEY_VALUE": {
     "message": "Valor"

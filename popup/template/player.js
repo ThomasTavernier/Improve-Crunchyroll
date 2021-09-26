@@ -28,6 +28,11 @@ core.main.player = {
             key: 'hide_dim_screen',
             label: 'KEY_HIDE_DIM_SCREEN',
           },
+          disable_numpad: {
+            type: 'checkbox',
+            key: 'disable_numpad',
+            label: 'KEY_DISABLE_NUMPAD',
+          },
         },
       },
 

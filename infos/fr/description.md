@@ -1,6 +1,7 @@
 Improve Crunchyroll peut:
  - Agrandir le lecteur vidéo (2 mods)
  - Prendre toute la fenêtre en plein écran
+ - Boutons de sauts pour les intros, récapitulatifs, outros ...
  - Thème sombre
  - Contrôlez la vitesse de lecture vidéo dans les paramètres du lecteur existant
  - Marquer l'épisode / la série entière comme regardé / non regardé
@@ -15,11 +16,11 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
- - Supporte la version bêta de Crunchyroll
- - Boutons de sauts pour les intros, récapitulatifs, outros ...
+- Ajouter des raccourcis à sauter
+- Désactiver le pavé numérique
 
+Supporte la version bêta de Crunchyroll.
 Les retours sont les bienvenus!
-Je peux facilement ajouter de nouveaux thèmes / modifier ceux existants.
 Les traductions sont effectuées avec google translate, elles peuvent contenir des erreurs.
 
 Nom de l'extension et popup inspirés par l'extension Improve YouTube !

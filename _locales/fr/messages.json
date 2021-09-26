@@ -44,6 +44,9 @@
   "KEY_DELETE": {
     "message": "Effacer"
   },
+  "KEY_DISABLE_NUMPAD": {
+    "message": "désactiver le pavé numérique"
+  },
   "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
     "message": "Éditer raccourci reculer"
   },
@@ -110,6 +113,9 @@
   "KEY_MARK_ONLY_THIS_ONE": {
     "message": "Ne marquez que celui-ci"
   },
+  "KEY_NONE": {
+    "message": "rien"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },
@@ -143,11 +149,17 @@
   "KEY_SHORTCUTS": {
     "message": "Raccourcis"
   },
+  "KEY_SKIP": {
+    "message": "sauter"
+  },
   "KEY_SKIP_TO": {
     "message": "PASSER:"
   },
   "KEY_SKIPPING": {
     "message": "Saut"
+  },
+  "KEY_SKIPPING_SHORTCUT": {
+    "message": "Définir le raccourci de saut"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Sauvegarde réussie."
@@ -163,6 +175,9 @@
   },
   "KEY_THEMES": {
     "message": "Thèmes"
+  },
+  "KEY_UNSET": {
+    "message": "Désarmé"
   },
   "KEY_VALUE": {
     "message": "Valeur"

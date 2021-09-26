@@ -44,6 +44,9 @@
   "KEY_DELETE": {
     "message": "Excluir"
   },
+  "KEY_DISABLE_NUMPAD": {
+    "message": "desabilitar o NumPad"
+  },
   "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
     "message": "Editar atalho de voltar"
   },
@@ -110,6 +113,9 @@
   "KEY_MARK_ONLY_THIS_ONE": {
     "message": "Marque apenas este"
   },
+  "KEY_NONE": {
+    "message": "nenhum"
+  },
   "KEY_NORMAL": {
     "message": "Normal"
   },
@@ -143,11 +149,17 @@
   "KEY_SHORTCUTS": {
     "message": "Atalhos"
   },
+  "KEY_SKIP": {
+    "message": "pular"
+  },
   "KEY_SKIP_TO": {
     "message": "PULE PARA:"
   },
   "KEY_SKIPPING": {
     "message": "Pulando"
+  },
+  "KEY_SKIPPING_SHORTCUT": {
+    "message": "Definir atalho para pular"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."
@@ -163,6 +175,9 @@
   },
   "KEY_THEMES": {
     "message": "Temas"
+  },
+  "KEY_UNSET": {
+    "message": "Não definido"
   },
   "KEY_VALUE": {
     "message": "Valor"

@@ -335,27 +335,41 @@ function insertCbpDivs(vilosControlsContainer) {
 }
 
 function shortcutHandler() {
-  let shortcuts = chromeStorage.shortcuts;
   chrome.storage.local.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
       createFastForwardBackwardButtons();
     }
-    if (changes.shortcuts) {
-      shortcuts = chromeStorage.shortcuts;
-    }
   });
-  window.addEventListener('keydown', (ev) => {
-    const key = shortcutUtils.eventToKey(ev);
-    Object.entries({
-      forward,
-      backward,
-    }).forEach(([type, fn]) => {
-      const value = shortcuts && shortcuts[type] && shortcuts[type][key];
-      if (value) {
-        fn(value);
-      }
-    });
-  });
+  window.addEventListener(
+    'keydown',
+    (ev) => {
+      const key = shortcutUtils.eventToKey(ev);
+      Object.entries({
+        forward,
+        backward,
+        skip: () => {
+          if (activeSkipper && activeSkipper.element && typeof activeSkipper.element.click === 'function') {
+            activeSkipper.element.click();
+          }
+        },
+      }).forEach(([type, fn]) => {
+        const {
+          shortcuts: { [type]: shortcut },
+          disable_numpad,
+        } = chromeStorage;
+        if (!shortcut) return;
+        if (shortcut === key) {
+          fn();
+        } else if (typeof shortcut === 'object' && key in shortcut) {
+          fn(shortcut[key]);
+        } else if (!disable_numpad || ev.location !== 3) {
+          return;
+        }
+        ev.stopPropagation();
+      });
+    },
+    true
+  );
 }
 
 function createSkipper(skipper, player) {
@@ -397,7 +411,8 @@ function skippersHandler() {
               if (lastTime !== currentTime) {
                 lastTime = currentTime;
                 skippers.forEach((skipper) => {
-                  if (skipper.end > currentTime && currentTime > skipper.start) {
+                  if (skipper.end > currentTime + 1 && currentTime > skipper.start) {
+                    activeSkipper = skipper;
                     skipper.element.classList.add('active');
                     if (currentTime - 5 >= skipper.start) {
                       skipper.element.classList.add('past');
@@ -409,6 +424,9 @@ function skippersHandler() {
                     }
                   } else {
                     skipper.element.classList.remove('active');
+                    if (skipper === activeSkipper) {
+                      activeSkipper = undefined;
+                    }
                   }
                 });
               }
@@ -430,6 +448,7 @@ function skippersHandler() {
 
 const icDivPlayerControls = document.createElement('div');
 const icDivPlayerMode = document.createElement('div');
+let activeSkipper;
 
 skippersHandler();
 new MutationObserver((_, observer) => {

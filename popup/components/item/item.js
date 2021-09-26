@@ -7,10 +7,11 @@ core.components.item = (object) => {
   component_label.innerText = core.translate(object.label);
   component.appendChild(component_label);
 
+  const component_subLabel = document.createElement('span');
+  component.appendChild(component_subLabel);
+  object.setSubLabel = (subLabel) => (component_subLabel.innerText = core.translate(subLabel));
   if (object.subLabel) {
-    const component_subLabel = document.createElement('span');
-    component_subLabel.innerText = core.translate(object.subLabel);
-    component.appendChild(component_subLabel);
+    object.setSubLabel(object.subLabel);
   }
   return component;
 };

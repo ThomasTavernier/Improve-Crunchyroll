@@ -2,6 +2,7 @@ const chromeStorage = new (class {
   NESTED = 'NESTED';
   CHROME_STORAGE = {
     auto_skip: false,
+    disable_numpad: false,
     fast_backward_buttons: '30,10',
     fast_forward_buttons: '30,90',
     header_on_hover: true,
@@ -27,6 +28,7 @@ const chromeStorage = new (class {
         'ctrl||ArrowRight': 30,
         'shift||ArrowRight': 90,
       },
+      skip: 'Enter',
     },
   };
   ATTRIBUTES = new (class extends Set {
