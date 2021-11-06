@@ -92,6 +92,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "cacher alerte message"
   },
+  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
+    "message": "cacher le bouton lecture/pause"
+  },
   "KEY_HIDE_SKIP_BUTTON": {
     "message": "masquer le bouton de saut"
   },

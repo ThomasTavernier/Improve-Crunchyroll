@@ -1,7 +1,7 @@
 Improve Crunchyroll pode:
  - Aumentar o player de vídeo (2 mods)
  - Cubra toda a janela em tela cheia
- - Botões de pular para introdução, recapitulação, outros ...
+ - Botões/atalhos de pular para introdução, recapitulação, outros ...
  - Tema escuro
  - Controlar a velocidade de reprodução de vídeo nas configurações existentes do player
  - Marcar episódio / série inteira como assistido / não assistido
@@ -9,14 +9,14 @@ Improve Crunchyroll pode:
  - Ocultar bandeiras,  imagem de fundo
  - Ocultar tela escurecida do jogador
  - Ocultar legendas
+ - Desativar NumPad
  - Adicionar botões voltar / pular
  - Adicionar atalhos para voltar / pular
  - Cada recurso pode ser ligado / desligado
  - Configurações de backup / redefinição
 
 Novo:
-- Adicionar atalhos para pular
-- Desativar NumPad
+- Ocultar botão de pausa de reprodução
 
 Suporte a versão beta do Crunchyroll.
 Comentários são bem-vindos!

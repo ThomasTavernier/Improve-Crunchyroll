@@ -1,7 +1,7 @@
 Improve Crunchyroll puede:
  - Agrandar el reproductor (2 mods)
  - Toma toda la ventana en pantalla completa
- - Botones de omisión para intros, resúmenes, outros ...
+ - Botones/atajos de omisión para intros, resúmenes, outros ...
  - Tema oscuro
  - Controle la velocidad de reproducción de video en la configuración del reproductor existente
  - Marcar episodio / serie completa como visto / no visto
@@ -9,14 +9,14 @@ Improve Crunchyroll puede:
  - Ocultar bandera, imagen de fondo
  - Ocultar la pantalla tenue del jugador
  - Ocultar subtítulos
+ - Deshabilitar NumPad
  - Agregar botones de retroceso / salto
  - Agregar atajos para retroceso / salto
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Agregar atajos para omitir
-- Deshabilitar NumPad
+- Ocultar el botón de pausa de reproducción
 
 Compatible con la versión beta de Crunchyroll.
 ¡Los comentarios son bienvenidos!

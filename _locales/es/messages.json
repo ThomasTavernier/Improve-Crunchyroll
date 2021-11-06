@@ -92,6 +92,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar cuadro de mensaje"
   },
+  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
+    "message": "ocultar el botón de reproducción / pausa"
+  },
   "KEY_HIDE_SKIP_BUTTON": {
     "message": "ocultar el botón de omisión"
   },

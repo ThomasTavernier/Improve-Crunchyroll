@@ -92,6 +92,9 @@
   "KEY_HIDE_MESSAGE_BOX": {
     "message": "ocultar caixa de mensagem"
   },
+  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
+    "message": "ocultar botão reproduzir / pausar"
+  },
   "KEY_HIDE_SKIP_BUTTON": {
     "message": "ocultar botão pular"
   },

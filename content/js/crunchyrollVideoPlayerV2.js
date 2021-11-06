@@ -458,7 +458,14 @@ new MutationObserver((_, observer) => {
   document.onfullscreenchange = () => {
     document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
   };
-  chromeStorage.reload('hide_dim_screen', 'hide_skip_button', 'hide_subtitles', 'player_mode', 'scrollbar');
+  chromeStorage.reload(
+    'hide_dim_screen',
+    'hide_play_pause_button',
+    'hide_skip_button',
+    'hide_subtitles',
+    'player_mode',
+    'scrollbar',
+  );
   new MutationObserver((_, observer) => {
     observer.disconnect();
     new MutationObserver((_, observer) => {

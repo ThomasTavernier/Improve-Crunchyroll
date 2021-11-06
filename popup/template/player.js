@@ -54,6 +54,11 @@ core.main.player = {
         label: 'KEY_BUTTONS',
 
         content: {
+          hide_play_pause_button: {
+            type: 'checkbox',
+            key: 'hide_play_pause_button',
+            label: 'KEY_HIDE_PLAY_PAUSE_BUTTON',
+          },
           hide_skip_button: {
             type: 'checkbox',
             key: 'hide_skip_button',
