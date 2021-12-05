@@ -4,7 +4,7 @@ core.components.input = (object) => {
   const input = document.createElement('input');
   input.className = 'input';
   input.setAttribute('type', object.inputType);
-  ['value', 'required', 'min'].forEach((key) => {
+  ['value', 'required', 'min', 'max', 'step'].forEach((key) => {
     input[key] = object[key];
   });
   component.appendChild(input);

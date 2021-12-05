@@ -14,6 +14,12 @@
   "KEY_ADD_FAST_FORWARD_SHORTCUT": {
     "message": "Add fast forward shortcut"
   },
+  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+    "message": "Add speed down shortcut"
+  },
+  "KEY_ADD_SPEED_UP_SHORTCUT": {
+    "message": "Add speed up shortcut"
+  },
   "KEY_AUTO_SKIP": {
     "message": "auto skip"
   },
@@ -52,6 +58,12 @@
   },
   "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
     "message": "Edit fast forward shortcut"
+  },
+  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+    "message": "Edit speed down shortcut"
+  },
+  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+    "message": "Edit speed up shortcut"
   },
   "KEY_FAST_BACKWARD": {
     "message": "fast backward"
@@ -151,6 +163,18 @@
   },
   "KEY_SHORTCUTS": {
     "message": "Shortcuts"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "speed down"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Speed down shortcuts"
+  },
+  "KEY_SPEED_UP": {
+    "message": "speed up"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Speed up shortcuts"
   },
   "KEY_SKIP": {
     "message": "skip"

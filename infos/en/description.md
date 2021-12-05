@@ -17,7 +17,7 @@ Improve Crunchyroll can:
  - Backup/reset settings
 
 New:
- - Chrome Manifest V3
+ - Add video playback speed shortcuts
 
 Support beta version of Crunchyroll.
 Feedbacks are welcomed!

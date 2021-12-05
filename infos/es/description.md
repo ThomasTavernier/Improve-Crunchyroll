@@ -17,7 +17,7 @@ Improve Crunchyroll puede:
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Chrome Manifest V3
+- Agregar atajos de velocidad de reproducción de video
 
 Compatible con la versión beta de Crunchyroll.
 ¡Los comentarios son bienvenidos!

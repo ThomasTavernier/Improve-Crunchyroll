@@ -3,7 +3,7 @@ const shortcutUtils = {
   eventToKey: (event) => {
     const key = ['ctrl', 'alt', 'shift'].filter((key) => event[`${key}Key`]);
     if (!['Control', 'Alt', 'Shift'].includes(event.key)) {
-      key.push(event.key);
+      key.push(event.code);
     }
     return key.join(shortcutUtils.delimiter);
   },

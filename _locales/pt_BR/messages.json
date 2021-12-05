@@ -14,6 +14,12 @@
   "KEY_ADD_FAST_FORWARD_SHORTCUT": {
     "message": "Adicionar atalho de pular"
   },
+  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+    "message": "Adicionar atalho para diminuir a velocidade"
+  },
+  "KEY_ADD_SPEED_UP_SHORTCUT": {
+    "message": "Adicionar atalho de aceleração"
+  },
   "KEY_AUTO_SKIP": {
     "message": "pular automático"
   },
@@ -52,6 +58,12 @@
   },
   "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
     "message": "Editar atalho de pular"
+  },
+  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+    "message": "Editar atalho para diminuir a velocidade"
+  },
+  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+    "message": "Editar atalho de aceleração"
   },
   "KEY_FAST_BACKWARD": {
     "message": "voltar"
@@ -151,6 +163,18 @@
   },
   "KEY_SHORTCUTS": {
     "message": "Atalhos"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "diminua a velocidade"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Atalhos mais rápidos"
+  },
+  "KEY_SPEED_UP": {
+    "message": "acelerar"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Acelere os atalhos"
   },
   "KEY_SKIP": {
     "message": "pular"

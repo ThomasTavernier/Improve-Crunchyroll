@@ -18,7 +18,7 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
-- Chrome Manifest V3
+- Ajouter des raccourcis de vitesse de lecture vidéo
 
 Supporte la version bêta de Crunchyroll.
 Les retours sont les bienvenus!

@@ -1,3 +1,12 @@
+function render({ tagName, children, callback, ...properties }) {
+  const element = document.createElement(tagName);
+  Object.entries(properties).forEach(([property, value]) => (element[property] = value));
+  if (Array.isArray(children))
+    children.forEach((child) => element.appendChild(child instanceof HTMLElement ? child : render(child)));
+  if (typeof callback === 'function') callback(element);
+  return element;
+}
+
 function parseNumber(number) {
   return [2, 1, 0]
     .map((v) => ~~((number % Math.pow(60, v + 1)) / Math.pow(60, v)))
@@ -7,6 +16,14 @@ function parseNumber(number) {
 function translate(key) {
   const label = chrome.i18n.getMessage(key);
   return label !== '' ? label : key;
+}
+
+function renderSvg(svg) {
+  svg.addEventListener('transitionend', () => {
+    svg.remove();
+  });
+  document.getElementById('velocity-controls-package').appendChild(svg).focus({ preventScroll: true });
+  svg.classList.add('ic_remove');
 }
 
 function forwardBackward(isBackward, seconds) {
@@ -21,11 +38,7 @@ function forwardBackward(isBackward, seconds) {
   const svg = createSvgForwardBackward(isBackward ? 'backward' : 'forward', seconds);
   svg.classList.add('ic_forward_backward');
   svg.style[isBackward ? 'right' : 'left'] = '25%';
-  svg.addEventListener('transitionend', () => {
-    svg.remove();
-  });
-  document.getElementById('velocity-controls-package').appendChild(svg).focus({ preventScroll: true });
-  svg.classList.add('ic_remove');
+  renderSvg(svg);
 }
 
 function forward(fastForwardNumber) {
@@ -151,102 +164,21 @@ function createPlayerButton() {
   });
 }
 
-function createSettingsDiv(title, value, type) {
-  const div = document.createElement('div');
-  div.className = 'ic_menu';
-  div.id = `ic_${type}_menu`;
-  div.innerHTML = `
-    <div class='font'>${title}</div>
-    <div class='right'>
-      <div class='right_text'>
-        <span class='font'>
-          ${value}
-        </span>
-      </div>
-      <div class='next'></div>
-    </div>`;
-  div.addEventListener('click', () => {
-    document.getElementById('velocity-settings-menu').setAttribute('ic_options', 'hide');
-    window.location.hash = type;
-  });
-  return div;
-}
-
-function createSettingsOptionsDiv(title, type, options, value, callback) {
-  const div = document.createElement('div');
-  div.id = type;
-  div.className = 'ic_settings';
-  const back = document.createElement('div');
-  div.appendChild(back);
-  back.className = `ic_back`;
-  back.innerHTML = `
-    <div class='back'></div>
-    <div class='font'>${title}</div>`;
-  back.addEventListener('click', () => {
-    document.getElementById('velocity-settings-menu').removeAttribute('ic_options');
-  });
-  const optionsDiv = document.createElement('div');
-  div.appendChild(optionsDiv);
-  optionsDiv.className = `ic_options`;
-  options.forEach((option) => {
-    const optionDIv = document.createElement('div');
-    let optionValueName = option.name ? translate(option.name) : option.value;
-    optionDIv.className = 'ic_option';
-    optionDIv.innerHTML = `
-      <svg viewBox='0 0 20 20' style='height: 20px; width: 20px;'>
-      <circle
-        class='bg'
-        cx='10'
-        cy='10'
-        r='9'
-        style='fill: rgb(25, 46, 56); opacity: 1;'
-      ></circle>
-      <circle
-        class='dot'
-        cx='10'
-        cy='10'
-        r='4'
-        style='fill: rgb(68, 195, 171);'
-      ></circle>
-      <path
-        class='outer_circle'
-        d='M10,2a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z'
-        style='fill: rgb(160, 160, 160);'
-      ></path>
-      </svg>`;
-    const name = document.createElement('span');
-    name.className = 'text font';
-    name.innerHTML = `${option.value}`;
-    optionDIv.appendChild(name);
-    if (option.type === 'slider') {
-      const slider = document.createElement('input');
-      slider.type = 'range';
-      slider.min = option.min;
-      slider.max = option.max;
-      slider.value = `${option.value}`;
-      slider.step = option.step;
-      slider.addEventListener('input', () => {
-        const sliderValue = parseFloat(slider.value);
-        if (sliderValue === sliderValue) {
-          option.value = sliderValue;
-          optionValueName = sliderValue;
-          name.innerHTML = `${option.value}`;
-        }
-      });
-      optionDIv.appendChild(slider);
-    }
-    optionDIv.setAttribute('value', `${option.value === value}`);
-    optionDIv.addEventListener('click', () => {
-      const selected = document.querySelector('.ic_option[value=true]');
-      if (selected) selected.setAttribute('value', 'false');
-      optionDIv.setAttribute('value', 'true');
-      localStorage.setItem(`Vilos:${type}`, `${option.value}`);
-      document.querySelector(`#ic_${type}_menu .right_text .font`).innerHTML = optionValueName;
-      callback(option.value);
-    });
-    optionsDiv.appendChild(optionDIv);
-  });
-  return div;
+function setPlaybackRate(value, animation) {
+  value = Math.round((+value + Number.EPSILON) * 100) / 100;
+  if (value !== value) return;
+  if (value < 0.25) value = 0.25;
+  if (value > 2) value = 2;
+  document.getElementById('player0').playbackRate = value;
+  if (!animation) return;
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 226 226');
+  svg.innerHTML = `
+      <text font-size='90' font-weight='500' letter-spacing='-0.5' font-size-adjust='0.5'>
+        <tspan text-anchor='middle' x='50%' y='67%'>${value}x</tspan>
+      </text>`;
+  svg.classList.add('playback_rate');
+  renderSvg(svg);
 }
 
 function createAndInsertSettings() {
@@ -254,9 +186,8 @@ function createAndInsertSettings() {
   const firstElementChild = velocitySettingsMenu.firstElementChild;
   [
     {
-      title: 'KEY_PLAYBACK_RATE',
+      title: translate('KEY_PLAYBACK_RATE'),
       type: 'playbackRate',
-      defaultValue: 1,
       values: [
         {
           type: 'slider',
@@ -291,27 +222,134 @@ function createAndInsertSettings() {
           value: 2,
         },
       ],
-      callback: (value) => (document.getElementById('player0').playbackRate = value),
+      callback: setPlaybackRate,
     },
-  ].forEach((setting) => {
-    const localStorageValue = parseFloat(localStorage.getItem(`Vilos:${setting.type}`));
-    const value = localStorageValue === localStorageValue ? localStorageValue : setting.defaultValue;
-    const title = translate(setting.title);
-    const selectedValue = setting.values.find((v) => v.value === value);
-    let selectedValueName;
-    setting.callback(value);
-    if (selectedValue) {
-      selectedValueName = selectedValue.name ? translate(selectedValue.name) : selectedValue.value;
-    } else {
-      selectedValueName = value;
-      const slider = setting.values.find((value) => value.type === 'slider');
-      if (slider) slider.value = value;
-    }
-    velocitySettingsMenu.insertBefore(createSettingsDiv(title, selectedValueName, setting.type), firstElementChild);
+  ].forEach(({ type, title, values, callback }) => {
+    callback(parseFloat(localStorage.getItem(`Vilos:${type}`), false));
+    const displayValue = render({
+      tagName: 'span',
+      className: 'font',
+    });
     velocitySettingsMenu.insertBefore(
-      createSettingsOptionsDiv(title, setting.type, setting.values, value, setting.callback),
+      render({
+        tagName: 'div',
+        id: `ic_${type}_menu`,
+        classList: ['ic_menu'],
+        children: [
+          {
+            tagName: 'div',
+            className: 'font',
+            innerHTML: title,
+          },
+          {
+            tagName: 'div',
+            className: 'right',
+            children: [
+              {
+                tagName: 'div',
+                className: 'right_text',
+                children: [displayValue],
+              },
+              {
+                tagName: 'div',
+                className: 'next',
+              },
+            ],
+          },
+        ],
+        callback: (element) => {
+          element.addEventListener('click', () => {
+            document.getElementById('velocity-settings-menu').setAttribute('ic_options', 'hide');
+            window.location.hash = type;
+          });
+        },
+      }),
       firstElementChild,
     );
+    const elementByValues = {};
+    velocitySettingsMenu.insertBefore(
+      render({
+        tagName: 'div',
+        id: type,
+        className: 'ic_settings',
+        children: [
+          {
+            tagName: 'div',
+            className: 'ic_back',
+            innerHTML: `<div class='back'></div><div class='font'>${title}</div>`,
+            callback: (element) => {
+              element.addEventListener('click', () =>
+                document.getElementById('velocity-settings-menu').removeAttribute('ic_options'),
+              );
+            },
+          },
+          {
+            tagName: 'div',
+            className: 'ic_options',
+            children: values.map((option) => {
+              const element = render({
+                tagName: 'div',
+                className: 'ic_option',
+                innerHTML: `
+                <svg viewBox='0 0 20 20' style='height: 20px; width: 20px;'>
+                  <circle class='bg' cx='10' cy='10' r='9' style='fill: rgb(25, 46, 56); opacity: 1;'></circle>
+                  <circle class='dot' cx='10' cy='10' r='4' style='fill: rgb(68, 195, 171);'></circle>
+                  <path class='outer_circle' d='M10,2a8,8,0,1,1-8,8,8.009,8.009,0,0,1,8-8m0-2A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z' style='fill: rgb(160, 160, 160);'></path>
+                </svg>`,
+                children: (() => {
+                  const children = [
+                    {
+                      tagName: 'span',
+                      className: 'text font',
+                      innerHTML: `${option.value}`,
+                    },
+                  ];
+                  if (option.type === 'slider') {
+                    children.push({
+                      tagName: 'input',
+                      type: 'range',
+                      min: option.min,
+                      max: option.max,
+                      step: option.step,
+                      callback: (element) => {
+                        element.addEventListener('input', ({ target: { value } }) => {
+                          option.value = value;
+                        });
+                      },
+                    });
+                  }
+                  return children;
+                })(),
+                callback: (element) => {
+                  element.addEventListener('click', () => {
+                    callback(option.value, true);
+                  });
+                },
+              });
+              elementByValues[option.type || option.value] = { element, option };
+              return element;
+            }, {}),
+          },
+        ],
+      }),
+      firstElementChild,
+    );
+    document.getElementById('player0').addEventListener('ratechange', ({ target: { playbackRate } }) => {
+      if (!playbackRate) return;
+      displayValue.innerText = playbackRate;
+      const key = playbackRate in elementByValues ? playbackRate : 'slider';
+      const {
+        [key]: { element, option },
+      } = elementByValues;
+      const selected = document.querySelector('.ic_option[value=true]');
+      if (selected) selected.setAttribute('value', 'false');
+      element.setAttribute('value', 'true');
+      localStorage.setItem(`Vilos:${type}`, `${playbackRate}`);
+      if (key === 'slider') {
+        element.querySelector('.font').innerHTML = playbackRate;
+        option.value = playbackRate;
+      }
+    });
   });
 
   new MutationObserver(() => {
@@ -347,6 +385,8 @@ function shortcutHandler() {
       Object.entries({
         forward,
         backward,
+        speedUp: (value) => setPlaybackRate(document.getElementById('player0').playbackRate + +value, true),
+        speedDown: (value) => setPlaybackRate(document.getElementById('player0').playbackRate - +value, true),
         skip: () => {
           if (activeSkipper && activeSkipper.element && typeof activeSkipper.element.click === 'function') {
             activeSkipper.element.click();

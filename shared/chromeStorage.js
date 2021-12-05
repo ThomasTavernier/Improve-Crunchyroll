@@ -29,6 +29,12 @@ const chromeStorage = new (class {
         'ctrl||ArrowRight': 30,
         'shift||ArrowRight': 90,
       },
+      speedUp: {
+        'shift||Comma': 0.25,
+      },
+      speedDown: {
+        'shift||KeyM': 0.25,
+      },
       skip: 'Enter',
     },
   };

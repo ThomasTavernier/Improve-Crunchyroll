@@ -14,6 +14,12 @@
   "KEY_ADD_FAST_FORWARD_SHORTCUT": {
     "message": "Ajouter raccourci avancer"
   },
+  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+    "message": "Ajouter un raccourci pour ralentir"
+  },
+  "KEY_ADD_SPEED_UP_SHORTCUT": {
+    "message": "Ajouter un raccourci d'accélération"
+  },
   "KEY_AUTO_SKIP": {
     "message": "saut automatique"
   },
@@ -52,6 +58,12 @@
   },
   "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
     "message": "Éditer raccourci avancer"
+  },
+  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+    "message": "Modifier le raccourci de réduction de la vitesse"
+  },
+  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+    "message": "Modifier le raccourci d'accélération"
   },
   "KEY_FAST_BACKWARD": {
     "message": "reculer"
@@ -151,6 +163,18 @@
   },
   "KEY_SHORTCUTS": {
     "message": "Raccourcis"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "ralentir"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Accélérer les raccourcis"
+  },
+  "KEY_SPEED_UP": {
+    "message": "accélérer"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Accélérer les raccourcis"
   },
   "KEY_SKIP": {
     "message": "sauter"

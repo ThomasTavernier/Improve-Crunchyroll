@@ -17,7 +17,7 @@ Improve Crunchyroll pode:
  - Configurações de backup / redefinição
 
 Novo:
-- Chrome Manifest V3
+- Adicionar atalhos de velocidade de reprodução de vídeo
 
 Suporte a versão beta do Crunchyroll.
 Comentários são bem-vindos!
