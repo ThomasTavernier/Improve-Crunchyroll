@@ -3,7 +3,7 @@ const shortcutUtils = {
   eventToKey: (event) => {
     const key = ['ctrl', 'alt', 'shift'].filter((key) => event[`${key}Key`]);
     if (!['Control', 'Alt', 'Shift'].includes(event.key)) {
-      key.push(event.code);
+      key.push(event.code.replace('Numpad', ''));
     }
     return key.join(shortcutUtils.delimiter);
   },
@@ -23,10 +23,7 @@ const shortcutUtils = {
           case 'ArrowDown':
             return '\u2193';
           default:
-            if (value.match(/^[a-z]$/)) {
-              return value.toUpperCase();
-            }
-            return value;
+            return value.replace('Key', '');
         }
       })
     );
