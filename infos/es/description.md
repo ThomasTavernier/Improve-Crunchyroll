@@ -1,7 +1,7 @@
 Improve Crunchyroll puede:
  - Agrandar el reproductor (2 mods)
  - Toma toda la ventana en pantalla completa
- - Botones/atajos de omisión para intros, resúmenes, outros ...
+ - Botones/atajos de omisión para intros, resúmenes, outros... (Basado en subtítulos, no será perfecto)
  - Tema oscuro
  - Controle la velocidad de reproducción de video en la configuración del reproductor existente
  - Marcar episodio / serie completa como visto / no visto

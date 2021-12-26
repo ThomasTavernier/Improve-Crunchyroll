@@ -1,7 +1,7 @@
 Improve Crunchyroll pode:
  - Aumentar o player de vídeo (2 mods)
  - Cubra toda a janela em tela cheia
- - Botões/atalhos de pular para introdução, recapitulação, outros ...
+ - Botões/atalhos de pular para introdução, recapitulação, outros... (baseado em legendas, não será perfeito)
  - Tema escuro
  - Controlar a velocidade de reprodução de vídeo nas configurações existentes do player
  - Marcar episódio / série inteira como assistido / não assistido

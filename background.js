@@ -46,15 +46,14 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                               .reverse()
                               .reduce((acc, v, i) => acc + ~~v * Math.pow(60, i), 0),
                           );
-                          const text = texts.join().replaceAll(/({[^}]*})|(\\.)/g, '');
-                          acc.push({
-                            start,
-                            end,
-                            style,
-                            name,
-                            text,
-                            key: [style, name, text].join(),
-                          });
+                          const type = `${style}-${name}`;
+                          if (!type.match(/title|sign/i)) {
+                            acc.push({
+                              start,
+                              end,
+                              key: `${type}-${texts.join().replaceAll(/({[^}]*})|(\\.)/g, '')}`,
+                            });
+                          }
                           return acc;
                         }, []);
                       }),
@@ -70,30 +69,28 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                   currentSub.push(fake, fake);
                   const keys = new Set(subs.map((sub) => sub.map((s) => s.key)).flat());
                   let lastGroup;
-                  let lastValue;
+                  let lastValue = { end: 0 };
                   resolve(
                     currentSub.reduce((acc, value) => {
-                      if (
-                        (value.key && keys.has(value.key)) ||
-                        value.start - ((lastValue && lastValue.end) || 0) >= MIN_DURATION
-                      ) {
+                      if (keys.has(value.key) || value.start - lastValue.end >= MIN_DURATION) {
                         if (!lastGroup) {
                           lastGroup = {
-                            start: (lastValue && lastValue.end) || 0,
+                            start: lastValue.end,
+                            end: value.start,
                           };
                         }
                       } else {
                         if (lastGroup) {
-                          lastGroup.end = value.start;
+                          if (lastGroup.end !== lastValue.start) {
+                            lastGroup.end = value.start;
+                          }
                           if (lastGroup.end - lastGroup.start >= MIN_DURATION) {
                             acc.push(lastGroup);
                           }
+                          lastGroup = undefined;
                         }
-                        lastGroup = undefined;
                       }
-                      if (lastGroup || ![value.name, value.style].some((s) => s && s.toLowerCase().includes('title'))) {
-                        lastValue = value;
-                      }
+                      lastValue = value;
                       return acc;
                     }, []),
                   );

@@ -1,7 +1,7 @@
 Improve Crunchyroll peut:
  - Agrandir le lecteur vidéo (2 mods)
  - Prendre toute la fenêtre en plein écran
- - Boutons/raccourcis de sauts pour les intros, récapitulatifs, outros ...
+ - Boutons/raccourcis de sauts pour les intros, récapitulatifs, outros... (basé sur des sous-titres, ne sera pas parfait)
  - Thème sombre
  - Contrôlez la vitesse de lecture vidéo dans les paramètres du lecteur existant
  - Marquer l'épisode / la série entière comme regardé / non regardé
