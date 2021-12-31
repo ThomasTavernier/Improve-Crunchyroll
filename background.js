@@ -47,7 +47,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                               .reduce((acc, v, i) => acc + ~~v * Math.pow(60, i), 0),
                           );
                           const type = `${style}-${name}`;
-                          if (!type.match(/title|sign/i)) {
+                          if (!type.match(/title|sign|show/i)) {
                             acc.push({
                               start,
                               end,
