@@ -107,7 +107,7 @@ function createDivs() {
   });
 
   createPlayerButton();
-  createFastForwardBackwardButtons();
+  chromeStorage.LOADED.then(createFastForwardBackwardButtons);
 }
 
 function scrollBarChange() {
@@ -259,6 +259,7 @@ function createAndInsertSettings() {
         ],
         callback: (element) => {
           element.addEventListener('click', () => {
+            window.location.hash = '';
             document.getElementById('velocity-settings-menu').setAttribute('ic_options', 'hide');
             window.location.hash = type;
           });
@@ -508,25 +509,28 @@ new MutationObserver((_, observer) => {
   );
   new MutationObserver((_, observer) => {
     observer.disconnect();
-    new MutationObserver((_, observer) => {
-      observer.disconnect();
-      createAndInsertSvgDefs();
+    createAndInsertSvgDefs();
+    createDivs();
+    shortcutHandler();
+    new MutationObserver((mutations) => {
+      const velocityControlsPackage = mutations.reduce(
+        (f, { addedNodes }) => f || [...addedNodes].find(({ id }) => id === 'velocity-controls-package'),
+        false,
+      );
+      if (!velocityControlsPackage) return;
       createAndInsertSettings();
-      createDivs();
-      shortcutHandler();
       new MutationObserver((mutations) => {
-        mutations.some(({ addedNodes }) =>
-          [...addedNodes].some((node) => {
+        mutations.some(({ addedNodes }) => {
+          const bool = [...addedNodes].some((node) => {
             if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
-              document.documentElement.setAttribute('ic_vilos_controls', 'true');
               insertCbpDivs(node);
               return true;
-            } else {
-              document.documentElement.setAttribute('ic_vilos_controls', 'false');
             }
-          }),
-        );
-      }).observe(document.getElementById('velocity-controls-package'), {
+          });
+          document.documentElement.setAttribute('ic_vilos_controls', `${bool}`);
+          return bool;
+        });
+      }).observe(velocityControlsPackage, {
         childList: true,
       });
     }).observe(document.getElementById('vilosRoot'), {
