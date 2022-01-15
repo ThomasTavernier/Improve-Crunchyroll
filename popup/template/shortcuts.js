@@ -213,7 +213,7 @@ core.main.shortcuts = {
             };
             chromeStorage.LOADED.then(() => {
               skip.subLabel = shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts.skip) || 'KEY_NONE';
-              chrome.storage.local.onChanged.addListener((changes) => {
+              chrome.storage.onChanged.addListener((changes) => {
                 if (changes.shortcuts && changes.shortcuts.newValue.skip !== changes.shortcuts.oldValue.skip) {
                   setTimeout(() => {
                       if (typeof skip.setSubLabel === 'function') {

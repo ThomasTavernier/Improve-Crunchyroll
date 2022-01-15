@@ -68,7 +68,7 @@ const chromeStorage = new (class {
         }
       });
 
-      chrome.storage.local.onChanged.addListener((changes) => {
+      chrome.storage.onChanged.addListener((changes) => {
         Object.entries(changes).forEach(([key, storageChange]) => {
           if (storageChange.newValue === this.NESTED && this.CHROME_STORAGE_NESTED[key]) {
             items[key] = this.CHROME_STORAGE_NESTED[key];

@@ -365,7 +365,10 @@ function createAndInsertSettings() {
 
 function insertCbpDivs(vilosControlsContainer) {
   if (document.body.contains(icDivPlayerControls)) return;
-  const controlsBar = vilosControlsContainer.firstElementChild.lastElementChild.children[2] || vilosControlsContainer.firstElementChild.firstElementChild;
+  const controlsBar =
+    vilosControlsContainer.firstElementChild &&
+    (vilosControlsContainer.firstElementChild.lastElementChild.children[2] ||
+      vilosControlsContainer.firstElementChild.firstElementChild);
   if (!controlsBar) return;
   const controlsBarLeft = controlsBar.firstElementChild;
   const controlsBarRight = controlsBar.lastElementChild;
@@ -375,7 +378,7 @@ function insertCbpDivs(vilosControlsContainer) {
 }
 
 function shortcutHandler() {
-  chrome.storage.local.onChanged.addListener((changes) => {
+  chrome.storage.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
       createFastForwardBackwardButtons();
     }
