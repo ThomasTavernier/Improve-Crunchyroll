@@ -364,7 +364,8 @@ function createAndInsertSettings() {
 }
 
 function insertCbpDivs(vilosControlsContainer) {
-  const controlsBar = vilosControlsContainer.firstElementChild.lastElementChild.children[2];
+  if (document.body.contains(icDivPlayerControls)) return;
+  const controlsBar = vilosControlsContainer.firstElementChild.lastElementChild.children[2] || vilosControlsContainer.firstElementChild.firstElementChild;
   if (!controlsBar) return;
   const controlsBarLeft = controlsBar.firstElementChild;
   const controlsBarRight = controlsBar.lastElementChild;
@@ -520,16 +521,19 @@ new MutationObserver((_, observer) => {
       if (!velocityControlsPackage) return;
       createAndInsertSettings();
       new MutationObserver((mutations) => {
-        mutations.some(({ addedNodes }) => {
-          const bool = [...addedNodes].some((node) => {
-            if (node.id === 'vilosControlsContainer' && node.hasChildNodes()) {
-              insertCbpDivs(node);
-              return true;
-            }
+        const vilosControlsContainer = mutations.reduce(
+          (f, { addedNodes }) => f || [...addedNodes].find(({ id }) => id === 'vilosControlsContainer'),
+          false,
+        );
+        document.documentElement.setAttribute('ic_vilos_controls', `${!!vilosControlsContainer}`);
+        if (vilosControlsContainer) {
+          insertCbpDivs(vilosControlsContainer);
+          new MutationObserver(() => {
+            insertCbpDivs(vilosControlsContainer);
+          }).observe(vilosControlsContainer, {
+            childList: true,
           });
-          document.documentElement.setAttribute('ic_vilos_controls', `${bool}`);
-          return bool;
-        });
+        }
       }).observe(velocityControlsPackage, {
         childList: true,
       });

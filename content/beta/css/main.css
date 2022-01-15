@@ -47,3 +47,9 @@ html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content:hover {
 html[ic_player_mode='2'] .header-content:hover::after {
   height: 0;
 }
+
+@media only screen and (max-width: 799px) {
+  html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
+    height: 12px;
+  }
+}
