@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "version": "3.1.5",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
@@ -9,13 +9,17 @@
     "128": "assets/icon128.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "https://*.crunchyroll.com/*"
   ],
-  "action": {
+  "browser_action": {
     "default_popup": "popup/index.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
   },
   "content_scripts": [
     {
@@ -157,13 +161,6 @@
     }
   ],
   "web_accessible_resources": [
-    {
-      "resources": [
-        "resources/*"
-      ],
-      "matches": [
-        "https://static.crunchyroll.com/*"
-      ]
-    }
+    "resources/*"
   ]
 }
