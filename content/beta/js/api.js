@@ -107,7 +107,17 @@ const API = new (class {
             );
             if (item) {
               this.objects(item.id)
-                .then(({ items: [{ __links__: { streams: { href } } }] }) => this._fetch(href))
+                .then(
+                  ({
+                    items: [
+                      {
+                        __links__: {
+                          streams: { href },
+                        },
+                      },
+                    ],
+                  }) => this._fetch(href),
+                )
                 .then((response) => response.json())
                 .then(({ subtitles }) => {
                   resolve(Object.values(subtitles));
@@ -135,6 +145,22 @@ const API = new (class {
 
   episodes(season_id) {
     return this._fetchCmsV2('episodes', { season_id });
+  }
+
+  up_next_series(series_id) {
+    return this.TOKEN.then(({ Authorization }) =>
+      this._fetch(
+        `/content/v1/up_next_series`,
+        { series_id },
+        {
+          method: 'GET',
+          headers: {
+            Authorization,
+            'Content-Type': 'application/json',
+          },
+        },
+      ).then((response) => response.json()),
+    );
   }
 
   playheads(content_id, playheadMs) {
