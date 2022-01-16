@@ -11,7 +11,7 @@ class Series extends Empty {
 }
 
 class MarkAsWatchedNotWatched {
-  seasons = new Proxy(
+  episodes = new Proxy(
     {},
     {
       get(target, p) {
@@ -22,100 +22,116 @@ class MarkAsWatchedNotWatched {
       },
     },
   );
+  series_id;
   locationReloadTimeOut;
 
   constructor() {
     this.refresh = this.refresh.bind(this);
-    const series_id = location.pathname.match(/(?<=\/series\/)[^\/]*/);
-    if (!series_id) return;
-    const seasons = API.seasons(series_id[0]);
+    [this.series_id] = location.pathname.match(/(?<=\/series\/)[^\/]*/) || [];
+    if (!this.series_id) return;
     const appBodyWrapper = document.querySelector('.app-body-wrapper');
     if (!appBodyWrapper) return;
     const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
     if (ercSeasonWithNavigation) {
-      seasons.then(({ items: seasons }) =>
-        this.seasons[this.getCurrentSeasonId(seasons)].then((episodes) => {
-          ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
-            this.card(card, seasons, episodes);
-          });
-          this.watchCollection(ercSeasonWithNavigation, seasons, episodes);
-        }),
-      );
-      this.watchSeason(seasons, ercSeasonWithNavigation);
+      this.getCurrentSeasonEpisodes().then((episodes) => {
+        ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
+          this.card(card, episodes);
+        });
+        this.watchCollection(ercSeasonWithNavigation);
+      });
+      this.watchSeason(ercSeasonWithNavigation);
     } else {
       new MutationObserver((_, observer) => {
         const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
         if (!ercSeasonWithNavigation) return;
         observer.disconnect();
-        this.watchSeason(seasons, ercSeasonWithNavigation);
+        this.watchSeason(ercSeasonWithNavigation);
       }).observe(appBodyWrapper, {
         childList: true,
+        subtree: true,
       });
     }
+  }
+
+  get seasons() {
+    Object.defineProperty(this, 'seasons', {
+      value: API.seasons(this.series_id),
+    });
+    return this.seasons;
+  }
+
+  get upNextSeries() {
+    Object.defineProperty(this, 'upNextSeries', {
+      value: API.up_next_series(this.series_id),
+    });
+    return this.upNextSeries;
   }
 
   destroy() {
     clearInterval(this.locationReloadTimeOut);
   }
 
-  watchSeason(seasons, ercSeasonWithNavigation) {
+  watchSeason(ercSeasonWithNavigation) {
     new MutationObserver((mutations) => {
-      seasons.then(({ items: seasons }) =>
-        this.seasons[this.getCurrentSeasonId(seasons)]
-          .then((episodes) => {
-            mutations.forEach((mutation) =>
-              mutation.addedNodes.forEach((node) => {
-                if (node.classList.contains('erc-season-episode-list')) {
-                  node.querySelectorAll('.card').forEach((card) => {
-                    this.card(card, seasons, episodes);
-                  });
-                }
-              }),
-            );
-            this.watchCollection(ercSeasonWithNavigation, seasons, episodes);
-          })
-          .catch(),
+      const ercSeasonEpisodeList = mutations.reduce(
+        (f, { addedNodes }) =>
+          f || [...addedNodes].find(({ classList }) => classList.contains('erc-season-episode-list')),
+        false,
       );
+      if (!ercSeasonEpisodeList) return;
+      this.getCurrentSeasonEpisodes().then((episodes) => {
+        ercSeasonEpisodeList.querySelectorAll('.card').forEach((card) => {
+          this.card(card, episodes);
+        });
+        this.watchCollection(ercSeasonWithNavigation);
+      });
     }).observe(ercSeasonWithNavigation, {
       childList: true,
     });
   }
 
-  watchCollection(ercSeasonWithNavigation, seasons, episodes) {
+  watchCollection(ercSeasonWithNavigation) {
     const ercPlayableCollection = ercSeasonWithNavigation.querySelector('.erc-playable-collection');
     if (!ercPlayableCollection) return;
     new MutationObserver((mutations) => {
-      mutations.forEach((mutation) =>
-        mutation.addedNodes.forEach((card) => {
-          if (card.classList.contains('card')) {
-            this.card(card, seasons, episodes);
-          }
-        }),
-      );
+      const cards = [...mutations]
+        .flatMap(({ addedNodes }) => [...addedNodes])
+        .filter(({ classList }) => classList.contains('card'));
+      if (cards.length > 0) {
+        this.getCurrentSeasonEpisodes().then((episodes) => {
+          cards.forEach((card) => this.card(card, episodes));
+        });
+      }
     }).observe(ercPlayableCollection, {
       childList: true,
     });
   }
 
-  getCurrentSeasonId(seasons) {
+  getCurrentSeasonEpisodes() {
     const currentSeasonH4 = document.querySelector('div.seasons-select h4');
-    const currentSeason =
-      seasons.length > 1
-        ? seasons.find(
-            ({ title }) => currentSeasonH4 && currentSeasonH4.innerText && currentSeasonH4.innerText.endsWith(title),
-          )
-        : seasons[0];
-    return currentSeason && currentSeason.id;
+    return currentSeasonH4
+      ? this.seasons.then(
+          ({ items }) => this.episodes[items.find(({ title }) => currentSeasonH4.innerText.endsWith(title)).id],
+        )
+      : this.upNextSeries.then(
+          ({
+            panel: {
+              episode_metadata: { season_id },
+            },
+          }) => {
+            return this.episodes[season_id];
+          },
+        );
   }
 
-  card(card, seasons, episodes) {
+  card(card, episodes) {
     new MutationObserver((mutations) => {
       if (
         mutations
           .flatMap((mutation) => [...mutation.addedNodes])
           .some((node) => node.classList.contains('c-playable-card'))
       ) {
-        this.seasons[this.getCurrentSeasonId(seasons)].then((episodes) => {
+        this.getCurrentSeasonEpisodes().then((episodes) => {
           this.createCard(card, episodes);
         });
       }
@@ -127,7 +143,7 @@ class MarkAsWatchedNotWatched {
 
   createCard(card, { items: episodes }) {
     const body = card.querySelector('.c-playable-card__body');
-    if (!body) return;
+    if (!body || body.querySelector('.ic_action')) return;
     const a = card.querySelector('a');
     if (!a) return;
     const episode = episodes.find(({ id }) => {
@@ -191,19 +207,19 @@ class MarkAsWatchedNotWatched {
   }
 
   refresh() {
+    clearTimeout(this.locationReloadTimeOut);
     const select = document.querySelector('.seasons-select');
     if (select) {
       const selectButton = select.querySelector('[role=button]');
       if (selectButton) {
         selectButton.click();
-        const active = select.querySelector('.c-select-option--active');
+        const active = select.querySelector('[class*="active"]');
         if (active) {
           active.click();
           return;
         }
       }
     }
-    clearTimeout(this.locationReloadTimeOut);
     this.locationReloadTimeOut = setTimeout(() => location.reload(), 2500);
   }
 }
