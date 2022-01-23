@@ -29,6 +29,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Backup and reset"
   },
+  "KEY_BLUR": {
+    "message": "Blur"
+  },
   "KEY_BUTTONS": {
     "message": "Buttons"
   },
@@ -46,6 +49,9 @@
   },
   "KEY_DARK_THEME": {
     "message": "Dark mode"
+  },
+  "KEY_DEFAULT": {
+    "message": "Default"
   },
   "KEY_DELETE": {
     "message": "Delete"
@@ -91,6 +97,9 @@
   },
   "KEY_HEADER_ON_HOVER": {
     "message": "header on hover"
+  },
+  "KEY_HIDE": {
+    "message": "Hide"
   },
   "KEY_HIDE_BACKGROUND_IMAGE": {
     "message": "hide background image"
@@ -152,6 +161,9 @@
   "KEY_RESTORE": {
     "message": "Restore"
   },
+  "KEY_RUNNER_THUMBNAIL": {
+    "message": "runner thumbnail"
+  },
   "KEY_SAVE": {
     "message": "Save"
   },
@@ -164,18 +176,6 @@
   "KEY_SHORTCUTS": {
     "message": "Shortcuts"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "speed down"
-  },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
-    "message": "Speed down shortcuts"
-  },
-  "KEY_SPEED_UP": {
-    "message": "speed up"
-  },
-  "KEY_SPEED_UP_SHORTCUTS": {
-    "message": "Speed up shortcuts"
-  },
   "KEY_SKIP": {
     "message": "skip"
   },
@@ -187,6 +187,18 @@
   },
   "KEY_SKIPPING_SHORTCUT": {
     "message": "Set skipping shortcut"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "speed down"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Speed down shortcuts"
+  },
+  "KEY_SPEED_UP": {
+    "message": "speed up"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Speed up shortcuts"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Successfully backup."

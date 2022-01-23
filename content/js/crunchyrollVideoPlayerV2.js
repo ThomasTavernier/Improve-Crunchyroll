@@ -508,6 +508,7 @@ new MutationObserver((_, observer) => {
     'hide_play_pause_button',
     'hide_skip_button',
     'hide_subtitles',
+    'runnerThumbnail',
     'player_mode',
     'scrollbar',
   );

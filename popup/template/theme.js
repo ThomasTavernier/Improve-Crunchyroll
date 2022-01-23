@@ -9,8 +9,8 @@ core.main.theme = {
     label: 'KEY_THEMES',
 
     content: {
-      select: {
-        type: 'select',
+      theme: {
+        type: 'theme',
         key: 'theme',
 
         options: [

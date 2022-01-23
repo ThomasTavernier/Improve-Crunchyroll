@@ -1,0 +1,13 @@
+.theme .item {
+  border-radius: 0.5em;
+  margin: 8px;
+  height: 64px;
+}
+
+[class^='item theme'] {
+  color: whitesmoke;
+}
+
+.theme-1 {
+  background-color: rgb(52, 58, 64) !important;
+}

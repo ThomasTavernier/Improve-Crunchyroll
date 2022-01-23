@@ -29,6 +29,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Backup e redefinição"
   },
+  "KEY_BLUR": {
+    "message": "Borrão"
+  },
   "KEY_BUTTONS": {
     "message": "Botões"
   },
@@ -46,6 +49,9 @@
   },
   "KEY_DARK_THEME": {
     "message": "Modo escuro"
+  },
+  "KEY_DEFAULT": {
+    "message": "Padrão"
   },
   "KEY_DELETE": {
     "message": "Excluir"
@@ -91,6 +97,9 @@
   },
   "KEY_HEADER_ON_HOVER": {
     "message": "cabeçalho ao passar o mouse"
+  },
+  "KEY_HIDE": {
+    "message": "Esconder"
   },
   "KEY_HIDE_BACKGROUND_IMAGE": {
     "message": "ocultar a imagem de fundo"
@@ -152,6 +161,9 @@
   "KEY_RESTORE": {
     "message": "Restore"
   },
+  "KEY_RUNNER_THUMBNAIL": {
+    "message": "miniatura da barra de progresso"
+  },
   "KEY_SAVE": {
     "message": "Salve"
   },
@@ -164,18 +176,6 @@
   "KEY_SHORTCUTS": {
     "message": "Atalhos"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "diminua a velocidade"
-  },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
-    "message": "Atalhos mais rápidos"
-  },
-  "KEY_SPEED_UP": {
-    "message": "acelerar"
-  },
-  "KEY_SPEED_UP_SHORTCUTS": {
-    "message": "Acelere os atalhos"
-  },
   "KEY_SKIP": {
     "message": "pular"
   },
@@ -187,6 +187,18 @@
   },
   "KEY_SKIPPING_SHORTCUT": {
     "message": "Definir atalho para pular"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "diminua a velocidade"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Atalhos mais rápidos"
+  },
+  "KEY_SPEED_UP": {
+    "message": "acelerar"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Acelere os atalhos"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."

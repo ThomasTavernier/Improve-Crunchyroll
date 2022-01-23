@@ -1,7 +1,7 @@
 Improve Crunchyroll can:
  - Make the video player bigger (2 mods)
- - Take all window in fullsreen
- - Skippings buttons/shortcut for intros, recaps, outros... (subtitles based, won't be flawless)
+ - Take all window in fullscreen
+ - Skipping's buttons/shortcut for intros, recaps, outros... (subtitles based, won't be flawless)
  - Dark Theme
  - Control video playback speed in the existing player settings
  - Mark episode/entire series as watched/not watched
@@ -13,11 +13,12 @@ Improve Crunchyroll can:
  - Disable NumPad
  - Add fast backward/forward buttons
  - Add fast backward/forward shortcuts
+ - Add video playback speed shortcuts
  - Each features can be turn on/off
  - Backup/reset settings
 
 New:
- - Add video playback speed shortcuts
+ - Blur or hide runner thumbnail
 
 Support beta version of Crunchyroll.
 Feedbacks are welcomed!

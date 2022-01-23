@@ -13,11 +13,12 @@ Improve Crunchyroll puede:
  - Deshabilitar NumPad
  - Agregar botones de retroceso / salto
  - Agregar atajos para retroceso / salto
+ - Agregar atajos de velocidad de reproducción de video
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Agregar atajos de velocidad de reproducción de video
+- Difuminar u ocultar la miniatura de la barra de progreso
 
 Compatible con la versión beta de Crunchyroll.
 ¡Los comentarios son bienvenidos!

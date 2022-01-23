@@ -1,33 +1,26 @@
 core.components.select = (object) => {
-  const component = document.createElement('div');
-  let active;
+  const component = core.components.item(object);
 
-  component.className = 'select';
-  object.options.forEach((option) => {
-    const component_option = core.components.item(option);
-    const component_switch = core.components.switch();
+  const initValue = chromeStorage[object.key];
 
-    if (chromeStorage[object.key] === option.value) {
-      active = component_switch;
-      component_switch.setAttribute('value', 'true');
+  const select = document.createElement('select');
+  select.className = 'select';
+  object.options.forEach(({ key, label, value }) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.innerText = core.translate(label);
+    if (value === initValue) {
+      option.setAttribute('selected', 'selected');
     }
-
-    component_option.classList.add(`theme-${option.value}`);
-    component_option.appendChild(component_switch);
-    component_option.addEventListener('click', () => {
-      if (chromeStorage[object.key] !== option.value) {
-        chromeStorage[object.key] = option.value;
-        if (active) active.setAttribute('value', false);
-        component_switch.setAttribute('value', 'true');
-        active = component_switch;
-      } else {
-        chromeStorage[object.key] = 0;
-        component_switch.setAttribute('value', 'false');
-        active = undefined;
-      }
-    });
-    component.appendChild(component_option);
+    select.appendChild(option);
   });
+  const setSubLabel = () => object.setSubLabel(select.options[select.selectedIndex].text);
+  select.addEventListener('change', () => {
+    chromeStorage[object.key] = select.value;
+    setSubLabel();
+  });
+  setSubLabel();
+  component.appendChild(select);
 
   return component;
 };

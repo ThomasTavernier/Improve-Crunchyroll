@@ -6,6 +6,15 @@ html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
   background: none !important;
 }
 
+html[ic_runnerThumbnail='hide'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
+  height: 0 !important;
+  width: 1px !important;
+}
+
+html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
+  filter: blur(5px);
+}
+
 #velocity-canvas {
   height: 100%;
 }
