@@ -164,18 +164,6 @@
   "KEY_SHORTCUTS": {
     "message": "Atajos"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "reduce la velocidad"
-  },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
-    "message": "Acelerar los atajos"
-  },
-  "KEY_SPEED_UP": {
-    "message": "acelerar"
-  },
-  "KEY_SPEED_UP_SHORTCUTS": {
-    "message": "Acelerar los atajos"
-  },
   "KEY_SKIP": {
     "message": "saltar"
   },
@@ -187,6 +175,18 @@
   },
   "KEY_SKIPPING_SHORTCUT": {
     "message": "Establecer acceso directo para omitir"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "reduce la velocidad"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Acelerar los atajos"
+  },
+  "KEY_SPEED_UP": {
+    "message": "acelerar"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Acelerar los atajos"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Con éxito copia de seguridad."

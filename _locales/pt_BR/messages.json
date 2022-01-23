@@ -164,18 +164,6 @@
   "KEY_SHORTCUTS": {
     "message": "Atalhos"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "diminua a velocidade"
-  },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
-    "message": "Atalhos mais rápidos"
-  },
-  "KEY_SPEED_UP": {
-    "message": "acelerar"
-  },
-  "KEY_SPEED_UP_SHORTCUTS": {
-    "message": "Acelere os atalhos"
-  },
   "KEY_SKIP": {
     "message": "pular"
   },
@@ -187,6 +175,18 @@
   },
   "KEY_SKIPPING_SHORTCUT": {
     "message": "Definir atalho para pular"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "diminua a velocidade"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Atalhos mais rápidos"
+  },
+  "KEY_SPEED_UP": {
+    "message": "acelerar"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Acelere os atalhos"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Backup com sucesso."

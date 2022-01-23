@@ -164,18 +164,6 @@
   "KEY_SHORTCUTS": {
     "message": "Raccourcis"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "ralentir"
-  },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
-    "message": "Accélérer les raccourcis"
-  },
-  "KEY_SPEED_UP": {
-    "message": "accélérer"
-  },
-  "KEY_SPEED_UP_SHORTCUTS": {
-    "message": "Accélérer les raccourcis"
-  },
   "KEY_SKIP": {
     "message": "sauter"
   },
@@ -187,6 +175,18 @@
   },
   "KEY_SKIPPING_SHORTCUT": {
     "message": "Définir le raccourci de saut"
+  },
+  "KEY_SPEED_DOWN": {
+    "message": "ralentir"
+  },
+  "KEY_SPEED_DOWN_SHORTCUTS": {
+    "message": "Accélérer les raccourcis"
+  },
+  "KEY_SPEED_UP": {
+    "message": "accélérer"
+  },
+  "KEY_SPEED_UP_SHORTCUTS": {
+    "message": "Accélérer les raccourcis"
   },
   "KEY_SUCCESSFULLY_BACKUP": {
     "message": "Sauvegarde réussie."
