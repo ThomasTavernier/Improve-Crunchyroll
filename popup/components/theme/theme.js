@@ -1,8 +1,8 @@
-core.components.select = (object) => {
+core.components.theme = (object) => {
   const component = document.createElement('div');
   let active;
 
-  component.className = 'select';
+  component.className = 'theme';
   object.options.forEach((option) => {
     const component_option = core.components.item(option);
     const component_switch = core.components.switch();
