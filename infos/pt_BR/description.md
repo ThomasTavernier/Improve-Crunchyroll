@@ -13,11 +13,12 @@ Improve Crunchyroll pode:
  - Desativar NumPad
  - Adicionar botões voltar / pular
  - Adicionar atalhos para voltar / pular
+ - Adicionar atalhos de velocidade de reprodução de vídeo
  - Cada recurso pode ser ligado / desligado
  - Configurações de backup / redefinição
 
 Novo:
-- Adicionar atalhos de velocidade de reprodução de vídeo
+- Desfocar ou ocultar a miniatura da barra de progresso
 
 Suporte a versão beta do Crunchyroll.
 Comentários são bem-vindos!

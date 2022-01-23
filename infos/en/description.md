@@ -13,11 +13,12 @@ Improve Crunchyroll can:
  - Disable NumPad
  - Add fast backward/forward buttons
  - Add fast backward/forward shortcuts
+ - Add video playback speed shortcuts
  - Each features can be turn on/off
  - Backup/reset settings
 
 New:
- - Add video playback speed shortcuts
+ - Blur or hide runner thumbnail
 
 Support beta version of Crunchyroll.
 Feedbacks are welcomed!

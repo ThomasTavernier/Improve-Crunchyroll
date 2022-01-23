@@ -14,11 +14,12 @@ Improve Crunchyroll peut:
  - Désactiver le pavé numérique
  - Ajouter des bouttons d'avance / retour rapides
  - Ajouter des raccourcis d'avance / retour rapides
+ - Ajouter des raccourcis de vitesse de lecture vidéo
  - Chacune des fonctionnalités peut être activée / désactivée
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
-- Ajouter des raccourcis de vitesse de lecture vidéo
+- Flouter ou masquer la vignette de la barre de progression
 
 Supporte la version bêta de Crunchyroll.
 Les retours sont les bienvenus!
