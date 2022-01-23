@@ -1,0 +1,19 @@
+select.select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: inherit;
+  cursor: pointer;
+  opacity: 0;
+  border: none;
+  outline: none;
+  background: none;
+  appearance: none;
+}
+
+select.select > option {
+  background-color: var(--secondary);
+  color: var(--secondary-font);
+}

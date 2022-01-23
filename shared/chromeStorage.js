@@ -14,6 +14,7 @@ const chromeStorage = new (class {
     hide_skip_button: false,
     hide_subtitles: false,
     player_mode: 2,
+    runnerThumbnail: '',
     scrollbar: false,
     shortcuts: this.NESTED,
     theater_mode: true,

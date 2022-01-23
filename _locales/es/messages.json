@@ -29,6 +29,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Copia de seguridad & reiniciar"
   },
+  "KEY_BLUR": {
+    "message": "Difuminar"
+  },
   "KEY_BUTTONS": {
     "message": "Botones"
   },
@@ -46,6 +49,9 @@
   },
   "KEY_DARK_THEME": {
     "message": "Modo oscuro"
+  },
+  "KEY_DEFAULT": {
+    "message": "Defecto"
   },
   "KEY_DELETE": {
     "message": "Borrar"
@@ -91,6 +97,9 @@
   },
   "KEY_HEADER_ON_HOVER": {
     "message": "muestre el encabezado"
+  },
+  "KEY_HIDE": {
+    "message": "Esconder"
   },
   "KEY_HIDE_BACKGROUND_IMAGE": {
     "message": "ocultar imagen de fondo"
@@ -151,6 +160,9 @@
   },
   "KEY_RESTORE": {
     "message": "Restaurar"
+  },
+  "KEY_RUNNER_THUMBNAIL": {
+    "message": "miniatura de la barra de progreso"
   },
   "KEY_SAVE": {
     "message": "Salvar"

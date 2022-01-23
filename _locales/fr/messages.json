@@ -29,6 +29,9 @@
   "KEY_BACKUP_AND_RESET": {
     "message": "Réinitialisation et sauvegarde"
   },
+  "KEY_BLUR": {
+    "message": "Flouter"
+  },
   "KEY_BUTTONS": {
     "message": "Boutons"
   },
@@ -46,6 +49,9 @@
   },
   "KEY_DARK_THEME": {
     "message": "Mode sombre"
+  },
+  "KEY_DEFAULT": {
+    "message": "Défaut"
   },
   "KEY_DELETE": {
     "message": "Effacer"
@@ -91,6 +97,9 @@
   },
   "KEY_HEADER_ON_HOVER": {
     "message": "entête (curseur)"
+  },
+  "KEY_HIDE": {
+    "message": "Cacher"
   },
   "KEY_HIDE_BACKGROUND_IMAGE": {
     "message": "masquer l'image d'arrière-plan"
@@ -151,6 +160,9 @@
   },
   "KEY_RESTORE": {
     "message": "Restaurer"
+  },
+  "KEY_RUNNER_THUMBNAIL": {
+    "message": "vignette de la barre de progression"
   },
   "KEY_SAVE": {
     "message": "Sauvegarder"

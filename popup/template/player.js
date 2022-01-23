@@ -33,18 +33,24 @@ core.main.player = {
             key: 'disable_numpad',
             label: 'KEY_DISABLE_NUMPAD',
           },
-        },
-      },
-
-      skippers: {
-        type: 'section',
-        label: 'KEY_SKIPPING',
-
-        content: {
-          auto_skip: {
-            type: 'checkbox',
-            key: 'auto_skip',
-            label: 'KEY_AUTO_SKIP',
+          runnerThumbnail: {
+            type: 'select',
+            key: 'runnerThumbnail',
+            label: 'KEY_RUNNER_THUMBNAIL',
+            options: [
+              {
+                label: 'KEY_DEFAULT',
+                value: '',
+              },
+              {
+                label: 'KEY_BLUR',
+                value: 'blur',
+              },
+              {
+                label: 'KEY_HIDE',
+                value: 'hide',
+              },
+            ],
           },
         },
       },
@@ -75,6 +81,19 @@ core.main.player = {
             key: 'fast_forward_buttons',
             label: 'KEY_FAST_FORWARD_BUTTONS',
             placeholder: '30,90',
+          },
+        },
+      },
+
+      skippers: {
+        type: 'section',
+        label: 'KEY_SKIPPING',
+
+        content: {
+          auto_skip: {
+            type: 'checkbox',
+            key: 'auto_skip',
+            label: 'KEY_AUTO_SKIP',
           },
         },
       },
