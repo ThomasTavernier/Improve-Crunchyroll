@@ -15,10 +15,6 @@ html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-
   filter: blur(5px);
 }
 
-#velocity-canvas {
-  height: 100%;
-}
-
 .ic_forward_backward {
   height: 120px;
   position: absolute;
