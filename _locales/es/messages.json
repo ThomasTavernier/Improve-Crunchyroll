@@ -1,9 +1,9 @@
 {
-  "extName": {
-    "message": "Improve Crunchyroll"
-  },
   "extDescription": {
     "message": "Mejora Crunchyroll: modo teatro, omitir intros/outros, marcar como visto/no visto, botones de retroceso/salto, modo oscuro, ..."
+  },
+  "extName": {
+    "message": "Improve Crunchyroll"
   },
   "KEY_ACCEPT": {
     "message": "Aceptar"

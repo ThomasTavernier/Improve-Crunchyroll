@@ -1,9 +1,9 @@
 {
-  "extName": {
-    "message": "Improve Crunchyroll"
-  },
   "extDescription": {
     "message": "Enhance Crunchyroll: theater mode, skip intros/outros, mark as watched/not watched, fast forward/backward buttons, dark mode, ..."
+  },
+  "extName": {
+    "message": "Improve Crunchyroll"
   },
   "KEY_ACCEPT": {
     "message": "Accept"
