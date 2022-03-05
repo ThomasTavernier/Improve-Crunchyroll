@@ -122,6 +122,9 @@
   "KEY_HIDE_SUBTITLES": {
     "message": "ocultar subtítulos"
   },
+  "KEY_HIDE_UI": {
+    "message": "esconder UI"
+  },
   "KEY_MARK_ALL_NEXT": {
     "message": "Marcar todos los siguientes"
   },
@@ -179,14 +182,14 @@
   "KEY_SKIP": {
     "message": "saltar"
   },
+  "KEY_SKIP_SHORTCUT": {
+    "message": "Omitir"
+  },
   "KEY_SKIP_TO": {
     "message": "PASEMOS A:"
   },
   "KEY_SKIPPING": {
     "message": "Saltó a la comba"
-  },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Establecer acceso directo para omitir"
   },
   "KEY_SPEED_DOWN": {
     "message": "reduce la velocidad"
@@ -215,10 +218,25 @@
   "KEY_THEMES": {
     "message": "Temas"
   },
+  "KEY_TOGGLE_HIDE_UI": {
+    "message": "Alternar ocultar UI"
+  },
   "KEY_UNSET": {
     "message": "Desarmado"
   },
   "KEY_VALUE": {
     "message": "Valor"
+  },
+  "KEY_WHILE_FULLSCREEN": {
+    "message": "mientras está en pantalla completa"
+  },
+  "KEY_WHILE_PLAYING": {
+    "message": "mientras se reproduce"
+  },
+  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
+    "message": "mientras se reproduce y pantalla completa"
+  },
+  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
+    "message": "mientras se reproduce o en pantalla completa"
   }
 }

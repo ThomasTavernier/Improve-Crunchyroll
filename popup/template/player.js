@@ -52,6 +52,33 @@ core.main.player = {
               },
             ],
           },
+          hide_ui: {
+            type: 'select',
+            key: 'hide_ui',
+            label: 'KEY_HIDE_UI',
+            options: [
+              {
+                label: 'KEY_DEFAULT',
+                value: '',
+              },
+              {
+                label: 'KEY_WHILE_PLAYING',
+                value: 'playing',
+              },
+              {
+                label: 'KEY_WHILE_FULLSCREEN',
+                value: 'fullscreen',
+              },
+              {
+                label: 'KEY_WHILE_PLAYING_OR_FULLSCREEN',
+                value: 'playingOrFullscreen',
+              },
+              {
+                label: 'KEY_WHILE_PLAYING_AND_FULLSCREEN',
+                value: 'playingAndFullscreen',
+              },
+            ],
+          },
         },
       },
 

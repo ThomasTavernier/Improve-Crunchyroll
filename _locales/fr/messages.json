@@ -122,6 +122,9 @@
   "KEY_HIDE_SUBTITLES": {
     "message": "masquer les sous-titres"
   },
+  "KEY_HIDE_UI": {
+    "message": "masquer UI"
+  },
   "KEY_MARK_ALL_NEXT": {
     "message": "Marquer tous les suivant"
   },
@@ -179,14 +182,14 @@
   "KEY_SKIP": {
     "message": "sauter"
   },
+  "KEY_SKIP_SHORTCUT": {
+    "message": "Sauter"
+  },
   "KEY_SKIP_TO": {
     "message": "PASSER:"
   },
   "KEY_SKIPPING": {
     "message": "Saut"
-  },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Définir le raccourci de saut"
   },
   "KEY_SPEED_DOWN": {
     "message": "ralentir"
@@ -215,10 +218,25 @@
   "KEY_THEMES": {
     "message": "Thèmes"
   },
+  "KEY_TOGGLE_HIDE_UI": {
+    "message": "Basculer le masquage UI"
+  },
   "KEY_UNSET": {
     "message": "Désarmé"
   },
   "KEY_VALUE": {
     "message": "Valeur"
+  },
+  "KEY_WHILE_FULLSCREEN": {
+    "message": "en plein écran"
+  },
+  "KEY_WHILE_PLAYING": {
+    "message": "pendant la lecture"
+  },
+  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
+    "message": "pendant la lecture et en plein écran"
+  },
+  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
+    "message": "pendant la lecture vidéo ou en plein écran"
   }
 }

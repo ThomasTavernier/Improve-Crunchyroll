@@ -87,6 +87,16 @@ function createFastForwardBackwardButtons() {
   });
 }
 
+function playingHandler() {
+  const player = document.getElementById('player0');
+  player.addEventListener('play', () => {
+    document.documentElement.setAttribute('ic_playing', 'true');
+  });
+  player.addEventListener('pause', () => {
+    document.documentElement.setAttribute('ic_playing', 'false');
+  });
+}
+
 function createAndInsertSvgDefs() {
   Promise.all(['forward', 'backward'].map((file) => fetch(chrome.runtime.getURL(`/resources/${file}.html`))))
     .then((responses) => Promise.all(responses.map((response) => response.text())))
@@ -397,6 +407,22 @@ function shortcutHandler() {
             activeSkipper.element.click();
           }
         },
+        ...[
+          ['toggleHideUiWhilePlaying', 'playing'],
+          ['toggleHideUiWhileFullscreen', 'fullscreen'],
+          ['toggleHideUiWhilePlayingOrFullscreen', 'playingOrFullscreen'],
+          ['toggleHideUiWhilePlayingAndFullscreen', 'playingAndFullscreen'],
+        ].reduce(
+          (acc, [type, value]) => ({
+            ...acc,
+            [type]: () =>
+              document.documentElement.setAttribute(
+                'ic_hide_ui',
+                (document.documentElement.getAttribute('ic_hide_ui') !== value && value) || '',
+              ),
+          }),
+          {},
+        ),
       }).forEach(([type, fn]) => {
         const {
           shortcuts: { [type]: shortcut },
@@ -508,12 +534,14 @@ new MutationObserver((_, observer) => {
     'hide_play_pause_button',
     'hide_skip_button',
     'hide_subtitles',
+    'hide_ui',
     'runnerThumbnail',
     'player_mode',
     'scrollbar',
   );
   new MutationObserver((_, observer) => {
     observer.disconnect();
+    playingHandler();
     createAndInsertSvgDefs();
     createDivs();
     shortcutHandler();

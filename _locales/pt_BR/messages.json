@@ -122,6 +122,9 @@
   "KEY_HIDE_SUBTITLES": {
     "message": "ocultar legendas"
   },
+  "KEY_HIDE_UI": {
+    "message": "ocultar UI"
+  },
   "KEY_MARK_ALL_NEXT": {
     "message": "Marcar todas os próximos"
   },
@@ -179,14 +182,14 @@
   "KEY_SKIP": {
     "message": "pular"
   },
+  "KEY_SKIP_SHORTCUT": {
+    "message": "Pular"
+  },
   "KEY_SKIP_TO": {
     "message": "PULE PARA:"
   },
   "KEY_SKIPPING": {
     "message": "Pulando"
-  },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Definir atalho para pular"
   },
   "KEY_SPEED_DOWN": {
     "message": "diminua a velocidade"
@@ -215,10 +218,25 @@
   "KEY_THEMES": {
     "message": "Temas"
   },
+  "KEY_TOGGLE_HIDE_UI": {
+    "message": "Alternar ocultar UI"
+  },
   "KEY_UNSET": {
     "message": "Não definido"
   },
   "KEY_VALUE": {
     "message": "Valor"
+  },
+  "KEY_WHILE_FULLSCREEN": {
+    "message": "enquanto em tela cheia"
+  },
+  "KEY_WHILE_PLAYING": {
+    "message": "enquanto é reproduzido"
+  },
+  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
+    "message": "durante a reprodução e em tela cheia"
+  },
+  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
+    "message": "durante a reprodução ou em tela cheia"
   }
 }

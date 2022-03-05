@@ -1,3 +1,73 @@
+function createShortcut(type, label) {
+  const shortcut = {
+    type: 'item',
+    label: label,
+    on: {
+      click: () => {
+        const key = chromeStorage.shortcuts[type];
+        let newKey = key;
+        core.popup.custom(
+          {
+            span: {
+              type: 'item',
+              label,
+            },
+            shortcut: {
+              type: 'shortcut',
+              label: key || 'KEY_NONE',
+              onChange: (value) => {
+                newKey = value;
+              },
+            },
+          },
+          {
+            cancel: {
+              type: 'button',
+              innerHTML: 'KEY_CANCEL',
+              on: {
+                click: () => core.popup.close(),
+              },
+            },
+            delete: {
+              type: 'button',
+              innerHTML: 'KEY_UNSET',
+              on: {
+                click: () => {
+                  chromeStorage.shortcuts = { ...chromeStorage.shortcuts, [type]: undefined };
+                  core.popup.close();
+                },
+              },
+            },
+            save: {
+              type: 'button',
+              innerHTML: 'KEY_SAVE',
+              on: {
+                click: () => {
+                  chromeStorage.shortcuts = { ...chromeStorage.shortcuts, [type]: newKey };
+                  core.popup.close();
+                },
+              },
+            },
+          },
+        );
+      },
+    },
+  };
+  chromeStorage.LOADED.then(() => {
+    shortcut.subLabel = shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts[type]) || 'KEY_NONE';
+    chrome.storage.onChanged.addListener((changes) => {
+      if (changes.shortcuts && changes.shortcuts.newValue[type] !== changes.shortcuts.oldValue[type]) {
+        setTimeout(() => {
+          if (typeof shortcut.setSubLabel === 'function') {
+            shortcut.setSubLabel(shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts[type]) || 'KEY_NONE');
+          }
+        });
+      }
+    });
+  });
+  return shortcut;
+}
+
 function createShortcutWithValue({ type, prefix, inputOption }) {
   const label = `${prefix ? `${prefix}_` : ''}${type.replace(/([A-Z])/g, '_$1').toUpperCase()}`;
   return {
@@ -130,99 +200,56 @@ core.main.shortcuts = {
 
     content: {
       section: {
-        type: 'section',
+        type: 'main',
 
         content: {
-          ...['backward', 'forward'].reduce((acc, type) => {
-            acc[type] = createShortcutWithValue({
-              type,
-              prefix: 'FAST',
-              inputOption: {
-                min: 1,
-              },
-            });
-            return acc;
-          }, {}),
-          ...['speedUp', 'speedDown'].reduce((acc, type) => {
-            acc[type] = createShortcutWithValue({
-              type,
-              inputOption: {
-                min: 0.05,
-                max: 2,
-                step: 0.05,
-              },
-            });
-            return acc;
-          }, {}),
-          skip: (() => {
-            const skip = {
-              type: 'item',
-              label: `KEY_SKIP`,
-              on: {
-                click: () => {
-                  const key = chromeStorage.shortcuts.skip;
-                  let newKey = key;
-                  core.popup.custom(
-                    {
-                      span: {
-                        type: 'item',
-                        label: 'KEY_SKIPPING_SHORTCUT',
-                      },
-                      shortcut: {
-                        type: 'shortcut',
-                        label: key || 'KEY_NONE',
-                        onChange: (value) => {
-                          newKey = value;
-                        },
-                      },
-                    },
-                    {
-                      delete: {
-                        type: 'button',
-                        innerHTML: 'KEY_UNSET',
-                        on: {
-                          click: () => {
-                            chromeStorage.shortcuts = { ...chromeStorage.shortcuts, skip: undefined };
-                            core.popup.close();
-                          },
-                        },
-                      },
-                      cancel: {
-                        type: 'button',
-                        innerHTML: 'KEY_CANCEL',
-                        on: {
-                          click: () => core.popup.close(),
-                        },
-                      },
-                      save: {
-                        type: 'button',
-                        innerHTML: 'KEY_SAVE',
-                        on: {
-                          click: () => {
-                            chromeStorage.shortcuts = { ...chromeStorage.shortcuts, skip: newKey };
-                            core.popup.close();
-                          },
-                        },
-                      },
-                    },
-                  );
-                },
-              },
-            };
-            chromeStorage.LOADED.then(() => {
-              skip.subLabel = shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts.skip) || 'KEY_NONE';
-              chrome.storage.onChanged.addListener((changes) => {
-                if (changes.shortcuts && changes.shortcuts.newValue.skip !== changes.shortcuts.oldValue.skip) {
-                  setTimeout(() => {
-                    if (typeof skip.setSubLabel === 'function') {
-                      skip.setSubLabel(shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts.skip) || 'KEY_NONE');
-                    }
-                  });
-                }
-              });
-            });
-            return skip;
-          })(),
+          x: {
+            type: 'section',
+
+            content: {
+              ...['backward', 'forward'].reduce((acc, type) => {
+                acc[type] = createShortcutWithValue({
+                  type,
+                  prefix: 'FAST',
+                  inputOption: {
+                    min: 1,
+                  },
+                });
+                return acc;
+              }, {}),
+              ...['speedUp', 'speedDown'].reduce((acc, type) => {
+                acc[type] = createShortcutWithValue({
+                  type,
+                  inputOption: {
+                    min: 0.05,
+                    max: 2,
+                    step: 0.05,
+                  },
+                });
+                return acc;
+              }, {}),
+              skip: createShortcut('skip', 'KEY_SKIP'),
+            },
+          },
+          toggleHideUi: {
+            type: 'section',
+            label: 'KEY_TOGGLE_HIDE_UI',
+
+            content: {
+              ...[
+                ['toggleHideUiWhilePlaying', 'KEY_WHILE_PLAYING'],
+                ['toggleHideUiWhileFullscreen', 'KEY_WHILE_FULLSCREEN'],
+                ['toggleHideUiWhilePlayingOrFullscreen', 'KEY_WHILE_PLAYING_OR_FULLSCREEN'],
+                ['toggleHideUiWhilePlayingAndFullscreen', 'KEY_WHILE_PLAYING_AND_FULLSCREEN'],
+              ].reduce(
+                (acc, [type, label]) => ({
+                  ...acc,
+                  [type]: createShortcut(type, label),
+                }),
+                {},
+              ),
+            },
+          },
         },
       },
     },

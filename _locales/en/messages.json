@@ -122,6 +122,9 @@
   "KEY_HIDE_SUBTITLES": {
     "message": "hide subtitles"
   },
+  "KEY_HIDE_UI": {
+    "message": "hide UI"
+  },
   "KEY_MARK_ALL_NEXT": {
     "message": "Mark all next"
   },
@@ -179,14 +182,14 @@
   "KEY_SKIP": {
     "message": "skip"
   },
+  "KEY_SKIP_SHORTCUT": {
+    "message": "Skip"
+  },
   "KEY_SKIP_TO": {
     "message": "SKIP TO:"
   },
   "KEY_SKIPPING": {
     "message": "Skipping"
-  },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Set skipping shortcut"
   },
   "KEY_SPEED_DOWN": {
     "message": "speed down"
@@ -215,10 +218,25 @@
   "KEY_THEMES": {
     "message": "Themes"
   },
+  "KEY_TOGGLE_HIDE_UI": {
+    "message": "Toggle hide UI"
+  },
   "KEY_UNSET": {
     "message": "Unset"
   },
   "KEY_VALUE": {
     "message": "Value"
+  },
+  "KEY_WHILE_FULLSCREEN": {
+    "message": "while fullscreen"
+  },
+  "KEY_WHILE_PLAYING": {
+    "message": "while playing"
+  },
+  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
+    "message": "while playing and fullscreen"
+  },
+  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
+    "message": "while playing or fullscreen"
   }
 }

@@ -256,3 +256,11 @@ html:not([ic_vilos_controls='true']) .ic_skipper.active.past:not(:hover),
 html[ic_hide_skip_button='true'] .ic_skipper {
   clip: rect(0 152px 160px 152px);
 }
+
+html[ic_hide_ui='playing'][ic_playing='true'] #velocity-controls-package,
+html[ic_hide_ui='fullscreen'][ic_fullscreen='true'] #velocity-controls-package,
+html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] #velocity-controls-package,
+html[ic_hide_ui='playingOrFullscreen'][ic_fullscreen='true'] #velocity-controls-package,
+html[ic_hide_ui='playingAndFullscreen'][ic_playing='true'][ic_fullscreen='true'] #velocity-controls-package {
+  opacity: 0;
+}
