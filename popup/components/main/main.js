@@ -20,6 +20,7 @@ core.components.main = (object) => {
 
   component.close = () => {
     const content = document.getElementById('content');
+    content.scrollTo(0,0);
     content.classList.add('changing');
     component.classList.add('closing');
     component.addEventListener('animationend', () => {
