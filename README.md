@@ -4,6 +4,9 @@
 
 #### [Edge Addons](https://microsoftedge.microsoft.com/addons/detail/improve-crunchyroll/jkdpkopdoookfdobegpdbacmbnlacgjk)
 
+#### [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/improve-crunchyroll) (firefox branch)
+
+
 ### Descriptions
 
 - [English](infos/en/description.md)
