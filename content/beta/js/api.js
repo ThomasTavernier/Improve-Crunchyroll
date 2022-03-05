@@ -13,7 +13,9 @@ const API = new (class {
     const cxApiParams = fetch(window.location.href)
       .then((response) => response.text())
       .then((text) => {
-        const { localization: { locale } } = JSON.parse(text.match(/(?<=window.__INITIAL_STATE__ = ){.*}/)[0]);
+        const {
+          localization: { locale },
+        } = JSON.parse(text.match(/(?<=window.__INITIAL_STATE__ = ){.*}/)[0]);
         const {
           cxApiParams: { apiDomain, accountAuthClientId },
         } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
