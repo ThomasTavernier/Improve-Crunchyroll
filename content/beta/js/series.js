@@ -33,19 +33,13 @@ class MarkAsWatchedNotWatched {
     if (!appBodyWrapper) return;
     const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
     if (ercSeasonWithNavigation) {
-      this.getCurrentSeasonEpisodes().then((episodes) => {
-        ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
-          this.card(card, episodes);
-        });
-        this.watchCollection(ercSeasonWithNavigation);
-      });
-      this.watchSeason(ercSeasonWithNavigation);
+      this.createAndWatch(ercSeasonWithNavigation);
     } else {
       new MutationObserver((_, observer) => {
         const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
         if (!ercSeasonWithNavigation) return;
         observer.disconnect();
-        this.watchSeason(ercSeasonWithNavigation);
+        this.createAndWatch(ercSeasonWithNavigation);
       }).observe(appBodyWrapper, {
         childList: true,
         subtree: true,
@@ -69,6 +63,16 @@ class MarkAsWatchedNotWatched {
 
   destroy() {
     clearInterval(this.locationReloadTimeOut);
+  }
+
+  createAndWatch(ercSeasonWithNavigation) {
+    this.getCurrentSeasonEpisodes().then((episodes) => {
+      ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
+        this.card(card, episodes);
+      });
+      this.watchCollection(ercSeasonWithNavigation);
+    });
+    this.watchSeason(ercSeasonWithNavigation);
   }
 
   watchSeason(ercSeasonWithNavigation) {
