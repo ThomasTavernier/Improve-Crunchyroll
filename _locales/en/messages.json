@@ -5,238 +5,238 @@
   "extName": {
     "message": "Improve Crunchyroll"
   },
-  "KEY_ACCEPT": {
+  "accept": {
     "message": "Accept"
   },
-  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+  "addFastBackwardShortcut": {
     "message": "Add fast backward shortcut"
   },
-  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+  "addFastForwardShortcut": {
     "message": "Add fast forward shortcut"
   },
-  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+  "addSpeedDownShortcut": {
     "message": "Add speed down shortcut"
   },
-  "KEY_ADD_SPEED_UP_SHORTCUT": {
+  "addSpeedUpShortcut": {
     "message": "Add speed up shortcut"
   },
-  "KEY_AUTO_SKIP": {
-    "message": "auto skip"
+  "autoSkip": {
+    "message": "Auto skip"
   },
-  "KEY_BACKUP": {
+  "backup": {
     "message": "Backup"
   },
-  "KEY_BACKUP_AND_RESET": {
+  "backupAndReset": {
     "message": "Backup and reset"
   },
-  "KEY_BLUR": {
+  "blur": {
     "message": "Blur"
   },
-  "KEY_BUTTONS": {
+  "buttons": {
     "message": "Buttons"
   },
-  "KEY_CANCEL": {
+  "cancel": {
     "message": "Cancel"
   },
-  "KEY_CONFIRM_BACKUP": {
+  "confirmBackup": {
     "message": "The current backup will be deleted."
   },
-  "KEY_CONFIRM_RESET": {
+  "confirmReset": {
     "message": "The current settings will be deleted."
   },
-  "KEY_CONFIRM_RESTORE": {
+  "confirmRestore": {
     "message": "The current settings will be deleted."
   },
-  "KEY_DARK_THEME": {
+  "darkTheme": {
     "message": "Dark mode"
   },
-  "KEY_DEFAULT": {
+  "default": {
     "message": "Default"
   },
-  "KEY_DELETE": {
+  "delete": {
     "message": "Delete"
   },
-  "KEY_DISABLE_NUMPAD": {
-    "message": "disable NumPad"
+  "disableNumpad": {
+    "message": "Disable NumPad"
   },
-  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+  "editFastBackwardShortcut": {
     "message": "Edit fast backward shortcut"
   },
-  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+  "editFastForwardShortcut": {
     "message": "Edit fast forward shortcut"
   },
-  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+  "editSpeedDownShortcut": {
     "message": "Edit speed down shortcut"
   },
-  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+  "editSpeedUpShortcut": {
     "message": "Edit speed up shortcut"
   },
-  "KEY_FAST_BACKWARD": {
-    "message": "fast backward"
+  "fastBackward": {
+    "message": "Fast backward"
   },
-  "KEY_FAST_BACKWARD_BUTTONS": {
-    "message": "fast backward buttons"
+  "fastBackwardButtons": {
+    "message": "Fast backward buttons"
   },
-  "KEY_FAST_BACKWARD_SHORTCUTS": {
+  "fastBackwardShortcuts": {
     "message": "Fast backward shortcuts"
   },
-  "KEY_FAST_FORWARD": {
-    "message": "fast forward"
+  "fastForward": {
+    "message": "Fast forward"
   },
-  "KEY_FAST_FORWARD_BUTTONS": {
-    "message": "fast forward buttons"
+  "fastForwardButtons": {
+    "message": "Fast forward buttons"
   },
-  "KEY_FAST_FORWARD_SHORTCUTS": {
+  "fastForwardShortcuts": {
     "message": "Fast forward shortcuts"
   },
-  "KEY_FULLSCREEN_MODE": {
-    "message": "fullscreen mode"
+  "fullscreenMode": {
+    "message": "Fullscreen mode"
   },
-  "KEY_GENERAL": {
+  "general": {
     "message": "General"
   },
-  "KEY_HEADER_ON_HOVER": {
-    "message": "header on hover"
+  "headerOnHover": {
+    "message": "Header on hover"
   },
-  "KEY_HIDE": {
+  "hide": {
     "message": "Hide"
   },
-  "KEY_HIDE_BACKGROUND_IMAGE": {
-    "message": "hide background image"
+  "hideBackgroundImage": {
+    "message": "Hide background image"
   },
-  "KEY_HIDE_BANNER": {
-    "message": "hide banner"
+  "hideBanner": {
+    "message": "Hide banner"
   },
-  "KEY_HIDE_DIM_SCREEN": {
-    "message": "hide dim screen"
+  "hideDimScreen": {
+    "message": "Hide dim screen"
   },
-  "KEY_HIDE_MESSAGE_BOX": {
-    "message": "hide message box"
+  "hideMessageBox": {
+    "message": "Hide message box"
   },
-  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
-    "message": "hide play/pause button"
+  "hidePlayPauseButton": {
+    "message": "Hide play/pause button"
   },
-  "KEY_HIDE_SKIP_BUTTON": {
-    "message": "hide skip button"
+  "hideSkipButton": {
+    "message": "Hide skip button"
   },
-  "KEY_HIDE_SUBTITLES": {
-    "message": "hide subtitles"
+  "hideSubtitles": {
+    "message": "Hide subtitles"
   },
-  "KEY_HIDE_UI": {
-    "message": "hide UI"
+  "hideUi": {
+    "message": "Hide UI"
   },
-  "KEY_MARK_ALL_NEXT": {
+  "markAllNext": {
     "message": "Mark all next"
   },
-  "KEY_MARK_ALL_PREVIOUS": {
+  "markAllPrevious": {
     "message": "Mark all previous"
   },
-  "KEY_MARK_AS_NOT_WATCHED": {
+  "markAsNotWatched": {
     "message": "Mark as not watched"
   },
-  "KEY_MARK_AS_WATCHED": {
+  "markAsWatched": {
     "message": "Mark as watched"
   },
-  "KEY_MARK_ONLY_THIS_ONE": {
+  "markOnlyThisOne": {
     "message": "Mark only this one"
   },
-  "KEY_NONE": {
-    "message": "none"
+  "none": {
+    "message": "None"
   },
-  "KEY_NORMAL": {
+  "normal": {
     "message": "Normal"
   },
-  "KEY_OK": {
+  "ok": {
     "message": "OK"
   },
-  "KEY_PLAYBACK_RATE": {
+  "playbackRate": {
     "message": "Playback speed"
   },
-  "KEY_PLAYER": {
+  "player": {
     "message": "Player"
   },
-  "KEY_PRESS_ANY_KEY": {
+  "pressAnyKey": {
     "message": "Press any key"
   },
-  "KEY_RESET": {
+  "reset": {
     "message": "Reset"
   },
-  "KEY_RESTORE": {
+  "restore": {
     "message": "Restore"
   },
-  "KEY_RUNNER_THUMBNAIL": {
-    "message": "runner thumbnail"
+  "runnerThumbnail": {
+    "message": "Runner thumbnail"
   },
-  "KEY_SAVE": {
+  "save": {
     "message": "Save"
   },
-  "KEY_SCROLLBAR": {
-    "message": "scrollbar"
+  "scrollbar": {
+    "message": "Scrollbar"
   },
-  "KEY_SETTINGS": {
+  "settings": {
     "message": "Settings"
   },
-  "KEY_SHORTCUTS": {
+  "shortcuts": {
     "message": "Shortcuts"
   },
-  "KEY_SKIP": {
-    "message": "skip"
-  },
-  "KEY_SKIP_SHORTCUT": {
+  "skip": {
     "message": "Skip"
   },
-  "KEY_SKIP_TO": {
-    "message": "SKIP TO:"
-  },
-  "KEY_SKIPPING": {
+  "skipping": {
     "message": "Skipping"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "speed down"
+  "skipShortcut": {
+    "message": "Skip"
   },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
+  "skipTo": {
+    "message": "SKIP TO:"
+  },
+  "speedDown": {
+    "message": "Speed down"
+  },
+  "speedDownShortcuts": {
     "message": "Speed down shortcuts"
   },
-  "KEY_SPEED_UP": {
-    "message": "speed up"
+  "speedUp": {
+    "message": "Speed up"
   },
-  "KEY_SPEED_UP_SHORTCUTS": {
+  "speedUpShortcuts": {
     "message": "Speed up shortcuts"
   },
-  "KEY_SUCCESSFULLY_BACKUP": {
+  "successfullyBackup": {
     "message": "Successfully backup."
   },
-  "KEY_SUCCESSFULLY_RESETED": {
+  "successfullyReseted": {
     "message": "Successfully reseted."
   },
-  "KEY_SUCCESSFULLY_RESTORED": {
+  "successfullyRestored": {
     "message": "Successfully restored."
   },
-  "KEY_THEATER_MODE": {
-    "message": "theater mode"
+  "theaterMode": {
+    "message": "Theater mode"
   },
-  "KEY_THEMES": {
+  "themes": {
     "message": "Themes"
   },
-  "KEY_TOGGLE_HIDE_UI": {
+  "toggleHideUi": {
     "message": "Toggle hide UI"
   },
-  "KEY_UNSET": {
+  "unset": {
     "message": "Unset"
   },
-  "KEY_VALUE": {
+  "value": {
     "message": "Value"
   },
-  "KEY_WHILE_FULLSCREEN": {
-    "message": "while fullscreen"
+  "whileFullscreen": {
+    "message": "While fullscreen"
   },
-  "KEY_WHILE_PLAYING": {
-    "message": "while playing"
+  "whilePlaying": {
+    "message": "While playing"
   },
-  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
-    "message": "while playing and fullscreen"
+  "whilePlayingAndFullscreen": {
+    "message": "While playing and fullscreen"
   },
-  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
-    "message": "while playing or fullscreen"
+  "whilePlayingOrFullscreen": {
+    "message": "While playing or fullscreen"
   }
 }

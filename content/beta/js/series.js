@@ -159,16 +159,16 @@ class MarkAsWatchedNotWatched {
     body.appendChild(
       createActionMenuButton([
         {
-          name: 'KEY_MARK_AS_WATCHED',
+          name: 'markAsWatched',
           subMenus: [
             {
-              name: 'KEY_MARK_ONLY_THIS_ONE',
+              name: 'markOnlyThisOne',
               action: () => {
                 API.playheads(id, duration_ms).then(this.refresh);
               },
             },
             {
-              name: 'KEY_MARK_ALL_PREVIOUS',
+              name: 'markAllPrevious',
               if: () => episode_sequence_number > first_episode_sequence_number,
               action: () => {
                 Promise.all(
@@ -181,16 +181,16 @@ class MarkAsWatchedNotWatched {
           ],
         },
         {
-          name: 'KEY_MARK_AS_NOT_WATCHED',
+          name: 'markAsNotWatched',
           subMenus: [
             {
-              name: 'KEY_MARK_ONLY_THIS_ONE',
+              name: 'markOnlyThisOne',
               action: () => {
                 API.playheads(id, 0).then(this.refresh);
               },
             },
             {
-              name: 'KEY_MARK_ALL_NEXT',
+              name: 'markAllNext',
               if: () => last_episode_sequence_number !== episode_sequence_number,
               action: () => {
                 Promise.all(

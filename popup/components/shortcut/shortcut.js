@@ -9,10 +9,10 @@ core.components.shortcut = (object) => {
       .map((value) => `<span>${value}</span>`)
       .join('+');
   };
-  if (object.label.startsWith('KEY_')) {
-    component.innerText = core.translate(object.label);
+  if (object.key) {
+    render(object.key);
   } else {
-    render(object.label);
+    component.innerText = core.translate(object.label);
   }
   component.addEventListener('keydown', (ev) => {
     const shortcut = shortcutUtils.eventToKey(ev);

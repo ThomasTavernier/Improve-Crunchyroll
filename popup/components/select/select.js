@@ -8,8 +8,7 @@ core.components.select = (object) => {
   object.options.forEach(({ key, label, value }) => {
     const option = document.createElement('option');
     option.value = value;
-    const [upp, ...letters] = core.translate(label);
-    option.innerText = [upp.toUpperCase(), ...letters].join('');
+    option.innerText = core.translate(label);
     if (value === initValue) {
       option.setAttribute('selected', 'selected');
     }

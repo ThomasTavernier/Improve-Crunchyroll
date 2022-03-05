@@ -67,7 +67,7 @@ function createFastForwardBackwardButtons() {
     (fastBackwardNumber) => {
       const fastBackwardButton = document.createElement('div');
       fastBackwardButton.appendChild(createSvgForwardBackward('backward', fastBackwardNumber));
-      fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
+      fastBackwardButton.title = `${chrome.i18n.getMessage('fastBackward')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
       buttonList.push(fastBackwardButton);
     },
@@ -76,7 +76,7 @@ function createFastForwardBackwardButtons() {
     (fastForwardNumber) => {
       const fastForwardButton = document.createElement('div');
       fastForwardButton.appendChild(createSvgForwardBackward('forward', fastForwardNumber));
-      fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
+      fastForwardButton.title = `${chrome.i18n.getMessage('fastForward')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
       buttonList.push(fastForwardButton);
     },
@@ -149,20 +149,20 @@ function createPlayerButton() {
     {
       className: 'scrollbar',
       chromeStorageKey: 'scrollbar',
-      title: 'KEY_SCROLLBAR',
+      title: 'scrollbar',
       onChange: scrollBarChange,
     },
     {
       className: 'theater_mode',
       chromeStorageKey: 'theater_mode',
-      title: 'KEY_THEATER_MODE',
+      title: 'theaterMode',
       onChange: playerMode1Change,
     },
     {
       className: 'fullscreen_mode',
       chromeStorageKey: 'player_mode',
       eq: 2,
-      title: 'KEY_FULLSCREEN_MODE',
+      title: 'fullscreenMode',
       onChange: playerMode2Change,
     },
   ].forEach((button) => {
@@ -196,7 +196,7 @@ function createAndInsertSettings() {
   const firstElementChild = velocitySettingsMenu.firstElementChild;
   [
     {
-      title: translate('KEY_PLAYBACK_RATE'),
+      title: translate('playbackRate'),
       type: 'playbackRate',
       values: [
         {
@@ -217,7 +217,7 @@ function createAndInsertSettings() {
         },
         {
           value: 1,
-          name: 'KEY_NORMAL',
+          name: 'normal',
         },
         {
           value: 1.25,
@@ -451,7 +451,7 @@ function createSkipper(skipper, player) {
     element.classList.remove('active');
     forward(skipper.end - player.currentTime);
   });
-  [translate('KEY_SKIP_TO'), parseNumber(skipper.end)].forEach((text) => {
+  [translate('skipTo'), parseNumber(skipper.end)].forEach((text) => {
     const span = document.createElement('span');
     span.innerText = text;
     element.appendChild(span);

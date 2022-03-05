@@ -5,238 +5,238 @@
   "extName": {
     "message": "Improve Crunchyroll"
   },
-  "KEY_ACCEPT": {
+  "accept": {
     "message": "Aceitar"
   },
-  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+  "addFastBackwardShortcut": {
     "message": "Adicionar atalho de voltar"
   },
-  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+  "addFastForwardShortcut": {
     "message": "Adicionar atalho de pular"
   },
-  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+  "addSpeedDownShortcut": {
     "message": "Adicionar atalho para diminuir a velocidade"
   },
-  "KEY_ADD_SPEED_UP_SHORTCUT": {
+  "addSpeedUpShortcut": {
     "message": "Adicionar atalho de aceleração"
   },
-  "KEY_AUTO_SKIP": {
-    "message": "pular automático"
+  "autoSkip": {
+    "message": "Pular automático"
   },
-  "KEY_BACKUP": {
+  "backup": {
     "message": "Backup"
   },
-  "KEY_BACKUP_AND_RESET": {
+  "backupAndReset": {
     "message": "Backup e redefinição"
   },
-  "KEY_BLUR": {
+  "blur": {
     "message": "Borrão"
   },
-  "KEY_BUTTONS": {
+  "buttons": {
     "message": "Botões"
   },
-  "KEY_CANCEL": {
+  "cancel": {
     "message": "Cancelar"
   },
-  "KEY_CONFIRM_BACKUP": {
+  "confirmBackup": {
     "message": "O backup atual será excluído."
   },
-  "KEY_CONFIRM_RESET": {
+  "confirmReset": {
     "message": "As configurações atuais serão excluídas."
   },
-  "KEY_CONFIRM_RESTORE": {
+  "confirmRestore": {
     "message": "As configurações atuais serão excluídas."
   },
-  "KEY_DARK_THEME": {
+  "darkTheme": {
     "message": "Modo escuro"
   },
-  "KEY_DEFAULT": {
+  "default": {
     "message": "Padrão"
   },
-  "KEY_DELETE": {
+  "delete": {
     "message": "Excluir"
   },
-  "KEY_DISABLE_NUMPAD": {
-    "message": "desabilitar o NumPad"
+  "disableNumpad": {
+    "message": "Desabilitar o NumPad"
   },
-  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+  "editFastBackwardShortcut": {
     "message": "Editar atalho de voltar"
   },
-  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+  "editFastForwardShortcut": {
     "message": "Editar atalho de pular"
   },
-  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+  "editSpeedDownShortcut": {
     "message": "Editar atalho para diminuir a velocidade"
   },
-  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+  "editSpeedUpShortcut": {
     "message": "Editar atalho de aceleração"
   },
-  "KEY_FAST_BACKWARD": {
-    "message": "voltar"
+  "fastBackward": {
+    "message": "Voltar"
   },
-  "KEY_FAST_BACKWARD_BUTTONS": {
-    "message": "voltar botões"
+  "fastBackwardButtons": {
+    "message": "Voltar botões"
   },
-  "KEY_FAST_BACKWARD_SHORTCUTS": {
+  "fastBackwardShortcuts": {
     "message": "Atalhos de voltar"
   },
-  "KEY_FAST_FORWARD": {
-    "message": "pular"
-  },
-  "KEY_FAST_FORWARD_BUTTONS": {
-    "message": "pular botões"
-  },
-  "KEY_FAST_FORWARD_SHORTCUTS": {
-    "message": "Atalhos de pular"
-  },
-  "KEY_FULLSCREEN_MODE": {
-    "message": "modo tela cheia"
-  },
-  "KEY_GENERAL": {
-    "message": "Geral"
-  },
-  "KEY_HEADER_ON_HOVER": {
-    "message": "cabeçalho ao passar o mouse"
-  },
-  "KEY_HIDE": {
-    "message": "Esconder"
-  },
-  "KEY_HIDE_BACKGROUND_IMAGE": {
-    "message": "ocultar a imagem de fundo"
-  },
-  "KEY_HIDE_BANNER": {
-    "message": "ocultar bandeira"
-  },
-  "KEY_HIDE_DIM_SCREEN": {
-    "message": "ocultar tela escurecida"
-  },
-  "KEY_HIDE_MESSAGE_BOX": {
-    "message": "ocultar caixa de mensagem"
-  },
-  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
-    "message": "ocultar botão reproduzir / pausar"
-  },
-  "KEY_HIDE_SKIP_BUTTON": {
-    "message": "ocultar botão pular"
-  },
-  "KEY_HIDE_SUBTITLES": {
-    "message": "ocultar legendas"
-  },
-  "KEY_HIDE_UI": {
-    "message": "ocultar UI"
-  },
-  "KEY_MARK_ALL_NEXT": {
-    "message": "Marcar todas os próximos"
-  },
-  "KEY_MARK_ALL_PREVIOUS": {
-    "message": "Marcar todas as anteriores"
-  },
-  "KEY_MARK_AS_NOT_WATCHED": {
-    "message": "Marcar como não assistidod"
-  },
-  "KEY_MARK_AS_WATCHED": {
-    "message": "Marcar como assistido"
-  },
-  "KEY_MARK_ONLY_THIS_ONE": {
-    "message": "Marque apenas este"
-  },
-  "KEY_NONE": {
-    "message": "nenhum"
-  },
-  "KEY_NORMAL": {
-    "message": "Normal"
-  },
-  "KEY_OK": {
-    "message": "OK"
-  },
-  "KEY_PLAYBACK_RATE": {
-    "message": "Velocidade de playback"
-  },
-  "KEY_PLAYER": {
-    "message": "Player"
-  },
-  "KEY_PRESS_ANY_KEY": {
-    "message": "Pressione qualquer tecla"
-  },
-  "KEY_RESET": {
-    "message": "Restaurar"
-  },
-  "KEY_RESTORE": {
-    "message": "Restore"
-  },
-  "KEY_RUNNER_THUMBNAIL": {
-    "message": "miniatura da barra de progresso"
-  },
-  "KEY_SAVE": {
-    "message": "Salve"
-  },
-  "KEY_SCROLLBAR": {
-    "message": "Barra de rolagem"
-  },
-  "KEY_SETTINGS": {
-    "message": "Configurações"
-  },
-  "KEY_SHORTCUTS": {
-    "message": "Atalhos"
-  },
-  "KEY_SKIP": {
-    "message": "pular"
-  },
-  "KEY_SKIP_SHORTCUT": {
+  "fastForward": {
     "message": "Pular"
   },
-  "KEY_SKIP_TO": {
-    "message": "PULE PARA:"
+  "fastForwardButtons": {
+    "message": "Pular botões"
   },
-  "KEY_SKIPPING": {
+  "fastForwardShortcuts": {
+    "message": "Atalhos de pular"
+  },
+  "fullscreenMode": {
+    "message": "Modo tela cheia"
+  },
+  "general": {
+    "message": "Geral"
+  },
+  "headerOnHover": {
+    "message": "Cabeçalho ao passar o mouse"
+  },
+  "hide": {
+    "message": "Esconder"
+  },
+  "hideBackgroundImage": {
+    "message": "Ocultar a imagem de fundo"
+  },
+  "hideBanner": {
+    "message": "Ocultar bandeira"
+  },
+  "hideDimScreen": {
+    "message": "Ocultar tela escurecida"
+  },
+  "hideMessageBox": {
+    "message": "Ocultar caixa de mensagem"
+  },
+  "hidePlayPauseButton": {
+    "message": "Ocultar botão reproduzir / pausar"
+  },
+  "hideSkipButton": {
+    "message": "Ocultar botão pular"
+  },
+  "hideSubtitles": {
+    "message": "Ocultar legendas"
+  },
+  "hideUi": {
+    "message": "Ocultar UI"
+  },
+  "markAllNext": {
+    "message": "Marcar todas os próximos"
+  },
+  "markAllPrevious": {
+    "message": "Marcar todas as anteriores"
+  },
+  "markAsNotWatched": {
+    "message": "Marcar como não assistidod"
+  },
+  "markAsWatched": {
+    "message": "Marcar como assistido"
+  },
+  "markOnlyThisOne": {
+    "message": "Marque apenas este"
+  },
+  "none": {
+    "message": "Nenhum"
+  },
+  "normal": {
+    "message": "Normal"
+  },
+  "ok": {
+    "message": "OK"
+  },
+  "playbackRate": {
+    "message": "Velocidade de playback"
+  },
+  "player": {
+    "message": "Player"
+  },
+  "pressAnyKey": {
+    "message": "Pressione qualquer tecla"
+  },
+  "reset": {
+    "message": "Restaurar"
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "runnerThumbnail": {
+    "message": "Miniatura da barra de progresso"
+  },
+  "save": {
+    "message": "Salve"
+  },
+  "scrollbar": {
+    "message": "Barra de rolagem"
+  },
+  "settings": {
+    "message": "Configurações"
+  },
+  "shortcuts": {
+    "message": "Atalhos"
+  },
+  "skip": {
+    "message": "Pular"
+  },
+  "skipping": {
     "message": "Pulando"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "diminua a velocidade"
+  "skipShortcut": {
+    "message": "Pular"
   },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
+  "skipTo": {
+    "message": "PULE PARA:"
+  },
+  "speedDown": {
+    "message": "Diminua a velocidade"
+  },
+  "speedDownShortcuts": {
     "message": "Atalhos mais rápidos"
   },
-  "KEY_SPEED_UP": {
-    "message": "acelerar"
+  "speedUp": {
+    "message": "Acelerar"
   },
-  "KEY_SPEED_UP_SHORTCUTS": {
+  "speedUpShortcuts": {
     "message": "Acelere os atalhos"
   },
-  "KEY_SUCCESSFULLY_BACKUP": {
+  "successfullyBackup": {
     "message": "Backup com sucesso."
   },
-  "KEY_SUCCESSFULLY_RESETED": {
+  "successfullyReseted": {
     "message": "Reinicializado com sucesso."
   },
-  "KEY_SUCCESSFULLY_RESTORED": {
+  "successfullyRestored": {
     "message": "Restaurado com sucesso."
   },
-  "KEY_THEATER_MODE": {
-    "message": "modo de teatro"
+  "theaterMode": {
+    "message": "Modo de teatro"
   },
-  "KEY_THEMES": {
+  "themes": {
     "message": "Temas"
   },
-  "KEY_TOGGLE_HIDE_UI": {
+  "toggleHideUi": {
     "message": "Alternar ocultar UI"
   },
-  "KEY_UNSET": {
+  "unset": {
     "message": "Não definido"
   },
-  "KEY_VALUE": {
+  "value": {
     "message": "Valor"
   },
-  "KEY_WHILE_FULLSCREEN": {
-    "message": "enquanto em tela cheia"
+  "whileFullscreen": {
+    "message": "Enquanto em tela cheia"
   },
-  "KEY_WHILE_PLAYING": {
-    "message": "enquanto é reproduzido"
+  "whilePlaying": {
+    "message": "Enquanto é reproduzido"
   },
-  "KEY_WHILE_PLAYING_AND_FULLSCREEN": {
-    "message": "durante a reprodução e em tela cheia"
+  "whilePlayingAndFullscreen": {
+    "message": "Durante a reprodução e em tela cheia"
   },
-  "KEY_WHILE_PLAYING_OR_FULLSCREEN": {
-    "message": "durante a reprodução ou em tela cheia"
+  "whilePlayingOrFullscreen": {
+    "message": "Durante a reprodução ou em tela cheia"
   }
 }
