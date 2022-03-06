@@ -5,6 +5,7 @@ Improve Crunchyroll can:
  - Dark Theme
  - Control video playback speed in the existing player settings
  - Mark episode/entire series as watched/not watched
+ - Blur or hide runner thumbnail
  - Hide scrollbar for a better immersion
  - Hide banners, background image
  - Hide player dim screen
@@ -18,7 +19,7 @@ Improve Crunchyroll can:
  - Backup/reset settings
 
 New:
- - Blur or hide runner thumbnail
+ - Hide player UI options & shortcuts
 
 Support beta version of Crunchyroll.
 Feedbacks are welcomed!

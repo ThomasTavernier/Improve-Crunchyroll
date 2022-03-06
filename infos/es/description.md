@@ -5,6 +5,7 @@ Improve Crunchyroll puede:
  - Tema oscuro
  - Controle la velocidad de reproducción de video en la configuración del reproductor existente
  - Marcar episodio / serie completa como visto / no visto
+ - Difuminar u ocultar la miniatura de la barra de progreso
  - Ocultar la barra de desplazamiento para una mejor inmersión
  - Ocultar bandera, imagen de fondo
  - Ocultar la pantalla tenue del jugador
@@ -18,7 +19,7 @@ Improve Crunchyroll puede:
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Difuminar u ocultar la miniatura de la barra de progreso
+- Ocultar opciones de interfaz de usuario y accesos directos del jugador
 
 Compatible con la versión beta de Crunchyroll.
 ¡Los comentarios son bienvenidos!

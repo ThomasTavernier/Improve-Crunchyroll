@@ -6,6 +6,7 @@ Improve Crunchyroll peut:
  - Contrôlez la vitesse de lecture vidéo dans les paramètres du lecteur existant
  - Marquer l'épisode / la série entière comme regardé / non regardé
  - Masquer la barre de défilement pour une meilleure immersion
+ - Flouter ou masquer la vignette de la barre de progression
  - Cacher les bannières, l'image d'arrière-plan
  - Grossir le lecteur vidéo
  - Masquer l'écran sombre du lecteur
@@ -19,7 +20,7 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
-- Flouter ou masquer la vignette de la barre de progression
+- Masquer les options et les raccourcis de l'interface utilisateur du lecteur
 
 Supporte la version bêta de Crunchyroll.
 Les retours sont les bienvenus!
