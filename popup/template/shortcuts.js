@@ -57,10 +57,16 @@ function createShortcut(type, label) {
   chromeStorage.LOADED.then(() => {
     shortcut.subLabel = shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts[type]) || 'none';
     chrome.storage.onChanged.addListener((changes) => {
-      if (changes.shortcuts && changes.shortcuts.newValue[type] !== changes.shortcuts.oldValue[type]) {
+      if (
+        changes.shortcuts &&
+        (!changes.shortcuts.oldValue || changes.shortcuts.newValue[type] !== changes.shortcuts.oldValue[type])
+      ) {
         setTimeout(() => {
+          const subLabel = shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts[type]) || 'none';
           if (typeof shortcut.setSubLabel === 'function') {
-            shortcut.setSubLabel(shortcutUtils.renderKeyJoinByPlus(chromeStorage.shortcuts[type]) || 'none');
+            shortcut.setSubLabel(subLabel);
+          } else {
+            shortcut.subLabel = subLabel;
           }
         });
       }
