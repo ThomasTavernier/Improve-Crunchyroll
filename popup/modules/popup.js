@@ -37,7 +37,7 @@ core.popup = {
       {
         ok: {
           type: 'button',
-          innerHTML: 'KEY_OK',
+          innerHTML: 'ok',
           on: {
             click: () => this.close(),
           },
@@ -57,14 +57,14 @@ core.popup = {
       {
         cancel: {
           type: 'button',
-          innerHTML: 'KEY_CANCEL',
+          innerHTML: 'cancel',
           on: {
             click: () => this.close(),
           },
         },
         ok: {
           type: 'button',
-          innerHTML: 'KEY_ACCEPT',
+          innerHTML: 'accept',
           on: {
             click: okClick,
           },

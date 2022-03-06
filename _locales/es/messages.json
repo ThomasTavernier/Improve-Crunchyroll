@@ -1,224 +1,242 @@
 {
-  "extName": {
-    "message": "Improve Crunchyroll"
-  },
   "extDescription": {
     "message": "Mejora Crunchyroll: modo teatro, omitir intros/outros, marcar como visto/no visto, botones de retroceso/salto, modo oscuro, ..."
   },
-  "KEY_ACCEPT": {
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "accept": {
     "message": "Aceptar"
   },
-  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+  "addFastBackwardShortcut": {
     "message": "Agregar retroceso atajo"
   },
-  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+  "addFastForwardShortcut": {
     "message": "Agregar salto atajo"
   },
-  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+  "addSpeedDownShortcut": {
     "message": "Agregar atajo para reducir la velocidad"
   },
-  "KEY_ADD_SPEED_UP_SHORTCUT": {
+  "addSpeedUpShortcut": {
     "message": "Agregar atajo de aceleración"
   },
-  "KEY_AUTO_SKIP": {
-    "message": "omisión automático"
+  "autoSkip": {
+    "message": "Omisión automático"
   },
-  "KEY_BACKUP": {
+  "backup": {
     "message": "Copia de seguridad"
   },
-  "KEY_BACKUP_AND_RESET": {
+  "backupAndReset": {
     "message": "Copia de seguridad & reiniciar"
   },
-  "KEY_BLUR": {
+  "blur": {
     "message": "Difuminar"
   },
-  "KEY_BUTTONS": {
+  "buttons": {
     "message": "Botones"
   },
-  "KEY_CANCEL": {
+  "cancel": {
     "message": "Cancelar"
   },
-  "KEY_CONFIRM_BACKUP": {
+  "confirmBackup": {
     "message": "La copia de seguridad actual se eliminará."
   },
-  "KEY_CONFIRM_RESET": {
+  "confirmReset": {
     "message": "La configuración actual se eliminará."
   },
-  "KEY_CONFIRM_RESTORE": {
+  "confirmRestore": {
     "message": "La configuración actual se eliminará"
   },
-  "KEY_DARK_THEME": {
+  "darkTheme": {
     "message": "Modo oscuro"
   },
-  "KEY_DEFAULT": {
+  "default": {
     "message": "Defecto"
   },
-  "KEY_DELETE": {
+  "delete": {
     "message": "Borrar"
   },
-  "KEY_DISABLE_NUMPAD": {
-    "message": "desactivar NumPad"
+  "disableNumpad": {
+    "message": "Desactivar NumPad"
   },
-  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+  "editFastBackwardShortcut": {
     "message": "Editar retroceso atajo"
   },
-  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+  "editFastForwardShortcut": {
     "message": "Editar salto atajo"
   },
-  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+  "editSpeedDownShortcut": {
     "message": "Editar atajo de reducción de velocidad"
   },
-  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+  "editSpeedUpShortcut": {
     "message": "Editar atajo de aceleración"
   },
-  "KEY_FAST_BACKWARD": {
-    "message": "retroceso"
+  "fastBackward": {
+    "message": "Retroceso"
   },
-  "KEY_FAST_BACKWARD_BUTTONS": {
-    "message": "retroceso buttons"
+  "fastBackwardButtons": {
+    "message": "Retroceso buttons"
   },
-  "KEY_FAST_BACKWARD_SHORTCUTS": {
+  "fastBackwardShortcuts": {
     "message": "Etroceso atajos"
   },
-  "KEY_FAST_FORWARD": {
-    "message": "salto"
+  "fastForward": {
+    "message": "Salto"
   },
-  "KEY_FAST_FORWARD_BUTTONS": {
-    "message": "salto botones"
+  "fastForwardButtons": {
+    "message": "Salto botones"
   },
-  "KEY_FAST_FORWARD_SHORTCUTS": {
+  "fastForwardShortcuts": {
     "message": "Salto atajos"
   },
-  "KEY_FULLSCREEN_MODE": {
-    "message": "modo de pantalla completa"
+  "fullscreenMode": {
+    "message": "Modo de pantalla completa"
   },
-  "KEY_GENERAL": {
+  "general": {
     "message": "General"
   },
-  "KEY_HEADER_ON_HOVER": {
-    "message": "muestre el encabezado"
+  "headerOnHover": {
+    "message": "Muestre el encabezado"
   },
-  "KEY_HIDE": {
+  "hide": {
     "message": "Esconder"
   },
-  "KEY_HIDE_BACKGROUND_IMAGE": {
-    "message": "ocultar imagen de fondo"
+  "hideBackgroundImage": {
+    "message": "Ocultar imagen de fondo"
   },
-  "KEY_HIDE_BANNER": {
-    "message": "ocultar bandera"
+  "hideBanner": {
+    "message": "Ocultar bandera"
   },
-  "KEY_HIDE_DIM_SCREEN": {
-    "message": "ocultar pantalla tenue"
+  "hideDimScreen": {
+    "message": "Ocultar pantalla tenue"
   },
-  "KEY_HIDE_MESSAGE_BOX": {
-    "message": "ocultar cuadro de mensaje"
+  "hideMessageBox": {
+    "message": "Ocultar cuadro de mensaje"
   },
-  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
-    "message": "ocultar el botón de reproducción / pausa"
+  "hidePlayPauseButton": {
+    "message": "Ocultar el botón de reproducción / pausa"
   },
-  "KEY_HIDE_SKIP_BUTTON": {
-    "message": "ocultar el botón de omisión"
+  "hideSkipButton": {
+    "message": "Ocultar el botón de omisión"
   },
-  "KEY_HIDE_SUBTITLES": {
-    "message": "ocultar subtítulos"
+  "hideSubtitles": {
+    "message": "Ocultar subtítulos"
   },
-  "KEY_MARK_ALL_NEXT": {
+  "hideUi": {
+    "message": "Esconder UI"
+  },
+  "markAllNext": {
     "message": "Marcar todos los siguientes"
   },
-  "KEY_MARK_ALL_PREVIOUS": {
+  "markAllPrevious": {
     "message": "Marcar todos los anteriores"
   },
-  "KEY_MARK_AS_NOT_WATCHED": {
+  "markAsNotWatched": {
     "message": "Marcar como no visto"
   },
-  "KEY_MARK_AS_WATCHED": {
+  "markAsWatched": {
     "message": "Marcar como visto"
   },
-  "KEY_MARK_ONLY_THIS_ONE": {
+  "markOnlyThisOne": {
     "message": "Marca solo este"
   },
-  "KEY_NONE": {
-    "message": "ninguno"
+  "none": {
+    "message": "Ninguno"
   },
-  "KEY_NORMAL": {
+  "normal": {
     "message": "Normal"
   },
-  "KEY_OK": {
+  "ok": {
     "message": "Ok"
   },
-  "KEY_PLAYBACK_RATE": {
+  "playbackRate": {
     "message": "Velocidad de playback"
   },
-  "KEY_PLAYER": {
+  "player": {
     "message": "Reproductor"
   },
-  "KEY_PRESS_ANY_KEY": {
+  "pressAnyKey": {
     "message": "Presiona cualquier tecla"
   },
-  "KEY_RESET": {
+  "reset": {
     "message": "Reiniciar"
   },
-  "KEY_RESTORE": {
+  "restore": {
     "message": "Restaurar"
   },
-  "KEY_RUNNER_THUMBNAIL": {
-    "message": "miniatura de la barra de progreso"
+  "runnerThumbnail": {
+    "message": "Miniatura de la barra de progreso"
   },
-  "KEY_SAVE": {
+  "save": {
     "message": "Salvar"
   },
-  "KEY_SCROLLBAR": {
-    "message": "barra de desplazamiento"
+  "scrollbar": {
+    "message": "Barra de desplazamiento"
   },
-  "KEY_SETTINGS": {
+  "settings": {
     "message": "Configuraciones"
   },
-  "KEY_SHORTCUTS": {
+  "shortcuts": {
     "message": "Atajos"
   },
-  "KEY_SKIP": {
-    "message": "saltar"
+  "skip": {
+    "message": "Saltar"
   },
-  "KEY_SKIP_TO": {
-    "message": "PASEMOS A:"
-  },
-  "KEY_SKIPPING": {
+  "skipping": {
     "message": "Saltó a la comba"
   },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Establecer acceso directo para omitir"
+  "skipShortcut": {
+    "message": "Omitir"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "reduce la velocidad"
+  "skipTo": {
+    "message": "PASEMOS A:"
   },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
+  "speedDown": {
+    "message": "Reduce la velocidad"
+  },
+  "speedDownShortcuts": {
     "message": "Acelerar los atajos"
   },
-  "KEY_SPEED_UP": {
-    "message": "acelerar"
+  "speedUp": {
+    "message": "Acelerar"
   },
-  "KEY_SPEED_UP_SHORTCUTS": {
+  "speedUpShortcuts": {
     "message": "Acelerar los atajos"
   },
-  "KEY_SUCCESSFULLY_BACKUP": {
+  "successfullyBackup": {
     "message": "Con éxito copia de seguridad."
   },
-  "KEY_SUCCESSFULLY_RESETED": {
+  "successfullyReseted": {
     "message": "Restablecida con éxito."
   },
-  "KEY_SUCCESSFULLY_RESTORED": {
+  "successfullyRestored": {
     "message": "Restaurado con éxito."
   },
-  "KEY_THEATER_MODE": {
-    "message": "modo teatro"
+  "theaterMode": {
+    "message": "Modo teatro"
   },
-  "KEY_THEMES": {
+  "themes": {
     "message": "Temas"
   },
-  "KEY_UNSET": {
+  "toggleHideUi": {
+    "message": "Alternar ocultar UI"
+  },
+  "unset": {
     "message": "Desarmado"
   },
-  "KEY_VALUE": {
+  "value": {
     "message": "Valor"
+  },
+  "whileFullscreen": {
+    "message": "Mientras está en pantalla completa"
+  },
+  "whilePlaying": {
+    "message": "Mientras se reproduce"
+  },
+  "whilePlayingAndFullscreen": {
+    "message": "Mientras se reproduce y pantalla completa"
+  },
+  "whilePlayingOrFullscreen": {
+    "message": "Mientras se reproduce o en pantalla completa"
   }
 }

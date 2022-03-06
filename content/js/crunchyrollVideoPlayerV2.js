@@ -67,7 +67,7 @@ function createFastForwardBackwardButtons() {
     (fastBackwardNumber) => {
       const fastBackwardButton = document.createElement('div');
       fastBackwardButton.appendChild(createSvgForwardBackward('backward', fastBackwardNumber));
-      fastBackwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_BACKWARD')} ${parseNumber(fastBackwardNumber)}`;
+      fastBackwardButton.title = `${chrome.i18n.getMessage('fastBackward')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
       buttonList.push(fastBackwardButton);
     },
@@ -76,7 +76,7 @@ function createFastForwardBackwardButtons() {
     (fastForwardNumber) => {
       const fastForwardButton = document.createElement('div');
       fastForwardButton.appendChild(createSvgForwardBackward('forward', fastForwardNumber));
-      fastForwardButton.title = `${chrome.i18n.getMessage('KEY_FAST_FORWARD')} ${parseNumber(fastForwardNumber)}`;
+      fastForwardButton.title = `${chrome.i18n.getMessage('fastForward')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
       buttonList.push(fastForwardButton);
     },
@@ -84,6 +84,16 @@ function createFastForwardBackwardButtons() {
   buttonList.forEach((button) => {
     button.classList.add('ic_buttons');
     icDivPlayerControls.appendChild(button);
+  });
+}
+
+function playingHandler() {
+  const player = document.getElementById('player0');
+  player.addEventListener('play', () => {
+    document.documentElement.setAttribute('ic_playing', 'true');
+  });
+  player.addEventListener('pause', () => {
+    document.documentElement.setAttribute('ic_playing', 'false');
   });
 }
 
@@ -139,20 +149,20 @@ function createPlayerButton() {
     {
       className: 'scrollbar',
       chromeStorageKey: 'scrollbar',
-      title: 'KEY_SCROLLBAR',
+      title: 'scrollbar',
       onChange: scrollBarChange,
     },
     {
       className: 'theater_mode',
       chromeStorageKey: 'theater_mode',
-      title: 'KEY_THEATER_MODE',
+      title: 'theaterMode',
       onChange: playerMode1Change,
     },
     {
       className: 'fullscreen_mode',
       chromeStorageKey: 'player_mode',
       eq: 2,
-      title: 'KEY_FULLSCREEN_MODE',
+      title: 'fullscreenMode',
       onChange: playerMode2Change,
     },
   ].forEach((button) => {
@@ -186,7 +196,7 @@ function createAndInsertSettings() {
   const firstElementChild = velocitySettingsMenu.firstElementChild;
   [
     {
-      title: translate('KEY_PLAYBACK_RATE'),
+      title: translate('playbackRate'),
       type: 'playbackRate',
       values: [
         {
@@ -207,7 +217,7 @@ function createAndInsertSettings() {
         },
         {
           value: 1,
-          name: 'KEY_NORMAL',
+          name: 'normal',
         },
         {
           value: 1.25,
@@ -397,6 +407,22 @@ function shortcutHandler() {
             activeSkipper.element.click();
           }
         },
+        ...[
+          ['toggleHideUiWhilePlaying', 'playing'],
+          ['toggleHideUiWhileFullscreen', 'fullscreen'],
+          ['toggleHideUiWhilePlayingOrFullscreen', 'playingOrFullscreen'],
+          ['toggleHideUiWhilePlayingAndFullscreen', 'playingAndFullscreen'],
+        ].reduce(
+          (acc, [type, value]) => ({
+            ...acc,
+            [type]: () =>
+              document.documentElement.setAttribute(
+                'ic_hide_ui',
+                (document.documentElement.getAttribute('ic_hide_ui') !== value && value) || '',
+              ),
+          }),
+          {},
+        ),
       }).forEach(([type, fn]) => {
         const {
           shortcuts: { [type]: shortcut },
@@ -425,7 +451,7 @@ function createSkipper(skipper, player) {
     element.classList.remove('active');
     forward(skipper.end - player.currentTime);
   });
-  [translate('KEY_SKIP_TO'), parseNumber(skipper.end)].forEach((text) => {
+  [translate('skipTo'), parseNumber(skipper.end)].forEach((text) => {
     const span = document.createElement('span');
     span.innerText = text;
     element.appendChild(span);
@@ -508,12 +534,14 @@ new MutationObserver((_, observer) => {
     'hide_play_pause_button',
     'hide_skip_button',
     'hide_subtitles',
+    'hide_ui',
     'runnerThumbnail',
     'player_mode',
     'scrollbar',
   );
   new MutationObserver((_, observer) => {
     observer.disconnect();
+    playingHandler();
     createAndInsertSvgDefs();
     createDivs();
     shortcutHandler();

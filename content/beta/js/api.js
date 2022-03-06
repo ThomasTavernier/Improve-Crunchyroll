@@ -10,17 +10,20 @@ const API = new (class {
   }
 
   get TOKEN() {
-    const cxApiParams = fetch(window.location.origin)
+    const cxApiParams = fetch(window.location.href)
       .then((response) => response.text())
       .then((text) => {
         const {
+          localization: { locale },
+        } = JSON.parse(text.match(/(?<=window.__INITIAL_STATE__ = ){.*}/)[0]);
+        const {
           cxApiParams: { apiDomain, accountAuthClientId },
         } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
-        return { apiDomain, accountAuthClientId };
+        return { apiDomain, accountAuthClientId, locale };
       });
     const get = () => {
       Object.defineProperty(this, 'TOKEN', {
-        value: cxApiParams.then(({ apiDomain, accountAuthClientId }) => {
+        value: cxApiParams.then(({ apiDomain, accountAuthClientId, locale }) => {
           return fetch(`${apiDomain}/auth/v1/token`, {
             method: 'POST',
             credentials: 'include',
@@ -37,7 +40,7 @@ const API = new (class {
                   get,
                 });
               }, expires_in * 1000);
-              return { Authorization: `${token_type} ${access_token}`, apiDomain };
+              return { Authorization: `${token_type} ${access_token}`, apiDomain, locale };
             });
         }),
         configurable: true,
@@ -66,7 +69,7 @@ const API = new (class {
 
   get CMS() {
     Object.defineProperty(this, 'CMS', {
-      value: this.TOKEN.then(({ apiDomain, Authorization }) =>
+      value: this.TOKEN.then(({ apiDomain, Authorization, locale }) =>
         fetch(`${apiDomain}/index/v2`, {
           headers: {
             Authorization: Authorization,
@@ -78,6 +81,7 @@ const API = new (class {
               apiDomain,
               bucket,
               searchParams: {
+                locale,
                 Signature: signature,
                 Policy: policy,
                 'Key-Pair-Id': key_pair_id,

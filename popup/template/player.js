@@ -1,54 +1,81 @@
 core.main.player = {
   type: 'folder',
-  label: 'KEY_PLAYER',
+  label: 'player',
   icon: '<svg viewBox="0 0 172 172"><path d="M28.66667,14.33333v143.33333l124.07292,-71.66667z"></path></svg>',
 
   content: {
     type: 'main',
-    label: 'KEY_PLAYER',
+    label: 'player',
 
     content: {
       player: {
         type: 'section',
-        label: 'KEY_GENERAL',
+        label: 'general',
 
         content: {
           header_on_hover: {
             type: 'checkbox',
             key: 'header_on_hover',
-            label: 'KEY_HEADER_ON_HOVER',
+            label: 'headerOnHover',
           },
           hide_subtitles: {
             type: 'checkbox',
             key: 'hide_subtitles',
-            label: 'KEY_HIDE_SUBTITLES',
+            label: 'hideSubtitles',
           },
           hide_dim_screen: {
             type: 'checkbox',
             key: 'hide_dim_screen',
-            label: 'KEY_HIDE_DIM_SCREEN',
+            label: 'hideDimScreen',
           },
           disable_numpad: {
             type: 'checkbox',
             key: 'disable_numpad',
-            label: 'KEY_DISABLE_NUMPAD',
+            label: 'disableNumpad',
           },
           runnerThumbnail: {
             type: 'select',
             key: 'runnerThumbnail',
-            label: 'KEY_RUNNER_THUMBNAIL',
+            label: 'runnerThumbnail',
             options: [
               {
-                label: 'KEY_DEFAULT',
+                label: 'default',
                 value: '',
               },
               {
-                label: 'KEY_BLUR',
+                label: 'blur',
                 value: 'blur',
               },
               {
-                label: 'KEY_HIDE',
+                label: 'hide',
                 value: 'hide',
+              },
+            ],
+          },
+          hide_ui: {
+            type: 'select',
+            key: 'hide_ui',
+            label: 'hideUi',
+            options: [
+              {
+                label: 'default',
+                value: '',
+              },
+              {
+                label: 'whilePlaying',
+                value: 'playing',
+              },
+              {
+                label: 'whileFullscreen',
+                value: 'fullscreen',
+              },
+              {
+                label: 'whilePlayingOrFullscreen',
+                value: 'playingOrFullscreen',
+              },
+              {
+                label: 'whilePlayingAndFullscreen',
+                value: 'playingAndFullscreen',
               },
             ],
           },
@@ -57,29 +84,29 @@ core.main.player = {
 
       buttons: {
         type: 'section',
-        label: 'KEY_BUTTONS',
+        label: 'buttons',
 
         content: {
           hide_play_pause_button: {
             type: 'checkbox',
             key: 'hide_play_pause_button',
-            label: 'KEY_HIDE_PLAY_PAUSE_BUTTON',
+            label: 'hidePlayPauseButton',
           },
           hide_skip_button: {
             type: 'checkbox',
             key: 'hide_skip_button',
-            label: 'KEY_HIDE_SKIP_BUTTON',
+            label: 'hideSkipButton',
           },
           fast_backward_buttons: {
             type: 'numberList',
             key: 'fast_backward_buttons',
-            label: 'KEY_FAST_BACKWARD_BUTTONS',
+            label: 'fastBackwardButtons',
             placeholder: '30,10',
           },
           fast_forward_buttons: {
             type: 'numberList',
             key: 'fast_forward_buttons',
-            label: 'KEY_FAST_FORWARD_BUTTONS',
+            label: 'fastForwardButtons',
             placeholder: '30,90',
           },
         },
@@ -87,13 +114,13 @@ core.main.player = {
 
       skippers: {
         type: 'section',
-        label: 'KEY_SKIPPING',
+        label: 'skipping',
 
         content: {
           auto_skip: {
             type: 'checkbox',
             key: 'auto_skip',
-            label: 'KEY_AUTO_SKIP',
+            label: 'autoSkip',
           },
         },
       },

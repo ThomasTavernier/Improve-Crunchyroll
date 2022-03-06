@@ -13,6 +13,7 @@ const chromeStorage = new (class {
     hide_play_pause_button: false,
     hide_skip_button: false,
     hide_subtitles: false,
+    hide_ui: '',
     player_mode: 2,
     runnerThumbnail: '',
     scrollbar: false,

@@ -28,18 +28,8 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                       .then((response) => response.text())
                       .then((text) => {
                         return text.match(/Dialogue:.*/g).reduce((acc, dialogue) => {
-                          const [
-                            layer,
-                            startText,
-                            endText,
-                            style,
-                            name,
-                            marginL,
-                            marginR,
-                            marginV,
-                            effect,
-                            ...texts
-                          ] = dialogue.split(',');
+                          const [layer, startText, endText, style, name, marginL, marginR, marginV, effect, ...texts] =
+                            dialogue.split(',');
                           const [start, end] = [startText, endText].map((text) =>
                             text
                               .split(':')

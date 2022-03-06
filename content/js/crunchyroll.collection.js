@@ -12,28 +12,28 @@ if (seasons.length > 0) {
           episode.appendChild(
             createActionMenuButton([
               {
-                name: 'KEY_MARK_AS_WATCHED',
+                name: 'markAsWatched',
                 subMenus: [
                   {
-                    name: 'KEY_MARK_ONLY_THIS_ONE',
+                    name: 'markOnlyThisOne',
                     action: () => markAsWatched(episodeId),
                   },
                   {
-                    name: 'KEY_MARK_ALL_PREVIOUS',
+                    name: 'markAllPrevious',
                     if: () => episodes.length !== episodeIdPostion + 1,
                     action: () => markAsWatched(episodesIds.filter((value, index) => index >= episodeIdPostion)),
                   },
                 ],
               },
               {
-                name: 'KEY_MARK_AS_NOT_WATCHED',
+                name: 'markAsNotWatched',
                 subMenus: [
                   {
-                    name: 'KEY_MARK_ONLY_THIS_ONE',
+                    name: 'markOnlyThisOne',
                     action: () => markAsNotWatched(episodeId),
                   },
                   {
-                    name: 'KEY_MARK_ALL_NEXT',
+                    name: 'markAllNext',
                     if: () => episodeIdPostion > 0,
                     action: () => markAsNotWatched(episodesIds.filter((value, index) => index <= episodeIdPostion)),
                   },

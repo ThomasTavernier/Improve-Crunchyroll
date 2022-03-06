@@ -1,224 +1,242 @@
 {
-  "extName": {
-    "message": "Improve Crunchyroll"
-  },
   "extDescription": {
     "message": "Améliore Crunchyroll: mode théâtre, sauter intros/outros, marquer comme vu/pas vu, boutons d'avance/retour rapide, mode sombre, ..."
   },
-  "KEY_ACCEPT": {
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "accept": {
     "message": "J'accepte"
   },
-  "KEY_ADD_FAST_BACKWARD_SHORTCUT": {
+  "addFastBackwardShortcut": {
     "message": "Ajouter raccourci reculer"
   },
-  "KEY_ADD_FAST_FORWARD_SHORTCUT": {
+  "addFastForwardShortcut": {
     "message": "Ajouter raccourci avancer"
   },
-  "KEY_ADD_SPEED_DOWN_SHORTCUT": {
+  "addSpeedDownShortcut": {
     "message": "Ajouter un raccourci pour ralentir"
   },
-  "KEY_ADD_SPEED_UP_SHORTCUT": {
+  "addSpeedUpShortcut": {
     "message": "Ajouter un raccourci d'accélération"
   },
-  "KEY_AUTO_SKIP": {
-    "message": "saut automatique"
+  "autoSkip": {
+    "message": "Saut automatique"
   },
-  "KEY_BACKUP": {
+  "backup": {
     "message": "Sauvegarde"
   },
-  "KEY_BACKUP_AND_RESET": {
+  "backupAndReset": {
     "message": "Réinitialisation et sauvegarde"
   },
-  "KEY_BLUR": {
+  "blur": {
     "message": "Flouter"
   },
-  "KEY_BUTTONS": {
+  "buttons": {
     "message": "Boutons"
   },
-  "KEY_CANCEL": {
+  "cancel": {
     "message": "Annuler"
   },
-  "KEY_CONFIRM_BACKUP": {
+  "confirmBackup": {
     "message": "La sauvegarde actuelle sera supprimée."
   },
-  "KEY_CONFIRM_RESET": {
+  "confirmReset": {
     "message": "Les paramètres actuels seront supprimés."
   },
-  "KEY_CONFIRM_RESTORE": {
+  "confirmRestore": {
     "message": "Les paramètres actuels seront supprimés."
   },
-  "KEY_DARK_THEME": {
+  "darkTheme": {
     "message": "Mode sombre"
   },
-  "KEY_DEFAULT": {
+  "default": {
     "message": "Défaut"
   },
-  "KEY_DELETE": {
+  "delete": {
     "message": "Effacer"
   },
-  "KEY_DISABLE_NUMPAD": {
-    "message": "désactiver le pavé numérique"
+  "disableNumpad": {
+    "message": "Désactiver le pavé numérique"
   },
-  "KEY_EDIT_FAST_BACKWARD_SHORTCUT": {
+  "editFastBackwardShortcut": {
     "message": "Éditer raccourci reculer"
   },
-  "KEY_EDIT_FAST_FORWARD_SHORTCUT": {
+  "editFastForwardShortcut": {
     "message": "Éditer raccourci avancer"
   },
-  "KEY_EDIT_SPEED_DOWN_SHORTCUT": {
+  "editSpeedDownShortcut": {
     "message": "Modifier le raccourci de réduction de la vitesse"
   },
-  "KEY_EDIT_SPEED_UP_SHORTCUT": {
+  "editSpeedUpShortcut": {
     "message": "Modifier le raccourci d'accélération"
   },
-  "KEY_FAST_BACKWARD": {
-    "message": "reculer"
+  "fastBackward": {
+    "message": "Reculer"
   },
-  "KEY_FAST_BACKWARD_BUTTONS": {
-    "message": "boutons reculer"
+  "fastBackwardButtons": {
+    "message": "Boutons reculer"
   },
-  "KEY_FAST_BACKWARD_SHORTCUTS": {
+  "fastBackwardShortcuts": {
     "message": "Raccourcis reculer"
   },
-  "KEY_FAST_FORWARD": {
-    "message": "avancer"
+  "fastForward": {
+    "message": "Avancer"
   },
-  "KEY_FAST_FORWARD_BUTTONS": {
-    "message": "boutons avancer"
+  "fastForwardButtons": {
+    "message": "Boutons avancer"
   },
-  "KEY_FAST_FORWARD_SHORTCUTS": {
+  "fastForwardShortcuts": {
     "message": "Raccourcis avancer"
   },
-  "KEY_FULLSCREEN_MODE": {
-    "message": "mode plein écran"
+  "fullscreenMode": {
+    "message": "Mode plein écran"
   },
-  "KEY_GENERAL": {
+  "general": {
     "message": "Général"
   },
-  "KEY_HEADER_ON_HOVER": {
-    "message": "entête (curseur)"
+  "headerOnHover": {
+    "message": "Entête (curseur)"
   },
-  "KEY_HIDE": {
+  "hide": {
     "message": "Cacher"
   },
-  "KEY_HIDE_BACKGROUND_IMAGE": {
-    "message": "masquer l'image d'arrière-plan"
+  "hideBackgroundImage": {
+    "message": "Masquer l'image d'arrière-plan"
   },
-  "KEY_HIDE_BANNER": {
-    "message": "cacher la bannière"
+  "hideBanner": {
+    "message": "Cacher la bannière"
   },
-  "KEY_HIDE_DIM_SCREEN": {
-    "message": "masquer l'écran sombre"
+  "hideDimScreen": {
+    "message": "Masquer l'écran sombre"
   },
-  "KEY_HIDE_MESSAGE_BOX": {
-    "message": "cacher alerte message"
+  "hideMessageBox": {
+    "message": "Cacher alerte message"
   },
-  "KEY_HIDE_PLAY_PAUSE_BUTTON": {
-    "message": "cacher le bouton lecture/pause"
+  "hidePlayPauseButton": {
+    "message": "Cacher le bouton lecture/pause"
   },
-  "KEY_HIDE_SKIP_BUTTON": {
-    "message": "masquer le bouton de saut"
+  "hideSkipButton": {
+    "message": "Masquer le bouton de saut"
   },
-  "KEY_HIDE_SUBTITLES": {
-    "message": "masquer les sous-titres"
+  "hideSubtitles": {
+    "message": "Masquer les sous-titres"
   },
-  "KEY_MARK_ALL_NEXT": {
+  "hideUi": {
+    "message": "Masquer UI"
+  },
+  "markAllNext": {
     "message": "Marquer tous les suivant"
   },
-  "KEY_MARK_ALL_PREVIOUS": {
+  "markAllPrevious": {
     "message": "Marquer tous les précédents"
   },
-  "KEY_MARK_AS_NOT_WATCHED": {
+  "markAsNotWatched": {
     "message": "Marquer comme non regardé"
   },
-  "KEY_MARK_AS_WATCHED": {
+  "markAsWatched": {
     "message": "Marquer comme regardé"
   },
-  "KEY_MARK_ONLY_THIS_ONE": {
+  "markOnlyThisOne": {
     "message": "Ne marquez que celui-ci"
   },
-  "KEY_NONE": {
-    "message": "rien"
+  "none": {
+    "message": "Rien"
   },
-  "KEY_NORMAL": {
+  "normal": {
     "message": "Normal"
   },
-  "KEY_OK": {
+  "ok": {
     "message": "OK"
   },
-  "KEY_PLAYBACK_RATE": {
+  "playbackRate": {
     "message": "Vitesse de lecture"
   },
-  "KEY_PLAYER": {
+  "player": {
     "message": "Lecteur vidéo"
   },
-  "KEY_PRESS_ANY_KEY": {
+  "pressAnyKey": {
     "message": "Appuyez sur une touche"
   },
-  "KEY_RESET": {
+  "reset": {
     "message": "Réinitialiser"
   },
-  "KEY_RESTORE": {
+  "restore": {
     "message": "Restaurer"
   },
-  "KEY_RUNNER_THUMBNAIL": {
-    "message": "vignette de la barre de progression"
+  "runnerThumbnail": {
+    "message": "Vignette de la barre de progression"
   },
-  "KEY_SAVE": {
+  "save": {
     "message": "Sauvegarder"
   },
-  "KEY_SCROLLBAR": {
-    "message": "barre de défilement"
+  "scrollbar": {
+    "message": "Barre de défilement"
   },
-  "KEY_SETTINGS": {
+  "settings": {
     "message": "Réglages"
   },
-  "KEY_SHORTCUTS": {
+  "shortcuts": {
     "message": "Raccourcis"
   },
-  "KEY_SKIP": {
-    "message": "sauter"
+  "skip": {
+    "message": "Sauter"
   },
-  "KEY_SKIP_TO": {
-    "message": "PASSER:"
-  },
-  "KEY_SKIPPING": {
+  "skipping": {
     "message": "Saut"
   },
-  "KEY_SKIPPING_SHORTCUT": {
-    "message": "Définir le raccourci de saut"
+  "skipShortcut": {
+    "message": "Sauter"
   },
-  "KEY_SPEED_DOWN": {
-    "message": "ralentir"
+  "skipTo": {
+    "message": "PASSER:"
   },
-  "KEY_SPEED_DOWN_SHORTCUTS": {
+  "speedDown": {
+    "message": "Ralentir"
+  },
+  "speedDownShortcuts": {
     "message": "Accélérer les raccourcis"
   },
-  "KEY_SPEED_UP": {
-    "message": "accélérer"
+  "speedUp": {
+    "message": "Accélérer"
   },
-  "KEY_SPEED_UP_SHORTCUTS": {
+  "speedUpShortcuts": {
     "message": "Accélérer les raccourcis"
   },
-  "KEY_SUCCESSFULLY_BACKUP": {
+  "successfullyBackup": {
     "message": "Sauvegarde réussie."
   },
-  "KEY_SUCCESSFULLY_RESETED": {
+  "successfullyReseted": {
     "message": "Réinitialisé avec succès."
   },
-  "KEY_SUCCESSFULLY_RESTORED": {
+  "successfullyRestored": {
     "message": "Restauré avec succès."
   },
-  "KEY_THEATER_MODE": {
-    "message": "mode théâtre"
+  "theaterMode": {
+    "message": "Mode théâtre"
   },
-  "KEY_THEMES": {
+  "themes": {
     "message": "Thèmes"
   },
-  "KEY_UNSET": {
+  "toggleHideUi": {
+    "message": "Basculer le masquage UI"
+  },
+  "unset": {
     "message": "Désarmé"
   },
-  "KEY_VALUE": {
+  "value": {
     "message": "Valeur"
+  },
+  "whileFullscreen": {
+    "message": "En plein écran"
+  },
+  "whilePlaying": {
+    "message": "Pendant la lecture"
+  },
+  "whilePlayingAndFullscreen": {
+    "message": "Pendant la lecture et en plein écran"
+  },
+  "whilePlayingOrFullscreen": {
+    "message": "Pendant la lecture vidéo ou en plein écran"
   }
 }

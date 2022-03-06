@@ -33,19 +33,13 @@ class MarkAsWatchedNotWatched {
     if (!appBodyWrapper) return;
     const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
     if (ercSeasonWithNavigation) {
-      this.getCurrentSeasonEpisodes().then((episodes) => {
-        ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
-          this.card(card, episodes);
-        });
-        this.watchCollection(ercSeasonWithNavigation);
-      });
-      this.watchSeason(ercSeasonWithNavigation);
+      this.createAndWatch(ercSeasonWithNavigation);
     } else {
       new MutationObserver((_, observer) => {
         const ercSeasonWithNavigation = appBodyWrapper.querySelector('.erc-season-with-navigation');
         if (!ercSeasonWithNavigation) return;
         observer.disconnect();
-        this.watchSeason(ercSeasonWithNavigation);
+        this.createAndWatch(ercSeasonWithNavigation);
       }).observe(appBodyWrapper, {
         childList: true,
         subtree: true,
@@ -69,6 +63,16 @@ class MarkAsWatchedNotWatched {
 
   destroy() {
     clearInterval(this.locationReloadTimeOut);
+  }
+
+  createAndWatch(ercSeasonWithNavigation) {
+    this.getCurrentSeasonEpisodes().then((episodes) => {
+      ercSeasonWithNavigation.querySelectorAll('.card').forEach((card) => {
+        this.card(card, episodes);
+      });
+      this.watchCollection(ercSeasonWithNavigation);
+    });
+    this.watchSeason(ercSeasonWithNavigation);
   }
 
   watchSeason(ercSeasonWithNavigation) {
@@ -159,16 +163,16 @@ class MarkAsWatchedNotWatched {
     body.appendChild(
       createActionMenuButton([
         {
-          name: 'KEY_MARK_AS_WATCHED',
+          name: 'markAsWatched',
           subMenus: [
             {
-              name: 'KEY_MARK_ONLY_THIS_ONE',
+              name: 'markOnlyThisOne',
               action: () => {
                 API.playheads(id, duration_ms).then(this.refresh);
               },
             },
             {
-              name: 'KEY_MARK_ALL_PREVIOUS',
+              name: 'markAllPrevious',
               if: () => episode_sequence_number > first_episode_sequence_number,
               action: () => {
                 Promise.all(
@@ -181,16 +185,16 @@ class MarkAsWatchedNotWatched {
           ],
         },
         {
-          name: 'KEY_MARK_AS_NOT_WATCHED',
+          name: 'markAsNotWatched',
           subMenus: [
             {
-              name: 'KEY_MARK_ONLY_THIS_ONE',
+              name: 'markOnlyThisOne',
               action: () => {
                 API.playheads(id, 0).then(this.refresh);
               },
             },
             {
-              name: 'KEY_MARK_ALL_NEXT',
+              name: 'markAllNext',
               if: () => last_episode_sequence_number !== episode_sequence_number,
               action: () => {
                 Promise.all(
