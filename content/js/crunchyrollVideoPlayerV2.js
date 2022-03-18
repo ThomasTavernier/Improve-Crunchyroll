@@ -68,7 +68,10 @@ function createFastForwardBackwardButtons() {
       const fastBackwardButton = document.createElement('div');
       fastBackwardButton.appendChild(createSvgForwardBackward('backward', fastBackwardNumber));
       fastBackwardButton.title = `${chrome.i18n.getMessage('fastBackward')} ${parseNumber(fastBackwardNumber)}`;
-      fastBackwardButton.addEventListener('click', () => backward(fastBackwardNumber));
+      fastBackwardButton.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        backward(fastBackwardNumber);
+      });
       buttonList.push(fastBackwardButton);
     },
   );
@@ -77,7 +80,10 @@ function createFastForwardBackwardButtons() {
       const fastForwardButton = document.createElement('div');
       fastForwardButton.appendChild(createSvgForwardBackward('forward', fastForwardNumber));
       fastForwardButton.title = `${chrome.i18n.getMessage('fastForward')} ${parseNumber(fastForwardNumber)}`;
-      fastForwardButton.addEventListener('click', () => forward(fastForwardNumber));
+      fastForwardButton.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        forward(fastForwardNumber);
+      });
       buttonList.push(fastForwardButton);
     },
   );
@@ -169,7 +175,10 @@ function createPlayerButton() {
     let span = document.createElement('span');
     span.className = `ic_buttons ${button.className}`;
     span.title = chrome.i18n.getMessage(button.title);
-    span.addEventListener('click', button.onChange);
+    span.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      button.onChange();
+    });
     icDivPlayerMode.appendChild(span);
   });
 }
@@ -191,10 +200,8 @@ function setPlaybackRate(value, animation) {
   renderSvg(svg);
 }
 
-function createAndInsertSettings() {
-  const velocitySettingsMenu = document.getElementById('velocity-settings-menu');
-  const firstElementChild = velocitySettingsMenu.firstElementChild;
-  [
+function createSettings() {
+  return [
     {
       title: translate('playbackRate'),
       type: 'playbackRate',
@@ -234,13 +241,14 @@ function createAndInsertSettings() {
       ],
       callback: setPlaybackRate,
     },
-  ].forEach(({ type, title, values, callback }) => {
+  ].flatMap(({ type, title, values, callback }) => {
     callback(parseFloat(localStorage.getItem(`Vilos:${type}`), false));
     const displayValue = render({
       tagName: 'span',
       className: 'font',
     });
-    velocitySettingsMenu.insertBefore(
+    const elementByValues = {};
+    const elements = [
       render({
         tagName: 'div',
         id: `ic_${type}_menu`,
@@ -275,10 +283,6 @@ function createAndInsertSettings() {
           });
         },
       }),
-      firstElementChild,
-    );
-    const elementByValues = {};
-    velocitySettingsMenu.insertBefore(
       render({
         tagName: 'div',
         id: type,
@@ -343,8 +347,7 @@ function createAndInsertSettings() {
           },
         ],
       }),
-      firstElementChild,
-    );
+    ];
     document.getElementById('player0').addEventListener('ratechange', ({ target: { playbackRate } }) => {
       if (!playbackRate) return;
       displayValue.innerText = playbackRate;
@@ -361,8 +364,12 @@ function createAndInsertSettings() {
         option.value = playbackRate;
       }
     });
+    return elements;
   });
+}
 
+function insertSettings(velocitySettingsMenu, elements) {
+  elements.forEach((element) => velocitySettingsMenu.insertBefore(element, velocitySettingsMenu.firstElementChild));
   new MutationObserver(() => {
     velocitySettingsMenu.setAttribute(
       'ic_options',
@@ -376,9 +383,9 @@ function createAndInsertSettings() {
 function insertCbpDivs(vilosControlsContainer) {
   if (document.body.contains(icDivPlayerControls)) return;
   const controlsBar =
-    vilosControlsContainer.firstElementChild &&
-    (vilosControlsContainer.firstElementChild.lastElementChild.children[2] ||
-      vilosControlsContainer.firstElementChild.firstElementChild);
+    vilosControlsContainer?.firstElementChild &&
+    (vilosControlsContainer.firstElementChild.lastElementChild?.children[1]?.children[2] ||
+      vilosControlsContainer.firstElementChild.firstElementChild?.children[0]);
   if (!controlsBar) return;
   const controlsBarLeft = controlsBar.firstElementChild;
   const controlsBarRight = controlsBar.lastElementChild;
@@ -545,26 +552,33 @@ new MutationObserver((_, observer) => {
     createAndInsertSvgDefs();
     createDivs();
     shortcutHandler();
+    const settings = createSettings();
     new MutationObserver((mutations) => {
       const velocityControlsPackage = mutations.reduce(
         (f, { addedNodes }) => f || [...addedNodes].find(({ id }) => id === 'velocity-controls-package'),
         false,
       );
       if (!velocityControlsPackage) return;
-      createAndInsertSettings();
       new MutationObserver((mutations) => {
-        const vilosControlsContainer = mutations.reduce(
-          (f, { addedNodes }) => f || [...addedNodes].find(({ id }) => id === 'vilosControlsContainer'),
-          false,
-        );
-        document.documentElement.setAttribute('ic_vilos_controls', `${!!vilosControlsContainer}`);
-        if (vilosControlsContainer) {
-          insertCbpDivs(vilosControlsContainer);
-          new MutationObserver(() => {
-            insertCbpDivs(vilosControlsContainer);
-          }).observe(vilosControlsContainer, {
+        const [addedNode] = mutations.flatMap(({ addedNodes }) => [...addedNodes]);
+        if (!addedNode) return;
+        if (addedNode.id === 'vilosControlsContainer') {
+          insertCbpDivs(addedNode);
+          new MutationObserver((mutations) => {
+            if (mutations.some(({ addedNodes }) => [...addedNodes].some(({ children }) => children.length > 0))) {
+              document.documentElement.setAttribute('ic_vilos_controls', `${true}`);
+              insertCbpDivs(addedNode);
+            } else {
+              document.documentElement.setAttribute('ic_vilos_controls', `${false}`);
+            }
+          }).observe(addedNode, {
             childList: true,
           });
+        } else {
+          const velocitySettingsMenu = addedNode.querySelector('#velocity-settings-menu');
+          if (velocitySettingsMenu) {
+            insertSettings(velocitySettingsMenu, settings);
+          }
         }
       }).observe(velocityControlsPackage, {
         childList: true,
