@@ -60,14 +60,14 @@ function createSvgForwardBackward(type, fastBackwardNumber) {
   return svg;
 }
 
-function createFastForwardBackwardButtons() {
+function createFastForwardBackwardButtons(icDivPlayerControls) {
   icDivPlayerControls.innerHTML = '';
   let buttonList = [];
   (chromeStorage.fast_backward_buttons.length > 0 ? chromeStorage.fast_backward_buttons.split(',') : []).forEach(
     (fastBackwardNumber) => {
       const fastBackwardButton = document.createElement('div');
       fastBackwardButton.appendChild(createSvgForwardBackward('backward', fastBackwardNumber));
-      fastBackwardButton.title = `${chrome.i18n.getMessage('fastBackward')} ${parseNumber(fastBackwardNumber)}`;
+      fastBackwardButton.title = `${translate('fastBackward')} ${parseNumber(fastBackwardNumber)}`;
       fastBackwardButton.addEventListener('click', (ev) => {
         ev.stopPropagation();
         backward(fastBackwardNumber);
@@ -79,7 +79,7 @@ function createFastForwardBackwardButtons() {
     (fastForwardNumber) => {
       const fastForwardButton = document.createElement('div');
       fastForwardButton.appendChild(createSvgForwardBackward('forward', fastForwardNumber));
-      fastForwardButton.title = `${chrome.i18n.getMessage('fastForward')} ${parseNumber(fastForwardNumber)}`;
+      fastForwardButton.title = `${translate('fastForward')} ${parseNumber(fastForwardNumber)}`;
       fastForwardButton.addEventListener('click', (ev) => {
         ev.stopPropagation();
         forward(fastForwardNumber);
@@ -114,67 +114,57 @@ function createAndInsertSvgDefs() {
     });
 }
 
-function createDivs() {
-  [icDivPlayerControls, icDivPlayerMode].forEach((div) => {
+function createDivs(n) {
+  return [...Array(n)].map(() => {
+    const div = document.createElement('div');
     div.className = 'ic_div';
     ['mouseup', 'mousedown'].forEach((type) => {
       div.addEventListener(type, (evt) => evt.stopPropagation());
     });
-  });
-
-  createPlayerButton();
-  chromeStorage.LOADED.then(createFastForwardBackwardButtons);
-}
-
-function scrollBarChange() {
-  chrome.storage.local.set({
-    scrollbar: !chromeStorage.scrollbar,
+    return div;
   });
 }
 
-function playerMode1Change() {
-  chrome.storage.local.set({
-    theater_mode: !chromeStorage.theater_mode,
-    player_mode:
-      chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1
-        ? !chromeStorage.theater_mode
-          ? 1
-          : 0
-        : chromeStorage.player_mode,
-  });
-}
-
-function playerMode2Change() {
-  chrome.storage.local.set({
-    player_mode: (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0,
-  });
-}
-
-function createPlayerButton() {
+function createPlayerButton(icDivPlayerMode) {
   [
     {
       className: 'scrollbar',
       chromeStorageKey: 'scrollbar',
       title: 'scrollbar',
-      onChange: scrollBarChange,
+      onChange: () =>
+        chrome.storage.local.set({
+          scrollbar: !chromeStorage.scrollbar,
+        }),
     },
     {
       className: 'theater_mode',
       chromeStorageKey: 'theater_mode',
       title: 'theaterMode',
-      onChange: playerMode1Change,
+      onChange: () =>
+        chrome.storage.local.set({
+          theater_mode: !chromeStorage.theater_mode,
+          player_mode:
+            chromeStorage.player_mode === 0 || chromeStorage.player_mode === 1
+              ? !chromeStorage.theater_mode
+                ? 1
+                : 0
+              : chromeStorage.player_mode,
+        }),
     },
     {
       className: 'fullscreen_mode',
       chromeStorageKey: 'player_mode',
       eq: 2,
       title: 'fullscreenMode',
-      onChange: playerMode2Change,
+      onChange: () =>
+        chrome.storage.local.set({
+          player_mode: (chromeStorage.player_mode === 2 ? 0 : 2) === 2 ? 2 : chromeStorage.theater_mode ? 1 : 0,
+        }),
     },
   ].forEach((button) => {
     let span = document.createElement('span');
     span.className = `ic_buttons ${button.className}`;
-    span.title = chrome.i18n.getMessage(button.title);
+    span.title = translate(button.title);
     span.addEventListener('click', (ev) => {
       ev.stopPropagation();
       button.onChange();
@@ -380,21 +370,15 @@ function insertSettings(velocitySettingsMenu, elements) {
   });
 }
 
-function insertCbpDivs(vilosControlsContainer) {
-  if (document.body.contains(icDivPlayerControls)) return;
-  const controlsBar =
-    vilosControlsContainer?.firstElementChild &&
-    (vilosControlsContainer.firstElementChild.lastElementChild?.children[1]?.children[2] ||
-      vilosControlsContainer.firstElementChild.firstElementChild?.children[0]);
-  if (!controlsBar) return;
-  const controlsBarLeft = controlsBar.firstElementChild;
-  const controlsBarRight = controlsBar.lastElementChild;
-
-  controlsBarLeft.appendChild(icDivPlayerControls);
-  controlsBarRight.insertBefore(icDivPlayerMode, controlsBarRight.children[1]);
+function insertCbpDivs(vilosControlsContainer, icDivPlayerControls, icDivPlayerMode) {
+  if (vilosControlsContainer.contains(icDivPlayerControls)) return;
+  const { firstElementChild, lastElementChild } =
+    vilosControlsContainer.querySelector('#settingsControl')?.parentElement?.parentElement || {};
+  firstElementChild?.appendChild(icDivPlayerControls);
+  lastElementChild?.insertBefore(icDivPlayerMode, lastElementChild.children[1]);
 }
 
-function shortcutHandler() {
+function shortcutHandler(skip) {
   chrome.storage.onChanged.addListener((changes) => {
     if (changes.fast_backward_buttons || changes.fast_forward_buttons) {
       createFastForwardBackwardButtons();
@@ -409,11 +393,7 @@ function shortcutHandler() {
         backward,
         speedUp: (value) => setPlaybackRate(document.getElementById('player0').playbackRate + +value, true),
         speedDown: (value) => setPlaybackRate(document.getElementById('player0').playbackRate - +value, true),
-        skip: () => {
-          if (activeSkipper && activeSkipper.element && typeof activeSkipper.element.click === 'function') {
-            activeSkipper.element.click();
-          }
-        },
+        skip,
         ...[
           ['toggleHideUiWhilePlaying', 'playing'],
           ['toggleHideUiWhileFullscreen', 'fullscreen'],
@@ -469,6 +449,7 @@ function createSkipper(skipper, player) {
 
 function skippersHandler() {
   let mediaId;
+  let activeSkipper;
   window.addEventListener('message', ({ data }) => {
     const { method, value } = JSON.parse(data);
     if (method === 'loadConfig' || method === 'extendConfig') {
@@ -522,13 +503,10 @@ function skippersHandler() {
       }
     }
   });
+  return () => activeSkipper?.element?.click();
 }
 
-const icDivPlayerControls = document.createElement('div');
-const icDivPlayerMode = document.createElement('div');
-let activeSkipper;
-
-skippersHandler();
+const skipFn = skippersHandler();
 new MutationObserver((_, observer) => {
   const vilos = document.getElementById('vilos');
   if (!vilos) return;
@@ -550,8 +528,10 @@ new MutationObserver((_, observer) => {
     observer.disconnect();
     playingHandler();
     createAndInsertSvgDefs();
-    createDivs();
-    shortcutHandler();
+    const [icDivPlayerControls, icDivPlayerMode] = createDivs(2);
+    createPlayerButton(icDivPlayerMode);
+    chromeStorage.LOADED.then(() => createFastForwardBackwardButtons(icDivPlayerControls));
+    shortcutHandler(skipFn);
     const settings = createSettings();
     new MutationObserver((mutations) => {
       const velocityControlsPackage = mutations.reduce(
@@ -563,11 +543,11 @@ new MutationObserver((_, observer) => {
         const [addedNode] = mutations.flatMap(({ addedNodes }) => [...addedNodes]);
         if (!addedNode) return;
         if (addedNode.id === 'vilosControlsContainer') {
-          insertCbpDivs(addedNode);
+          insertCbpDivs(addedNode, icDivPlayerControls, icDivPlayerMode);
           new MutationObserver((mutations) => {
             if (mutations.some(({ addedNodes }) => [...addedNodes].some(({ children }) => children.length > 0))) {
               document.documentElement.setAttribute('ic_vilos_controls', `${true}`);
-              insertCbpDivs(addedNode);
+              insertCbpDivs(addedNode, icDivPlayerControls, icDivPlayerMode);
             } else {
               document.documentElement.setAttribute('ic_vilos_controls', `${false}`);
             }
