@@ -93,48 +93,89 @@ const API = new (class {
     return this.CMS;
   }
 
-  skippers({ data: { mediaId } }, _, sendResponse) {
-    return new Promise((resolve, reject) => {
-      this.objects(mediaId).then(
+  skippers(
+    { data: { mediaId, episode_number: currentEpisodeNumber, title: currentTitle, subtitles: currentSubtitles } },
+    _,
+    sendResponse,
+  ) {
+    return this.objects(mediaId)
+      .then(
         ({
           items: [
             {
-              episode_metadata: { season_id },
+              episode_metadata: { season_id, season_number, series_id, is_subbed, series_slug_title },
             },
           ],
-        }) => {
-          this.episodes(season_id).then(({ items }) => {
-            let isUpNext = true;
-            const item = items.find(
-              ({ next_episode_id, id }, i) =>
-                next_episode_id === mediaId || ((isUpNext = isUpNext && id !== mediaId) && i === items.length - 1),
-            );
-            if (item) {
-              this.objects(item.id)
+        }) =>
+          is_subbed
+            ? this.episodes(season_id)
+                .then(({ items }) => {
+                  let isUpNext = true;
+                  return this.subtitles(
+                    items.find(
+                      ({ next_episode_id, id }, i) =>
+                        next_episode_id === mediaId ||
+                        ((isUpNext = isUpNext && id !== mediaId) && i === items.length - 1),
+                    ).id,
+                  );
+                })
+                .then((previousSubtitles) => [currentSubtitles, previousSubtitles])
+            : this.seasons(series_id)
+                .then(({ items }) => this.findSeasonBySeasonNumber(items, season_number))
                 .then(
-                  ({
-                    items: [
-                      {
-                        __links__: {
-                          streams: { href },
-                        },
-                      },
-                    ],
-                  }) => this._fetch(href),
+                  (season) =>
+                    season ||
+                    this.search(series_slug_title)
+                      .then(({ items }) =>
+                        items
+                          .find(({ type }) => type === 'series')
+                          .items.find(({ series_metadata: { is_subbed } }) => is_subbed),
+                      )
+                      .then(({ id }) => this.seasons(id))
+                      .then(({ items }) => this.findSeasonBySeasonNumber(items, season_number)),
                 )
-                .then((response) => response.json())
-                .then(({ subtitles }) => {
-                  resolve(Object.values(subtitles));
-                });
-            } else {
-              reject();
-            }
-          });
-        },
-      );
-    })
-      .then(sendResponse)
-      .catch(() => sendResponse([]));
+                .then((season) => this.episodes(season.id))
+                .then(({ items }) =>
+                  Promise.all(
+                    items
+                      .splice(
+                        items
+                          .reverse()
+                          .findIndex(
+                            ({ episode_number, title }) =>
+                              episode_number === currentEpisodeNumber && currentTitle === title,
+                          ),
+                        2,
+                      )
+                      .map(({ id }) => this.subtitles(id)),
+                  ),
+                ),
+      )
+      .catch(() => sendResponse([]))
+      .then(sendResponse);
+  }
+
+  findSeasonBySeasonNumber(items, season_number) {
+    return items.find(
+      ({ season_number: itemSeason_number, is_subbed }) => itemSeason_number === season_number && is_subbed === true,
+    );
+  }
+
+  subtitles(objectId) {
+    return this.objects(objectId)
+      .then(
+        ({
+          items: [
+            {
+              __links__: {
+                streams: { href },
+              },
+            },
+          ],
+        }) => this._fetch(href),
+      )
+      .then((response) => response.json())
+      .then(({ subtitles }) => Object.values(subtitles));
   }
 
   objects(objectId) {
@@ -149,6 +190,22 @@ const API = new (class {
 
   episodes(season_id) {
     return this._fetchCmsV2('episodes', { season_id });
+  }
+
+  search(q) {
+    return this.TOKEN.then(({ Authorization, locale }) =>
+      this._fetch(
+        `/content/v1/search`,
+        { q, locale },
+        {
+          method: 'GET',
+          headers: {
+            Authorization,
+            'Content-Type': 'application/json',
+          },
+        },
+      ).then((response) => response.json()),
+    );
   }
 
   up_next_series(series_id) {

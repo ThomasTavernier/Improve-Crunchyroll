@@ -4,8 +4,8 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
       const {
         analytics: { legacy },
         media: {
-          metadata: { id: mediaId, duration },
-          subtitles: currentSubtitles,
+          metadata: { id: mediaId, duration, episode_number, title },
+          subtitles,
         },
       } = data;
       new Promise((resolve, reject) => {
@@ -13,9 +13,9 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
           tabId,
           {
             type,
-            data: { mediaId, legacyMediaId: legacy && legacy.media_id },
+            data: { mediaId, legacyMediaId: legacy && legacy.media_id, episode_number, title, subtitles },
           },
-          (previousSubtitles) => {
+          ([currentSubtitles, previousSubtitles]) => {
             if (
               !currentSubtitles.some(({ language: currentLanguage, format: currentFormat, url: currentUrl }) => {
                 const previousSubtitle = previousSubtitles.find(
@@ -52,6 +52,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                   const MIN_DURATION = 75;
                   const currentSub = subs.shift();
                   const durationInSeconds = duration / 1000;
+                  const MAX_DURATION = durationInSeconds / 4;
                   const fake = {
                     start: durationInSeconds,
                     end: durationInSeconds,
@@ -74,7 +75,8 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
                           if (lastGroup.end !== lastValue.start) {
                             lastGroup.end = value.start;
                           }
-                          if (lastGroup.end - lastGroup.start >= MIN_DURATION) {
+                          const lastGroupDuration = lastGroup.end - lastGroup.start;
+                          if (MIN_DURATION <= lastGroupDuration && lastGroupDuration <= MAX_DURATION) {
                             acc.push(lastGroup);
                           }
                           lastGroup = undefined;
