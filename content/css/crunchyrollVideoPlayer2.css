@@ -58,6 +58,7 @@ html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .ic_buttons:hover {
