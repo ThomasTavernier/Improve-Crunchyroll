@@ -76,7 +76,7 @@ const API = new (class {
           },
         })
           .then((response) => response.json())
-          .then(({ cms: { bucket, signature, policy, key_pair_id } }) => {
+          .then(({ cms_beta: { bucket, signature, policy, key_pair_id } }) => {
             return {
               apiDomain,
               bucket,
@@ -120,6 +120,10 @@ const API = new (class {
                   );
                 })
                 .then((previousSubtitles) => [currentSubtitles, previousSubtitles])
+                .then((v) => {
+                  console.log(v);
+                  return v;
+                })
             : this.seasons(series_id)
                 .then(({ items }) => this.findSeasonBySeasonNumber(items, season_number))
                 .then(
