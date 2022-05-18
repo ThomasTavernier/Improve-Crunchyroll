@@ -120,10 +120,6 @@ const API = new (class {
                   );
                 })
                 .then((previousSubtitles) => [currentSubtitles, previousSubtitles])
-                .then((v) => {
-                  console.log(v);
-                  return v;
-                })
             : this.seasons(series_id)
                 .then(({ items }) => this.findSeasonBySeasonNumber(items, season_number))
                 .then(
