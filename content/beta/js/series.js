@@ -146,7 +146,7 @@ class MarkAsWatchedNotWatched {
   }
 
   createCard(card, { items: episodes }) {
-    const body = card.querySelector('.c-playable-card__body');
+    const body = card.querySelector('[class^="playable-card__body"]');
     if (!body || body.querySelector('.ic_action')) return;
     const a = card.querySelector('a');
     if (!a) return;
