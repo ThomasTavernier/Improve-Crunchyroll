@@ -2,6 +2,10 @@ html[ic_scrollbar='true'] ::-webkit-scrollbar {
   width: 0;
 }
 
+html[ic_scrollbar='true'] {
+  scrollbar-width: none;
+}
+
 .video-player-wrapper {
   transition: max-height 0.75s ease-in-out;
 }
