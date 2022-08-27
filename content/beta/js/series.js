@@ -11,6 +11,7 @@ class Series extends Empty {
 }
 
 class MarkAsWatchedNotWatched {
+  playableCardClass = 'playable-card-static';
   episodes = new Proxy(
     {},
     {
@@ -133,7 +134,7 @@ class MarkAsWatchedNotWatched {
       if (
         mutations
           .flatMap((mutation) => [...mutation.addedNodes])
-          .some((node) => node.classList.contains('c-playable-card'))
+          .some((node) => [...node.classList].find(c => c.startsWith(this.playableCardClass)))
       ) {
         this.getCurrentSeasonEpisodes().then((episodes) => {
           this.createCard(card, episodes);
@@ -146,7 +147,7 @@ class MarkAsWatchedNotWatched {
   }
 
   createCard(card, { items: episodes }) {
-    const body = card.querySelector('[class^="playable-card__body"]');
+    const body = card.querySelector(`[class^='${this.playableCardClass}__body']`);
     if (!body || body.querySelector('.ic_action')) return;
     const a = card.querySelector('a');
     if (!a) return;
