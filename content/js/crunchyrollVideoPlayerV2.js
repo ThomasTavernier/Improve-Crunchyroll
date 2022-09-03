@@ -509,7 +509,14 @@ function skippersHandler() {
 const skipFn = skippersHandler();
 new MutationObserver((_, observer) => {
   const vilos = document.getElementById('vilos');
-  if (!vilos) return;
+  if (!vilos) {
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+      });
+    }
+    return;
+  }
   observer.disconnect();
   document.onfullscreenchange = () => {
     document.documentElement.setAttribute('ic_fullscreen', `${!!document.fullscreenElement}`);
