@@ -134,7 +134,7 @@ class MarkAsWatchedNotWatched {
       if (
         mutations
           .flatMap((mutation) => [...mutation.addedNodes])
-          .some((node) => [...node.classList].find(c => c.startsWith(this.playableCardClass)))
+          .some((node) => [...node.classList].find((c) => c.startsWith(this.playableCardClass)))
       ) {
         this.getCurrentSeasonEpisodes().then((episodes) => {
           this.createCard(card, episodes);
@@ -168,20 +168,17 @@ class MarkAsWatchedNotWatched {
           subMenus: [
             {
               name: 'markOnlyThisOne',
-              action: () => {
-                API.playheads(id, duration_ms).then(this.refresh);
-              },
+              action: () => API.playheads(id, duration_ms).then(this.refresh),
             },
             {
               name: 'markAllPrevious',
               if: () => episode_sequence_number > first_episode_sequence_number,
-              action: () => {
+              action: () =>
                 Promise.all(
                   episodes
                     .filter(({ sequence_number }) => sequence_number <= episode_sequence_number)
                     .map(({ id, duration_ms }) => API.playheads(id, duration_ms)),
-                ).then(this.refresh);
-              },
+                ).then(this.refresh),
             },
           ],
         },
@@ -190,20 +187,17 @@ class MarkAsWatchedNotWatched {
           subMenus: [
             {
               name: 'markOnlyThisOne',
-              action: () => {
-                API.playheads(id, 0).then(this.refresh);
-              },
+              action: () => API.playheads(id, 0).then(this.refresh),
             },
             {
               name: 'markAllNext',
               if: () => last_episode_sequence_number !== episode_sequence_number,
-              action: () => {
+              action: () =>
                 Promise.all(
                   episodes
                     .filter(({ sequence_number }) => sequence_number >= episode_sequence_number)
                     .map(({ id }) => API.playheads(id, 0)),
-                ).then(this.refresh);
-              },
+                ).then(this.refresh),
             },
           ],
         },

@@ -6,10 +6,7 @@ const chromeStorage = new (class {
     fast_backward_buttons: '30,10',
     fast_forward_buttons: '30,90',
     header_on_hover: true,
-    hide_background_image: true,
-    hide_banner: true,
     hide_dim_screen: false,
-    hide_message_box: true,
     hide_play_pause_button: false,
     hide_skip_button: false,
     hide_subtitles: false,
@@ -19,7 +16,6 @@ const chromeStorage = new (class {
     scrollbar: false,
     shortcuts: this.NESTED,
     theater_mode: true,
-    theme: 1,
   };
   CHROME_STORAGE_NESTED = {
     shortcuts: {

@@ -47,9 +47,6 @@
   "confirmRestore": {
     "message": "The current settings will be deleted."
   },
-  "darkTheme": {
-    "message": "Dark mode"
-  },
   "default": {
     "message": "Default"
   },
@@ -101,17 +98,8 @@
   "hide": {
     "message": "Hide"
   },
-  "hideBackgroundImage": {
-    "message": "Hide background image"
-  },
-  "hideBanner": {
-    "message": "Hide banner"
-  },
   "hideDimScreen": {
     "message": "Hide dim screen"
-  },
-  "hideMessageBox": {
-    "message": "Hide message box"
   },
   "hidePlayPauseButton": {
     "message": "Hide play/pause button"
@@ -214,9 +202,6 @@
   },
   "theaterMode": {
     "message": "Theater mode"
-  },
-  "themes": {
-    "message": "Themes"
   },
   "toggleHideUi": {
     "message": "Toggle hide UI"

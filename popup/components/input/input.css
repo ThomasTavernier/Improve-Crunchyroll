@@ -3,8 +3,8 @@
   height: 21px;
   border-radius: 6px;
   text-align: center;
-  border-color: var(--secondary-font);
-  background: var(--secondary);
+  border-color: var(--primary-font);
+  background: var(--tertiary);
   color: var(--secondary-font);
 }
 

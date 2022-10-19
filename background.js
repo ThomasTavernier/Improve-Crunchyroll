@@ -2,7 +2,6 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
   switch (type) {
     case 'skippers':
       const {
-        analytics: { legacy },
         media: {
           metadata: { id: mediaId, duration, episode_number, title },
           subtitles,
@@ -13,7 +12,7 @@ chrome.runtime.onMessage.addListener(function ({ type, data }, { tab: { id: tabI
           tabId,
           {
             type,
-            data: { mediaId, legacyMediaId: legacy && legacy.media_id, episode_number, title, subtitles },
+            data: { mediaId, episode_number, title, subtitles },
           },
           ([currentSubtitles, previousSubtitles]) => {
             if (
