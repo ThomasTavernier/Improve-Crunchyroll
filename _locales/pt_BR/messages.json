@@ -47,9 +47,6 @@
   "confirmRestore": {
     "message": "As configurações atuais serão excluídas."
   },
-  "darkTheme": {
-    "message": "Modo escuro"
-  },
   "default": {
     "message": "Padrão"
   },
@@ -101,17 +98,8 @@
   "hide": {
     "message": "Esconder"
   },
-  "hideBackgroundImage": {
-    "message": "Ocultar a imagem de fundo"
-  },
-  "hideBanner": {
-    "message": "Ocultar bandeira"
-  },
   "hideDimScreen": {
     "message": "Ocultar tela escurecida"
-  },
-  "hideMessageBox": {
-    "message": "Ocultar caixa de mensagem"
   },
   "hidePlayPauseButton": {
     "message": "Ocultar botão reproduzir / pausar"
@@ -214,9 +202,6 @@
   },
   "theaterMode": {
     "message": "Modo de teatro"
-  },
-  "themes": {
-    "message": "Temas"
   },
   "toggleHideUi": {
     "message": "Alternar ocultar UI"

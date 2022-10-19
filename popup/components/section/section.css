@@ -17,5 +17,5 @@ section[section-label]::before {
   margin: -24px 0 0 0;
   padding: 0 4px;
   content: attr(section-label);
-  color: var(--crunchyroll-orange-light);
+  color: var(--crunchyroll-orange);
 }

@@ -35,21 +35,22 @@
     },
     {
       "matches": [
-        "https://beta.crunchyroll.com/*"
+        "https://beta.crunchyroll.com/*",
+        "https://www.crunchyroll.com/*"
       ],
       "js": [
         "shared/chromeStorage.js",
-        "content/beta/js/api.js",
+        "content/js/api.js",
         "content/js/action-menu.js",
-        "content/beta/js/empty.js",
-        "content/beta/js/series.js",
-        "content/beta/js/watch.js",
-        "content/beta/js/main.js"
+        "content/js/empty.js",
+        "content/js/series.js",
+        "content/js/watch.js",
+        "content/js/main.js"
       ],
       "css": [
-        "content/beta/css/main.css",
-        "content/css/action-menu.css",
-        "content/beta/css/action-menu.css"
+        "shared/theme-color.css",
+        "content/css/main.css",
+        "content/css/action-menu.css"
       ],
       "run_at": "document_idle"
     }

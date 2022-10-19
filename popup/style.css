@@ -2,7 +2,6 @@ html {
   width: 336px;
   height: 500px;
   background-color: var(--secondary);
-  --hover-background: rgba(0, 0, 0, 0.08);
 }
 
 body {

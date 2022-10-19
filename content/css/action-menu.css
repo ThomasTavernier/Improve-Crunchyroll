@@ -2,25 +2,26 @@
   cursor: progress;
 }
 
+.card {
+  position: relative;
+}
+
 .ic_action {
-  border-radius: 50%;
-  fill: var(--secondary-font);
+  fill: var(--primary-font);
   position: absolute;
   right: 0;
-  top: 55%;
   height: 23px;
   width: 23px;
   display: none;
+  z-index: 2;
 }
 
-.ic_action[menu-active] {
-  display: block;
+.card:hover .ic_action, .ic_action[menu-active] {
+  display: initial;
 }
 
 .ic_action:hover {
-  display: block;
-  fill: var(--primary-font);
-  background-color: var(--secondary);
+  fill: var(--secondary-font);
 }
 
 .ic_action.loading {
@@ -32,11 +33,11 @@
 .ic_action_menu {
   position: absolute;
   z-index: 9999999;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   font-size: 12px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--primary-font);
-  border: 1px solid var(--primary);
+  border: 1px solid rgb(52, 58, 64);
   padding: 4px 0;
 }
 
@@ -71,7 +72,7 @@
 }
 
 .ic_action_menu > div:hover {
-  background-color: var(--primary);
+  background-color: var(--hover-background);
 }
 
 .ic_action_menu_parent::after {
@@ -80,8 +81,8 @@
   width: 20px;
   position: absolute;
   right: 0;
-  background-image: url(/i/beta/videos_dropdown_arrow.png);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 226 226' fill='%23AAAAAA'%3E%3Cpath d='M75.33333,37.66667v150.66667l75.33333,-75.33333z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position-y: -11px;
-  transform: scaleX(-1);
+  background-position-y: center;
+  transform: scaleX(1.3);
 }

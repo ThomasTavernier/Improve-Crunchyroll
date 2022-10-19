@@ -19,20 +19,28 @@ const API = new (class {
         const {
           cxApiParams: { apiDomain, accountAuthClientId },
         } = JSON.parse(text.match(/(?<=window.__APP_CONFIG__ = ){.*}/)[0]);
-        return { apiDomain, accountAuthClientId, locale };
+        return { apiDomain: location.origin, accountAuthClientId, locale };
       });
     const get = () => {
       Object.defineProperty(this, 'TOKEN', {
         value: cxApiParams.then(({ apiDomain, accountAuthClientId, locale }) => {
-          return fetch(`${apiDomain}/auth/v1/token`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
-            },
-            body: 'grant_type=etp_rt_cookie',
-          })
+          const fetchToken = (grant_type) =>
+            fetch(`${apiDomain}/auth/v1/token`, {
+              method: 'POST',
+              credentials: 'include',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                Authorization: `Basic ${window.btoa(`${accountAuthClientId}:`)}`,
+              },
+              body: `grant_type=${grant_type}`,
+            });
+          return fetchToken('etp_rt_cookie')
+            .then((response) => {
+              if (response.ok) {
+                return response;
+              }
+              return fetchToken('client_id');
+            })
             .then((response) => response.json())
             .then(({ token_type, access_token, expires_in }) => {
               setTimeout(() => {
@@ -76,18 +84,16 @@ const API = new (class {
           },
         })
           .then((response) => response.json())
-          .then(({ cms_beta: { bucket, signature, policy, key_pair_id } }) => {
-            return {
-              apiDomain,
-              bucket,
-              searchParams: {
-                locale,
-                Signature: signature,
-                Policy: policy,
-                'Key-Pair-Id': key_pair_id,
-              },
-            };
-          }),
+          .then(({ cms_web: { bucket, signature, policy, key_pair_id } }) => ({
+            apiDomain,
+            bucket,
+            searchParams: {
+              locale,
+              Signature: signature,
+              Policy: policy,
+              'Key-Pair-Id': key_pair_id,
+            },
+          })),
       ),
     });
     return this.CMS;
