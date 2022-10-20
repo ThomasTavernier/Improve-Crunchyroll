@@ -12,10 +12,10 @@
     "storage"
   ],
   "action": {
-    "default_popup": "popup/index.html"
+    "default_popup": "lib/popup/index.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "lib/background/background.js"
   },
   "content_scripts": [
     {
@@ -23,12 +23,12 @@
         "https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"
       ],
       "js": [
-        "shared/chromeStorage.js",
-        "content/js/crunchyrollVideoPlayerV2.js",
-        "shared/shortcutUtils.js"
+        "lib/shared/chromeStorage.js",
+        "lib/shared/shortcutUtils.js",
+        "lib/content_scripts/player/main.js"
       ],
       "css": [
-        "content/css/crunchyrollVideoPlayer2.css"
+        "lib/content_scripts/player/main.css"
       ],
       "all_frames": true,
       "run_at": "document_start"
@@ -39,18 +39,18 @@
         "https://www.crunchyroll.com/*"
       ],
       "js": [
-        "shared/chromeStorage.js",
-        "content/js/api.js",
-        "content/js/action-menu.js",
-        "content/js/empty.js",
-        "content/js/series.js",
-        "content/js/watch.js",
-        "content/js/main.js"
+        "lib/shared/chromeStorage.js",
+        "lib/content_scripts/website/api/api.js",
+        "lib/content_scripts/website/action-menu/action-menu.js",
+        "lib/content_scripts/website/pages/empty.js",
+        "lib/content_scripts/website/pages/series/series.js",
+        "lib/content_scripts/website/pages/watch/watch.js",
+        "lib/content_scripts/website/main.js"
       ],
       "css": [
-        "shared/theme-color.css",
-        "content/css/main.css",
-        "content/css/action-menu.css"
+        "lib/shared/theme-color.css",
+        "lib/content_scripts/website/main.css",
+        "lib/content_scripts/website/action-menu/action-menu.css"
       ],
       "run_at": "document_idle"
     }
@@ -58,7 +58,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "resources/*"
+        "lib/content_scripts/player/resources/*"
       ],
       "matches": [
         "https://static.crunchyroll.com/*"
