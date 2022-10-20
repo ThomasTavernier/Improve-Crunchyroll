@@ -25,9 +25,22 @@
       "js": [
         "lib/shared/chromeStorage.js",
         "lib/shared/shortcutUtils.js",
+        "lib/content_scripts/player/buttons/buttons.js",
+        "lib/content_scripts/player/fast-forward-backward/fast-forward-backward.js",
+        "lib/content_scripts/player/playback/playback.js",
+        "lib/content_scripts/player/render/render.js",
+        "lib/content_scripts/player/settings/settings.js",
+        "lib/content_scripts/player/shortcuts/shortcuts.js",
+        "lib/content_scripts/player/skippers/skippers.js",
         "lib/content_scripts/player/main.js"
       ],
       "css": [
+        "lib/content_scripts/player/buttons/buttons.css",
+        "lib/content_scripts/player/fast-forward-backward/fast-forward-backward.css",
+        "lib/content_scripts/player/playback/playback.css",
+        "lib/content_scripts/player/render/render.css",
+        "lib/content_scripts/player/settings/settings.css",
+        "lib/content_scripts/player/skippers/skippers.css",
         "lib/content_scripts/player/main.css"
       ],
       "all_frames": true,
