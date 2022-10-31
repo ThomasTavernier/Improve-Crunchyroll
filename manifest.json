@@ -24,6 +24,7 @@
       ],
       "js": [
         "lib/shared/chromeStorage.js",
+        "lib/shared/renderer.js",
         "lib/shared/shortcutUtils.js",
         "lib/content_scripts/player/buttons/buttons.js",
         "lib/content_scripts/player/fast-forward-backward/fast-forward-backward.js",
@@ -53,6 +54,7 @@
       ],
       "js": [
         "lib/shared/chromeStorage.js",
+        "lib/shared/renderer.js",
         "lib/content_scripts/website/api/api.js",
         "lib/content_scripts/website/action-menu/action-menu.js",
         "lib/content_scripts/website/pages/empty.js",
@@ -66,16 +68,6 @@
         "lib/content_scripts/website/action-menu/action-menu.css"
       ],
       "run_at": "document_idle"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "lib/content_scripts/player/resources/*"
-      ],
-      "matches": [
-        "https://static.crunchyroll.com/*"
-      ]
     }
   ]
 }

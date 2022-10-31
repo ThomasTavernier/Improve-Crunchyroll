@@ -12,6 +12,7 @@
 }
 
 .shortcut span {
+  position: relative;
   display: flex;
   margin: 0 8px;
   height: 32px;
@@ -21,4 +22,10 @@
   align-items: center;
   justify-content: center;
   background: var(--primary);
+}
+
+.shortcut span:not(:last-child)::after {
+  content: '+';
+  position: absolute;
+  right: -12px;
 }
