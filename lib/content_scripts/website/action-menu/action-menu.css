@@ -1,0 +1,89 @@
+.ic_loading {
+  cursor: progress;
+}
+
+.card {
+  position: relative;
+}
+
+.ic_action {
+  fill: var(--primary-font);
+  position: absolute;
+  right: 0;
+  height: 23px;
+  width: 23px;
+  display: none;
+  z-index: 2;
+}
+
+.card:hover .ic_action,
+.ic_action[menu-active] {
+  display: initial;
+}
+
+.ic_action:hover {
+  fill: var(--secondary-font);
+}
+
+.ic_action.loading {
+  cursor: progress;
+  background-color: red;
+  display: block;
+}
+
+.ic_action_menu {
+  position: absolute;
+  z-index: 9999999;
+  background-color: var(--primary);
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--primary-font);
+  border: 1px solid rgb(52, 58, 64);
+  padding: 4px 0;
+}
+
+.ic_action_menu * div {
+  display: none;
+}
+
+.ic_action_menu .ic_action_menu {
+  position: absolute;
+  flex-direction: column;
+  top: -4px;
+  left: 100%;
+  width: max-content;
+}
+
+.ic_action_menu.left .ic_action_menu {
+  right: 100%;
+  left: unset;
+}
+
+.ic_action_menu > div {
+  position: relative;
+  align-items: center;
+  height: 36px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.ic_action_menu > div,
+.ic_action_menu > div:hover > .ic_action_menu {
+  display: flex;
+}
+
+.ic_action_menu > div:hover {
+  background-color: var(--hover-background);
+}
+
+.ic_action_menu_parent::after {
+  content: '';
+  height: 36px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 226 226' fill='%23AAAAAA'%3E%3Cpath d='M75.33333,37.66667v150.66667l75.33333,-75.33333z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  transform: scaleX(1.3);
+}

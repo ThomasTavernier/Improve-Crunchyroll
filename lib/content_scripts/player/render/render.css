@@ -1,0 +1,8 @@
+.ic_remove {
+  opacity: 0;
+  transition: opacity 0.75s ease-out;
+}
+
+.ic_div {
+  display: flex;
+}

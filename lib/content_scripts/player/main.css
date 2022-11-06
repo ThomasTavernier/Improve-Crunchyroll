@@ -1,0 +1,28 @@
+html[ic_hide_subtitles='true'] #velocity-canvas {
+  display: none;
+}
+
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
+  background: none !important;
+}
+
+html[ic_runnerThumbnail='hide'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
+  height: 0 !important;
+  width: 1px !important;
+}
+
+html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
+  filter: blur(5px);
+}
+
+html[ic_hide_play_pause_button='true'] [data-testid='vilos-large_play_pause_button'] {
+  display: none;
+}
+
+html[ic_hide_ui='playing'][ic_playing='true'] #velocity-controls-package,
+html[ic_hide_ui='fullscreen'][ic_fullscreen='true'] #velocity-controls-package,
+html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] #velocity-controls-package,
+html[ic_hide_ui='playingOrFullscreen'][ic_fullscreen='true'] #velocity-controls-package,
+html[ic_hide_ui='playingAndFullscreen'][ic_playing='true'][ic_fullscreen='true'] #velocity-controls-package {
+  opacity: 0;
+}
