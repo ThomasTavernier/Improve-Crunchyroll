@@ -6,7 +6,6 @@
 
 #### [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/improve-crunchyroll) (firefox branch)
 
-
 ### Descriptions
 
 - [English](docs/en/description.md)
