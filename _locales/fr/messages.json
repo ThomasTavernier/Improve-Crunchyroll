@@ -93,7 +93,7 @@
     "message": "Général"
   },
   "headerOnHover": {
-    "message": "Entête (curseur)"
+    "message": "En-tête au survol"
   },
   "hide": {
     "message": "Cacher"
@@ -204,10 +204,10 @@
     "message": "Mode théâtre"
   },
   "toggleHideUi": {
-    "message": "Basculer le masquage UI"
+    "message": "Masquer l'interface"
   },
   "unset": {
-    "message": "Désarmé"
+    "message": "Non défini"
   },
   "value": {
     "message": "Valeur"
