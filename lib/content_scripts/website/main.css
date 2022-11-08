@@ -6,15 +6,15 @@ html[ic_scrollbar='true'] {
   scrollbar-width: none;
 }
 
-.video-player-wrapper {
+.video-player-spacer {
   transition: max-height 0.75s ease-in-out;
 }
 
-html[ic_player_mode='1'] .video-player-wrapper {
+html[ic_player_mode='1'] .video-player-spacer {
   max-height: calc(100vh - 3.75rem);
 }
 
-html[ic_player_mode='2'] .video-player-wrapper {
+html[ic_player_mode='2'] .video-player-spacer {
   max-height: 100vh;
 }
 
