@@ -1,41 +1,41 @@
-html[ic_scrollbar='true'] ::-webkit-scrollbar {
+html[ic_page='watch'][ic_scrollbar='true'] ::-webkit-scrollbar {
   width: 0;
 }
 
-html[ic_scrollbar='true'] {
+html[ic_page='watch'][ic_scrollbar='true'] {
   scrollbar-width: none;
 }
 
-.video-player-spacer {
+html[ic_page='watch'] .video-player-spacer {
   transition: max-height 0.75s ease-in-out;
 }
 
-html[ic_player_mode='1'] .video-player-spacer {
+html[ic_page='watch'][ic_player_mode='1'] .video-player-spacer {
   max-height: calc(100vh - 3.75rem);
 }
 
-html[ic_player_mode='2'] .video-player-spacer {
+html[ic_page='watch'][ic_player_mode='2'] .video-player-spacer {
   max-height: 100vh;
 }
 
-.erc-header {
+html[ic_page='watch'] .erc-header {
   transition: flex-basis 0.75s ease-in-out;
 }
 
-html[ic_player_mode='2'] .erc-header {
+html[ic_page='watch'][ic_player_mode='2'] .erc-header {
   flex-basis: 0;
 }
 
-.header-content {
+html[ic_page='watch'] .header-content {
   transform: initial;
   transition: transform 0.75s ease-in-out;
 }
 
-html[ic_player_mode='2'] .header-content {
+html[ic_page='watch'][ic_player_mode='2'] .header-content {
   transform: translate(0, -3.75rem);
 }
 
-html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
+html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
   content: '';
   position: absolute;
   top: 3.75rem;
@@ -44,16 +44,16 @@ html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
   transition: height 0.75s ease-in-out;
 }
 
-html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content:hover {
+html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-content:hover {
   transform: initial;
 }
 
-html[ic_player_mode='2'] .header-content:hover::after {
+html[ic_page='watch'][ic_player_mode='2'] .header-content:hover::after {
   height: 0;
 }
 
 @media only screen and (max-width: 799px) {
-  html[ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
+  html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-content::after {
     height: 12px;
   }
 }
