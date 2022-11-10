@@ -64,8 +64,8 @@
       ],
       "css": [
         "lib/shared/theme-color.css",
-        "lib/content_scripts/website/main.css",
-        "lib/content_scripts/website/action-menu/action-menu.css"
+        "lib/content_scripts/website/action-menu/action-menu.css",
+        "lib/content_scripts/website/pages/watch/watch.css"
       ],
       "run_at": "document_idle"
     }
