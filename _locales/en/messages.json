@@ -137,6 +137,9 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Open header menu on hover"
+  },
   "playbackRate": {
     "message": "Playback speed"
   },

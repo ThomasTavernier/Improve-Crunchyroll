@@ -1,0 +1,5 @@
+html[ic_open_header_menu_on_hover='true'] .header-left [class^='erc-'][class$='-menu']:hover [class^='erc-'][class$='-menu-dropdown'] {
+  opacity: 1;
+  transform: translate(0);
+  visibility: visible;
+}

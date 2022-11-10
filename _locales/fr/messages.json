@@ -137,6 +137,9 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Ouvrir le menu d'en-tête au survolr"
+  },
   "playbackRate": {
     "message": "Vitesse de lecture"
   },

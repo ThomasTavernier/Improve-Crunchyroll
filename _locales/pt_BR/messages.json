@@ -137,6 +137,9 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Abra o menu de cabeçalho ao passar o mouse"
+  },
   "playbackRate": {
     "message": "Velocidade de playback"
   },
