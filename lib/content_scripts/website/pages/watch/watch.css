@@ -7,7 +7,7 @@ html[ic_page='watch'][ic_scrollbar='true'] {
 }
 
 html[ic_page='watch'] .video-player-spacer {
-  transition: max-height 0.75s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
 }
 
 html[ic_page='watch'][ic_player_mode='1'] .video-player-spacer {
@@ -18,17 +18,19 @@ html[ic_page='watch'][ic_player_mode='2'] .video-player-spacer {
   max-height: 100vh;
 }
 
-html[ic_page='watch'] .erc-header {
-  transition: flex-basis 0.75s ease-in-out;
+html[ic_page='watch'] .erc-header,
+html[ic_page='watch'] .erc-header-shell {
+  transition: flex-basis 0.5s ease-in-out;
 }
 
-html[ic_page='watch'][ic_player_mode='2'] .erc-header {
+html[ic_page='watch'][ic_player_mode='2'] .erc-header,
+html[ic_page='watch'][ic_player_mode='2'] .erc-header-shell {
   flex-basis: 0;
 }
 
 html[ic_page='watch'] .header-content {
   transform: initial;
-  transition: transform 0.75s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 html[ic_page='watch'][ic_player_mode='2'] .header-content {
@@ -41,7 +43,7 @@ html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-con
   top: 3.75rem;
   width: 100%;
   height: 3.75rem;
-  transition: height 0.75s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-content:hover {
