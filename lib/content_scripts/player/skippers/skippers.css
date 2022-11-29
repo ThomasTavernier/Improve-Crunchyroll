@@ -1,23 +1,41 @@
 .ic_skipper {
   position: absolute;
-  right: 10px;
-  bottom: 96px;
+  right: 18px;
+  bottom: 106px;
   width: 130px;
   text-align: center;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 800;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  font-family: 'Lato';
   justify-content: space-evenly;
   cursor: pointer;
-  padding: 10px;
+  padding: 8px;
   color: whitesmoke;
-  border: 1px rgba(255, 255, 255, 0.4) solid;
-  background-color: rgba(0, 0, 0, 0.4);
+  border: 0;
   max-height: 140px;
   clip: rect(0 152px 160px 0px);
   overflow: hidden;
   transition: clip 0.3s ease-out;
+  background: rgb(35, 37, 43);
+}
+.ic_skipper > span:first-of-type {
+  margin-left:8px;
+}
+.ic_skipper > img {
+  width:26px;
+  height:28px
+}
+
+.ic_skipper:hover{
+  background: rgb(74, 78, 88);
+  color: rgb(218, 218, 218);
+}
+
+div[aria-label="Skip Intro"] {
+  display:none!important;
 }
 
 .ic_skipper:not(.active),
