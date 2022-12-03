@@ -140,6 +140,9 @@
   "openHeaderMenuOnHover": {
     "message": "Open header menu on hover"
   },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Playback speed"
   },

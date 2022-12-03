@@ -140,6 +140,9 @@
   "openHeaderMenuOnHover": {
     "message": "Abrir menú de encabezado al pasar el mouse"
   },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Velocidad de playback"
   },
