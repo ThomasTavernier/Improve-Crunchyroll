@@ -1,7 +1,7 @@
 Improve Crunchyroll can:
  - Make the video player bigger (2 mods)
  - Take all window in fullscreen
- - Skipping's buttons/shortcut for intros, recaps, outros... (subtitles based, won't be flawless)
+ - Skipping's buttons/shortcut for intros, recaps, outros... (buttons with time in it come from this extension and are subtitles based, won't be flawless, the others are native)
  - Control video playback speed in the existing player settings
  - Mark episode/entire series as watched/not watched
  - Blur or hide runner thumbnail
@@ -16,6 +16,10 @@ Improve Crunchyroll can:
  - Add video playback speed shortcuts
  - Each features can be turn on/off
  - Backup/reset settings
+
+New:
+- Open header menu on hover option
+- Add Picture-in-Picture button (no subtitles)
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!

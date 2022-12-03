@@ -1,7 +1,7 @@
 Improve Crunchyroll pode:
  - Aumentar o player de vídeo (2 mods)
  - Cubra toda a janela em tela cheia
- - Botões/atalhos de pular para introdução, recapitulação, outros... (baseado em legendas, não será perfeito)
+ - Botões/atalhos de pular para introdução, recapitulação, outros... (botões com tempo vêm desta extensão e são baseados em legendas, não serão perfeitos, os outros são nativos)
  - Controlar a velocidade de reprodução de vídeo nas configurações existentes do player
  - Marcar episódio / série inteira como assistido / não assistido
  - Desfocar ou ocultar a miniatura da barra de progresso
@@ -16,6 +16,10 @@ Improve Crunchyroll pode:
  - Adicionar atalhos de velocidade de reprodução de vídeo
  - Cada recurso pode ser ligado / desligado
  - Configurações de backup / redefinição
+
+Novo:
+- Menu de cabeçalho aberto na opção de foco
+- Adicionar botão Picture-in-Picture (sem legendas)
 
 Suporte a nova versão do Crunchyroll.
 Comentários são bem-vindos!

@@ -1,7 +1,7 @@
 Improve Crunchyroll puede:
  - Agrandar el reproductor (2 mods)
  - Toma toda la ventana en pantalla completa
- - Botones/atajos de omisión para intros, resúmenes, outros... (Basado en subtítulos, no será perfecto)
+ - Botones/atajos de omisión para intros, resúmenes, outros... (los botones con tiempo provienen de esta extensión y están basados en subtítulos, no serán perfectos, los otros son nativos)
  - Controle la velocidad de reproducción de video en la configuración del reproductor existente
  - Marcar episodio / serie completa como visto / no visto
  - Difuminar u ocultar la miniatura de la barra de progreso
@@ -16,6 +16,10 @@ Improve Crunchyroll puede:
  - Agregar atajos de velocidad de reproducción de video
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
+
+Nuevo:
+- Menú de encabezado abierto en la opción de desplazamiento
+- Agregar botón Picture-in-Picture (sin subtítulos)
 
 Compatible con la nueva versión de Crunchyroll.
 ¡Los comentarios son bienvenidos!
