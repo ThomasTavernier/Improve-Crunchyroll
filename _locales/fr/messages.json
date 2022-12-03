@@ -183,7 +183,12 @@
     "message": "Sauter"
   },
   "skipTo": {
-    "message": "PASSER:"
+    "message": "IGNORER A : $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Ralentir"

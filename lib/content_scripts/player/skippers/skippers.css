@@ -1,8 +1,8 @@
 .ic_skipper {
   position: absolute;
-  right: 18px;
-  bottom: 106px;
-  width: 130px;
+  right: 20px;
+  bottom: 100px;
+  min-width: 110px;
   text-align: center;
   font-size: 14px;
   font-weight: 800;
@@ -10,25 +10,19 @@
   flex-wrap: wrap;
   align-items: center;
   font-family: 'Lato';
-  justify-content: space-evenly;
+  touch-action: manipulation;
   cursor: pointer;
-  padding: 8px;
+  padding: 0 16px;
   color: whitesmoke;
   border: 0;
-  max-height: 140px;
-  clip: rect(0 152px 160px 0px);
-  overflow: hidden;
-  transition: clip 0.3s ease-out;
+  height: 40px;
   background: rgb(35, 37, 43);
 }
 
-.ic_skipper > span:first-of-type {
-  margin-left: 8px;
-}
-
 .ic_skipper > img {
-  width: 26px;
-  height: 28px
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
 .ic_skipper:hover {
@@ -39,5 +33,5 @@
 .ic_skipper:not(.active),
 html:not([ic_vilos_controls='true']) .ic_skipper.active.past:not(:hover),
 html[ic_hide_skip_button='true'] .ic_skipper {
-  clip: rect(0 152px 160px 152px);
+  display: none;
 }

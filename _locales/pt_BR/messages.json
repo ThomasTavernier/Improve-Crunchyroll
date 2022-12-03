@@ -183,7 +183,12 @@
     "message": "Pular"
   },
   "skipTo": {
-    "message": "PULE PARA:"
+    "message": "PULAR PARA: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Diminua a velocidade"

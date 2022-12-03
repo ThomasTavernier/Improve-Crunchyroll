@@ -24,5 +24,5 @@ const en = read('en');
 write('en', en);
 ['es', 'fr', 'pt_BR'].forEach((locale) => {
   const data = read(locale);
-  write(locale, Object.fromEntries(Object.entries(en).map(([key, value]) => [key, data[key] || value])));
+  write(locale, Object.fromEntries(Object.entries(en).map(([key, value]) => [key, { ...value, ...data[key] }])));
 });
