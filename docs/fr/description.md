@@ -1,7 +1,7 @@
 Improve Crunchyroll peut:
  - Agrandir le lecteur vidéo (2 mods)
  - Prendre toute la fenêtre en plein écran
- - Boutons/raccourcis de sauts pour les intros, récapitulatifs, outros... (basé sur des sous-titres, ne sera pas parfait)
+ - Boutons/raccourcis de sauts pour les intros, récapitulatifs, outros... (les boutons avec le temps proviennent de cette extension et sont basés sur les sous-titres, ne seront pas sans défaut, les autres sont natifs)
  - Contrôlez la vitesse de lecture vidéo dans les paramètres du lecteur existant
  - Marquer l'épisode / la série entière comme regardé / non regardé
  - Flouter ou masquer la vignette de la barre de progression
@@ -16,6 +16,10 @@ Improve Crunchyroll peut:
  - Ajouter des raccourcis de vitesse de lecture vidéo
  - Chacune des fonctionnalités peut être activée / désactivée
  - Paramètres de sauvegarde / réinitialisation
+
+Nouveau:
+- Ouvrir le menu d'en-tête sur l'option de survol
+- Ajouter un bouton Picture-in-Picture (pas de sous-titres)
 
 Supporte la nouvelle version de Crunchyroll.
 Les retours sont les bienvenus!

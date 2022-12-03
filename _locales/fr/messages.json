@@ -137,6 +137,12 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Ouvrir le menu d'en-tête au survolr"
+  },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Vitesse de lecture"
   },
@@ -177,7 +183,12 @@
     "message": "Sauter"
   },
   "skipTo": {
-    "message": "PASSER:"
+    "message": "IGNORER A : $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Ralentir"

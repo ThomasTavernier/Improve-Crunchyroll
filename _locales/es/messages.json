@@ -137,6 +137,12 @@
   "ok": {
     "message": "Ok"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Abrir menú de encabezado al pasar el mouse"
+  },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Velocidad de playback"
   },
@@ -177,7 +183,12 @@
     "message": "Omitir"
   },
   "skipTo": {
-    "message": "PASEMOS A:"
+    "message": "SALTAR A: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Reduce la velocidad"

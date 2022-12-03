@@ -137,6 +137,12 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Abra o menu de cabeçalho ao passar o mouse"
+  },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Velocidade de playback"
   },
@@ -177,7 +183,12 @@
     "message": "Pular"
   },
   "skipTo": {
-    "message": "PULE PARA:"
+    "message": "PULAR PARA: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Diminua a velocidade"

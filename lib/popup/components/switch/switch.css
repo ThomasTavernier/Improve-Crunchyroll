@@ -1,6 +1,6 @@
 .switch {
   position: relative;
-  width: 60px;
+  min-width: 60px;
   height: 24px;
 }
 

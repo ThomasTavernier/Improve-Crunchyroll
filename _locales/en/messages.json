@@ -137,6 +137,12 @@
   "ok": {
     "message": "OK"
   },
+  "openHeaderMenuOnHover": {
+    "message": "Open header menu on hover"
+  },
+  "pictureInPicture": {
+    "message": "Picture-in-Picture"
+  },
   "playbackRate": {
     "message": "Playback speed"
   },
@@ -177,7 +183,12 @@
     "message": "Skip"
   },
   "skipTo": {
-    "message": "SKIP TO:"
+    "message": "SKIP TO: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "speedDown": {
     "message": "Speed down"
