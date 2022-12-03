@@ -21,21 +21,19 @@
   transition: clip 0.3s ease-out;
   background: rgb(35, 37, 43);
 }
+
 .ic_skipper > span:first-of-type {
-  margin-left:8px;
-}
-.ic_skipper > img {
-  width:26px;
-  height:28px
+  margin-left: 8px;
 }
 
-.ic_skipper:hover{
+.ic_skipper > img {
+  width: 26px;
+  height: 28px
+}
+
+.ic_skipper:hover {
   background: rgb(74, 78, 88);
   color: rgb(218, 218, 218);
-}
-
-div[aria-label="Skip Intro"] {
-  display:none!important;
 }
 
 .ic_skipper:not(.active),
