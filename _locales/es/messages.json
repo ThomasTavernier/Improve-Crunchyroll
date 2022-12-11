@@ -47,6 +47,9 @@
   "confirmRestore": {
     "message": "La configuración actual se eliminará"
   },
+  "crunchyrollIntro": {
+    "message": "Crunchyroll Intro"
+  },
   "default": {
     "message": "Defecto"
   },
@@ -173,11 +176,14 @@
   "shortcuts": {
     "message": "Atajos"
   },
+  "show": {
+    "message": "Mostrar"
+  },
   "skip": {
     "message": "Saltar"
   },
-  "skipping": {
-    "message": "Saltó a la comba"
+  "skipEvents": {
+    "message": "Saltar eventos"
   },
   "skipShortcut": {
     "message": "Omitir"

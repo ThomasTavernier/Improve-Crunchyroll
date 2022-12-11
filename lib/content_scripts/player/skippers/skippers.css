@@ -35,3 +35,7 @@ html:not([ic_vilos_controls='true']) .ic_skipper.active.past:not(:hover),
 html[ic_hide_skip_button='true'] .ic_skipper {
   display: none;
 }
+
+html[ic_skip_event_intro='0'] [aria-label="Skip Intro"] {
+  display: none;
+}
