@@ -47,6 +47,9 @@
   "confirmRestore": {
     "message": "As configurações atuais serão excluídas."
   },
+  "crunchyrollIntro": {
+    "message": "Crunchyroll Abertura"
+  },
   "default": {
     "message": "Padrão"
   },
@@ -173,11 +176,14 @@
   "shortcuts": {
     "message": "Atalhos"
   },
+  "show": {
+    "message": "Mostrar"
+  },
   "skip": {
     "message": "Pular"
   },
-  "skipping": {
-    "message": "Pulando"
+  "skipEvents": {
+    "message": "Pular eventos"
   },
   "skipShortcut": {
     "message": "Pular"

@@ -47,6 +47,9 @@
   "confirmRestore": {
     "message": "The current settings will be deleted."
   },
+  "crunchyrollIntro": {
+    "message": "Crunchyroll Intro"
+  },
   "default": {
     "message": "Default"
   },
@@ -173,11 +176,14 @@
   "shortcuts": {
     "message": "Shortcuts"
   },
+  "show": {
+    "message": "Show"
+  },
   "skip": {
     "message": "Skip"
   },
-  "skipping": {
-    "message": "Skipping"
+  "skipEvents": {
+    "message": "Skip events"
   },
   "skipShortcut": {
     "message": "Skip"
