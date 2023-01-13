@@ -4,7 +4,7 @@
   display: none;
 }
 
-#velocity-settings-menu[ic_options='hide'] > .ic_settings:target {
+#velocity-settings-menu[ic_options='hide'] > .ic_settings.ic_show {
   display: flex !important;
   flex-direction: column;
   overflow-y: auto;
