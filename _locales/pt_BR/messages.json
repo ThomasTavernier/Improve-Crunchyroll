@@ -23,6 +23,22 @@
   "autoSkip": {
     "message": "Pular automático"
   },
+  "availability_date": {
+    "message": "disponibilidade data: $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": " hora: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
   "backup": {
     "message": "Backup"
   },

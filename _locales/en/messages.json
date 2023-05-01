@@ -23,6 +23,22 @@
   "autoSkip": {
     "message": "Auto skip"
   },
+  "availability_date": {
+    "message": "availability date: $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": "availability time: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
   "backup": {
     "message": "Backup"
   },
