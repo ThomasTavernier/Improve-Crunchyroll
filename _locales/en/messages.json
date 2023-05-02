@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Enhance Crunchyroll: theater mode, skip intros/outros, mark as watched/not watched, fast forward/backward buttons, dark mode, ..."
+    "message": "Enhance Crunchyroll: theater mode, skip intros/outros, mark as watched/not watched, fast forward/backward buttons, ..."
   },
   "extName": {
     "message": "Improve Crunchyroll"
@@ -22,6 +22,22 @@
   },
   "autoSkip": {
     "message": "Auto skip"
+  },
+  "availability_date": {
+    "message": "availability date: $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": "availability time: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "backup": {
     "message": "Backup"

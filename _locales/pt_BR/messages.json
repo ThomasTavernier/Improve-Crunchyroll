@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Melhore Crunchyroll: modo de teatro, pular introduções/outros, marcar como visto/não visto, botões voltar/pular, modo escuro, ..."
+    "message": "Melhore Crunchyroll: modo de teatro, pular introduções/outros, marcar como visto/não visto, botões voltar/pular, ..."
   },
   "extName": {
     "message": "Improve Crunchyroll"
@@ -22,6 +22,22 @@
   },
   "autoSkip": {
     "message": "Pular automático"
+  },
+  "availability_date": {
+    "message": "disponibilidade data: $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": " hora: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "backup": {
     "message": "Backup"

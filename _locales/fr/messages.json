@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "Améliore Crunchyroll: mode théâtre, sauter intros/outros, marquer comme vu/pas vu, boutons d'avance/retour rapide, mode sombre, ..."
+    "message": "Améliore Crunchyroll: mode théâtre, sauter intros/outros, marquer comme vu/pas vu, boutons d'avance/retour rapide, ..."
   },
   "extName": {
     "message": "Improve Crunchyroll"
@@ -22,6 +22,22 @@
   },
   "autoSkip": {
     "message": "Saut automatique"
+  },
+  "availability_date": {
+    "message": "date de disponibilité : $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": "heure de disponibilité :$time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
   },
   "backup": {
     "message": "Sauvegarde"
