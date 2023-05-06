@@ -51,9 +51,9 @@ html[ic_scrollbar='true'] .ic_scrollbar_button {
 }
 
 html[ic_player_mode='2'] .ic_theater_mode_button,
-html[ic_fullscreen='true'] .ic_theater_mode_button,
-html[ic_fullscreen='true'] .ic_fullscreen_mode_button,
-html[ic_fullscreen='true'] .ic_scrollbar_button,
-html[ic_fullscreen='true'] .ic_pip_mode_button {
+#vilosRoot:fullscreen .ic_theater_mode_button,
+#vilosRoot:fullscreen .ic_fullscreen_mode_button,
+#vilosRoot:fullscreen .ic_scrollbar_button,
+#vilosRoot:fullscreen .ic_pip_mode_button {
   display: none;
 }
