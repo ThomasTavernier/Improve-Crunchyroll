@@ -16,8 +16,7 @@
   z-index: 2;
 }
 
-.card:hover .ic_action,
-.ic_action[menu-active] {
+.card:hover .ic_action {
   display: initial;
 }
 
