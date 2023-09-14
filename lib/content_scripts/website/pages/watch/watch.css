@@ -33,6 +33,14 @@ html[ic_page='watch'] .header-content {
   transition: transform 0.5s ease-in-out;
 }
 
+html[ic_page='watch'] .erc-large-header {
+  transition: flex-basis 0.5s ease-in-out;
+}
+
+html[ic_page='watch'][ic_player_mode='2'] .erc-large-header {
+  flex-basis: 0;
+}
+
 html[ic_page='watch'][ic_player_mode='2'] .header-content {
   transform: translate(0, -3.75rem);
 }
