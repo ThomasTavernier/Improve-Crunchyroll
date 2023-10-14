@@ -120,9 +120,6 @@
   "hideDimScreen": {
     "message": "Masquer l'écran sombre"
   },
-  "hidePlayPauseButton": {
-    "message": "Cacher le bouton lecture/pause"
-  },
   "hideSkipButton": {
     "message": "Masquer le bouton de saut"
   },

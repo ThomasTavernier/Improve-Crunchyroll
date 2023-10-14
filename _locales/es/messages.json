@@ -120,9 +120,6 @@
   "hideDimScreen": {
     "message": "Ocultar pantalla tenue"
   },
-  "hidePlayPauseButton": {
-    "message": "Ocultar el botón de reproducción / pausa"
-  },
   "hideSkipButton": {
     "message": "Ocultar el botón de omisión"
   },

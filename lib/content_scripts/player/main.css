@@ -17,10 +17,6 @@ html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-
   filter: blur(5px);
 }
 
-html[ic_hide_play_pause_button='true'] [data-testid='vilos-large_play_pause_button'] {
-  display: none;
-}
-
 html[ic_hide_ui='playing'][ic_playing='true'] #velocity-controls-package,
 html[ic_hide_ui='fullscreen'] #vilosRoot:fullscreen #velocity-controls-package,
 html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] #velocity-controls-package,
