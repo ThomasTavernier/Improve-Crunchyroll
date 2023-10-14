@@ -2,7 +2,9 @@ html[ic_hide_subtitles='true'] #velocity-canvas {
   display: none;
 }
 
-html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child,
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child > div,
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:nth-child(2) > div {
   background: none !important;
 }
 
@@ -13,10 +15,6 @@ html[ic_runnerThumbnail='hide'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-
 
 html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
   filter: blur(5px);
-}
-
-html[ic_hide_play_pause_button='true'] [data-testid='vilos-large_play_pause_button'] {
-  display: none;
 }
 
 html[ic_hide_ui='playing'][ic_playing='true'] #velocity-controls-package,
