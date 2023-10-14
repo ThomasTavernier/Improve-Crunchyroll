@@ -2,7 +2,9 @@ html[ic_hide_subtitles='true'] #velocity-canvas {
   display: none;
 }
 
-html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child {
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child,
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child > div,
+html[ic_hide_dim_screen='true'] #velocity-controls-package > div:nth-child(2) > div {
   background: none !important;
 }
 
