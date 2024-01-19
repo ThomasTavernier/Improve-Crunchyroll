@@ -63,8 +63,17 @@
   "confirmRestore": {
     "message": "As configurações atuais serão excluídas."
   },
+  "crunchyrollCredits": {
+    "message": "Crunchyroll Créditos"
+  },
   "crunchyrollIntro": {
     "message": "Crunchyroll Abertura"
+  },
+  "crunchyrollPreview": {
+    "message": "Crunchyroll Prévia"
+  },
+  "crunchyrollRecap": {
+    "message": "Crunchyroll Resumo"
   },
   "default": {
     "message": "Padrão"
