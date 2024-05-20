@@ -1,0 +1,17 @@
+.anime-list-link-container {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    height: 100%;
+    margin: auto 0 auto;
+}
+
+.anime-list-link {
+    width: 20px;
+    height: 20px;
+}
+
+.anime-list-link > svg {
+    border-radius: 2px;
+}

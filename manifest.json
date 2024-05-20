@@ -59,6 +59,7 @@
         "lib/content_scripts/website/api/api.js",
         "lib/content_scripts/website/action-menu/action-menu.js",
         "lib/content_scripts/website/pages/empty.js",
+        "lib/content_scripts/website/pages/utils.js",
         "lib/content_scripts/website/pages/series/series.js",
         "lib/content_scripts/website/pages/watch/watch.js",
         "lib/content_scripts/website/main.js"
@@ -67,6 +68,7 @@
         "lib/shared/theme-color.css",
         "lib/content_scripts/website/action-menu/action-menu.css",
         "lib/content_scripts/website/pages/watch/watch.css",
+        "lib/content_scripts/website/pages/utils.css",
         "lib/content_scripts/website/main.css"
       ],
       "run_at": "document_idle"
