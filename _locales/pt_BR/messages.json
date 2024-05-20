@@ -153,6 +153,9 @@
   "markOnlyThisOne": {
     "message": "Marque apenas este"
   },
+  "maximizeOnDoubleClick": {
+    "message": "Maximizar ao clicar duas vezes"
+  },
   "none": {
     "message": "Nenhum"
   },
