@@ -14,12 +14,14 @@ Improve Crunchyroll can:
  - Add fast backward/forward buttons
  - Add fast backward/forward shortcuts
  - Add video playback speed shortcuts
+ - Open header menu on hover option
+ - Add Picture-in-Picture button (no subtitles)
  - Each features can be turn on/off
  - Backup/reset settings
 
 New:
-- Open header menu on hover option
-- Add Picture-in-Picture button (no subtitles)
+ - Add integration options with MyAnimeList and AniList
+ - Maximize on double-click option
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!
