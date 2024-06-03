@@ -153,6 +153,9 @@
   "markOnlyThisOne": {
     "message": "Mark only this one"
   },
+  "maximizeOnDoubleClick": {
+    "message": "Maximize on double-click"
+  },
   "none": {
     "message": "None"
   },
