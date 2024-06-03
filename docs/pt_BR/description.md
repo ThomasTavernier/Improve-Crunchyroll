@@ -14,12 +14,14 @@ Improve Crunchyroll pode:
  - Adicionar botões voltar / pular
  - Adicionar atalhos para voltar / pular
  - Adicionar atalhos de velocidade de reprodução de vídeo
+ - Menu de cabeçalho aberto na opção de foco
+ - Adicionar botão Picture-in-Picture (sem legendas)
  - Cada recurso pode ser ligado / desligado
  - Configurações de backup / redefinição
 
 Novo:
-- Menu de cabeçalho aberto na opção de foco
-- Adicionar botão Picture-in-Picture (sem legendas)
+ - Adicionar opções de integração com MyAnimeList e AniList
+ - Maximizar com duplo clique
 
 Suporte a nova versão do Crunchyroll.
 Comentários são bem-vindos!

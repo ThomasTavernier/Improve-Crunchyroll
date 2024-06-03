@@ -14,12 +14,14 @@ Improve Crunchyroll puede:
  - Agregar botones de retroceso / salto
  - Agregar atajos para retroceso / salto
  - Agregar atajos de velocidad de reproducción de video
+ - Menú de encabezado abierto en la opción de desplazamiento
+ - Agregar botón Picture-in-Picture (sin subtítulos)
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Menú de encabezado abierto en la opción de desplazamiento
-- Agregar botón Picture-in-Picture (sin subtítulos)
+ - Agregar opciones de integración con MyAnimeList y AniList
+ - Maximizar con doble clic
 
 Compatible con la nueva versión de Crunchyroll.
 ¡Los comentarios son bienvenidos!
