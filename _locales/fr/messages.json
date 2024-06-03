@@ -20,6 +20,9 @@
   "addSpeedUpShortcut": {
     "message": "Ajouter un raccourci d'accélération"
   },
+  "animeListLinks": {
+    "message": "Liens de la liste des animes"
+  },
   "autoSkip": {
     "message": "Saut automatique"
   },
@@ -84,6 +87,9 @@
   "disableNumpad": {
     "message": "Désactiver le pavé numérique"
   },
+  "doNotShow": {
+    "message": "Ne pas afficher"
+  },
   "editFastBackwardShortcut": {
     "message": "Éditer raccourci reculer"
   },
@@ -137,6 +143,9 @@
   },
   "hideUi": {
     "message": "Masquer UI"
+  },
+  "integrations": {
+    "message": "Intégrations"
   },
   "markAllNext": {
     "message": "Marquer tous les suivant"
@@ -203,6 +212,15 @@
   },
   "show": {
     "message": "Afficher"
+  },
+  "showOnSeries": {
+    "message": "Page de la série"
+  },
+  "showOnWatch": {
+    "message": "Page de veille"
+  },
+  "showOnSeriesAndWatch": {
+    "message": "Page des séries et de la veille"
   },
   "skip": {
     "message": "Sauter"

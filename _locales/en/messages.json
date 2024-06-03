@@ -20,6 +20,9 @@
   "addSpeedUpShortcut": {
     "message": "Add speed up shortcut"
   },
+  "animeListLinks": {
+    "message": "Anime List Links"
+  },
   "autoSkip": {
     "message": "Auto skip"
   },
@@ -84,6 +87,9 @@
   "disableNumpad": {
     "message": "Disable NumPad"
   },
+  "doNotShow": {
+    "message": "Do not show"
+  },
   "editFastBackwardShortcut": {
     "message": "Edit fast backward shortcut"
   },
@@ -137,6 +143,9 @@
   },
   "hideUi": {
     "message": "Hide UI"
+  },
+  "integrations": {
+    "message": "Integrations"
   },
   "markAllNext": {
     "message": "Mark all next"
@@ -203,6 +212,15 @@
   },
   "show": {
     "message": "Show"
+  },
+  "showOnSeries": {
+    "message": "Series page"
+  },
+  "showOnWatch": {
+    "message": "Watch page"
+  },
+  "showOnSeriesAndWatch": {
+    "message": "Series and watch page"
   },
   "skip": {
     "message": "Skip"

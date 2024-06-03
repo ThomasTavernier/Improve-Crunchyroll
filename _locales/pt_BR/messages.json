@@ -20,6 +20,9 @@
   "addSpeedUpShortcut": {
     "message": "Adicionar atalho de aceleração"
   },
+  "animeListLinks": {
+    "message": "Links da lista de animes"
+  },
   "autoSkip": {
     "message": "Pular automático"
   },
@@ -84,6 +87,9 @@
   "disableNumpad": {
     "message": "Desabilitar o NumPad"
   },
+  "doNotShow": {
+    "message": "Não mostrar"
+  },
   "editFastBackwardShortcut": {
     "message": "Editar atalho de voltar"
   },
@@ -137,6 +143,9 @@
   },
   "hideUi": {
     "message": "Ocultar UI"
+  },
+  "integrations": {
+    "message": "Integrações"
   },
   "markAllNext": {
     "message": "Marcar todas os próximos"
@@ -203,6 +212,15 @@
   },
   "show": {
     "message": "Mostrar"
+  },
+  "showOnSeries": {
+    "message": "Serie página"
+  },
+  "showOnWatch": {
+    "message": "Mostrar página"
+  },
+  "showOnSeriesAndWatch": {
+    "message": "Página de series y relojes"
   },
   "skip": {
     "message": "Pular"
