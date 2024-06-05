@@ -165,6 +165,17 @@
   "maximizeOnDoubleClick": {
     "message": "Maximizar ao clicar duas vezes"
   },
+  "nextEpisodeAirsAt": {
+    "message": "Le prochain épisode sera diffusé le $date$ à $time$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      },
+      "time": {
+        "content": "$2"
+      }
+    }
+  },
   "none": {
     "message": "Nenhum"
   },
@@ -212,6 +223,9 @@
   },
   "show": {
     "message": "Mostrar"
+  },
+  "showEpisodeAirDate": {
+    "message": "Data de exibição do próximo episódio"
   },
   "showOnSeries": {
     "message": "Serie página"

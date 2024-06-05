@@ -67,6 +67,7 @@
       "css": [
         "lib/shared/theme-color.css",
         "lib/content_scripts/website/action-menu/action-menu.css",
+        "lib/content_scripts/website/pages/series/series.css",
         "lib/content_scripts/website/pages/watch/watch.css",
         "lib/content_scripts/website/pages/utils.css",
         "lib/content_scripts/website/main.css"
