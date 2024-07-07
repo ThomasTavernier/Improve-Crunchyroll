@@ -16,12 +16,13 @@ Improve Crunchyroll puede:
  - Agregar atajos de velocidad de reproducción de video
  - Menú de encabezado abierto en la opción de desplazamiento
  - Agregar botón Picture-in-Picture (sin subtítulos)
+ - Maximizar con doble clic
  - Cada característica se puede activar / desactivar
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
  - Agregar opciones de integración con MyAnimeList y AniList
- - Maximizar con doble clic
+ - Agregar la fecha de transmisión del próximo episodio
 
 Compatible con la nueva versión de Crunchyroll.
 ¡Los comentarios son bienvenidos!
