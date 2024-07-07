@@ -16,12 +16,13 @@ Improve Crunchyroll peut:
  - Ajouter des raccourcis de vitesse de lecture vidéo
  - Ouvrir le menu d'en-tête sur l'option de survol
  - Ajouter un bouton Picture-in-Picture (pas de sous-titres)
+ - Maximiser avec un double-clic
  - Chacune des fonctionnalités peut être activée / désactivée
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
  - Ajouter des options d'intégration avec MyAnimeList et AniList
- - Maximiser avec un double-clic
+ - Ajouter la date de diffusion du prochain épisode
 
 Supporte la nouvelle version de Crunchyroll.
 Les retours sont les bienvenus!

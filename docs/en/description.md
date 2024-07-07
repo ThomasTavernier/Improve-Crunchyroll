@@ -16,12 +16,13 @@ Improve Crunchyroll can:
  - Add video playback speed shortcuts
  - Open header menu on hover option
  - Add Picture-in-Picture button (no subtitles)
+ - Maximize on double-click option
  - Each features can be turn on/off
  - Backup/reset settings
 
 New:
  - Add integration options with MyAnimeList and AniList
- - Maximize on double-click option
+ - Add the broadcast date of the next episode
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!
