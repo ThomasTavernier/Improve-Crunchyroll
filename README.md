@@ -12,6 +12,7 @@
 - [Español](docs/es/description.md)
 - [Français](docs/fr/description.md)
 - [Português (Brasil)](docs/pt_BR/description.md)
+- [Deutsch](docs/de/description.md)
 
 ### Translations
 
@@ -19,6 +20,7 @@
 - [Español](_locales/es/messages.json)
 - [Français](_locales/fr/messages.json)
 - [Português (Brasil)](_locales/pt_BR/messages.json)
+- [Deutsch](_locales/de/messages.json)
 
 ### Manual/Development installation instructions
 
