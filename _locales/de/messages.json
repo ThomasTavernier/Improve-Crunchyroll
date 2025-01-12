@@ -1,0 +1,301 @@
+{
+  "extDescription": {
+    "message": "Verbessertes Crunchyroll: Kinomodus, Intros/Outros überspringen, als gesehen/ungesehen markieren, Vor-/Zurückspulen-Tasten, ..."
+  },
+  "extName": {
+    "message": "Improve Crunchyroll"
+  },
+  "accept": {
+    "message": "Akzeptieren"
+  },
+  "addFastBackwardShortcut": {
+    "message": "Schnellrücklauf-Tastenkürzel hinzufügen"
+  },
+  "addFastForwardShortcut": {
+    "message": "Schnellvorlauf-Tastenkürzel hinzufügen"
+  },
+  "addSpeedDownShortcut": {
+    "message": "Geschwindigkeit verringern-Tastenkürzel hinzufügen"
+  },
+  "addSpeedUpShortcut": {
+    "message": "Geschwindigkeit erhöhen-Tastenkürzel hinzufügen"
+  },
+  "animeListLinks": {
+    "message": "Anime List Links"
+  },
+  "autoSkip": {
+    "message": "Automatisch überspringen"
+  },
+  "availability_date": {
+    "message": "Verfügbarkeitsdatum: $date$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "availability_time": {
+    "message": "Verfügbarkeitszeit: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "backup": {
+    "message": "Sicherung"
+  },
+  "backupAndReset": {
+    "message": "Sichern und zurücksetzen"
+  },
+  "blur": {
+    "message": "Unschärfe"
+  },
+  "buttons": {
+    "message": "Buttons"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "confirmBackup": {
+    "message": "Die aktuelle Sicherung wird gelöscht."
+  },
+  "confirmReset": {
+    "message": "Die aktuellen Einstellungen werden gelöscht."
+  },
+  "confirmRestore": {
+    "message": "Die aktuellen Einstellungen werden gelöscht."
+  },
+  "crunchyrollCredits": {
+    "message": "Crunchyroll Abspann"
+  },
+  "crunchyrollIntro": {
+    "message": "Crunchyroll Intro"
+  },
+  "crunchyrollPreview": {
+    "message": "Crunchyroll Vorschau"
+  },
+  "crunchyrollRecap": {
+    "message": "Crunchyroll Zusammenfassung"
+  },
+  "default": {
+    "message": "Standard"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "disableNumpad": {
+    "message": "Nummernblock deaktivieren"
+  },
+  "doNotShow": {
+    "message": "Nicht anzeigen"
+  },
+  "editFastBackwardShortcut": {
+    "message": "Schnellrücklauf-Tastenkürzel bearbeiten"
+  },
+  "editFastForwardShortcut": {
+    "message": "Schnellvorlauf-Tastenkürzel bearbeiten"
+  },
+  "editSpeedDownShortcut": {
+    "message": "Geschwindigkeit verringern-Tastenkürzel bearbeiten"
+  },
+  "editSpeedUpShortcut": {
+    "message": "Geschwindigkeit erhöhen-Tastenkürzel bearbeiten"
+  },
+  "fastBackward": {
+    "message": "Schnellrücklauf"
+  },
+  "fastBackwardButtons": {
+    "message": "Schnellrücklauf-Tasten"
+  },
+  "fastBackwardShortcuts": {
+    "message": "Schnellrücklauf-Tastenkürzel"
+  },
+  "fastForward": {
+    "message": "Schnellvorlauf"
+  },
+  "fastForwardButtons": {
+    "message": "Schnellvorlauf-Tasten"
+  },
+  "fastForwardShortcuts": {
+    "message": "Schnellvorlauf-Tastenkürzel"
+  },
+  "fullscreenMode": {
+    "message": "Vollbildmodus"
+  },
+  "general": {
+    "message": "Allgemein"
+  },
+  "headerOnHover": {
+    "message": "Kopfzeile beim Hover"
+  },
+  "hide": {
+    "message": "Ausblenden"
+  },
+  "hideDimScreen": {
+    "message": "Abgedunkelten Bildschirm ausblenden"
+  },
+  "hideSkipButton": {
+    "message": "Überspringen-Taste ausblenden"
+  },
+  "hideSubtitles": {
+    "message": "Untertitel ausblenden"
+  },
+  "hideUi": {
+    "message": "Benutzeroberfläche ausblenden"
+  },
+  "integrations": {
+    "message": "Integrationen"
+  },
+  "markAllNext": {
+    "message": "Alle folgenden markieren"
+  },
+  "markAllPrevious": {
+    "message": "Alle vorherigen markieren"
+  },
+  "markAsNotWatched": {
+    "message": "Als ungesehen markieren"
+  },
+  "markAsWatched": {
+    "message": "Als gesehen markieren"
+  },
+  "markOnlyThisOne": {
+    "message": "Nur diese markieren"
+  },
+  "maximizeOnDoubleClick": {
+    "message": "Maximieren bei Doppelklick"
+  },
+  "nextEpisodeAirsAt": {
+    "message": "Nächste Episode wird am $date$ um $time$ ausgestrahlt",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      },
+      "time": {
+        "content": "$2"
+      }
+    }
+  },
+  "none": {
+    "message": "Keine"
+  },
+  "normal": {
+    "message": "Normal"
+  },
+  "ok": {
+    "message": "OK"
+  },
+  "openHeaderMenuOnHover": {
+    "message": "Kopfzeilenmenü beim Hover öffnen"
+  },
+  "pictureInPicture": {
+    "message": "Bild-in-Bild"
+  },
+  "playbackRate": {
+    "message": "Wiedergabegeschwindigkeit"
+  },
+  "player": {
+    "message": "Player"
+  },
+  "pressAnyKey": {
+    "message": "Beliebige Taste drücken"
+  },
+  "reset": {
+    "message": "Zurücksetzen"
+  },
+  "restore": {
+    "message": "Wiederherstellen"
+  },
+  "runnerThumbnail": {
+    "message": "Vorschaubild"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "scrollbar": {
+    "message": "Bildlaufleiste"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "shortcuts": {
+    "message": "Tastenkürzel"
+  },
+  "show": {
+    "message": "Anzeigen"
+  },
+  "showEpisodeAirDate": {
+    "message": "Ausstrahlungsdatum der nächsten Episode anzeigen"
+  },
+  "showOnSeries": {
+    "message": "Serienseite"
+  },
+  "showOnWatch": {
+    "message": "Wiedergabeseite"
+  },
+  "showOnSeriesAndWatch": {
+    "message": "Serien- und Wiedergabeseite"
+  },
+  "skip": {
+    "message": "Überspringen"
+  },
+  "skipEvents": {
+    "message": "Ereignisse überspringen"
+  },
+  "skipShortcut": {
+    "message": "Überspringen"
+  },
+  "skipTo": {
+    "message": "SPRINGEN ZU: $time$",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "speedDown": {
+    "message": "Geschwindigkeit verringern"
+  },
+  "speedDownShortcuts": {
+    "message": "Geschwindigkeit verringern-Tastenkürzel"
+  },
+  "speedUp": {
+    "message": "Geschwindigkeit erhöhen"
+  },
+  "speedUpShortcuts": {
+    "message": "Geschwindigkeit erhöhen-Tastenkürzel"
+  },
+  "successfullyBackup": {
+    "message": "Erfolgreich gesichert."
+  },
+  "successfullyReseted": {
+    "message": "Erfolgreich zurückgesetzt."
+  },
+  "successfullyRestored": {
+    "message": "Erfolgreich wiederhergestellt."
+  },
+  "theaterMode": {
+    "message": "Kinomodus"
+  },
+  "toggleHideUi": {
+    "message": "Benutzeroberfläche ein-/ausblenden"
+  },
+  "unset": {
+    "message": "Zurücksetzen"
+  },
+  "value": {
+    "message": "Wert"
+  },
+  "whileFullscreen": {
+    "message": "Im Vollbildmodus"
+  },
+  "whilePlaying": {
+    "message": "Während der Wiedergabe"
+  },
+  "whilePlayingAndFullscreen": {
+    "message": "Während der Wiedergabe und im Vollbildmodus"
+  },
+  "whilePlayingOrFullscreen": {
+    "message": "Während der Wiedergabe oder im Vollbildmodus"
+  }
+}
