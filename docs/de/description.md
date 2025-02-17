@@ -1,31 +1,27 @@
-# Improve Crunchyroll
+Improve Crunchyroll
 
-## Hauptfunktionen
+Hauptfunktionen
 
-- **Video-Player-Verbesserungen**
-
+- Video-Player-Verbesserungen
   - Video-Player vergrößern (2 Modi)
   - Im Vollbildmodus das gesamte Fenster einnehmen
   - Maximierung bei Doppelklick möglich
 
-- **Überspringen-Funktionen**
-
+- Überspringen-Funktionen
   - Tasten und Tastenkürzel für:
     - Intros
     - Zusammenfassungen
     - Outros
     - _(Hinweis: Tasten mit Zeitangaben basieren auf Untertiteln und sind nicht fehlerfrei. Andere Funktionen sind nativ)_
 
-- **Wiedergabesteuerung**
-
+- Wiedergabesteuerung
   - Wiedergabegeschwindigkeit in Player-Einstellungen anpassen
   - Schnellrücklauf-/Schnellvorlauf-Tasten
   - Schnellrücklauf-/Schnellvorlauf-Tastenkürzel
   - Tastenkürzel für Wiedergabegeschwindigkeit
   - Nummernblock deaktivierbar
 
-- **Benutzeroberfläche anpassen**
-
+- Benutzeroberfläche anpassen
   - Episode/gesamte Serie als gesehen/ungesehen markieren
   - Vorschaubild unscharf machen oder ausblenden
   - Bildlaufleiste für bessere Immersion ausblenden
@@ -36,19 +32,17 @@
   - Kopfzeilenmenü beim Überfahren öffnen
   - Bild-in-Bild-Taste (ohne Untertitel)
 
-- **Einstellungen**
+- Einstellungen
   - Alle Funktionen einzeln ein-/ausschaltbar
   - Einstellungen sichern/zurücksetzen
 
-## Neue Funktionen
-
+Neue Funktionen
 - Integration mit:
   - MyAnimeList
   - AniList
 - Anzeige des Ausstrahlungsdatums der nächsten Episode
 
-## Kompatibilität und Hinweise
-
+Kompatibilität und Hinweise
 - Unterstützt die neue Version von Crunchyroll
 - Feedback ist willkommen!
 - Übersetzungen wurden mit Google Translate erstellt und können Fehler enthalten
