@@ -141,6 +141,9 @@
   "hideSubtitles": {
     "message": "Ocultar subtítulos"
   },
+  "hideLastEpisodeBanner": {
+    "message": "Ocultar banner después del último episodio"
+  },
   "hideUi": {
     "message": "Esconder UI"
   },
