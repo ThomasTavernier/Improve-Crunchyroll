@@ -6,6 +6,10 @@
   margin: auto 0 auto;
 }
 
+h4 + .anime-list-link-container {
+  margin-left: .5rem;
+}
+
 .anime-list-link {
   width: 20px;
   height: 20px;
