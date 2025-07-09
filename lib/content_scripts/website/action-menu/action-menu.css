@@ -6,24 +6,6 @@
   position: relative;
 }
 
-.ic_action {
-  fill: var(--primary-font);
-  position: absolute;
-  right: 0;
-  height: 23px;
-  width: 23px;
-  display: none;
-  z-index: 2;
-}
-
-.card:hover .ic_action {
-  display: initial;
-}
-
-.ic_action:hover {
-  fill: var(--secondary-font);
-}
-
 .ic_action.loading {
   cursor: progress;
   background-color: red;
@@ -33,12 +15,15 @@
 .ic_action_menu {
   position: absolute;
   z-index: 9999999;
+  min-width: 12.5rem;
+  padding: .75rem 0;
   background-color: var(--primary);
-  font-size: 14px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: var(--primary-font);
-  border: 1px solid rgb(52, 58, 64);
-  padding: 4px 0;
+  color: #a0a0a0;
+  font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  cursor: default;
 }
 
 .ic_action_menu > .ic_action_menu_parent:not(:hover) > * {
@@ -48,7 +33,7 @@
 .ic_action_menu .ic_action_menu {
   position: absolute;
   flex-direction: column;
-  top: -4px;
+  top: -.75rem;
   left: 100%;
   width: max-content;
 }
@@ -61,14 +46,15 @@
 .ic_action_menu > div {
   position: relative;
   align-items: center;
-  height: 36px;
-  padding: 0 20px;
+  padding: .75rem 1.25rem;
   display: flex;
+  cursor: pointer;
+  transition: color .2s ease;
 }
 
 .ic_action_menu > div:not(.ic_info):hover {
   background-color: var(--hover-background);
-  cursor: pointer;
+  color: var(--secondary-font);
 }
 
 .ic_action_menu > .ic_info {
