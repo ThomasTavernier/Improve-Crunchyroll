@@ -2,6 +2,8 @@ Improve Crunchyroll peut:
  - Agrandir le lecteur vidéo (2 mods)
  - Prendre toute la fenêtre en plein écran
  - Boutons/raccourcis de sauts pour les intros, récapitulatifs, outros... (les boutons avec le temps proviennent de cette extension et sont basés sur les sous-titres, ne seront pas sans défaut, les autres sont natifs)
+ - Ajouter des options d'intégration avec MyAnimeList et AniList
+ - Ajouter la date de diffusion du prochain épisode
  - Contrôlez la vitesse de lecture vidéo dans les paramètres du lecteur existant
  - Marquer l'épisode / la série entière comme regardé / non regardé
  - Flouter ou masquer la vignette de la barre de progression
@@ -21,8 +23,7 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
- - Ajouter des options d'intégration avec MyAnimeList et AniList
- - Ajouter la date de diffusion du prochain épisode
+- Cacher la bannière après le dernier épisode
 
 Supporte la nouvelle version de Crunchyroll.
 Les retours sont les bienvenus!

@@ -2,6 +2,8 @@ Improve Crunchyroll can:
  - Make the video player bigger (2 mods)
  - Take all window in fullscreen
  - Skipping's buttons/shortcut for intros, recaps, outros... (buttons with time in it come from this extension and are subtitles based, won't be flawless, the others are native)
+ - Add integration options with MyAnimeList and AniList
+ - Add the broadcast date of the next episode
  - Control video playback speed in the existing player settings
  - Mark episode/entire series as watched/not watched
  - Blur or hide runner thumbnail
@@ -21,8 +23,7 @@ Improve Crunchyroll can:
  - Backup/reset settings
 
 New:
- - Add integration options with MyAnimeList and AniList
- - Add the broadcast date of the next episode
+- Hide banner after last episode
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!
