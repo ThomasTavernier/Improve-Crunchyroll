@@ -7,6 +7,11 @@ Hauptfunktionen
   - Im Vollbildmodus das gesamte Fenster einnehmen
   - Maximierung bei Doppelklick möglich
 
+- Integration mit:
+    - MyAnimeList
+    - AniList
+- Anzeige des Ausstrahlungsdatums der nächsten Episode
+
 - Überspringen-Funktionen
   - Tasten und Tastenkürzel für:
     - Intros
@@ -37,10 +42,7 @@ Hauptfunktionen
   - Einstellungen sichern/zurücksetzen
 
 Neue Funktionen
-- Integration mit:
-  - MyAnimeList
-  - AniList
-- Anzeige des Ausstrahlungsdatums der nächsten Episode
+- Banner nach letzter Episode ausblenden
 
 Kompatibilität und Hinweise
 - Unterstützt die neue Version von Crunchyroll

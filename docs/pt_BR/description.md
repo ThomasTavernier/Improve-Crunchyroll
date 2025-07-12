@@ -2,6 +2,8 @@ Improve Crunchyroll pode:
  - Aumentar o player de vídeo (2 mods)
  - Cubra toda a janela em tela cheia
  - Botões/atalhos de pular para introdução, recapitulação, outros... (botões com tempo vêm desta extensão e são baseados em legendas, não serão perfeitos, os outros são nativos)
+ - Adicionar opções de integração com MyAnimeList e AniList
+ - Adicione a data de difusão do episódio prochain
  - Controlar a velocidade de reprodução de vídeo nas configurações existentes do player
  - Marcar episódio / série inteira como assistido / não assistido
  - Desfocar ou ocultar a miniatura da barra de progresso
@@ -21,8 +23,7 @@ Improve Crunchyroll pode:
  - Configurações de backup / redefinição
 
 Novo:
- - Adicionar opções de integração com MyAnimeList e AniList
- - Adicione a data de difusão do episódio prochain
+- Ocultar o banner após o último episódio
 
 Suporte a nova versão do Crunchyroll.
 Comentários são bem-vindos!

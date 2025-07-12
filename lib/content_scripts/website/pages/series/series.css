@@ -2,3 +2,7 @@ html[ic_page='series'] .next-air-date {
   margin-top: .5rem;
   text-decoration: underline #f47521;
 }
+
+div[class^='playable-card__footer'].ic_action div[class^='dropdown-content'] {
+  display: none;
+}
