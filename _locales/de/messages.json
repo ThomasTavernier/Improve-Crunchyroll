@@ -135,14 +135,14 @@
   "hideDimScreen": {
     "message": "Abgedunkelten Bildschirm ausblenden"
   },
+  "hideLastEpisodeBanner": {
+    "message": "Banner nach letzter Episode ausblenden"
+  },
   "hideSkipButton": {
     "message": "Überspringen-Taste ausblenden"
   },
   "hideSubtitles": {
     "message": "Untertitel ausblenden"
-  },
-  "hideLastEpisodeBanner": {
-    "message": "Banner nach letzter Episode ausblenden"
   },
   "hideUi": {
     "message": "Benutzeroberfläche ausblenden"
@@ -167,6 +167,9 @@
   },
   "maximizeOnDoubleClick": {
     "message": "Maximieren bei Doppelklick"
+  },
+  "nextEpisode": {
+    "message": "Nächste Folge"
   },
   "nextEpisodeAirsAt": {
     "message": "Nächste Episode wird am $date$ um $time$ ausgestrahlt",
@@ -203,8 +206,14 @@
   "pressAnyKey": {
     "message": "Beliebige Taste drücken"
   },
+  "previousEpisode": {
+    "message": "Vorherige Folge"
+  },
   "reset": {
     "message": "Zurücksetzen"
+  },
+  "resolutionBasedQuality": {
+    "message": "Quailitätsbasierte Auflösungseinstellung"
   },
   "restore": {
     "message": "Wiederherstellen"
@@ -233,11 +242,11 @@
   "showOnSeries": {
     "message": "Serienseite"
   },
-  "showOnWatch": {
-    "message": "Wiedergabeseite"
-  },
   "showOnSeriesAndWatch": {
     "message": "Serien- und Wiedergabeseite"
+  },
+  "showOnWatch": {
+    "message": "Wiedergabeseite"
   },
   "skip": {
     "message": "Überspringen"

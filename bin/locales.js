@@ -14,8 +14,8 @@ const writeLocale = (locale, data) => {
   const localeDir = path.join(__dirname, '..', '_locales', locale);
   const sortedData = Object.fromEntries(
     Object.entries(data).sort(([a], [b]) => {
-      if (a.startsWith('ext') && !b.startsWith('ext')) return 1;
-      if (!a.startsWith('ext') && b.startsWith('ext')) return -1;
+      if (a.startsWith('ext') && !b.startsWith('ext')) return -1;
+      if (!a.startsWith('ext') && b.startsWith('ext')) return 1;
       return a.localeCompare(b);
     }),
   );

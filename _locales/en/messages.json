@@ -135,14 +135,14 @@
   "hideDimScreen": {
     "message": "Hide dim screen"
   },
+  "hideLastEpisodeBanner": {
+    "message": "Hide banner after last episode"
+  },
   "hideSkipButton": {
     "message": "Hide skip button"
   },
   "hideSubtitles": {
     "message": "Hide subtitles"
-  },
-  "hideLastEpisodeBanner": {
-    "message": "Hide banner after last episode"
   },
   "hideUi": {
     "message": "Hide UI"
@@ -167,6 +167,9 @@
   },
   "maximizeOnDoubleClick": {
     "message": "Maximize on double-click"
+  },
+  "nextEpisode": {
+    "message": "Next Episode"
   },
   "nextEpisodeAirsAt": {
     "message": "Next episode airs on $date$ at $time$",
@@ -203,8 +206,14 @@
   "pressAnyKey": {
     "message": "Press any key"
   },
+  "previousEpisode": {
+    "message": "Previous Episode"
+  },
   "reset": {
     "message": "Reset"
+  },
+  "resolutionBasedQuality": {
+    "message": "Resolution based quality settings"
   },
   "restore": {
     "message": "Restore"
@@ -233,11 +242,11 @@
   "showOnSeries": {
     "message": "Series page"
   },
-  "showOnWatch": {
-    "message": "Watch page"
-  },
   "showOnSeriesAndWatch": {
     "message": "Series and watch page"
+  },
+  "showOnWatch": {
+    "message": "Watch page"
   },
   "skip": {
     "message": "Skip"

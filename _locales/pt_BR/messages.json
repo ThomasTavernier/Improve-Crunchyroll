@@ -135,14 +135,14 @@
   "hideDimScreen": {
     "message": "Ocultar tela escurecida"
   },
+  "hideLastEpisodeBanner": {
+    "message": "Ocultar o banner após o último episódio"
+  },
   "hideSkipButton": {
     "message": "Ocultar botão pular"
   },
   "hideSubtitles": {
     "message": "Ocultar legendas"
-  },
-  "hideLastEpisodeBanner": {
-    "message": "Ocultar o banner após o último episódio"
   },
   "hideUi": {
     "message": "Ocultar UI"
@@ -167,6 +167,9 @@
   },
   "maximizeOnDoubleClick": {
     "message": "Maximizar ao clicar duas vezes"
+  },
+  "nextEpisode": {
+    "message": "Próximo episódio"
   },
   "nextEpisodeAirsAt": {
     "message": "Le prochain épisode sera diffusé le $date$ à $time$",
@@ -203,8 +206,14 @@
   "pressAnyKey": {
     "message": "Pressione qualquer tecla"
   },
+  "previousEpisode": {
+    "message": "Episódio anterior"
+  },
   "reset": {
     "message": "Restaurar"
+  },
+  "resolutionBasedQuality": {
+    "message": "Configurações de qualidade baseadas em resolução"
   },
   "restore": {
     "message": "Restore"
@@ -233,11 +242,11 @@
   "showOnSeries": {
     "message": "Serie página"
   },
-  "showOnWatch": {
-    "message": "Mostrar página"
-  },
   "showOnSeriesAndWatch": {
     "message": "Página de series y relojes"
+  },
+  "showOnWatch": {
+    "message": "Mostrar página"
   },
   "skip": {
     "message": "Pular"

@@ -19,9 +19,13 @@
   cursor: unset;
 }
 
-.popup section {
-  display: flex;
-  justify-self: right;
-  box-shadow: none;
-  margin: 0;
+.popup .section-content {
+  section {
+    margin: 0;
+  }
+  .section-content {
+    display: flex;
+    justify-self: right;
+    box-shadow: none;
+  }
 }

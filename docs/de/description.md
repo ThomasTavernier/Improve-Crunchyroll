@@ -34,6 +34,7 @@ Hauptfunktionen
   - Untertitel ausblenden
   - Start/Pause-Taste ausblenden
   - Player-Benutzeroberfläche und Tastenkürzel ausblenden
+  - Banner nach letzter Episode ausblenden
   - Kopfzeilenmenü beim Überfahren öffnen
   - Bild-in-Bild-Taste (ohne Untertitel)
 
@@ -42,7 +43,8 @@ Hauptfunktionen
   - Einstellungen sichern/zurücksetzen
 
 Neue Funktionen
-- Banner nach letzter Episode ausblenden
+- Verknüpfungen zur nächsten/vorherigen Folge
+- Wiederherstellung der auflösungsbasierten Qualität
 
 Kompatibilität und Hinweise
 - Unterstützt die neue Version von Crunchyroll

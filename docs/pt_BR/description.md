@@ -12,6 +12,7 @@ Improve Crunchyroll pode:
  - Ocultar legendas
  - Ocultar botão de pausa de reprodução
  - Ocultar opções e atalhos da IU do player
+ - Ocultar o banner após o último episódio
  - Desativar NumPad
  - Adicionar botões voltar / pular
  - Adicionar atalhos para voltar / pular
@@ -23,7 +24,8 @@ Improve Crunchyroll pode:
  - Configurações de backup / redefinição
 
 Novo:
-- Ocultar o banner após o último episódio
+- Atalhos para episódios anteriores/seguintes
+- Retorne a qualidade baseada em resolução
 
 Suporte a nova versão do Crunchyroll.
 Comentários são bem-vindos!
