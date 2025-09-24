@@ -168,6 +168,9 @@
   "maximizeOnDoubleClick": {
     "message": "Maximizar ao clicar duas vezes"
   },
+  "resolutionBasedQuality": {
+    "message": "Configurações de qualidade baseadas em resolução"
+  },
   "nextEpisodeAirsAt": {
     "message": "Le prochain épisode sera diffusé le $date$ à $time$",
     "placeholders": {
