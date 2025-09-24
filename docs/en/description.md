@@ -12,6 +12,7 @@ Improve Crunchyroll can:
  - Hide subtitles
  - Hide play pause button
  - Hide player UI options & shortcuts
+ - Hide banner after last episode
  - Disable NumPad
  - Add fast backward/forward buttons
  - Add fast backward/forward shortcuts
@@ -23,7 +24,8 @@ Improve Crunchyroll can:
  - Backup/reset settings
 
 New:
-- Hide banner after last episode
+- Next/Previous episode shortcuts
+- Bring back resolution based quality
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!

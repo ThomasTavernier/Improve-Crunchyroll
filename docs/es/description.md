@@ -12,6 +12,7 @@ Improve Crunchyroll puede:
  - Ocultar subtítulos
  - Ocultar el botón de pausa de reproducción
  - Ocultar opciones de interfaz de usuario y accesos directos del jugador
+ - Ocultar banner después del último episodio
  - Deshabilitar NumPad
  - Agregar botones de retroceso / salto
  - Agregar atajos para retroceso / salto
@@ -23,7 +24,8 @@ Improve Crunchyroll puede:
  - Configuración de copia de seguridad / restablecimiento
 
 Nuevo:
-- Ocultar banner después del último episodio
+- Atajos para episodios anteriores/siguientes
+- Recuperar la calidad basada en la resolución
 
 Compatible con la nueva versión de Crunchyroll.
 ¡Los comentarios son bienvenidos!

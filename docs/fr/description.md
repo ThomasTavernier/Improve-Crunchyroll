@@ -12,6 +12,7 @@ Improve Crunchyroll peut:
  - Masquer les sous-titres
  - Masquer le bouton pause de lecture
  - Masquer les options et les raccourcis de l'interface utilisateur du lecteur
+ - Masquer la bannière après le dernier épisode
  - Désactiver le pavé numérique
  - Ajouter des bouttons d'avance / retour rapides
  - Ajouter des raccourcis d'avance / retour rapides
@@ -23,7 +24,8 @@ Improve Crunchyroll peut:
  - Paramètres de sauvegarde / réinitialisation
 
 Nouveau:
-- Cacher la bannière après le dernier épisode
+- Raccourcis vers l'épisode suivant/précédent
+- Rétablissement de la qualité basée sur la résolution
 
 Supporte la nouvelle version de Crunchyroll.
 Les retours sont les bienvenus!
