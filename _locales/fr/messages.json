@@ -135,14 +135,14 @@
   "hideDimScreen": {
     "message": "Masquer l'écran sombre"
   },
+  "hideLastEpisodeBanner": {
+    "message": "Cacher la bannière après le dernier épisode"
+  },
   "hideSkipButton": {
     "message": "Masquer le bouton de saut"
   },
   "hideSubtitles": {
     "message": "Masquer les sous-titres"
-  },
-  "hideLastEpisodeBanner": {
-    "message": "Cacher la bannière après le dernier épisode"
   },
   "hideUi": {
     "message": "Masquer UI"
@@ -168,8 +168,8 @@
   "maximizeOnDoubleClick": {
     "message": "Agrandir lors d'un double-clic"
   },
-  "resolutionBasedQuality": {
-    "message": "Paramètres de qualité basés sur la résolution"
+  "nextEpisode": {
+    "message": "Prochain épisode"
   },
   "nextEpisodeAirsAt": {
     "message": "Le prochain épisode sera diffusé le $date$ à $time$",
@@ -206,8 +206,14 @@
   "pressAnyKey": {
     "message": "Appuyez sur une touche"
   },
+  "previousEpisode": {
+    "message": "Épisode précédent"
+  },
   "reset": {
     "message": "Réinitialiser"
+  },
+  "resolutionBasedQuality": {
+    "message": "Paramètres de qualité basés sur la résolution"
   },
   "restore": {
     "message": "Restaurer"
@@ -236,11 +242,11 @@
   "showOnSeries": {
     "message": "Page de la série"
   },
-  "showOnWatch": {
-    "message": "Page de veille"
-  },
   "showOnSeriesAndWatch": {
     "message": "Page des séries et de la veille"
+  },
+  "showOnWatch": {
+    "message": "Page de veille"
   },
   "skip": {
     "message": "Sauter"
