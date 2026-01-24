@@ -44,7 +44,6 @@ Hauptfunktionen
 
 Neue Funktionen
 - Verknüpfungen zur nächsten/vorherigen Folge
-- Wiederherstellung der auflösungsbasierten Qualität
 
 Kompatibilität und Hinweise
 - Unterstützt die neue Version von Crunchyroll

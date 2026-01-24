@@ -212,9 +212,6 @@
   "reset": {
     "message": "Réinitialiser"
   },
-  "resolutionBasedQuality": {
-    "message": "Paramètres de qualité basés sur la résolution"
-  },
   "restore": {
     "message": "Restaurer"
   },

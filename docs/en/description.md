@@ -25,7 +25,6 @@ Improve Crunchyroll can:
 
 New:
 - Next/Previous episode shortcuts
-- Bring back resolution based quality
 
 Support new version of Crunchyroll.
 Feedbacks are welcomed!
