@@ -25,7 +25,6 @@ Improve Crunchyroll peut:
 
 Nouveau:
 - Raccourcis vers l'épisode suivant/précédent
-- Rétablissement de la qualité basée sur la résolution
 
 Supporte la nouvelle version de Crunchyroll.
 Les retours sont les bienvenus!

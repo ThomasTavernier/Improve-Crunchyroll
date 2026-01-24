@@ -212,9 +212,6 @@
   "reset": {
     "message": "Reset"
   },
-  "resolutionBasedQuality": {
-    "message": "Resolution based quality settings"
-  },
   "restore": {
     "message": "Restore"
   },

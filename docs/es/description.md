@@ -25,7 +25,6 @@ Improve Crunchyroll puede:
 
 Nuevo:
 - Atajos para episodios anteriores/siguientes
-- Recuperar la calidad basada en la resolución
 
 Compatible con la nueva versión de Crunchyroll.
 ¡Los comentarios son bienvenidos!
