@@ -36,6 +36,15 @@ html[ic_hide_skip_button='true'] .ic_skipper {
   display: none;
 }
 
+html[ic_skip_event_recap='0'] [aria-label="Skip Recap"] {
+  display: none;
+}
 html[ic_skip_event_intro='0'] [aria-label="Skip Intro"] {
+  display: none;
+}
+html[ic_skip_event_credits='0'] [aria-label="Skip Credits"] {
+  display: none;
+}
+html[ic_skip_event_preview='0'] [aria-label="Skip Preview"] {
   display: none;
 }
