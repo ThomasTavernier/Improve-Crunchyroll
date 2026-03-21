@@ -1,0 +1,25 @@
+.ic_div {
+  display: flex !important;
+  z-index: 0 !important;
+}
+
+html[ic_hide_dim_screen='true'] div[data-testid='top-gradient'][class*=':bg-gradient'],
+html[ic_hide_dim_screen='true'] div[data-testid='bottom-controls-autohide'] > div[class*=':bg-gradient'] {
+  background: none;
+}
+
+html[ic_runnerThumbnail='hide'] div[data-testid='trickplay-container'] {
+  display: none;
+}
+
+html[ic_runnerThumbnail='blur'] div[data-testid='trickplay-container'] {
+  filter: blur(5px);
+}
+
+html[ic_hide_ui='playing'][ic_playing='true'] div[data-testid='player-controls-root'],
+html[ic_hide_ui='fullscreen'] #player-container:fullscreen div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingOrFullscreen'] #player-container:fullscreen div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingAndFullscreen'][ic_playing='true'] #player-container:fullscreen div[data-testid='player-controls-root'] {
+  opacity: 0;
+}

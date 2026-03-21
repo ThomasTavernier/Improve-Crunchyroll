@@ -1,0 +1,13 @@
+.ic_option {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 0 0 20px !important;
+  min-height: 50px !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+}
+
+.ic_option .text {
+  width: 45px !important;
+}

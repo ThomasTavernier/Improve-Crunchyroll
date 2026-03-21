@@ -1,0 +1,4 @@
+.ic_remove {
+  opacity: 0 !important;
+  transition: opacity 0.75s ease-out !important;
+}
