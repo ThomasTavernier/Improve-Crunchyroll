@@ -1,50 +1,15 @@
-.ic_skipper {
-  position: absolute;
-  right: 20px;
-  bottom: 100px;
-  min-width: 110px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 800;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  font-family: 'Lato';
-  touch-action: manipulation;
-  cursor: pointer;
-  padding: 0 16px;
-  color: whitesmoke;
-  border: 0;
-  height: 40px;
-  background: rgb(35, 37, 43);
-}
-
-.ic_skipper > img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.ic_skipper:hover {
-  background: rgb(74, 78, 88);
-  color: rgb(218, 218, 218);
-}
-
-.ic_skipper:not(.active),
-html:not([ic_vilos_controls='true']) .ic_skipper.active.past:not(:hover),
-html[ic_hide_skip_button='true'] .ic_skipper {
+html[ic_skip_event_recap='0'] [aria-label='Skip Recap'] {
   display: none;
 }
 
-html[ic_skip_event_recap='0'] [aria-label="Skip Recap"] {
+html[ic_skip_event_intro='0'] [aria-label='Skip Intro'] {
   display: none;
 }
-html[ic_skip_event_intro='0'] [aria-label="Skip Intro"] {
+
+html[ic_skip_event_credits='0'] [aria-label='Skip Credits'] {
   display: none;
 }
-html[ic_skip_event_credits='0'] [aria-label="Skip Credits"] {
-  display: none;
-}
-html[ic_skip_event_preview='0'] [aria-label="Skip Preview"] {
+
+html[ic_skip_event_preview='0'] [aria-label='Skip Preview'] {
   display: none;
 }

@@ -1,11 +1,11 @@
 .playback_rate {
-  height: 75px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 50%;
-  margin: auto;
-  fill: whitesmoke;
-  opacity: 0.75;
+  height: 75px !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 50% !important;
+  margin: auto !important;
+  fill: whitesmoke !important;
+  opacity: 0.75 !important;
 }

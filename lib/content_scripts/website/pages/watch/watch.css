@@ -35,7 +35,7 @@ html[ic_page='watch'][ic_player_mode='2'][ic_header_on_hover='true'] .header-con
   content: '';
   position: absolute;
   top: 3.75rem;
-  width: 100%;
+  width: calc(100% - 260px);
   height: 3.75rem;
   transition: height 0.5s ease-in-out;
 }

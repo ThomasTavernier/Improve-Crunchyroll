@@ -1,11 +1,11 @@
 .ic_forward_backward {
-  height: 120px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  fill: whitesmoke;
-  opacity: 0.75;
+  height: 120px !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  fill: whitesmoke !important;
+  opacity: 0.75 !important;
 }

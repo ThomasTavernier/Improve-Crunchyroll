@@ -1,26 +1,25 @@
-html[ic_hide_subtitles='true'] #velocity-canvas {
+.ic_div {
+  display: flex !important;
+  z-index: 0 !important;
+}
+
+html[ic_hide_dim_screen='true'] div[data-testid='top-gradient'][class*=':bg-gradient'],
+html[ic_hide_dim_screen='true'] div[data-testid='bottom-controls-autohide'] > div[class*=':bg-gradient'] {
+  background: none;
+}
+
+html[ic_runnerThumbnail='hide'] div[data-testid='trickplay-container'] {
   display: none;
 }
 
-html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child,
-html[ic_hide_dim_screen='true'] #velocity-controls-package > div:first-child > div,
-html[ic_hide_dim_screen='true'] #velocity-controls-package > div:nth-child(2) > div {
-  background: none !important;
-}
-
-html[ic_runnerThumbnail='hide'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
-  height: 0 !important;
-  width: 1px !important;
-}
-
-html[ic_runnerThumbnail='blur'] #vilosControlsContainer .css-1dbjc4n.r-kemksi.r-1mlwlqe.r-1udh08x.r-417010 {
+html[ic_runnerThumbnail='blur'] div[data-testid='trickplay-container'] {
   filter: blur(5px);
 }
 
-html[ic_hide_ui='playing'][ic_playing='true'] #velocity-controls-package,
-html[ic_hide_ui='fullscreen'] #vilosRoot:fullscreen #velocity-controls-package,
-html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] #velocity-controls-package,
-html[ic_hide_ui='playingOrFullscreen'] #vilosRoot:fullscreen #velocity-controls-package,
-html[ic_hide_ui='playingAndFullscreen'][ic_playing='true'] #vilosRoot:fullscreen #velocity-controls-package {
+html[ic_hide_ui='playing'][ic_playing='true'] div[data-testid='player-controls-root'],
+html[ic_hide_ui='fullscreen'] #player-container:fullscreen div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingOrFullscreen'][ic_playing='true'] div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingOrFullscreen'] #player-container:fullscreen div[data-testid='player-controls-root'],
+html[ic_hide_ui='playingAndFullscreen'][ic_playing='true'] #player-container:fullscreen div[data-testid='player-controls-root'] {
   opacity: 0;
 }
